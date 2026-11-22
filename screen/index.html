@@ -20,7 +20,13 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 .ringy{animation:ring 1.8s ease-out infinite}
 .flap{display:inline-block;transform-origin:50% 50%;animation:flap 9s ease-in-out infinite}
 .drain{animation:drain 20s linear both}
-@media (prefers-reduced-motion: reduce){.pulse,.ringy,.flap,.drain{animation:none}}
+@keyframes trainIn{from{transform:translateX(var(--from))}to{transform:translateX(0)}}
+@keyframes signIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes arriveRing{0%{box-shadow:0 0 0 0 rgba(16,31,68,.5)}100%{box-shadow:0 0 0 26px rgba(16,31,68,0)}}
+.arrive-train{animation:trainIn 2.8s cubic-bezier(.16,1,.3,1) both}
+.arrive-sign{animation:signIn .9s cubic-bezier(.16,1,.3,1) .4s both}
+.arrive-ring{animation:arriveRing 1.6s ease-out 2.4s 4}
+@media (prefers-reduced-motion: reduce){.pulse,.ringy,.flap,.drain,.arrive-train,.arrive-sign,.arrive-ring{animation:none}}
 .mono{font-family:'Overpass Mono',monospace}
 .row>*:not(.abs){position:relative;z-index:1}
 #arrival{position:absolute;inset:0;display:none;color:#101f44;font-family:Overpass,sans-serif;z-index:50}
@@ -168,12 +174,44 @@ function lowerHtml(lines) {
 
 function showArrival(l) {
   const el = document.getElementById('arrival');
-  const station = l.stations[l.at];
-  const next = l.stations[l.at + 1];
+  const n = l.stations.length;
+  const at = Math.min(l.at, n - 1);
+  const station = l.stations[at];
+  const next = l.stations[at + 1];
+  const final = at >= n - 1;
+  const idx = (state.lines || []).findIndex(x => x.id === l.id) + 1;
+  const time = new Date().toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' });
+  const signSize = Math.min(150, Math.floor(1560 / Math.max(6, station.length * 0.56)));
+  const RX0 = 200, RX1 = 1720;
+  const xs = l.stations.map((_, k) => RX0 + (n > 1 ? k / (n - 1) : 0) * (RX1 - RX0));
+  const prevX = at > 0 ? xs[at - 1] : xs[at] - 160;
+  let route = `<div class="abs" style="left:${RX0}px;top:710px;width:${Math.round(xs[at] - RX0)}px;height:20px;border-radius:10px 0 0 10px;background:${G}"></div>`;
+  if (!final) route += `<div class="abs" style="left:${Math.round(xs[at])}px;top:710px;width:${Math.round(RX1 - xs[at])}px;height:20px;border-radius:0 10px 10px 0;background:rgba(16,31,68,.25)"></div>`;
+  l.stations.forEach((name, k) => {
+    const done = k < at, here = k === at;
+    const d = here ? 60 : 34;
+    route += `<div class="abs${here ? ' arrive-ring' : ''}" style="left:${Math.round(xs[k] - d / 2)}px;top:${Math.round(720 - d / 2)}px;width:${d}px;height:${d}px;border-radius:50%;box-sizing:border-box;background:${done || here ? '#fff' : l.color};border:${here ? 9 : 6}px solid ${G};opacity:${done || here ? 1 : .55}"></div>`;
+    const first = k === 0, last = k === n - 1;
+    const lx = first ? xs[k] - 20 : (last ? xs[k] - 240 : xs[k] - 130);
+    route += `<span class="abs" style="left:${Math.round(lx)}px;top:${here ? 768 : 754}px;width:${first || last ? 260 : 260}px;text-align:${first ? 'left' : (last ? 'right' : 'center')};font-size:${here ? 30 : 22}px;font-weight:${here ? 800 : 700};color:${G};opacity:${done || here ? 1 : .6};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</span>`;
+  });
+  route += `<div class="abs arrive-train" style="--from:${Math.round(prevX - xs[at])}px;left:${Math.round(xs[at] - 132)}px;top:694px;width:100px;height:52px;border-radius:26px;background:#fff;box-shadow:0 10px 24px rgba(16,31,68,.35)"></div>`;
   el.style.background = l.color;
-  el.innerHTML = `<div class="abs" style="left:64px;top:52px;right:64px;display:flex;justify-content:space-between;align-items:center"><span style="background:${G};color:${l.color};font-size:40px;font-weight:800;padding:10px 26px 6px;border-radius:12px;line-height:1">${esc(l.name)}</span></div>
-<div class="abs" style="left:0;right:0;top:240px;display:flex;flex-direction:column;align-items:center;gap:28px"><span style="font-size:40px;font-weight:700">Arrived at</span><div style="background:#1a3170;border-radius:22px;padding:12px;box-shadow:0 24px 60px rgba(16,31,68,.45)"><div style="border:4px solid #fff;border-radius:14px;padding:28px 96px 18px"><span style="display:block;color:#fff;font-size:140px;font-weight:800;letter-spacing:-3px;line-height:1;white-space:nowrap">${esc(station)}</span></div></div></div>
-<div class="abs" style="left:64px;right:64px;bottom:56px;display:flex;flex-direction:column;gap:20px"><div style="display:flex;justify-content:space-between;font-size:26px;font-weight:700"><span>${esc(l.task || '')}</span><span>${next ? 'Next on this line: ' + esc(next) : 'Final station reached'}</span></div><div style="height:4px;background:rgba(16,31,68,.2)"><div class="drain" style="height:4px;background:${G}"></div></div></div>`;
+  el.innerHTML = `<div class="abs" style="left:64px;top:52px;right:64px;display:flex;justify-content:space-between;align-items:center">
+<span style="display:flex;align-items:center;gap:16px;background:${G};color:${l.color};font-size:40px;font-weight:800;padding:10px 26px 6px;border-radius:12px;line-height:1"><span style="width:44px;height:44px;border-radius:22px;background:${l.color};color:${G};font-size:26px;display:flex;align-items:center;justify-content:center;margin-top:-4px">${idx || ''}</span>${esc(l.name)}</span>
+<span class="mono" style="font-size:44px;font-weight:600">${time}</span></div>
+<div class="abs" style="left:0;right:0;top:230px;display:flex;flex-direction:column;align-items:center;gap:26px">
+<span style="font-size:40px;font-weight:800">${final ? 'End of the line' : 'Arrived at station ' + (at + 1) + ' of ' + n}</span>
+<div class="arrive-sign" style="background:#1a3170;border-radius:22px;padding:12px;box-shadow:0 28px 60px rgba(16,31,68,.4)"><div style="border:4px solid #fff;border-radius:14px;padding:26px 88px 16px;display:flex;flex-direction:column;align-items:center;gap:6px">
+<span style="display:block;color:#fff;font-size:${signSize}px;font-weight:800;letter-spacing:-2px;line-height:1;white-space:nowrap">${esc(station)}</span>
+${final ? '<span style="color:#c9d4ee;font-size:30px;font-weight:700;letter-spacing:6px">TERMINUS</span>' : ''}
+</div></div></div>
+<div role="img" aria-label="${esc(l.name)} line: ${at + 1} of ${n} stations reached">${route}</div>
+<div class="abs" style="left:64px;right:64px;top:870px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:20px;font-weight:700;opacity:.75">${final ? 'Last work on this line' : 'The agent works on'}</span><span style="font-size:32px;font-weight:800;line-height:1.15">${esc(l.task || '')}</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;text-align:right"><span style="font-size:20px;font-weight:700;opacity:.75">${final ? 'All stations reached' : 'Next station'}</span><span style="font-size:32px;font-weight:800;line-height:1.15">${final ? n + ' of ' + n : esc(next)}</span></div>
+</div>
+<div class="abs" style="left:0;right:0;bottom:0;height:8px;background:rgba(16,31,68,.15)"><div class="drain" style="height:8px;background:${G}"></div></div>`;
   el.classList.add('on');
   clearTimeout(arrivalTimer);
   arrivalTimer = setTimeout(() => el.classList.remove('on'), 20000);
