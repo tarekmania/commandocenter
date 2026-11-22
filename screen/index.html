@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commandcenter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Overpass+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
+::selection{background:#f4c430;color:#101f44}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;background:#101f44;color:#fff;font-family:Overpass,sans-serif;overflow:hidden;transition:filter 2s}
+#stage.night{filter:brightness(.55) saturate(.85)}
+.abs{position:absolute}
+@keyframes run{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(var(--len));opacity:0}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}100%{box-shadow:0 0 0 12px rgba(255,255,255,0)}}
+@keyframes flap{0%,94%{transform:scaleY(1)}96%{transform:scaleY(.08)}98%,100%{transform:scaleY(1)}}
+@keyframes drain{from{width:100%}to{width:0}}
+.pulse{animation:run 2.6s cubic-bezier(.2,.7,.3,1) infinite}
+.ringy{animation:ring 1.8s ease-out infinite}
+.flap{display:inline-block;transform-origin:50% 50%;animation:flap 9s ease-in-out infinite}
+.drain{animation:drain 20s linear both}
+@media (prefers-reduced-motion: reduce){.pulse,.ringy,.flap,.drain{animation:none}}
+.mono{font-family:'Overpass Mono',monospace}
+.row>*:not(.abs){position:relative;z-index:1}
+#arrival{position:absolute;inset:0;display:none;color:#101f44;font-family:Overpass,sans-serif}
+#arrival.on{display:block}
+</style>
+</head>
+<body>
+<div id="stage">
+<header class="abs" style="left:48px;top:40px;right:48px;height:96px;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;align-items:center;gap:36px">
+<div style="background:#1a3170;border-radius:12px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.35)">
+<div style="border:2px solid #fff;border-radius:8px;padding:10px 28px 8px"><span style="font-size:48px;font-weight:800;letter-spacing:-.5px;line-height:1">Commandcenter</span></div>
+</div>
+<p id="headline" style="margin:0;font-size:32px;font-weight:600;line-height:1.25;max-width:760px"></p>
+</div>
+<div style="display:flex;align-items:center;gap:40px">
+<div style="display:flex;flex-direction:column;gap:7px;font-size:16px;color:#c9d4ee">
+<span style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:12px;border-radius:6px;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25)"></span>AI agent working</span>
+<span style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:8px;background:#fff;box-shadow:0 0 10px 2px #f4c430"></span>Moved today</span>
+<span style="display:flex;align-items:center;gap:10px"><span style="width:14px;height:14px;border-radius:7px;background:#ff4d4d;border:3px solid #fff;box-sizing:border-box;margin:0 6px"></span>Held, needs you</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+<span id="date" style="font-size:16px;font-weight:700;letter-spacing:1px;color:#c9d4ee"></span>
+<span id="clock" class="mono" style="font-size:48px;font-weight:600;line-height:1"></span>
+<span id="fresh" class="mono" style="font-size:13px;color:#a9b8d8"></span>
+</div>
+</div>
+</header>
+<div id="map" role="img" aria-label="Network map: each project is a rail line, stations are milestones, trains are AI agents at work"></div>
+<div id="lower"></div>
+<div id="arrival"></div>
+</div>
+
+<script>
+(() => {
+const KEY = new URLSearchParams(location.search).get('key') || '';
+const G = '#101f44';
+const X0 = 330, X1 = 1540;
+const RUN_MS = 30 * 60 * 1000;
+const stage = document.getElementById('stage');
+let state = null, shown = {}, arrivalTimer = null;
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const ago = iso => {
+  if (!iso) return '';
+  const m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000));
+  if (m < 60) return m + ' min ago';
+  const h = Math.round(m / 60);
+  if (h < 48) return h + ' h ago';
+  return Math.round(h / 24) + ' days ago';
+};
+const daysSince = d => d ? Math.max(0, Math.round((Date.now() - Date.parse(d)) / 86400000)) : 0;
+
+function fit() {
+  const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(${(innerWidth - 1920 * s) / 2}px,${(innerHeight - 1080 * s) / 2}px) scale(${s})`;
+}
+addEventListener('resize', fit); fit();
+
+function tick() {
+  const now = new Date();
+  document.getElementById('clock').textContent = now.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' });
+  document.getElementById('date').textContent = now.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/Zurich' }).toUpperCase();
+  const hour = Number(now.toLocaleString('en-GB', { hour: '2-digit', hour12: false, timeZone: 'Europe/Zurich' }));
+  stage.classList.toggle('night', hour >= 22 || hour < 7);
+}
+setInterval(tick, 10000); tick();
+
+function render() {
+  if (!state) return;
+  document.getElementById('headline').innerHTML = esc(state.headline);
+  document.getElementById('fresh').textContent = state.updatedAt ? 'updated ' + ago(state.updatedAt) : '';
+  const lines = state.lines || [];
+  const groupOf = l => l.state === 'moving' ? 0 : (l.state === 'held' ? 1 : 2);
+  const groups = new Set(lines.map(groupOf)).size;
+  const gap = lines.length > 1 ? Math.min(68, (540 - (groups - 1) * 18) / (lines.length - 1)) : 0;
+  let html = '', extra = 0, lastGroup = null;
+  lines.forEach((l, i) => {
+    const g = groupOf(l);
+    if (lastGroup !== null && g !== lastGroup) extra += 18;
+    lastGroup = g;
+    const y = Math.round(206 + i * gap + extra);
+    html += lineHtml(l, i, y);
+  });
+  if (!lines.length) html = `<p class="abs" style="left:330px;top:300px;font-size:32px;color:#a9b8d8">No project lines yet. The first rating fills this map.</p>`;
+  document.getElementById('map').innerHTML = html;
+  document.getElementById('lower').innerHTML = lowerHtml(lines);
+}
+
+function lineHtml(l, i, y) {
+  const n = l.stations.length;
+  const xs = l.stations.map((_, k) => X0 + (n > 1 ? k / (n - 1) : 0) * (X1 - X0));
+  const posX = (at, p) => at >= n - 1 ? xs[n - 1] : xs[at] + p * (xs[at + 1] - xs[at]);
+  const tX = posX(l.at, l.progress);
+  const tf = l.todayFrom || { at: l.at, progress: l.progress };
+  const fromX = Math.min(posX(tf.at, tf.progress), tX);
+  const running = l.state === 'moving' && l.lastPush && (Date.now() - Date.parse(l.lastPush) < RUN_MS);
+  const held = l.state === 'held', parked = l.state === 'parked';
+  const c = l.color, fut = c + '45';
+  let h = '';
+  h += `<div class="abs" style="left:64px;top:${y - 20}px;width:250px;display:flex;justify-content:flex-end"><span style="background:${c};color:${G};font-size:20px;font-weight:800;padding:7px 15px 4px;border-radius:8px;white-space:nowrap;display:flex;align-items:center;gap:10px"><span style="width:24px;height:24px;border-radius:12px;background:${G};color:${c};font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:-3px">${i + 1}</span>${esc(l.name)}</span></div>`;
+  h += `<div class="abs" style="left:${X0}px;top:${y - 6}px;width:${Math.round(tX - X0)}px;height:12px;border-radius:6px 0 0 6px;background:${c}"></div>`;
+  h += `<div class="abs" style="left:${Math.round(tX)}px;top:${y - 6}px;width:${Math.round(X1 - tX)}px;height:12px;border-radius:0 6px 6px 0;background:${fut}"></div>`;
+  if (tX - fromX > 2) h += `<div class="abs" style="left:${Math.round(fromX)}px;top:${y - 6}px;width:${Math.round(tX - fromX)}px;height:12px;background:#fff;box-shadow:0 0 14px 3px ${c}"></div>`;
+  if (running) {
+    const start = tX - fromX > 40 ? fromX : xs[Math.min(l.at, n - 1)];
+    const len = Math.round(tX - start - 18);
+    if (len > 24) h += `<div class="abs pulse" style="--len:${len}px;left:${Math.round(start - 6)}px;top:${y - 6}px;width:12px;height:12px;border-radius:6px;background:#fff;box-shadow:0 0 14px 4px ${c}"></div>`;
+  }
+  l.stations.forEach((name, k) => {
+    const done = k <= l.at, next = k === l.at + 1, first = k === 0, last = k === n - 1;
+    const d = next ? 24 : (done ? 18 : 16);
+    const bd = done ? `3px solid ${G}` : (next ? `5px solid ${c}` : `3px solid ${c}99`);
+    h += `<div class="abs${next && running ? ' ringy' : ''}" style="left:${Math.round(xs[k] - d / 2)}px;top:${Math.round(y - d / 2)}px;width:${d}px;height:${d}px;border-radius:50%;box-sizing:border-box;background:${done ? '#fff' : G};border:${bd}"></div>`;
+    const lx = first ? xs[k] - 10 : (last ? xs[k] - 190 : xs[k] - 100);
+    h += `<span class="abs" style="left:${Math.round(lx)}px;top:${y - (next ? 42 : 36)}px;width:200px;text-align:${first ? 'left' : (last ? 'right' : 'center')};font-size:${next ? 18 : 14}px;font-weight:${next ? 800 : 600};color:${next ? '#fff' : (done ? '#dfe6f5' : '#a9b8d8')};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</span>`;
+  });
+  if (held && l.at < n - 1) h += `<div class="abs" style="left:${Math.round(xs[l.at + 1] - 46)}px;top:${y - 12}px;width:24px;height:24px;border-radius:12px;background:#ff4d4d;border:5px solid #fff;box-sizing:border-box;box-shadow:0 4px 10px rgba(0,0,0,.4)"></div>`;
+  const tc = parked ? '#6d7ea3' : '#fff';
+  const tsh = running ? `0 0 0 4px ${c}88, 0 6px 14px rgba(0,0,0,.45)` : '0 4px 10px rgba(0,0,0,.4)';
+  h += `<div class="abs" style="left:${Math.round(tX - 18)}px;top:${y - 9}px;width:36px;height:18px;border-radius:9px;background:${tc};box-shadow:${tsh};font-size:12px;font-weight:800;color:${G};display:flex;align-items:center;justify-content:center">${parked ? 'P' : ''}</div>`;
+  let status, sub, stc;
+  if (held) { status = 'Held ' + daysSince(l.held && l.held.since) + ' days'; sub = (l.held && l.held.reason) || l.task || ''; stc = '#ff8a80'; }
+  else if (parked) { status = 'Parked · ' + ago(l.lastPush); sub = l.task || ''; stc = '#a9b8d8'; }
+  else if (running) { status = 'Agent working · ' + ago(l.lastPush); sub = l.task || ''; stc = '#fff'; }
+  else { status = 'Moving · last push ' + ago(l.lastPush); sub = l.task || ''; stc = '#dfe6f5'; }
+  h += `<div class="abs" style="left:1592px;top:${y - 22}px;width:290px;display:flex;flex-direction:column;gap:1px"><span style="font-size:20px;font-weight:800;color:${stc};white-space:nowrap">${esc(status)}</span><span style="font-size:16px;font-weight:600;color:#a9b8d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(sub)}</span></div>`;
+  return h;
+}
+
+function lowerHtml(lines) {
+  const running = lines.filter(l => l.state === 'moving' && l.lastPush && (Date.now() - Date.parse(l.lastPush) < RUN_MS));
+  let rows = running.slice(0, 5).map((l, i) => `<div style="height:36px;margin-bottom:4px;display:flex;align-items:center;gap:20px;padding:0 16px;background:#0a1530;border-radius:4px;position:relative;font-size:18px;font-weight:600" class="mono row"><span class="abs" style="left:0;right:0;top:18px;height:1px;background:#1b2a54;z-index:0"></span><span style="width:12px;height:12px;border-radius:3px;background:${l.color};flex:none"></span><span style="width:200px;flex:none;letter-spacing:.5px">${esc(l.name.toUpperCase())}</span><span style="flex:1;color:#dfe6f5;font-family:Overpass,sans-serif;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(l.task || '')}</span><span class="flap" style="animation-delay:${(i * 1.8).toFixed(1)}s;color:#f4c430;flex:none">${esc(ago(l.lastPush).toUpperCase())}</span></div>`).join('');
+  if (!rows) {
+    const latest = lines.filter(l => l.lastPush).sort((a, b) => b.lastPush.localeCompare(a.lastPush))[0];
+    rows = `<p style="margin:6px 0 0;font-size:20px;color:#a9b8d8">No agent is working right now.${latest ? ' Last push: ' + esc(latest.name) + ', ' + esc(ago(latest.lastPush)) + '.' : ''}</p>`;
+  }
+  const depot = (state.depot || []).slice(0, 14).map(d => `<span style="display:flex;align-items:center;gap:12px;font-size:16px;color:#b8c5e3;white-space:nowrap;overflow:hidden"><span style="width:26px;height:6px;border-radius:3px;background:#3a4a74;flex:none"></span>${esc(d.name)}</span>`).join('');
+  return `<div class="abs" style="left:48px;right:48px;top:760px;height:1px;background:#24376b"></div>
+<section class="abs" style="left:48px;top:778px;width:1300px"><h2 style="margin:0 0 10px;font-size:20px;font-weight:800">Running now</h2>${rows}</section>
+<section class="abs" style="left:1400px;top:778px;width:472px"><h2 style="margin:0 0 12px;font-size:20px;font-weight:800">In the depot <span style="font-weight:600;color:#a9b8d8;font-size:16px">not moving</span></h2><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:10px">${depot}</div></section>`;
+}
+
+function showArrival(l) {
+  const el = document.getElementById('arrival');
+  const station = l.stations[l.at];
+  const next = l.stations[l.at + 1];
+  el.style.background = l.color;
+  el.innerHTML = `<div class="abs" style="left:64px;top:52px;right:64px;display:flex;justify-content:space-between;align-items:center"><span style="background:${G};color:${l.color};font-size:40px;font-weight:800;padding:10px 26px 6px;border-radius:12px;line-height:1">${esc(l.name)}</span></div>
+<div class="abs" style="left:0;right:0;top:240px;display:flex;flex-direction:column;align-items:center;gap:28px"><span style="font-size:40px;font-weight:700">Arrived at</span><div style="background:#1a3170;border-radius:22px;padding:12px;box-shadow:0 24px 60px rgba(16,31,68,.45)"><div style="border:4px solid #fff;border-radius:14px;padding:28px 96px 18px"><span style="display:block;color:#fff;font-size:140px;font-weight:800;letter-spacing:-3px;line-height:1;white-space:nowrap">${esc(station)}</span></div></div></div>
+<div class="abs" style="left:64px;right:64px;bottom:56px;display:flex;flex-direction:column;gap:20px"><div style="display:flex;justify-content:space-between;font-size:26px;font-weight:700"><span>${esc(l.task || '')}</span><span>${next ? 'Next on this line: ' + esc(next) : 'Final station reached'}</span></div><div style="height:4px;background:rgba(16,31,68,.2)"><div class="drain" style="height:4px;background:${G}"></div></div></div>`;
+  el.classList.add('on');
+  clearTimeout(arrivalTimer);
+  arrivalTimer = setTimeout(() => el.classList.remove('on'), 20000);
+}
+
+async function load() {
+  try {
+    const res = await fetch('/state.json?key=' + encodeURIComponent(KEY), { cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const s = await res.json();
+    const arrived = (s.lines || []).find(l => shown[l.id] !== undefined && l.at > shown[l.id]);
+    state = s;
+    (s.lines || []).forEach(l => { shown[l.id] = l.at; });
+    render();
+    if (arrived) showArrival(arrived);
+  } catch (e) {
+    document.getElementById('fresh').textContent = 'offline, retrying';
+  }
+}
+load();
+setInterval(load, 30000);
+setInterval(render, 60000);
+})();
+</script>
+</body>
+</html>
