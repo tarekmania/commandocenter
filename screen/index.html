@@ -23,7 +23,7 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 @media (prefers-reduced-motion: reduce){.pulse,.ringy,.flap,.drain{animation:none}}
 .mono{font-family:'Overpass Mono',monospace}
 .row>*:not(.abs){position:relative;z-index:1}
-#arrival{position:absolute;inset:0;display:none;color:#101f44;font-family:Overpass,sans-serif}
+#arrival{position:absolute;inset:0;display:none;color:#101f44;font-family:Overpass,sans-serif;z-index:50}
 #arrival.on{display:block}
 </style>
 </head>
@@ -56,7 +56,9 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 
 <script>
 (() => {
-const KEY = new URLSearchParams(location.search).get('key') || '';
+const Q = new URLSearchParams(location.search);
+const KEY = Q.get('key') || '';
+const PREVIEW = Q.get('preview');
 const G = '#101f44';
 const X0 = 330, X1 = 1540;
 const RUN_MS = 30 * 60 * 1000;
@@ -85,7 +87,7 @@ function tick() {
   document.getElementById('clock').textContent = now.toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' });
   document.getElementById('date').textContent = now.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Europe/Zurich' }).toUpperCase();
   const hour = Number(now.toLocaleString('en-GB', { hour: '2-digit', hour12: false, timeZone: 'Europe/Zurich' }));
-  stage.classList.toggle('night', hour >= 22 || hour < 7);
+  stage.classList.toggle('night', Q.get('night') === '1' || (Q.get('night') !== '0' && (hour >= 22 || hour < 7)));
 }
 setInterval(tick, 10000); tick();
 
@@ -96,7 +98,7 @@ function render() {
   const lines = state.lines || [];
   const groupOf = l => l.state === 'moving' ? 0 : (l.state === 'held' ? 1 : 2);
   const groups = new Set(lines.map(groupOf)).size;
-  const gap = lines.length > 1 ? Math.min(68, (540 - (groups - 1) * 18) / (lines.length - 1)) : 0;
+  const gap = lines.length > 1 ? Math.min(lines.length <= 4 ? 120 : 68, (540 - (groups - 1) * 18) / (lines.length - 1)) : 0;
   let html = '', extra = 0, lastGroup = null;
   lines.forEach((l, i) => {
     const g = groupOf(l);
@@ -179,14 +181,15 @@ function showArrival(l) {
 
 async function load() {
   try {
-    const res = await fetch('/state.json?key=' + encodeURIComponent(KEY), { cache: 'no-store' });
+    const res = await fetch(PREVIEW ? 'preview/' + encodeURIComponent(PREVIEW) + '.json' : '/state.json?key=' + encodeURIComponent(KEY), { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const s = await res.json();
     const arrived = (s.lines || []).find(l => shown[l.id] !== undefined && l.at > shown[l.id]);
     state = s;
     (s.lines || []).forEach(l => { shown[l.id] = l.at; });
     render();
-    if (arrived) showArrival(arrived);
+    const forced = Q.get('arrive') && (s.lines || []).find(l => l.id === Q.get('arrive'));
+    if (arrived || forced) showArrival(arrived || forced);
   } catch (e) {
     document.getElementById('fresh').textContent = 'offline, retrying';
   }
