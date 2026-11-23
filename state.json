@@ -1,0 +1,32 @@
+{
+  "headline": "EasyRep Sales is parked; no pushes in 19 days.",
+  "lines": [
+    {
+      "id": "easyrep-sales",
+      "repo": "tarekmania/easyrep-sales",
+      "name": "EasyRep Sales",
+      "color": "#f4c430",
+      "stations": [
+        "Needs analysis",
+        "PDF proposals",
+        "Vehicle import",
+        "Pricing setup"
+      ],
+      "at": 2,
+      "progress": 0.8,
+      "state": "parked",
+      "task": "Adjusting prices and content",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-04T18:36:01Z",
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.8
+      }
+    }
+  ],
+  "depot": [],
+  "day": "2026-11-23",
+  "updatedAt": "2026-11-23T02:33:43.350Z",
+  "lastSeenPush": "2026-11-04T18:36:01Z"
+}

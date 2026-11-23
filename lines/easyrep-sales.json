@@ -1,0 +1,11 @@
+{
+  "id": "easyrep-sales",
+  "repo": "tarekmania/easyrep-sales",
+  "name": "EasyRep Sales",
+  "stations": ["Needs analysis", "PDF proposals", "Vehicle import", "Pricing setup"],
+  "at": 2,
+  "progress": 0.8,
+  "task": "Adjusting prices and content",
+  "held": null,
+  "evidence": ["README.md: browser tool for needs analysis, PDF proposals, Excel vehicle import, price/content config", "pushedAt 2026-11-04T18:36:01Z, no commits in last 14 days"]
+}
