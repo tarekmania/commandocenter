@@ -12,7 +12,8 @@
         "bexio takeover",
         "Billing & security",
         "Year-end closing",
-        "AI connector"
+        "AI connector",
+        "Customers"
       ],
       "steps": [
         [
@@ -108,12 +109,22 @@
             "t": "Write tools with preview & confirm",
             "done": true
           }
+        ],
+        [
+          {
+            "t": "First paying customer",
+            "done": false
+          },
+          {
+            "t": "An SME fully off bexio",
+            "done": false
+          }
         ]
       ],
       "at": 4,
       "progress": 0,
       "stepsDone": 21,
-      "stepsTotal": 21,
+      "stepsTotal": 23,
       "state": "moving",
       "task": "Tester feedback round 2: invoices & contacts",
       "held": null,
@@ -229,8 +240,8 @@
           }
         ]
       ],
-      "at": 0,
-      "progress": 0,
+      "at": 2,
+      "progress": 0.47,
       "stepsDone": 14,
       "stepsTotal": 20,
       "state": "moving",
@@ -420,7 +431,7 @@
       "stepsDone": 0,
       "stepsTotal": 8,
       "state": "moving",
-      "task": "Building flip finder, web app and PDF export",
+      "task": "5 pull requests wait for merge",
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-17T19:23:14Z",
@@ -544,6 +555,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T16:45:52.590Z",
+  "updatedAt": "2026-11-23T16:53:48.980Z",
   "lastSeenPush": "2026-11-23T16:37:43Z"
 }

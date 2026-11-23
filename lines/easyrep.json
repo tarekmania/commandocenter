@@ -4,35 +4,123 @@
   "name": "EasyRep",
   "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
   "stations": [
-    { "name": "Telematics core", "steps": [
-      { "t": "Demo tenant & trip processing", "done": true, "ref": "08ba1b4" },
-      { "t": "MFK (vehicle inspection) tracking", "done": true, "ref": "893eb10" },
-      { "t": "Billing export", "done": true, "ref": "2a5745f" },
-      { "t": "Location filter for the fleet", "done": true, "ref": "e458c4a" },
-      { "t": "Faster per-vehicle trip scan", "done": true, "ref": "767d14d" }
-    ] },
-    { "name": "Website relaunch", "steps": [
-      { "t": "New homepage (Wise-style)", "done": true, "ref": "5082ba7" },
-      { "t": "Press & ETH credibility section", "done": true, "ref": "c577c32" },
-      { "t": "Realistic app screenshots", "done": true, "ref": "7cc3e17" }
-    ] },
-    { "name": "Partner page", "steps": [
-      { "t": "Garage partner page /werkstaetten", "done": true, "ref": "b84206e" },
-      { "t": "Invoicing through the platform", "done": true, "ref": "ee0d6a0" },
-      { "t": "Garage portal screenshots", "done": true, "ref": "5acf2ad" }
-    ] },
-    { "name": "App redesign", "steps": [
-      { "t": "Per-user redesign switch", "done": true, "ref": "c37e906" },
-      { "t": "Login, forgot & reset redesigned", "done": true, "ref": "1883cfd" },
-      { "t": "Overview, map & zones redesigned", "done": true, "ref": "d13370e" },
-      { "t": "New login shown to everyone", "done": true, "ref": "fdeb97a" },
-      { "t": "Security hardening pass", "done": true, "ref": "d3e9b5a" },
-      { "t": "Vehicle list & page redesign", "done": false }
-    ] },
-    { "name": "Lead system", "steps": [
-      { "t": "Capture leads from the site", "done": false },
-      { "t": "Hand off leads to sales", "done": false }
-    ] }
+    {
+      "name": "Telematics core",
+      "steps": [
+        {
+          "t": "Demo tenant & trip processing",
+          "done": true,
+          "ref": "08ba1b4"
+        },
+        {
+          "t": "MFK (vehicle inspection) tracking",
+          "done": true,
+          "ref": "893eb10"
+        },
+        {
+          "t": "Billing export",
+          "done": true,
+          "ref": "2a5745f"
+        },
+        {
+          "t": "Location filter for the fleet",
+          "done": true,
+          "ref": "e458c4a"
+        },
+        {
+          "t": "Faster per-vehicle trip scan",
+          "done": true,
+          "ref": "767d14d"
+        }
+      ]
+    },
+    {
+      "name": "Website relaunch",
+      "steps": [
+        {
+          "t": "New homepage (Wise-style)",
+          "done": true,
+          "ref": "5082ba7"
+        },
+        {
+          "t": "Press & ETH credibility section",
+          "done": true,
+          "ref": "c577c32"
+        },
+        {
+          "t": "Realistic app screenshots",
+          "done": true,
+          "ref": "7cc3e17"
+        }
+      ]
+    },
+    {
+      "name": "Partner page",
+      "steps": [
+        {
+          "t": "Garage partner page /werkstaetten",
+          "done": true,
+          "ref": "b84206e"
+        },
+        {
+          "t": "Invoicing through the platform",
+          "done": true,
+          "ref": "ee0d6a0"
+        },
+        {
+          "t": "Garage portal screenshots",
+          "done": true,
+          "ref": "5acf2ad"
+        }
+      ]
+    },
+    {
+      "name": "App redesign",
+      "steps": [
+        {
+          "t": "Per-user redesign switch",
+          "done": true,
+          "ref": "c37e906"
+        },
+        {
+          "t": "Login, forgot & reset redesigned",
+          "done": true,
+          "ref": "1883cfd"
+        },
+        {
+          "t": "Overview, map & zones redesigned",
+          "done": true,
+          "ref": "d13370e"
+        },
+        {
+          "t": "New login shown to everyone",
+          "done": true,
+          "ref": "fdeb97a"
+        },
+        {
+          "t": "Security hardening pass",
+          "done": true,
+          "ref": "d3e9b5a"
+        },
+        {
+          "t": "Vehicle list & page redesign",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Lead system",
+      "steps": [
+        {
+          "t": "Capture leads from the site",
+          "done": false
+        },
+        {
+          "t": "Hand off leads to sales",
+          "done": false
+        }
+      ]
+    }
   ],
   "task": "App redesign behind a switch",
   "held": null,
@@ -45,5 +133,6 @@
     "d13370e Redesign group 3: overview, map and zones in the new design",
     "open PR #14: Redesign group 4: vehicle list and vehicle page",
     "open PR #13: Demo Haustechnik: enable the new UI beta"
-  ]
+  ],
+  "v": 2
 }

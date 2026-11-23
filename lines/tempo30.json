@@ -4,38 +4,140 @@
   "name": "Tempo 30",
   "goal": "Tempo30 ships a detailed, drivable Zurich with traffic, races and police on itch.io",
   "stations": [
-    { "name": "Core driving", "steps": [
-      { "t": "Vehicle system & test track", "done": true, "ref": "c90c18e" },
-      { "t": "15 drivable vehicles, stats", "done": true, "ref": "6ac0816" },
-      { "t": "AI driving & checkpoint races", "done": true, "ref": "2e75a45" },
-      { "t": "Handling Profile B tuned", "done": true, "ref": "1312818" }
-    ] },
-    { "name": "Zurich city build", "steps": [
-      { "t": "Import POLYGON City/Town", "done": true, "ref": "b98b01a" },
-      { "t": "Zurich landmarks (3 churches)", "done": true, "ref": "2332811" },
-      { "t": "Facade kit per building type", "done": true, "ref": "4bc9ff4" },
-      { "t": "Terrain fixes, survey rounds 1-4", "done": true, "ref": "f85dc37" },
-      { "t": "Street dressing: billboards, ads", "done": true, "ref": "633b8e5" }
-    ] },
-    { "name": "Traffic & transit", "steps": [
-      { "t": "Trams & line buses running", "done": true, "ref": "828674c" },
-      { "t": "Pedestrians stay off the road", "done": true, "ref": "80723cb" },
-      { "t": "Police chases, fines, cameras", "done": true, "ref": "c704bd8" },
-      { "t": "Traffic AI cooperates in races", "done": true, "ref": "da7bb7b" }
-    ] },
-    { "name": "Multiplayer", "steps": [
-      { "t": "Shared-mode network design", "done": true, "ref": "bca77e5" },
-      { "t": "Photon Fusion 2 rooms by code", "done": true, "ref": "565e739" },
-      { "t": "Shared traffic, trams & buses", "done": true, "ref": "7a8fb04" },
-      { "t": "4 rounds of network bug tests", "done": true, "ref": "a8bdb33" }
-    ] },
-    { "name": "Release polish", "steps": [
-      { "t": "itch.io publish tooling", "done": true, "ref": "92cc8a3" },
-      { "t": "Sound: engines, crashes, sirens", "done": true, "ref": "c63d0ea" },
-      { "t": "Pigeons, radio & fine system", "done": true, "ref": "5b047e8" },
-      { "t": "Stutter/perf fixes & logging", "done": true, "ref": "fa16648" },
-      { "t": "Fix city survey round 2 bugs", "done": false }
-    ] }
+    {
+      "name": "Core driving",
+      "steps": [
+        {
+          "t": "Vehicle system & test track",
+          "done": true,
+          "ref": "c90c18e"
+        },
+        {
+          "t": "15 drivable vehicles, stats",
+          "done": true,
+          "ref": "6ac0816"
+        },
+        {
+          "t": "AI driving & checkpoint races",
+          "done": true,
+          "ref": "2e75a45"
+        },
+        {
+          "t": "Handling Profile B tuned",
+          "done": true,
+          "ref": "1312818"
+        }
+      ]
+    },
+    {
+      "name": "Zurich city build",
+      "steps": [
+        {
+          "t": "Import POLYGON City/Town",
+          "done": true,
+          "ref": "b98b01a"
+        },
+        {
+          "t": "Zurich landmarks (3 churches)",
+          "done": true,
+          "ref": "2332811"
+        },
+        {
+          "t": "Facade kit per building type",
+          "done": true,
+          "ref": "4bc9ff4"
+        },
+        {
+          "t": "Terrain fixes, survey rounds 1-4",
+          "done": true,
+          "ref": "f85dc37"
+        },
+        {
+          "t": "Street dressing: billboards, ads",
+          "done": true,
+          "ref": "633b8e5"
+        }
+      ]
+    },
+    {
+      "name": "Traffic & transit",
+      "steps": [
+        {
+          "t": "Trams & line buses running",
+          "done": true,
+          "ref": "828674c"
+        },
+        {
+          "t": "Pedestrians stay off the road",
+          "done": true,
+          "ref": "80723cb"
+        },
+        {
+          "t": "Police chases, fines, cameras",
+          "done": true,
+          "ref": "c704bd8"
+        },
+        {
+          "t": "Traffic AI cooperates in races",
+          "done": true,
+          "ref": "da7bb7b"
+        }
+      ]
+    },
+    {
+      "name": "Multiplayer",
+      "steps": [
+        {
+          "t": "Shared-mode network design",
+          "done": true,
+          "ref": "bca77e5"
+        },
+        {
+          "t": "Photon Fusion 2 rooms by code",
+          "done": true,
+          "ref": "565e739"
+        },
+        {
+          "t": "Shared traffic, trams & buses",
+          "done": true,
+          "ref": "7a8fb04"
+        },
+        {
+          "t": "4 rounds of network bug tests",
+          "done": true,
+          "ref": "a8bdb33"
+        }
+      ]
+    },
+    {
+      "name": "Release polish",
+      "steps": [
+        {
+          "t": "itch.io publish tooling",
+          "done": true,
+          "ref": "92cc8a3"
+        },
+        {
+          "t": "Sound: engines, crashes, sirens",
+          "done": true,
+          "ref": "c63d0ea"
+        },
+        {
+          "t": "Pigeons, radio & fine system",
+          "done": true,
+          "ref": "5b047e8"
+        },
+        {
+          "t": "Stutter/perf fixes & logging",
+          "done": true,
+          "ref": "fa16648"
+        },
+        {
+          "t": "Fix city survey round 2 bugs",
+          "done": false
+        }
+      ]
+    }
   ],
   "task": "Version 0.2.5: street dressing round 2",
   "held": null,
@@ -48,5 +150,6 @@
     "a39c441 Version 0.2.0: multiplayer phase 1 (changelog section)",
     "92cc8a3 itch.io publish via butler",
     "7a8fb04 Merge mp-phase1: multiplayer phase 1 (rooms by code, shared police, traffic, trams, buses)"
-  ]
+  ],
+  "v": 2
 }

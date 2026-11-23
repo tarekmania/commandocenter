@@ -4,29 +4,100 @@
   "name": "Noble Drive",
   "goal": "Customers book Noble Drive's cars online end-to-end, staff-free",
   "stations": [
-    { "name": "Vehicle catalog", "steps": [
-      { "t": "Vehicle listing with logos", "done": true, "ref": "e51ce33" },
-      { "t": "Grouped models, live availability", "done": true, "ref": "9d4feb4" },
-      { "t": "Multi-language site (DE/EN)", "done": true, "ref": "59d831a" }
-    ] },
-    { "name": "Booking flow", "steps": [
-      { "t": "Signature, contract & checkout", "done": true, "ref": "874ed30" },
-      { "t": "Pay-on-pickup wording update", "done": true, "ref": "a3ce082" },
-      { "t": "Hourly billing", "done": true, "ref": "843e6de" },
-      { "t": "Payment step in checkout", "done": true, "ref": "7344875" },
-      { "t": "Booking button re-enabled", "done": true, "ref": "ac14156" }
-    ] },
-    { "name": "Admin tools", "steps": [
-      { "t": "Collapsible admin sidebar", "done": true, "ref": "b4546ba" },
-      { "t": "Booking delete with confirm dialog", "done": true, "ref": "c4eb854" },
-      { "t": "Protocol/log on bookings", "done": true, "ref": "907a90a" },
-      { "t": "Locked down public writes/uploads", "done": true, "ref": "935a55a" }
-    ] },
-    { "name": "Launch", "steps": [
-      { "t": "Custom domain & DNS", "done": true, "ref": "49c9658" },
-      { "t": "Email notification infra", "done": true, "ref": "a4f2882" },
-      { "t": "SMS/Twilio notifications", "done": false }
-    ] }
+    {
+      "name": "Vehicle catalog",
+      "steps": [
+        {
+          "t": "Vehicle listing with logos",
+          "done": true,
+          "ref": "e51ce33"
+        },
+        {
+          "t": "Grouped models, live availability",
+          "done": true,
+          "ref": "9d4feb4"
+        },
+        {
+          "t": "Multi-language site (DE/EN)",
+          "done": true,
+          "ref": "59d831a"
+        }
+      ]
+    },
+    {
+      "name": "Booking flow",
+      "steps": [
+        {
+          "t": "Signature, contract & checkout",
+          "done": true,
+          "ref": "874ed30"
+        },
+        {
+          "t": "Pay-on-pickup wording update",
+          "done": true,
+          "ref": "a3ce082"
+        },
+        {
+          "t": "Hourly billing",
+          "done": true,
+          "ref": "843e6de"
+        },
+        {
+          "t": "Payment step in checkout",
+          "done": true,
+          "ref": "7344875"
+        },
+        {
+          "t": "Booking button re-enabled",
+          "done": true,
+          "ref": "ac14156"
+        }
+      ]
+    },
+    {
+      "name": "Admin tools",
+      "steps": [
+        {
+          "t": "Collapsible admin sidebar",
+          "done": true,
+          "ref": "b4546ba"
+        },
+        {
+          "t": "Booking delete with confirm dialog",
+          "done": true,
+          "ref": "c4eb854"
+        },
+        {
+          "t": "Protocol/log on bookings",
+          "done": true,
+          "ref": "907a90a"
+        },
+        {
+          "t": "Locked down public writes/uploads",
+          "done": true,
+          "ref": "935a55a"
+        }
+      ]
+    },
+    {
+      "name": "Launch",
+      "steps": [
+        {
+          "t": "Custom domain & DNS",
+          "done": true,
+          "ref": "49c9658"
+        },
+        {
+          "t": "Email notification infra",
+          "done": true,
+          "ref": "a4f2882"
+        },
+        {
+          "t": "SMS/Twilio notifications",
+          "done": false
+        }
+      ]
+    }
   ],
   "task": "Polishing booking flow and admin tools",
   "held": null,
@@ -38,5 +109,6 @@
     "9d4feb4 Fahrzeuge mit Status ausser 'Verfügbar' online nicht buchbar; Modelle korrekt gruppiert",
     "f9b8816 Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert",
     "935a55a Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert"
-  ]
+  ],
+  "v": 2
 }

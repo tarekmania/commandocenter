@@ -4,37 +4,149 @@
   "name": "Bilaro",
   "goal": "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio",
   "stations": [
-    { "name": "Core bookkeeping", "steps": [
-      { "t": "Chart of accounts and journal", "done": true, "ref": "c1f7ac4" },
-      { "t": "Receipts and bank reconciliation", "done": true, "ref": "3784811" },
-      { "t": "VAT handling", "done": true, "ref": "7b345c4" },
-      { "t": "Financial statements (Bilanz/ER)", "done": true, "ref": "56c1913" },
-      { "t": "Period picker across the app", "done": true, "ref": "955ef6e" },
-      { "t": "Open invoices, xls import, contact merge", "done": true, "ref": "2738741" }
-    ] },
-    { "name": "bexio takeover", "steps": [
-      { "t": "Import bexio contacts & invoices", "done": true, "ref": "1650f9f" },
-      { "t": "Balance takeover by cut-off date", "done": true, "ref": "9681925" },
-      { "t": "Fix takeover issues from feedback", "done": true, "ref": "f5a647b" }
-    ] },
-    { "name": "Billing & security", "steps": [
-      { "t": "Mandatory two-factor sign-in", "done": true, "ref": "9681925" },
-      { "t": "Team roles and invitations", "done": true, "ref": "ae50bae" },
-      { "t": "Stripe subscription & webhook", "done": true, "ref": "c26f7a9" },
-      { "t": "Pay supplier invoices via payment file", "done": true, "ref": "032833d" }
-    ] },
-    { "name": "Year-end closing", "steps": [
-      { "t": "Year-end closing assistant", "done": true, "ref": "7f4cfc6" },
-      { "t": "VAT reconciliation and MWST-XML export", "done": true, "ref": "5028250" },
-      { "t": "Dunning fees and default interest", "done": true, "ref": "5028250" },
-      { "t": "Fixed assets with depreciation", "done": true, "ref": "5133276" }
-    ] },
-    { "name": "AI connector", "steps": [
-      { "t": "MCP server with OAuth consent", "done": true, "ref": "2c92149" },
-      { "t": "Consent page expiry handling", "done": true, "ref": "0dab1ca" },
-      { "t": "Read tools: search, ledger, accounts", "done": true, "ref": "a5c1051" },
-      { "t": "Write tools with preview & confirm", "done": true, "ref": "ee02c4d" }
-    ] }
+    {
+      "name": "Core bookkeeping",
+      "steps": [
+        {
+          "t": "Chart of accounts and journal",
+          "done": true,
+          "ref": "c1f7ac4"
+        },
+        {
+          "t": "Receipts and bank reconciliation",
+          "done": true,
+          "ref": "3784811"
+        },
+        {
+          "t": "VAT handling",
+          "done": true,
+          "ref": "7b345c4"
+        },
+        {
+          "t": "Financial statements (Bilanz/ER)",
+          "done": true,
+          "ref": "56c1913"
+        },
+        {
+          "t": "Period picker across the app",
+          "done": true,
+          "ref": "955ef6e"
+        },
+        {
+          "t": "Open invoices, xls import, contact merge",
+          "done": true,
+          "ref": "2738741"
+        }
+      ]
+    },
+    {
+      "name": "bexio takeover",
+      "steps": [
+        {
+          "t": "Import bexio contacts & invoices",
+          "done": true,
+          "ref": "1650f9f"
+        },
+        {
+          "t": "Balance takeover by cut-off date",
+          "done": true,
+          "ref": "9681925"
+        },
+        {
+          "t": "Fix takeover issues from feedback",
+          "done": true,
+          "ref": "f5a647b"
+        }
+      ]
+    },
+    {
+      "name": "Billing & security",
+      "steps": [
+        {
+          "t": "Mandatory two-factor sign-in",
+          "done": true,
+          "ref": "9681925"
+        },
+        {
+          "t": "Team roles and invitations",
+          "done": true,
+          "ref": "ae50bae"
+        },
+        {
+          "t": "Stripe subscription & webhook",
+          "done": true,
+          "ref": "c26f7a9"
+        },
+        {
+          "t": "Pay supplier invoices via payment file",
+          "done": true,
+          "ref": "032833d"
+        }
+      ]
+    },
+    {
+      "name": "Year-end closing",
+      "steps": [
+        {
+          "t": "Year-end closing assistant",
+          "done": true,
+          "ref": "7f4cfc6"
+        },
+        {
+          "t": "VAT reconciliation and MWST-XML export",
+          "done": true,
+          "ref": "5028250"
+        },
+        {
+          "t": "Dunning fees and default interest",
+          "done": true,
+          "ref": "5028250"
+        },
+        {
+          "t": "Fixed assets with depreciation",
+          "done": true,
+          "ref": "5133276"
+        }
+      ]
+    },
+    {
+      "name": "AI connector",
+      "steps": [
+        {
+          "t": "MCP server with OAuth consent",
+          "done": true,
+          "ref": "2c92149"
+        },
+        {
+          "t": "Consent page expiry handling",
+          "done": true,
+          "ref": "0dab1ca"
+        },
+        {
+          "t": "Read tools: search, ledger, accounts",
+          "done": true,
+          "ref": "a5c1051"
+        },
+        {
+          "t": "Write tools with preview & confirm",
+          "done": true,
+          "ref": "ee02c4d"
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "steps": [
+        {
+          "t": "First paying customer",
+          "done": false
+        },
+        {
+          "t": "An SME fully off bexio",
+          "done": false
+        }
+      ]
+    }
   ],
   "task": "Tester feedback round 2: invoices & contacts",
   "held": null,
@@ -47,5 +159,6 @@
     "f5a647b bexio-Übernahme und MWST nach Tester-Feedback",
     "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen",
     "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen"
-  ]
+  ],
+  "v": 2
 }

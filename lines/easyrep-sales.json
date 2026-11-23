@@ -4,24 +4,61 @@
   "name": "EasyRep Sales",
   "goal": "EasyRep sales reps run a standard needs analysis and leave with a PDF proposal",
   "stations": [
-    { "name": "Needs analysis", "steps": [
-      { "t": "Standard question flow", "done": true, "ref": "2428a56" },
-      { "t": "Save/load analysis as a file", "done": true, "ref": "2428a56" }
-    ] },
-    { "name": "PDF proposals", "steps": [
-      { "t": "Branded PDF proposal in-browser", "done": true, "ref": "2428a56" }
-    ] },
-    { "name": "Vehicle import", "steps": [
-      { "t": "Import vehicle lists (Excel)", "done": true, "ref": "2428a56" }
-    ] },
-    { "name": "Pricing setup", "steps": [
-      { "t": "Editable prices & content", "done": true, "ref": "2428a56" },
-      { "t": "Per-industry question order", "done": true, "ref": "2428a56" }
-    ] }
+    {
+      "name": "Needs analysis",
+      "steps": [
+        {
+          "t": "Standard question flow",
+          "done": true,
+          "ref": "2428a56"
+        },
+        {
+          "t": "Save/load analysis as a file",
+          "done": true,
+          "ref": "2428a56"
+        }
+      ]
+    },
+    {
+      "name": "PDF proposals",
+      "steps": [
+        {
+          "t": "Branded PDF proposal in-browser",
+          "done": true,
+          "ref": "2428a56"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle import",
+      "steps": [
+        {
+          "t": "Import vehicle lists (Excel)",
+          "done": true,
+          "ref": "2428a56"
+        }
+      ]
+    },
+    {
+      "name": "Pricing setup",
+      "steps": [
+        {
+          "t": "Editable prices & content",
+          "done": true,
+          "ref": "2428a56"
+        },
+        {
+          "t": "Per-industry question order",
+          "done": true,
+          "ref": "2428a56"
+        }
+      ]
+    }
   ],
   "task": "Shipped the browser-based needs analysis tool",
   "held": null,
   "evidence": [
     "2428a56 EasyRep Bedarfsanalyse: Browser-Version für GitHub Pages"
-  ]
+  ],
+  "v": 2
 }

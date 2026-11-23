@@ -4,26 +4,65 @@
   "name": "Tutti",
   "goal": "Tutti finds underpriced tutti.ch car listings automatically, ready for a flip",
   "stations": [
-    { "name": "API client", "steps": [
-      { "t": "tutti.ch API client (no Puppeteer)", "done": false }
-    ] },
-    { "name": "Flip finder", "steps": [
-      { "t": "On-demand scan for good listings", "done": false },
-      { "t": "Km-adjusted market value & filter", "done": false },
-      { "t": "PureTech belt cost adjustment", "done": false }
-    ] },
-    { "name": "Local web app", "steps": [
-      { "t": "Browser scan with live progress", "done": false },
-      { "t": "Deals & settings UI", "done": false }
-    ] },
-    { "name": "Report export", "steps": [
-      { "t": "PDF/HTML analysis report", "done": false }
-    ] },
-    { "name": "Market tuning", "steps": [
-      { "t": "Tune thresholds per segment", "done": false }
-    ] }
+    {
+      "name": "API client",
+      "steps": [
+        {
+          "t": "tutti.ch API client (no Puppeteer)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Flip finder",
+      "steps": [
+        {
+          "t": "On-demand scan for good listings",
+          "done": false
+        },
+        {
+          "t": "Km-adjusted market value & filter",
+          "done": false
+        },
+        {
+          "t": "PureTech belt cost adjustment",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Local web app",
+      "steps": [
+        {
+          "t": "Browser scan with live progress",
+          "done": false
+        },
+        {
+          "t": "Deals & settings UI",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Report export",
+      "steps": [
+        {
+          "t": "PDF/HTML analysis report",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Market tuning",
+      "steps": [
+        {
+          "t": "Tune thresholds per segment",
+          "done": false
+        }
+      ]
+    }
   ],
-  "task": "Building flip finder, web app and PDF export",
+  "task": "5 pull requests wait for merge",
   "held": null,
   "evidence": [
     "open PR #5: Flip finder: km-adjusted market value, engine filter, PureTech belt cost",
@@ -31,5 +70,6 @@
     "open PR #3: Local web app: scans from the browser, live progress, deals and settings",
     "open PR #2: Flip finder: on-demand scan for profitable used-car listings",
     "open PR #1: tutti.ch JSON API client instead of Puppeteer scraper"
-  ]
+  ],
+  "v": 2
 }
