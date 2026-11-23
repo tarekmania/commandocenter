@@ -14,12 +14,12 @@
         "AI connector"
       ],
       "at": 3,
-      "progress": 0.4,
+      "progress": 0.65,
       "state": "moving",
-      "task": "Building the Claude/MCP connector",
+      "task": "Claude connector: write tools with confirmation",
       "held": null,
-      "runsWeek": 4,
-      "lastPush": "2026-11-23T14:32:18Z",
+      "runsWeek": 5,
+      "lastPush": "2026-11-23T14:43:25Z",
       "todayFrom": {
         "at": 3,
         "progress": 0.4
@@ -38,9 +38,9 @@
         "Full coverage"
       ],
       "at": 1,
-      "progress": 0.6,
+      "progress": 0.7,
       "state": "moving",
-      "task": "Documenting ped shapes and BCPack decoding",
+      "task": "Documenting ped shapes and material presets",
       "held": null,
       "runsWeek": 49,
       "lastPush": "2026-11-23T14:16:12Z",
@@ -157,6 +157,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T14:44:42.880Z",
-  "lastSeenPush": "2026-11-23T14:32:18Z"
+  "updatedAt": "2026-11-23T15:58:07.149Z",
+  "lastSeenPush": "2026-11-23T14:43:25Z"
 }

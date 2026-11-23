@@ -4,14 +4,13 @@
   "name": "GTA6 Asset Info",
   "stations": ["Containers & resources", "Textures", "Models, vehicles & peds", "Map, world & collision", "Full coverage"],
   "at": 1,
-  "progress": 0.6,
-  "task": "Documenting ped shapes and BCPack decoding",
+  "progress": 0.7,
+  "task": "Documenting ped shapes and material presets",
   "held": null,
   "evidence": [
     "d47428f Ped head faces through material presets; meta map type 0x71",
+    "6a6e6cd 1-byte ttpf layouts; ped body shape (presets, rig inputs, rig format)",
     "db4fb07 ttpf real mip count; ped clothing skinning (8 influences, bone palette, shared skeleton)",
-    "e9d9ca5 BCPack BC1 decodes: status, coverage 98.4%, detile open question",
-    "3739c82 Shader names, LOD parents, interior contents, PSO schema, vehicle tables",
-    "README: State of knowledge table — textures mostly understood (BC1 98.4%), BC3/4/5/6H/7 and 4/2-byte layouts not yet; peds and models still have gaps"
+    "e9d9ca5 BCPack BC1 decodes: status, coverage 98.4%, detile open question"
   ]
 }

@@ -4,16 +4,13 @@
   "name": "Bilaro",
   "stations": ["Core bookkeeping", "bexio takeover", "Billing & security", "Year-end closing", "AI connector"],
   "at": 3,
-  "progress": 0.4,
-  "task": "Building the Claude/MCP connector",
+  "progress": 0.65,
+  "task": "Claude connector: write tools with confirmation",
   "held": null,
   "evidence": [
+    "ee02c4d Claude connector: prepare and act tools (contacts, drafts, issue, bank, receipts, manual booking, reversal) with preview and confirm code",
     "a5c1051 Claude connector: read tools (search, overview, documents, receipts, bank, statements, ledger, accounts, contacts)",
     "2c92149 Claude connector: MCP server on mcp.bilaro.ch, OAuth consent page, connected apps and app restrictions",
-    "0dab1ca Consent page: show the 10-minute expiry and explain an expired request",
-    "f5a647b bexio-Übernahme und MWST nach Tester-Feedback",
-    "7f4cfc6 Year-end closing assistant (/abschluss): completeness checks, year-end bookings, VAT reconciliation",
-    "c26f7a9 Bilaro-Abo mit Stripe: Testphase, Checkout, Kundenportal, Webhook",
-    "9681925 Security: mandatory two-factor sign-in"
+    "0dab1ca Consent page: show the 10-minute expiry and explain an expired request"
   ]
 }
