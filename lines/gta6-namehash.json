@@ -71,9 +71,10 @@
       ]
     }
   ],
-  "task": "Built the joaat hash-to-name dictionary",
+  "task": "Resolver now marks matches as candidates",
   "held": null,
   "evidence": [
+    "02149cc Frame resolver output as candidates, not confirmed names",
     "1e38c45 gta6-namehash: shared joaat hash to name resolver for GTA 6"
   ],
   "v": 3
