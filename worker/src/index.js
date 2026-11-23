@@ -19,7 +19,7 @@ const gh = (path, token, init = {}) => fetch(API + path, {
 });
 
 async function readState(env) {
-  const res = await gh(`/repos/${CC}/contents/state.json`, env.CC_READ_TOKEN, { headers: { Accept: 'application/vnd.github.raw' } });
+  const res = await gh(`/repos/${CC}/contents/state.json`, env.CC_DISPATCH_TOKEN, { headers: { Accept: 'application/vnd.github.raw' } });
   if (!res.ok) return null;
   return res.text();
 }
