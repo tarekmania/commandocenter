@@ -7,161 +7,77 @@
     {
       "name": "Telematics core",
       "steps": [
-        {
-          "t": "Demo tenant & trip processing",
-          "done": true,
-          "ref": "08ba1b4"
-        },
-        {
-          "t": "MFK (vehicle inspection) tracking",
-          "done": true,
-          "ref": "893eb10"
-        },
-        {
-          "t": "Billing export",
-          "done": true,
-          "ref": "2a5745f"
-        },
-        {
-          "t": "Location filter for the fleet",
-          "done": true,
-          "ref": "e458c4a"
-        },
-        {
-          "t": "Faster per-vehicle trip scan",
-          "done": true,
-          "ref": "767d14d"
-        },
-        {
-          "t": "Alerts & fault codes",
-          "done": true,
-          "ref": "d13370e"
-        },
-        {
-          "t": "Invoicing through the platform",
-          "done": true,
-          "ref": "ee0d6a0"
-        }
+        { "t": "Demo tenant & trip processing", "done": true, "ref": "08ba1b4" },
+        { "t": "MFK (vehicle inspection) tracking", "done": true, "ref": "893eb10" },
+        { "t": "Billing export", "done": true, "ref": "2a5745f" },
+        { "t": "Location filter for the fleet", "done": true, "ref": "e458c4a" },
+        { "t": "Faster per-vehicle trip scan", "done": true, "ref": "767d14d" },
+        { "t": "Alerts & fault codes", "done": true, "ref": "d13370e" },
+        { "t": "Invoicing through the platform", "done": true, "ref": "ee0d6a0" }
       ]
     },
     {
       "name": "Website that converts",
       "steps": [
-        {
-          "t": "New homepage (Wise-style)",
-          "done": true,
-          "ref": "5082ba7"
-        },
-        {
-          "t": "Press & ETH credibility section",
-          "done": true,
-          "ref": "c577c32"
-        },
-        {
-          "t": "Garage partner page /werkstaetten",
-          "done": true,
-          "ref": "b84206e"
-        },
-        {
-          "t": "Realistic app screenshots",
-          "done": true,
-          "ref": "7cc3e17"
-        },
-        {
-          "t": "Garage portal screenshots",
-          "done": true,
-          "ref": "5acf2ad"
-        }
+        { "t": "New homepage (Wise-style)", "done": true, "ref": "5082ba7" },
+        { "t": "Press & ETH credibility section", "done": true, "ref": "c577c32" },
+        { "t": "Garage partner page /werkstaetten", "done": true, "ref": "b84206e" },
+        { "t": "Realistic app screenshots", "done": true, "ref": "7cc3e17" },
+        { "t": "Garage portal screenshots", "done": true, "ref": "5acf2ad" }
       ]
     },
     {
       "name": "App redesign",
       "steps": [
-        {
-          "t": "Per-user redesign switch",
-          "done": true,
-          "ref": "c37e906"
-        },
-        {
-          "t": "Login, forgot & reset redesigned",
-          "done": true,
-          "ref": "1883cfd"
-        },
-        {
-          "t": "Overview, map & zones redesigned",
-          "done": true,
-          "ref": "d13370e"
-        },
-        {
-          "t": "New login shown to everyone",
-          "done": true,
-          "ref": "fdeb97a"
-        },
-        {
-          "t": "Security hardening pass",
-          "done": true,
-          "ref": "d3e9b5a"
-        },
-        {
-          "t": "Vehicle list & page redesign",
-          "done": false
-        },
-        {
-          "t": "New design becomes default for all",
-          "done": false
-        }
+        { "t": "Per-user redesign switch", "done": true, "ref": "c37e906" },
+        { "t": "Login, forgot & reset redesigned", "done": true, "ref": "1883cfd" },
+        { "t": "Overview, map & zones redesigned", "done": true, "ref": "d13370e" },
+        { "t": "New login shown to everyone", "done": true, "ref": "fdeb97a" },
+        { "t": "Security hardening pass", "done": true, "ref": "d3e9b5a" },
+        { "t": "Vehicle list and vehicle page", "done": false },
+        { "t": "Trips and driving behaviour", "done": false },
+        { "t": "Alerts and service orders", "done": false },
+        { "t": "Users, invitations and settings", "done": false },
+        { "t": "Reports and exports", "done": false },
+        { "t": "Phone layout checked on all screens", "done": false },
+        { "t": "New design default for all customers", "done": false },
+        { "t": "Old design removed", "done": false }
       ]
     },
     {
       "name": "Lead machine",
       "steps": [
-        {
-          "t": "Capture leads from the site",
-          "done": false
-        },
-        {
-          "t": "Hand off leads to sales",
-          "done": false
-        },
-        {
-          "t": "50 cold mails a day",
-          "done": false
-        },
-        {
-          "t": "Workshop campaign",
-          "done": false
-        },
-        {
-          "t": "Demo bookings",
-          "done": false
-        }
+        { "t": "Qualified leads from Google Maps signals", "done": false },
+        { "t": "Lead scoring by fleet size and industry", "done": false },
+        { "t": "Mail domains warmed up", "done": false },
+        { "t": "50 cold mails a day running", "done": false },
+        { "t": "Workshop partner campaign live", "done": false },
+        { "t": "Savings calculator on the homepage", "done": false },
+        { "t": "Demo booking from mail to calendar", "done": false }
       ]
     },
     {
       "name": "Paying fleets",
       "steps": [
-        {
-          "t": "First large fleet contract signed",
-          "done": false
-        },
-        {
-          "t": "More paying fleets live",
-          "done": false
-        }
+        { "t": "Large fleet contract signed", "done": false },
+        { "t": "Trackers installed on the contract fleet", "done": false },
+        { "t": "First fleet won through a workshop", "done": false },
+        { "t": "5 paying fleets", "done": false },
+        { "t": "10 paying fleets", "done": false }
       ]
     }
   ],
-  "task": "Fixing MCP preview build tooling",
+  "task": "Restoring MCP preview build tooling",
   "held": null,
   "evidence": [
     "14e81f7 Restore generated MCP banner to unblock preview builds",
     "59ee5ca Save preview tooling dependency update",
     "2116350 Demo Haustechnik: enable the new UI beta (PR #13)",
-    "d3e9b5a Harden selected security findings: pin email function lookup, validate contact form, scope logo and feedback storage",
+    "d3e9b5a Harden selected security findings: pin email function lookup, validate contact form, scope logo and feedback storage, block leaked passwords",
     "401ed4c Merge pull request #12: New login for everyone; switch doesn't flip off while loading",
     "fdeb97a Show the new login, forgot and reset pages to everyone",
     "578ab1e Merge pull request #11: Redesign group 3: overview, map and zones",
-    "d13370e Redesign group 3: overview, map and zones in the new design"
-  ],
-  "v": 3
+    "d13370e Redesign group 3: overview, map and zones in the new design",
+    "PR #14 open: Redesign group 4, vehicle list and vehicle page (not yet merged)"
+  ]
 }

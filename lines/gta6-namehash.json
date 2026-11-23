@@ -2,7 +2,7 @@
   "id": "gta6-namehash",
   "repo": "tarekmania/gta6-namehash",
   "name": "GTA6 Namehash",
-  "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
+  "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
   "stations": [
     {
       "name": "Hash dictionary",
@@ -41,6 +41,11 @@
           "t": "List unresolved hashes",
           "done": true,
           "ref": "1e38c45"
+        },
+        {
+          "t": "Mark matches as candidates, not confirmed",
+          "done": true,
+          "ref": "02149cc"
         }
       ]
     },
@@ -52,7 +57,7 @@
           "done": false
         },
         {
-          "t": "Add more public corpora (OpenIV)",
+          "t": "Add more public name lists",
           "done": false
         }
       ]
@@ -61,7 +66,16 @@
       "name": "Adoption",
       "steps": [
         {
-          "t": "Other GTA6 tools load the dictionary",
+          "t": "Release with a clear README and licence",
+          "done": true,
+          "ref": "1e38c45"
+        },
+        {
+          "t": "Announced in the GTA 6 research scene",
+          "done": false
+        },
+        {
+          "t": "Used by SixNG",
           "done": false
         },
         {
@@ -71,11 +85,11 @@
       ]
     }
   ],
-  "task": "Resolver now marks matches as candidates",
+  "task": "Mark hash matches as candidates, not confirmed",
   "held": null,
   "evidence": [
     "02149cc Frame resolver output as candidates, not confirmed names",
     "1e38c45 gta6-namehash: shared joaat hash to name resolver for GTA 6"
   ],
-  "v": 3
+  "v": 4
 }

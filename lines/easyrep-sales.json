@@ -55,6 +55,14 @@
         {
           "t": "Shared with the whole sales team",
           "done": false
+        },
+        {
+          "t": "Templates for the top industries",
+          "done": false
+        },
+        {
+          "t": "Link to it from the demo booking mail",
+          "done": false
         }
       ]
     },
@@ -62,11 +70,15 @@
       "name": "Used in real deals",
       "steps": [
         {
-          "t": "Proposals sent to real prospects",
+          "t": "First 5 proposals sent to prospects",
           "done": false
         },
         {
-          "t": "Feedback worked into the tool",
+          "t": "Sales team feedback worked in",
+          "done": false
+        },
+        {
+          "t": "Outcome noted per proposal (won or lost)",
           "done": false
         }
       ]
@@ -77,5 +89,5 @@
   "evidence": [
     "2428a56 EasyRep Bedarfsanalyse: Browser-Version für GitHub Pages"
   ],
-  "v": 3
+  "v": 4
 }

@@ -123,7 +123,23 @@
           "ref": "2738741"
         },
         {
-          "t": "Design on the level of the best tools",
+          "t": "Tester round 3: bank import & receipts",
+          "done": false
+        },
+        {
+          "t": "Design pass on all main screens",
+          "done": false
+        },
+        {
+          "t": "Receipt upload from the phone",
+          "done": false
+        },
+        {
+          "t": "Real bexio imports of 3 test companies",
+          "done": false
+        },
+        {
+          "t": "Help texts and first-login guide",
           "done": false
         }
       ]
@@ -132,21 +148,37 @@
       "name": "Paying customers",
       "steps": [
         {
-          "t": "Own company's books in Bilaro",
+          "t": "Own company closes 2026 in Bilaro",
           "done": false
         },
         {
-          "t": "Public pricing and sign-up",
+          "t": "Pricing page on bilaro.ch",
+          "done": false
+        },
+        {
+          "t": "Self sign-up with trial and Stripe",
+          "done": false
+        },
+        {
+          "t": "First fiduciary partner using Bilaro",
+          "done": false
+        },
+        {
+          "t": "First 3 paying SMEs",
           "done": false
         },
         {
           "t": "First SME fully off bexio",
           "done": false
+        },
+        {
+          "t": "10 paying SMEs",
+          "done": false
         }
       ]
     }
   ],
-  "task": "Tester feedback round 2: invoices & contacts",
+  "task": "Tester round 2: invoices & contacts",
   "held": null,
   "evidence": [
     "2738741 Tester round 2: open invoices from the journal, xls reader, contact dedupe/merge, contact persons, due date edit, article numbers",
@@ -158,5 +190,5 @@
     "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen",
     "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen"
   ],
-  "v": 3
+  "v": 4
 }

@@ -101,6 +101,10 @@
           "t": "Review fixes on stock overview",
           "done": true,
           "ref": "f0f7486"
+        },
+        {
+          "t": "On-site presentation to management",
+          "done": false
         }
       ]
     },
@@ -113,7 +117,19 @@
           "ref": "483b3e4"
         },
         {
-          "t": "Real team in Staufen using it daily",
+          "t": "Pilot with the real team in Staufen",
+          "done": false
+        },
+        {
+          "t": "Drivers use the phone app daily",
+          "done": false
+        },
+        {
+          "t": "Pilot feedback fixed",
+          "done": false
+        },
+        {
+          "t": "Vans tracked with EasyRep trackers",
           "done": false
         }
       ]
@@ -122,11 +138,23 @@
       "name": "Sold & rolled out",
       "steps": [
         {
+          "t": "Offer and price sent",
+          "done": false
+        },
+        {
           "t": "Contract signed",
           "done": false
         },
         {
+          "t": "Data moved over from Rocklog",
+          "done": false
+        },
+        {
           "t": "Rocklog switched off",
+          "done": false
+        },
+        {
+          "t": "Second site onboarded",
           "done": false
         }
       ]
@@ -144,5 +172,5 @@
     "834a6af Merge step 13: no automatic replenishment, transfers between sites, Auslagerung to institutions",
     "54ce769 Merge Step 11: Live mode, multiple sites and Supabase"
   ],
-  "v": 3
+  "v": 4
 }

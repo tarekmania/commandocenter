@@ -77,7 +77,11 @@
           "done": false
         },
         {
-          "t": "Final map at 15-20 km (full city)",
+          "t": "Re-run city survey after fixes",
+          "done": false
+        },
+        {
+          "t": "More districts, map 15-20 km",
           "done": false
         }
       ]
@@ -129,6 +133,10 @@
           "t": "4 rounds of network bug tests",
           "done": true,
           "ref": "a8bdb33"
+        },
+        {
+          "t": "Multiplayer phase 2: races & modes online",
+          "done": false
         }
       ]
     },
@@ -136,7 +144,15 @@
       "name": "Public reveal",
       "steps": [
         {
-          "t": "Steam page live",
+          "t": "Name and trademark check",
+          "done": false
+        },
+        {
+          "t": "Steamworks account",
+          "done": false
+        },
+        {
+          "t": "Steam page with trailer and screenshots",
           "done": false
         },
         {
@@ -144,7 +160,7 @@
           "done": false
         },
         {
-          "t": "Public demo build",
+          "t": "Demo build for a Steam festival",
           "done": false
         }
       ]
@@ -153,15 +169,15 @@
       "name": "Early Access",
       "steps": [
         {
-          "t": "Paid release on Steam",
+          "t": "English and German texts and voices",
           "done": false
         },
         {
-          "t": "Many districts beyond Zentrum",
+          "t": "Price set",
           "done": false
         },
         {
-          "t": "English and German localisation",
+          "t": "Early Access release on Steam",
           "done": false
         }
       ]
@@ -179,5 +195,5 @@
     "92cc8a3 itch.io publish via butler",
     "7a8fb04 Merge mp-phase1: multiplayer phase 1 (rooms by code, shared police, traffic, trams, buses)"
   ],
-  "v": 3
+  "v": 4
 }

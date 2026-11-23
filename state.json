@@ -6,7 +6,7 @@
       "repo": "tarekmania/gta6-namehash",
       "name": "GTA6 Namehash",
       "color": "#f4c430",
-      "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
+      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
       "stations": [
         "Hash dictionary",
         "CLI lookup",
@@ -40,6 +40,10 @@
           {
             "t": "List unresolved hashes",
             "done": true
+          },
+          {
+            "t": "Mark matches as candidates, not confirmed",
+            "done": true
           }
         ],
         [
@@ -48,13 +52,21 @@
             "done": false
           },
           {
-            "t": "Add more public corpora (OpenIV)",
+            "t": "Add more public name lists",
             "done": false
           }
         ],
         [
           {
-            "t": "Other GTA6 tools load the dictionary",
+            "t": "Release with a clear README and licence",
+            "done": true
+          },
+          {
+            "t": "Announced in the GTA 6 research scene",
+            "done": false
+          },
+          {
+            "t": "Used by SixNG",
             "done": false
           },
           {
@@ -64,11 +76,11 @@
         ]
       ],
       "at": 1,
-      "progress": 0,
-      "stepsDone": 6,
-      "stepsTotal": 10,
+      "progress": 0.25,
+      "stepsDone": 8,
+      "stepsTotal": 13,
       "state": "moving",
-      "task": "Resolver now marks matches as candidates",
+      "task": "Mark hash matches as candidates, not confirmed",
       "held": null,
       "runsWeek": 2,
       "lastPush": "2026-11-23T17:47:05Z",
@@ -211,7 +223,7 @@
       "stepsDone": 17,
       "stepsTotal": 26,
       "state": "moving",
-      "task": "Fixing MCP preview build tooling",
+      "task": "Restoring MCP preview build tooling",
       "held": null,
       "runsWeek": 18,
       "lastPush": "2026-11-23T17:00:23Z",
@@ -321,37 +333,69 @@
             "done": true
           },
           {
-            "t": "Design on the level of the best tools",
+            "t": "Tester round 3: bank import & receipts",
+            "done": false
+          },
+          {
+            "t": "Design pass on all main screens",
+            "done": false
+          },
+          {
+            "t": "Receipt upload from the phone",
+            "done": false
+          },
+          {
+            "t": "Real bexio imports of 3 test companies",
+            "done": false
+          },
+          {
+            "t": "Help texts and first-login guide",
             "done": false
           }
         ],
         [
           {
-            "t": "Own company's books in Bilaro",
+            "t": "Own company closes 2026 in Bilaro",
             "done": false
           },
           {
-            "t": "Public pricing and sign-up",
+            "t": "Pricing page on bilaro.ch",
+            "done": false
+          },
+          {
+            "t": "Self sign-up with trial and Stripe",
+            "done": false
+          },
+          {
+            "t": "First fiduciary partner using Bilaro",
+            "done": false
+          },
+          {
+            "t": "First 3 paying SMEs",
             "done": false
           },
           {
             "t": "First SME fully off bexio",
             "done": false
+          },
+          {
+            "t": "10 paying SMEs",
+            "done": false
           }
         ]
       ],
       "at": 3,
-      "progress": 0.67,
+      "progress": 0.29,
       "stepsDone": 19,
-      "stepsTotal": 23,
+      "stepsTotal": 31,
       "state": "moving",
-      "task": "Tester feedback round 2: invoices & contacts",
+      "task": "Tester round 2: invoices & contacts",
       "held": null,
       "runsWeek": 6,
       "lastPush": "2026-11-23T16:37:43Z",
       "todayFrom": {
         "at": 3,
-        "progress": 0.4
+        "progress": 0.29
       }
     },
     {
@@ -462,19 +506,27 @@
             "done": true
           },
           {
-            "t": "Map all hash keys to names",
+            "t": "Next names PR batched from the watcher",
+            "done": false
+          },
+          {
+            "t": "Collision ids named",
+            "done": false
+          },
+          {
+            "t": "Hash keys mapped with gta6-namehash",
             "done": false
           }
         ]
       ],
       "at": 2,
-      "progress": 0.85,
+      "progress": 0.6,
       "stepsDone": 17,
-      "stepsTotal": 22,
+      "stepsTotal": 24,
       "state": "moving",
-      "task": "Documenting ped shapes and material presets",
+      "task": "Ped head faces documented via material presets",
       "held": null,
-      "runsWeek": 49,
+      "runsWeek": 46,
       "lastPush": "2026-11-23T14:16:12Z",
       "todayFrom": {
         "at": 0,
@@ -497,63 +549,63 @@
       "steps": [
         [
           {
-            "t": "Fetch listings via tutti.ch's JSON API",
-            "done": false
-          },
-          {
-            "t": "Remove Puppeteer scraper",
+            "t": "Review and merge the API client PR",
             "done": false
           }
         ],
         [
           {
-            "t": "On-demand scan for good listings",
+            "t": "Merge the flip finder PRs",
             "done": false
           },
           {
-            "t": "Km-adjusted market value & filter",
+            "t": "Budget per search setting",
             "done": false
           },
           {
-            "t": "PureTech belt cost adjustment",
-            "done": false
-          },
-          {
-            "t": "Budget per search",
+            "t": "Cost traps per model (belts, gearboxes)",
             "done": false
           }
         ],
         [
           {
-            "t": "Browser scan with live progress",
+            "t": "Merge the web app PR",
             "done": false
           },
           {
-            "t": "Deals & settings UI",
-            "done": false
-          },
-          {
-            "t": "PDF/HTML analysis report",
+            "t": "Merge the report PR",
             "done": false
           }
         ],
         [
           {
-            "t": "Deploy to flip.easyrep.ch",
+            "t": "Running on the own server",
             "done": false
           },
           {
-            "t": "Usable by others (not just local)",
+            "t": "Reachable at flip.easyrep.ch",
+            "done": false
+          },
+          {
+            "t": "Login so only invited people can scan",
             "done": false
           }
         ],
         [
           {
-            "t": "Car bought through Tutti",
+            "t": "First scan with a real budget",
+            "done": false
+          },
+          {
+            "t": "Car inspected and bought",
             "done": false
           },
           {
             "t": "Car sold with profit",
+            "done": false
+          },
+          {
+            "t": "Profit noted per flip in the tool",
             "done": false
           }
         ]
@@ -577,7 +629,7 @@
       "repo": "tarekmania/noble-drive-redo",
       "name": "Noble Drive",
       "color": "#d94f9a",
-      "goal": "B&G Autovermietung's customers book and pay online, staff runs it all from one admin",
+      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
       "stations": [
         "Vehicle catalog",
         "Booking flow",
@@ -650,33 +702,53 @@
             "done": true
           },
           {
-            "t": "SMS/Twilio notifications",
+            "t": "SMS notifications",
+            "done": false
+          },
+          {
+            "t": "Booking and reminder mails tested end to end",
+            "done": false
+          },
+          {
+            "t": "Real payment tested with a live booking",
             "done": false
           }
         ],
         [
           {
-            "t": "Client accepts the booking system",
+            "t": "Admin walkthrough with the client team",
             "done": false
           },
           {
-            "t": "Client uses it daily",
+            "t": "Test week with real bookings",
+            "done": false
+          },
+          {
+            "t": "Client feedback fixed",
+            "done": false
+          },
+          {
+            "t": "Client signs off",
+            "done": false
+          },
+          {
+            "t": "Final invoice paid",
             "done": false
           }
         ]
       ],
       "at": 2,
-      "progress": 0.67,
+      "progress": 0.4,
       "stepsDone": 14,
-      "stepsTotal": 17,
+      "stepsTotal": 22,
       "state": "moving",
-      "task": "Polishing booking flow and admin tools",
+      "task": "Booking delete confirmation in admin",
       "held": null,
       "runsWeek": 4,
       "lastPush": "2026-11-16T23:42:46Z",
       "todayFrom": {
         "at": 2,
-        "progress": 0.67
+        "progress": 0.4
       }
     },
     {
@@ -728,23 +800,35 @@
           {
             "t": "Shared with the whole sales team",
             "done": false
+          },
+          {
+            "t": "Templates for the top industries",
+            "done": false
+          },
+          {
+            "t": "Link to it from the demo booking mail",
+            "done": false
           }
         ],
         [
           {
-            "t": "Proposals sent to real prospects",
+            "t": "First 5 proposals sent to prospects",
             "done": false
           },
           {
-            "t": "Feedback worked into the tool",
+            "t": "Sales team feedback worked in",
+            "done": false
+          },
+          {
+            "t": "Outcome noted per proposal (won or lost)",
             "done": false
           }
         ]
       ],
       "at": 1,
-      "progress": 0.67,
+      "progress": 0.4,
       "stepsDone": 7,
-      "stepsTotal": 10,
+      "stepsTotal": 13,
       "state": "parked",
       "task": "Shipped the browser-based needs analysis tool",
       "held": null,
@@ -752,7 +836,7 @@
       "lastPush": "2026-11-04T18:36:01Z",
       "todayFrom": {
         "at": 1,
-        "progress": 0.67
+        "progress": 0.4
       }
     }
   ],
@@ -769,6 +853,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T17:52:56.164Z",
+  "updatedAt": "2026-11-23T18:15:54.004Z",
   "lastSeenPush": "2026-11-23T17:47:05Z"
 }

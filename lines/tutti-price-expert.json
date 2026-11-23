@@ -8,11 +8,7 @@
       "name": "API client",
       "steps": [
         {
-          "t": "Fetch listings via tutti.ch's JSON API",
-          "done": false
-        },
-        {
-          "t": "Remove Puppeteer scraper",
+          "t": "Review and merge the API client PR",
           "done": false
         }
       ]
@@ -21,19 +17,15 @@
       "name": "Flip finder",
       "steps": [
         {
-          "t": "On-demand scan for good listings",
+          "t": "Merge the flip finder PRs",
           "done": false
         },
         {
-          "t": "Km-adjusted market value & filter",
+          "t": "Budget per search setting",
           "done": false
         },
         {
-          "t": "PureTech belt cost adjustment",
-          "done": false
-        },
-        {
-          "t": "Budget per search",
+          "t": "Cost traps per model (belts, gearboxes)",
           "done": false
         }
       ]
@@ -42,15 +34,11 @@
       "name": "Web app",
       "steps": [
         {
-          "t": "Browser scan with live progress",
+          "t": "Merge the web app PR",
           "done": false
         },
         {
-          "t": "Deals & settings UI",
-          "done": false
-        },
-        {
-          "t": "PDF/HTML analysis report",
+          "t": "Merge the report PR",
           "done": false
         }
       ]
@@ -59,11 +47,15 @@
       "name": "Online & shareable",
       "steps": [
         {
-          "t": "Deploy to flip.easyrep.ch",
+          "t": "Running on the own server",
           "done": false
         },
         {
-          "t": "Usable by others (not just local)",
+          "t": "Reachable at flip.easyrep.ch",
+          "done": false
+        },
+        {
+          "t": "Login so only invited people can scan",
           "done": false
         }
       ]
@@ -72,11 +64,19 @@
       "name": "First profitable flip",
       "steps": [
         {
-          "t": "Car bought through Tutti",
+          "t": "First scan with a real budget",
+          "done": false
+        },
+        {
+          "t": "Car inspected and bought",
           "done": false
         },
         {
           "t": "Car sold with profit",
+          "done": false
+        },
+        {
+          "t": "Profit noted per flip in the tool",
           "done": false
         }
       ]
@@ -91,5 +91,5 @@
     "open PR #2: Flip finder: on-demand scan for profitable used-car listings",
     "open PR #1: tutti.ch JSON API client instead of Puppeteer scraper"
   ],
-  "v": 3
+  "v": 4
 }
