@@ -1,0 +1,80 @@
+{
+  "id": "gta6-namehash",
+  "repo": "tarekmania/gta6-namehash",
+  "name": "GTA6 Namehash",
+  "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
+  "stations": [
+    {
+      "name": "Hash dictionary",
+      "steps": [
+        {
+          "t": "Joaat hashing: exact & lowercase",
+          "done": true,
+          "ref": "1e38c45"
+        },
+        {
+          "t": "Build dictionary from public sources",
+          "done": true,
+          "ref": "1e38c45"
+        },
+        {
+          "t": "~309k names, ~498k hashes committed",
+          "done": true,
+          "ref": "1e38c45"
+        }
+      ]
+    },
+    {
+      "name": "CLI lookup",
+      "steps": [
+        {
+          "t": "Resolve hashes via CLI or stdin",
+          "done": true,
+          "ref": "1e38c45"
+        },
+        {
+          "t": "Resolve hashes across files/trees",
+          "done": true,
+          "ref": "1e38c45"
+        },
+        {
+          "t": "List unresolved hashes",
+          "done": true,
+          "ref": "1e38c45"
+        }
+      ]
+    },
+    {
+      "name": "Wider coverage",
+      "steps": [
+        {
+          "t": "Close remaining format-note hashes",
+          "done": false
+        },
+        {
+          "t": "Add more public corpora (OpenIV)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Adoption",
+      "steps": [
+        {
+          "t": "Other GTA6 tools load the dictionary",
+          "done": false
+        },
+        {
+          "t": "Used inside GTA6 Asset Info",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "task": "Built the joaat hash-to-name dictionary",
+  "held": null,
+  "evidence": [
+    "1e38c45 gta6-namehash: shared joaat hash to name resolver for GTA 6"
+  ],
+  "v": 2
+}

@@ -1,6 +1,121 @@
 {
-  "headline": "Five lines are moving. No line is held.",
+  "headline": "Bilaro reached AI connector. GTA6 Namehash is a new line.",
   "lines": [
+    {
+      "id": "easyrep",
+      "repo": "tarekmania/easyrep",
+      "name": "EasyRep",
+      "color": "#8fb3ff",
+      "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
+      "stations": [
+        "Telematics core",
+        "Website relaunch",
+        "Partner page",
+        "App redesign",
+        "Lead system"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Demo tenant & trip processing",
+            "done": true
+          },
+          {
+            "t": "MFK (vehicle inspection) tracking",
+            "done": true
+          },
+          {
+            "t": "Billing export",
+            "done": true
+          },
+          {
+            "t": "Location filter for the fleet",
+            "done": true
+          },
+          {
+            "t": "Faster per-vehicle trip scan",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "New homepage (Wise-style)",
+            "done": true
+          },
+          {
+            "t": "Press & ETH credibility section",
+            "done": true
+          },
+          {
+            "t": "Realistic app screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Garage partner page /werkstaetten",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
+          },
+          {
+            "t": "Garage portal screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Per-user redesign switch",
+            "done": true
+          },
+          {
+            "t": "Login, forgot & reset redesigned",
+            "done": true
+          },
+          {
+            "t": "Overview, map & zones redesigned",
+            "done": true
+          },
+          {
+            "t": "New login shown to everyone",
+            "done": true
+          },
+          {
+            "t": "Security hardening pass",
+            "done": true
+          },
+          {
+            "t": "Vehicle list & page redesign",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Capture leads from the site",
+            "done": false
+          },
+          {
+            "t": "Hand off leads to sales",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.83,
+      "stepsDone": 16,
+      "stepsTotal": 19,
+      "state": "moving",
+      "task": "Keeping the demo tenant on the new UI beta",
+      "held": null,
+      "runsWeek": 16,
+      "lastPush": "2026-11-23T16:52:46Z",
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.6
+      }
+    },
     {
       "id": "bilaro",
       "repo": "tarekmania/bilaro",
@@ -136,6 +251,82 @@
       }
     },
     {
+      "id": "gta6-namehash",
+      "repo": "tarekmania/gta6-namehash",
+      "name": "GTA6 Namehash",
+      "color": "#f4c430",
+      "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
+      "stations": [
+        "Hash dictionary",
+        "CLI lookup",
+        "Wider coverage",
+        "Adoption"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Joaat hashing: exact & lowercase",
+            "done": true
+          },
+          {
+            "t": "Build dictionary from public sources",
+            "done": true
+          },
+          {
+            "t": "~309k names, ~498k hashes committed",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Resolve hashes via CLI or stdin",
+            "done": true
+          },
+          {
+            "t": "Resolve hashes across files/trees",
+            "done": true
+          },
+          {
+            "t": "List unresolved hashes",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Close remaining format-note hashes",
+            "done": false
+          },
+          {
+            "t": "Add more public corpora (OpenIV)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Other GTA6 tools load the dictionary",
+            "done": false
+          },
+          {
+            "t": "Used inside GTA6 Asset Info",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0,
+      "stepsDone": 6,
+      "stepsTotal": 10,
+      "state": "moving",
+      "task": "Built the joaat hash-to-name dictionary",
+      "held": null,
+      "runsWeek": 1,
+      "lastPush": "2026-11-23T16:52:39Z",
+      "todayFrom": {
+        "at": 1,
+        "progress": 0
+      }
+    },
+    {
       "id": "gta6-asset-info",
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
@@ -252,121 +443,6 @@
       "todayFrom": {
         "at": 0,
         "progress": 0
-      }
-    },
-    {
-      "id": "easyrep",
-      "repo": "tarekmania/easyrep",
-      "name": "EasyRep",
-      "color": "#8fb3ff",
-      "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
-      "stations": [
-        "Telematics core",
-        "Website relaunch",
-        "Partner page",
-        "App redesign",
-        "Lead system"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Demo tenant & trip processing",
-            "done": true
-          },
-          {
-            "t": "MFK (vehicle inspection) tracking",
-            "done": true
-          },
-          {
-            "t": "Billing export",
-            "done": true
-          },
-          {
-            "t": "Location filter for the fleet",
-            "done": true
-          },
-          {
-            "t": "Faster per-vehicle trip scan",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "New homepage (Wise-style)",
-            "done": true
-          },
-          {
-            "t": "Press & ETH credibility section",
-            "done": true
-          },
-          {
-            "t": "Realistic app screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Garage partner page /werkstaetten",
-            "done": true
-          },
-          {
-            "t": "Invoicing through the platform",
-            "done": true
-          },
-          {
-            "t": "Garage portal screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Per-user redesign switch",
-            "done": true
-          },
-          {
-            "t": "Login, forgot & reset redesigned",
-            "done": true
-          },
-          {
-            "t": "Overview, map & zones redesigned",
-            "done": true
-          },
-          {
-            "t": "New login shown to everyone",
-            "done": true
-          },
-          {
-            "t": "Security hardening pass",
-            "done": true
-          },
-          {
-            "t": "Vehicle list & page redesign",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Capture leads from the site",
-            "done": false
-          },
-          {
-            "t": "Hand off leads to sales",
-            "done": false
-          }
-        ]
-      ],
-      "at": 2,
-      "progress": 0.83,
-      "stepsDone": 16,
-      "stepsTotal": 19,
-      "state": "moving",
-      "task": "App redesign behind a switch",
-      "held": null,
-      "runsWeek": 14,
-      "lastPush": "2026-11-19T17:58:16Z",
-      "todayFrom": {
-        "at": 2,
-        "progress": 0.6
       }
     },
     {
@@ -539,6 +615,11 @@
   ],
   "depot": [
     {
+      "id": "easyrep-sales",
+      "repo": "tarekmania/easyrep-sales",
+      "name": "EasyRep Sales"
+    },
+    {
       "id": "tempo30",
       "repo": "tarekmania/tempo30",
       "name": "Tempo 30"
@@ -547,14 +628,9 @@
       "id": "tischlein-lager",
       "repo": "tarekmania/tischlein-lager",
       "name": "Tischlein Lager"
-    },
-    {
-      "id": "easyrep-sales",
-      "repo": "tarekmania/easyrep-sales",
-      "name": "EasyRep Sales"
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T16:53:48.980Z",
-  "lastSeenPush": "2026-11-23T16:37:43Z"
+  "updatedAt": "2026-11-23T16:59:26.012Z",
+  "lastSeenPush": "2026-11-23T16:52:46Z"
 }
