@@ -45,6 +45,41 @@ async function checkForPushes(env) {
   return 'dispatch ' + d.status;
 }
 
+
+async function diagnose(env) {
+  const out = { time: new Date().toISOString(), secrets: {
+    CC_READ_TOKEN: !!env.CC_READ_TOKEN, CC_DISPATCH_TOKEN: !!env.CC_DISPATCH_TOKEN, SCREEN_KEY: !!env.SCREEN_KEY } };
+  const same = env.CC_READ_TOKEN && env.CC_READ_TOKEN === env.CC_DISPATCH_TOKEN;
+  out.readAndDispatchAreTheSameToken = !!same;
+
+  const r = await gh('/user/repos?per_page=100&sort=pushed&affiliation=owner,collaborator,organization_member', env.CC_READ_TOKEN);
+  const repos = r.ok ? await r.json() : [];
+  const counted = repos.filter(x => x.full_name !== CC && (!x.fork || INCLUDE_FORKS.includes(x.full_name)));
+  const newest = counted.reduce((m, x) => (x.pushed_at > m.pushed_at ? x : m), { pushed_at: '' });
+  out.readToken = { status: r.status, reposVisible: repos.length, privateVisible: repos.filter(x => x.private).length,
+    newestPush: newest.full_name ? newest.full_name + ' ' + newest.pushed_at : null };
+
+  const st = await readState(env);
+  out.stateJson = st ? 'ok' : 'not readable';
+  const lastSeen = st ? (JSON.parse(st).lastSeenPush || '') : '';
+  out.lastSeenPush = lastSeen;
+  out.newPushWaiting = !!newest.pushed_at && newest.pushed_at > lastSeen;
+
+  const runs = await gh(`/repos/${CC}/actions/runs?per_page=5`, env.CC_DISPATCH_TOKEN);
+  out.dispatchToken = { readRuns: runs.status };
+  const test = await gh(`/repos/${CC}/dispatches`, env.CC_DISPATCH_TOKEN, {
+    method: 'POST', body: JSON.stringify({ event_type: 'diag-test' })
+  });
+  out.dispatchToken.sendDispatch = test.status;
+  if (test.status !== 204) out.dispatchToken.message = (await test.text()).slice(0, 200);
+  out.verdict =
+    r.status !== 200 ? 'read token does not work (status ' + r.status + ')' :
+    !out.readToken.privateVisible ? 'read token only sees public repos' :
+    test.status !== 204 ? 'dispatch token cannot start runs (status ' + test.status + ')' :
+    'tokens are fine';
+  return out;
+}
+
 export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(checkForPushes(env).then(r => console.log(r)));
@@ -54,6 +89,10 @@ export default {
     const url = new URL(request.url);
     const key = url.searchParams.get('key');
     if (!env.SCREEN_KEY || key !== env.SCREEN_KEY) return new Response('Not found', { status: 404 });
+
+    if (url.pathname === '/diag') {
+      return new Response(JSON.stringify(await diagnose(env), null, 2), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
+    }
 
     if (url.pathname === '/state.json') {
       const cache = caches.default;
