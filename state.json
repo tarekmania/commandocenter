@@ -1,5 +1,5 @@
 {
-  "headline": "Bilaro reached AI connector. GTA6 Namehash is a new line.",
+  "headline": "Six lines are moving. No line is held or parked.",
   "lines": [
     {
       "id": "easyrep",
@@ -107,13 +107,89 @@
       "stepsDone": 16,
       "stepsTotal": 19,
       "state": "moving",
-      "task": "Keeping the demo tenant on the new UI beta",
+      "task": "Fixing MCP preview build tooling",
       "held": null,
-      "runsWeek": 16,
-      "lastPush": "2026-11-23T16:52:46Z",
+      "runsWeek": 18,
+      "lastPush": "2026-11-23T17:00:23Z",
       "todayFrom": {
         "at": 2,
         "progress": 0.6
+      }
+    },
+    {
+      "id": "gta6-namehash",
+      "repo": "tarekmania/gta6-namehash",
+      "name": "GTA6 Namehash",
+      "color": "#f4c430",
+      "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
+      "stations": [
+        "Hash dictionary",
+        "CLI lookup",
+        "Wider coverage",
+        "Adoption"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Joaat hashing: exact & lowercase",
+            "done": true
+          },
+          {
+            "t": "Build dictionary from public sources",
+            "done": true
+          },
+          {
+            "t": "~309k names, ~498k hashes committed",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Resolve hashes via CLI or stdin",
+            "done": true
+          },
+          {
+            "t": "Resolve hashes across files/trees",
+            "done": true
+          },
+          {
+            "t": "List unresolved hashes",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Close remaining format-note hashes",
+            "done": false
+          },
+          {
+            "t": "Add more public corpora (OpenIV)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Other GTA6 tools load the dictionary",
+            "done": false
+          },
+          {
+            "t": "Used inside GTA6 Asset Info",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0,
+      "stepsDone": 6,
+      "stepsTotal": 10,
+      "state": "moving",
+      "task": "Built the joaat hash-to-name dictionary",
+      "held": null,
+      "runsWeek": 1,
+      "lastPush": "2026-11-23T16:52:39Z",
+      "todayFrom": {
+        "at": 1,
+        "progress": 0
       }
     },
     {
@@ -248,82 +324,6 @@
       "todayFrom": {
         "at": 3,
         "progress": 0.4
-      }
-    },
-    {
-      "id": "gta6-namehash",
-      "repo": "tarekmania/gta6-namehash",
-      "name": "GTA6 Namehash",
-      "color": "#f4c430",
-      "goal": "GTA 6 tool authors resolve any joaat hash to a name instead of guessing",
-      "stations": [
-        "Hash dictionary",
-        "CLI lookup",
-        "Wider coverage",
-        "Adoption"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Joaat hashing: exact & lowercase",
-            "done": true
-          },
-          {
-            "t": "Build dictionary from public sources",
-            "done": true
-          },
-          {
-            "t": "~309k names, ~498k hashes committed",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Resolve hashes via CLI or stdin",
-            "done": true
-          },
-          {
-            "t": "Resolve hashes across files/trees",
-            "done": true
-          },
-          {
-            "t": "List unresolved hashes",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Close remaining format-note hashes",
-            "done": false
-          },
-          {
-            "t": "Add more public corpora (OpenIV)",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Other GTA6 tools load the dictionary",
-            "done": false
-          },
-          {
-            "t": "Used inside GTA6 Asset Info",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0,
-      "stepsDone": 6,
-      "stepsTotal": 10,
-      "state": "moving",
-      "task": "Built the joaat hash-to-name dictionary",
-      "held": null,
-      "runsWeek": 1,
-      "lastPush": "2026-11-23T16:52:39Z",
-      "todayFrom": {
-        "at": 1,
-        "progress": 0
       }
     },
     {
@@ -631,6 +631,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T16:59:26.012Z",
-  "lastSeenPush": "2026-11-23T16:52:46Z"
+  "updatedAt": "2026-11-23T17:04:43.413Z",
+  "lastSeenPush": "2026-11-23T17:00:23Z"
 }
