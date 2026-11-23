@@ -21,7 +21,7 @@ function cleanRoute(stations) {
   const out = [];
   for (const s of stations) {
     const name = str(s && s.name, 40);
-    if (!name || !Array.isArray(s.steps) || s.steps.length < 1 || s.steps.length > 12) return null;
+    if (!name || !Array.isArray(s.steps) || s.steps.length < 1 || s.steps.length > 16) return null;
     const steps = [];
     for (const st of s.steps) {
       const t = str(st && st.t, 60);

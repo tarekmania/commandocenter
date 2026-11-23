@@ -67,7 +67,7 @@ Only these four fields per line. The script takes name, goal, stations, task and
 
 **The route must reach the goal.** The last station is the goal reached, and the stations before it are what still has to happen to get there. Ask yourself: is the goal sentence true today? If not, the route is not finished, and at least the last station and its steps must still be open. Typical late stations are the ones code alone does not finish: launch, first customers, paying users, adoption, a public release, a complete reference. Plan them even when nobody has started them: the screen exists to show the big picture, so a route that ends at today's work is wrong.
 
-**Steps.** 2 to 10 per station, each at most 40 characters, a concrete piece of work that is either done or not ("Import open items from bexio"). Done stations: at most 8 steps, merge small ones.
+**Steps.** 2 to 14 per station, each at most 40 characters, a concrete piece of work that is either done or not ("Import open items from bexio"). Done stations: at most 8 steps, merge small ones.
 
 **The path ahead matters most.** Every station that is not finished needs at least 3 concrete open steps that together lead to it: the real next moves, in the order they will happen, including the ones outside the code (a contract, a launch, a first customer). Someone reading only the open steps must see how the project gets from today to the goal. Tarek's "Plan" steps come first; add the missing ones yourself, and never leave an open station with one vague step.
 
