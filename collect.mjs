@@ -23,6 +23,8 @@ const now = Date.now();
 const since14 = new Date(now - 14 * DAY).toISOString();
 const knownLines = existsSync('lines') ? readdirSync('lines').filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, '')) : [];
 
+const INCLUDE_FORKS = ['tarekmania/GTA6-Asset-Info'];
+
 const repos = [];
 for (let page = 1; page <= 3; page++) {
   const batch = await gh(`/user/repos?per_page=100&page=${page}&sort=pushed&affiliation=owner,collaborator,organization_member`);
@@ -35,7 +37,8 @@ console.log(`token sees ${repos.length} repos: ${repos.map(r => r.full_name).joi
 
 const evidence = [];
 for (const r of repos) {
-  if (r.full_name === SELF || r.fork || r.archived) continue;
+  if (r.full_name === SELF || r.archived) continue;
+  if (r.fork && !INCLUDE_FORKS.includes(r.full_name)) continue;
   const ageDays = (now - Date.parse(r.pushed_at)) / DAY;
   if (ageDays > 120) continue;
   const id = r.name.toLowerCase();
