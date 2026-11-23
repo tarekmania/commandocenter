@@ -1,5 +1,5 @@
 {
-  "headline": "Five lines are moving. EasyRep Sales' route is finished and moves to the depot.",
+  "headline": "Five lines are moving. No line is held.",
   "lines": [
     {
       "id": "bilaro",
@@ -34,6 +34,10 @@
           },
           {
             "t": "Period picker across the app",
+            "done": true
+          },
+          {
+            "t": "Open invoices, xls import, contact merge",
             "done": true
           }
         ],
@@ -108,13 +112,13 @@
       ],
       "at": 4,
       "progress": 0,
-      "stepsDone": 20,
-      "stepsTotal": 20,
+      "stepsDone": 21,
+      "stepsTotal": 21,
       "state": "moving",
-      "task": "Claude connector: write tools with confirmation",
+      "task": "Tester feedback round 2: invoices & contacts",
       "held": null,
-      "runsWeek": 5,
-      "lastPush": "2026-11-23T14:43:25Z",
+      "runsWeek": 6,
+      "lastPush": "2026-11-23T16:37:43Z",
       "todayFrom": {
         "at": 3,
         "progress": 0.4
@@ -540,6 +544,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T16:40:43.652Z",
-  "lastSeenPush": "2026-11-23T14:43:25Z"
+  "updatedAt": "2026-11-23T16:45:52.590Z",
+  "lastSeenPush": "2026-11-23T16:37:43Z"
 }

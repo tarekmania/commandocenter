@@ -9,7 +9,8 @@
       { "t": "Receipts and bank reconciliation", "done": true, "ref": "3784811" },
       { "t": "VAT handling", "done": true, "ref": "7b345c4" },
       { "t": "Financial statements (Bilanz/ER)", "done": true, "ref": "56c1913" },
-      { "t": "Period picker across the app", "done": true, "ref": "955ef6e" }
+      { "t": "Period picker across the app", "done": true, "ref": "955ef6e" },
+      { "t": "Open invoices, xls import, contact merge", "done": true, "ref": "2738741" }
     ] },
     { "name": "bexio takeover", "steps": [
       { "t": "Import bexio contacts & invoices", "done": true, "ref": "1650f9f" },
@@ -35,16 +36,16 @@
       { "t": "Write tools with preview & confirm", "done": true, "ref": "ee02c4d" }
     ] }
   ],
-  "task": "Claude connector: write tools with confirmation",
+  "task": "Tester feedback round 2: invoices & contacts",
   "held": null,
   "evidence": [
+    "2738741 Tester round 2: open invoices from the journal, xls reader, contact dedupe/merge, contact persons, due date edit, article numbers",
     "ee02c4d Claude connector: prepare and act tools (contacts, drafts, issue, bank, receipts, manual booking, reversal) with preview and confirm code",
     "a5c1051 Claude connector: read tools (search, overview, documents, receipts, bank, statements, ledger, accounts, contacts)",
     "0dab1ca Consent page: show the 10-minute expiry and explain an expired request",
     "2c92149 Claude connector: MCP server on mcp.bilaro.ch, OAuth consent page, connected apps and app restrictions",
     "f5a647b bexio-Übernahme und MWST nach Tester-Feedback",
     "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen",
-    "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen",
-    "c26f7a9 Bilaro-Abo mit Stripe: Testphase, Checkout, Kundenportal, Webhook"
+    "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen"
   ]
 }
