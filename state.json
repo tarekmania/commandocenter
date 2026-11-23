@@ -2,6 +2,141 @@
   "headline": "Six lines are moving. EasyRep Sales is parked.",
   "lines": [
     {
+      "id": "gta6-asset-info",
+      "repo": "tarekmania/GTA6-Asset-Info",
+      "name": "GTA6 Asset Info",
+      "color": "#f2892b",
+      "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
+      "stations": [
+        "Containers & resources",
+        "Textures",
+        "Models, vehicles & peds",
+        "Map, world & collision",
+        "Fully named"
+      ],
+      "steps": [
+        [
+          {
+            "t": "RPF9 header & payload layout",
+            "done": true
+          },
+          {
+            "t": "Resource/system & graphics pages",
+            "done": true
+          },
+          {
+            "t": "Audio (ADAT), PSO graph & shaders",
+            "done": true
+          },
+          {
+            "t": "RPF9 TOC encryption",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Texture dicts & Xbox BC tiling",
+            "done": true
+          },
+          {
+            "t": "ttpf store layouts (Gfx10, 1-byte)",
+            "done": true
+          },
+          {
+            "t": "BCPack BC1 decode (98.4% coverage)",
+            "done": true
+          },
+          {
+            "t": "Video (Bink2) & UI atlases",
+            "done": true
+          },
+          {
+            "t": "BCPack BC3/4/5/6H/7 decode",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Drawables, LODs, skeletons, skinning",
+            "done": true
+          },
+          {
+            "t": "Vehicle parts, damage, handling data",
+            "done": true
+          },
+          {
+            "t": "Ped clothing skinning & body shape",
+            "done": true
+          },
+          {
+            "t": "Ped head faces via material presets",
+            "done": true
+          },
+          {
+            "t": "Wheel scale, liveries, colours",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Meta resources & LOD hierarchy",
+            "done": true
+          },
+          {
+            "t": "Collision bounds & surface ids",
+            "done": true
+          },
+          {
+            "t": "Navmesh, lights & road graph",
+            "done": true
+          },
+          {
+            "t": "Collision ID to name mapping",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Shader & parameter names resolved",
+            "done": true
+          },
+          {
+            "t": "Material names via lowercase JOAAT",
+            "done": true
+          },
+          {
+            "t": "Map field hashes verified (PSIN overlap)",
+            "done": true
+          },
+          {
+            "t": "Next names PR batched from the watcher",
+            "done": false
+          },
+          {
+            "t": "Collision ids named",
+            "done": false
+          },
+          {
+            "t": "Hash keys mapped with gta6-namehash",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.6,
+      "stepsDone": 17,
+      "stepsTotal": 24,
+      "state": "moving",
+      "task": "Ped head faces documented via material presets",
+      "held": null,
+      "runsWeek": 49,
+      "lastPush": "2026-11-23T21:46:30Z",
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      }
+    },
+    {
       "id": "gta6-namehash",
       "repo": "tarekmania/gta6-namehash",
       "name": "GTA6 Namehash",
@@ -447,141 +582,6 @@
       }
     },
     {
-      "id": "gta6-asset-info",
-      "repo": "tarekmania/GTA6-Asset-Info",
-      "name": "GTA6 Asset Info",
-      "color": "#f2892b",
-      "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
-      "stations": [
-        "Containers & resources",
-        "Textures",
-        "Models, vehicles & peds",
-        "Map, world & collision",
-        "Fully named"
-      ],
-      "steps": [
-        [
-          {
-            "t": "RPF9 header & payload layout",
-            "done": true
-          },
-          {
-            "t": "Resource/system & graphics pages",
-            "done": true
-          },
-          {
-            "t": "Audio (ADAT), PSO graph & shaders",
-            "done": true
-          },
-          {
-            "t": "RPF9 TOC encryption",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Texture dicts & Xbox BC tiling",
-            "done": true
-          },
-          {
-            "t": "ttpf store layouts (Gfx10, 1-byte)",
-            "done": true
-          },
-          {
-            "t": "BCPack BC1 decode (98.4% coverage)",
-            "done": true
-          },
-          {
-            "t": "Video (Bink2) & UI atlases",
-            "done": true
-          },
-          {
-            "t": "BCPack BC3/4/5/6H/7 decode",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Drawables, LODs, skeletons, skinning",
-            "done": true
-          },
-          {
-            "t": "Vehicle parts, damage, handling data",
-            "done": true
-          },
-          {
-            "t": "Ped clothing skinning & body shape",
-            "done": true
-          },
-          {
-            "t": "Ped head faces via material presets",
-            "done": true
-          },
-          {
-            "t": "Wheel scale, liveries, colours",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Meta resources & LOD hierarchy",
-            "done": true
-          },
-          {
-            "t": "Collision bounds & surface ids",
-            "done": true
-          },
-          {
-            "t": "Navmesh, lights & road graph",
-            "done": true
-          },
-          {
-            "t": "Collision ID to name mapping",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Shader & parameter names resolved",
-            "done": true
-          },
-          {
-            "t": "Material names via lowercase JOAAT",
-            "done": true
-          },
-          {
-            "t": "Map field hashes verified (PSIN overlap)",
-            "done": true
-          },
-          {
-            "t": "Next names PR batched from the watcher",
-            "done": false
-          },
-          {
-            "t": "Collision ids named",
-            "done": false
-          },
-          {
-            "t": "Hash keys mapped with gta6-namehash",
-            "done": false
-          }
-        ]
-      ],
-      "at": 2,
-      "progress": 0.6,
-      "stepsDone": 17,
-      "stepsTotal": 24,
-      "state": "moving",
-      "task": "Ped head faces documented via material presets",
-      "held": null,
-      "runsWeek": 49,
-      "lastPush": "2026-11-23T14:16:12Z",
-      "todayFrom": {
-        "at": 0,
-        "progress": 0
-      }
-    },
-    {
       "id": "tutti-price-expert",
       "repo": "tarekmania/tutti-price-expert",
       "name": "Tutti",
@@ -901,6 +901,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T18:55:02.391Z",
-  "lastSeenPush": "2026-11-23T18:50:26Z"
+  "updatedAt": "2026-11-23T21:51:53.732Z",
+  "lastSeenPush": "2026-11-23T21:46:30Z"
 }
