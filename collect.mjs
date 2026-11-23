@@ -31,6 +31,8 @@ for (let page = 1; page <= 3; page++) {
   if (batch.length < 100) break;
 }
 
+console.log(`token sees ${repos.length} repos: ${repos.map(r => r.full_name).join(', ')}`);
+
 const evidence = [];
 for (const r of repos) {
   if (r.full_name === SELF || r.fork || r.archived) continue;
