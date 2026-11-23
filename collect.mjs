@@ -47,7 +47,7 @@ function parseRoadmap(md) {
   return real.length >= 2 ? { goal, stations: real } : null;
 }
 
-const ROADMAP_VERSION = 3; // keep in step with finalize.mjs
+const ROADMAP_VERSION = 4; // keep in step with finalize.mjs
 const INCLUDE_FORKS = ['tarekmania/GTA6-Asset-Info'];
 
 const repos = [];

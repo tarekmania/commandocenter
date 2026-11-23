@@ -12,3 +12,23 @@ Stations (in this order):
 Notes:
 - Runs only on command, no background process, no Telegram for now.
 - The work of stations 1 to 3 sits in open pull requests: merging them is the next step.
+
+Plan (open steps, in order; tick only with evidence):
+API client:
+- Review and merge the API client PR
+Flip finder:
+- Merge the flip finder PRs
+- Budget per search setting
+- Cost traps per model (belts, gearboxes)
+Web app:
+- Merge the web app PR
+- Merge the report PR
+Online & shareable:
+- Running on the own server
+- Reachable at flip.easyrep.ch
+- Login so only invited people can scan
+First profitable flip:
+- First scan with a real budget
+- Car inspected and bought
+- Car sold with profit
+- Profit noted per flip in the tool

@@ -13,3 +13,19 @@ Stations (in this order):
 Notes:
 - Billing, roles and two-factor sign-in belong to Core bookkeeping.
 - No longer focused on garages; Swiss SMEs in general.
+
+Plan (open steps, in order; tick only with evidence):
+Tester-ready:
+- Tester round 3: bank import & receipts
+- Design pass on all main screens
+- Receipt upload from the phone
+- Real bexio imports of 3 test companies
+- Help texts and first-login guide
+Paying customers:
+- Own company closes 2026 in Bilaro
+- Pricing page on bilaro.ch
+- Self sign-up with trial and Stripe
+- First fiduciary partner using Bilaro
+- First 3 paying SMEs
+- First SME fully off bexio
+- 10 paying SMEs

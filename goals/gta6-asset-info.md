@@ -12,3 +12,9 @@ Stations (in this order):
 Notes:
 - This is a fork of TrinitronClient/GTA6-Asset-Info. Tarek contributes mostly names (hash to name) and merged pull requests upstream count as done.
 - Related tools: SixNG (asset extractor) and the own resolver gta6-namehash.
+
+Plan (open steps, in order; tick only with evidence):
+Fully named:
+- Next names PR batched from the watcher
+- Collision ids named
+- Hash keys mapped with gta6-namehash

@@ -243,9 +243,18 @@ function detailHtml(l) {
   const finished = l.steps.every(st => st.every(x => x.done));
   const nowStep = finished ? null : (l.steps[tgt].find(x => !x.done) || l.steps.flat().find(x => !x.done));
   // Timetable grid: one column per station; the station's node sits at the head of its column.
+  // Done stations fold into narrow columns; the open ones get the room, because the path ahead matters most.
   const CL = 56, CR = 1864, GAP = 28, RY = 372;
-  const colW = Math.round((CR - CL - GAP * (n - 1)) / n);
-  const colX = k => CL + k * (colW + GAP);
+  const isDone = l.steps.map(st => st.length > 0 && st.every(x => x.done));
+  const nDone = isDone.filter(Boolean).length, nOpen = n - nDone;
+  const avail = CR - CL - GAP * (n - 1);
+  let openW = nOpen ? Math.min(560, (avail - 170 * nDone) / nOpen) : 0;
+  let doneW = nDone ? Math.max(150, Math.min(300, (avail - openW * nOpen) / nDone)) : 0;
+  if (!nOpen) doneW = avail / n;
+  const widths = isDone.map(d => Math.round(d ? doneW : openW));
+  const colX = k => CL + widths.slice(0, k).reduce((a, w) => a + w + GAP, 0);
+  const colW = Math.round(openW);
+  const many = Math.max(...l.steps.map((st, k) => isDone[k] ? 0 : st.length)) > 8;
   const xs = l.stations.map((_, k) => colX(k) + 10);
   const RX0 = xs[0], RX1 = xs[n - 1];
   const posX = (at, p) => at >= n - 1 ? xs[n - 1] : xs[at] + p * (xs[at + 1] - xs[at]);
@@ -276,7 +285,7 @@ function detailHtml(l) {
 <span style="font-size:20px;font-weight:700;color:#a9b8d8">steps done · ${finished ? 'all stations reached' : 'heading to station ' + (tgt + 1) + ' of ' + n}</span></div>`;
   // target column panel
   if (!finished) {
-    h += `<div class="abs" style="left:${colX(tgt) - 16}px;top:334px;width:${colW + 32}px;height:588px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid ${c}55"></div>`;
+    h += `<div class="abs" style="left:${colX(tgt) - 16}px;top:334px;width:${widths[tgt] + 32}px;height:588px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid ${c}55"></div>`;
   }
   // route
   h += `<div class="abs" style="left:${RX0}px;top:${RY - 7}px;width:${Math.round(tX - RX0)}px;height:14px;border-radius:7px 0 0 7px;background:${c}"></div>`;
@@ -291,8 +300,14 @@ function detailHtml(l) {
     const bd = done ? `4px solid ${G}` : (here ? `6px solid ${c}` : `4px solid ${c}99`);
     h += `<div class="abs" style="left:${Math.round(xs[k] - d / 2)}px;top:${Math.round(RY - d / 2)}px;width:${d}px;height:${d}px;border-radius:50%;box-sizing:border-box;background:${done ? '#fff' : G};border:${bd}"></div>`;
     if (term && !done) h += `<div class="abs" style="left:${Math.round(xs[k] - 5)}px;top:${RY - 5}px;width:10px;height:10px;border-radius:5px;background:${c}"></div>`;
-    const cx = colX(k);
-    h += `<div class="abs" style="left:${cx}px;top:402px;width:${colW}px;display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+    const cx = colX(k), w = widths[k];
+    if (isDone[k]) {
+      h += `<div class="abs" style="left:${cx}px;top:402px;width:${w}px;display:flex;flex-direction:column;gap:10px">
+<span class="clamp2" style="font-size:21px;line-height:1.2;font-weight:800;color:#dfe6f5">${esc(name)}</span>
+<span style="display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700;color:#a9b8d8"><span style="width:20px;height:20px;border-radius:10px;background:${c};color:${G};font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span>${st.length} steps done</span></div>`;
+      return;
+    }
+    h += `<div class="abs" style="left:${cx}px;top:402px;width:${w}px;display:flex;justify-content:space-between;align-items:baseline;gap:8px">
 <span style="font-size:${here ? 26 : 23}px;font-weight:800;color:${here || done ? '#fff' : '#a9b8d8'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(name)}</span>
 <span class="mono" style="font-size:14px;font-weight:600;color:${done ? c : '#8b9bc2'};flex:none">${done ? 'DONE' : sd + '/' + st.length}</span></div>`;
     const rows = st.map(x => {
@@ -302,9 +317,9 @@ function detailHtml(l) {
         : (isNow ? `<span class="nowdot" style="width:20px;height:20px;border-radius:10px;background:#fff;flex:none;margin-top:3px"></span>`
                  : `<span style="width:20px;height:20px;border-radius:10px;box-sizing:border-box;border:3px solid #4a5b85;flex:none;margin-top:3px"></span>`);
       const col = x.done ? '#c9d4ee' : (isNow ? '#fff' : '#8b9bc2');
-      return `<div style="display:flex;gap:12px;align-items:flex-start${isNow ? ';background:' + c + '26;margin:0 -10px;padding:6px 10px;border-radius:8px' : ''}">${icon}<span class="clamp2" style="font-size:21px;line-height:1.28;font-weight:${isNow ? 800 : 600};color:${col}">${esc(x.t)}</span></div>`;
+      return `<div style="display:flex;gap:12px;align-items:flex-start${isNow ? ';background:' + c + '26;margin:0 -10px;padding:6px 10px;border-radius:8px' : ''}">${icon}<span class="clamp2" style="font-size:${many ? 19 : 21}px;line-height:1.25;font-weight:${isNow ? 800 : 600};color:${col}">${esc(x.t)}</span></div>`;
     }).join('');
-    h += `<div class="abs" style="left:${cx}px;top:462px;width:${colW}px;display:flex;flex-direction:column;gap:14px">${rows}</div>`;
+    h += `<div class="abs" style="left:${cx}px;top:458px;width:${w}px;display:flex;flex-direction:column;gap:${many ? 9 : 14}px">${rows}</div>`;
   });
   const tc = parked ? '#6d7ea3' : '#fff';
   h += `<div class="abs" style="left:${Math.round(tX - 24)}px;top:${RY - 12}px;width:48px;height:24px;border-radius:12px;background:${tc};box-shadow:${running ? `0 0 0 5px ${c}88,` : ''}0 6px 14px rgba(0,0,0,.45);font-size:14px;font-weight:800;color:${G};display:flex;align-items:center;justify-content:center">${parked ? 'P' : ''}</div>`;

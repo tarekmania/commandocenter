@@ -11,3 +11,15 @@ Stations (in this order):
 
 Notes:
 - Client project for B&G Autovermietung.
+
+Plan (open steps, in order; tick only with evidence):
+Live:
+- SMS notifications
+- Booking and reminder mails tested end to end
+- Real payment tested with a live booking
+Handed over:
+- Admin walkthrough with the client team
+- Test week with real bookings
+- Client feedback fixed
+- Client signs off
+- Final invoice paid

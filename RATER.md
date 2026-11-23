@@ -58,7 +58,7 @@ Only these four fields per line. The script takes name, goal, stations, task and
 
 **Sources, strongest first.**
 1. `roadmap` (the project's own `ROADMAP.md`): copy goal, station names, steps and done flags exactly. Do not add, rename or tick anything yourself.
-2. `tarekGoals`: Tarek's own words. Use his goal sentence as written and his stations in his order, named as he wrote them before any brackets; the text in brackets says what belongs in that station, so turn it into steps. Fit all other steps around them. Lines under "Done (Tarek's word)" are evidence: tick the matching steps and put "Tarek" into `ref`. When his notes change the goal or the stations, rework the route to match them in the same run.
+2. `tarekGoals`: Tarek's own words. Use his goal sentence as written and his stations in his order, named as he wrote them before any brackets; the text in brackets says what belongs in that station, so turn it into steps. Fit all other steps around them. Steps under "Plan" are the path to the goal: put each one, worded as written, into its station as an open step (tick it only when the evidence shows it is finished), and keep them in that order. Lines under "Done (Tarek's word)" are evidence: tick the matching steps and put "Tarek" into `ref`. When his notes change the goal or the stations, rework the route to match them in the same run.
 3. `projectMd`, then the README, the commit history and open pull requests: your own draft.
 
 **Goal.** One sentence, at most 90 characters, saying what the world looks like when the project is done, from the view of its users or of Tarek. An outcome, not a feature list and not a technology. Good: "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio". Bad: "Build an accounting app with React and Supabase". Write the goal once and keep it; change it only when Tarek's notes or `ROADMAP.md` say so, or the work has clearly turned to a different aim.
@@ -67,7 +67,9 @@ Only these four fields per line. The script takes name, goal, stations, task and
 
 **The route must reach the goal.** The last station is the goal reached, and the stations before it are what still has to happen to get there. Ask yourself: is the goal sentence true today? If not, the route is not finished, and at least the last station and its steps must still be open. Typical late stations are the ones code alone does not finish: launch, first customers, paying users, adoption, a public release, a complete reference. Plan them even when nobody has started them: the screen exists to show the big picture, so a route that ends at today's work is wrong.
 
-**Steps.** 2 to 8 per station, each at most 40 characters, a concrete piece of work that is either done or not ("Import open items from bexio"). Future stations get the steps that will obviously be needed; mark them not done.
+**Steps.** 2 to 10 per station, each at most 40 characters, a concrete piece of work that is either done or not ("Import open items from bexio"). Done stations: at most 8 steps, merge small ones.
+
+**The path ahead matters most.** Every station that is not finished needs at least 3 concrete open steps that together lead to it: the real next moves, in the order they will happen, including the ones outside the code (a contract, a launch, a first customer). Someone reading only the open steps must see how the project gets from today to the goal. Tarek's "Plan" steps come first; add the missing ones yourself, and never leave an open station with one vague step.
 
 **Drafting** (`needsDraft: true`): read the whole `history` and the `readme` and design the full route once. If a line file already exists, use it as a starting point: keep its name and a good goal, keep ticks that the history backs, and rework the stations under the rules above. Tick a step `done` only when the history shows it was finished, and put the commit sha into `ref`. When the history is long, earlier stations will be fully done: that is right.
 
