@@ -1,5 +1,5 @@
 {
-  "headline": "Six lines are moving. EasyRep Sales is parked after shipping its needs-analysis tool.",
+  "headline": "Bilaro reached AI connector. Six lines are moving, EasyRep Sales is parked.",
   "lines": [
     {
       "id": "gta6-namehash",
@@ -177,51 +177,95 @@
             "done": true
           },
           {
-            "t": "Vehicle list & page redesign",
+            "t": "Vehicle list and vehicle page",
             "done": false
           },
           {
-            "t": "New design becomes default for all",
+            "t": "Trips and driving behaviour",
+            "done": false
+          },
+          {
+            "t": "Alerts and service orders",
+            "done": false
+          },
+          {
+            "t": "Users, invitations and settings",
+            "done": false
+          },
+          {
+            "t": "Reports and exports",
+            "done": false
+          },
+          {
+            "t": "Phone layout checked on all screens",
+            "done": false
+          },
+          {
+            "t": "New design default for all customers",
+            "done": false
+          },
+          {
+            "t": "Old design removed",
             "done": false
           }
         ],
         [
           {
-            "t": "Capture leads from the site",
+            "t": "Qualified leads from Google Maps signals",
             "done": false
           },
           {
-            "t": "Hand off leads to sales",
+            "t": "Lead scoring by fleet size and industry",
             "done": false
           },
           {
-            "t": "50 cold mails a day",
+            "t": "Mail domains warmed up",
             "done": false
           },
           {
-            "t": "Workshop campaign",
+            "t": "50 cold mails a day running",
             "done": false
           },
           {
-            "t": "Demo bookings",
+            "t": "Workshop partner campaign live",
+            "done": false
+          },
+          {
+            "t": "Savings calculator on the homepage",
+            "done": false
+          },
+          {
+            "t": "Demo booking from mail to calendar",
             "done": false
           }
         ],
         [
           {
-            "t": "First large fleet contract signed",
+            "t": "Large fleet contract signed",
             "done": false
           },
           {
-            "t": "More paying fleets live",
+            "t": "Trackers installed on the contract fleet",
+            "done": false
+          },
+          {
+            "t": "First fleet won through a workshop",
+            "done": false
+          },
+          {
+            "t": "5 paying fleets",
+            "done": false
+          },
+          {
+            "t": "10 paying fleets",
             "done": false
           }
         ]
       ],
       "at": 1,
-      "progress": 0.71,
+      "progress": 0.38,
       "stepsDone": 17,
-      "stepsTotal": 26,
+      "stepsTotal": 37,
       "state": "moving",
       "task": "Restoring MCP preview build tooling",
       "held": null,
@@ -229,7 +273,7 @@
       "lastPush": "2026-11-23T17:00:23Z",
       "todayFrom": {
         "at": 1,
-        "progress": 0.71
+        "progress": 0.38
       }
     },
     {
@@ -526,7 +570,7 @@
       "state": "moving",
       "task": "Ped head faces documented via material presets",
       "held": null,
-      "runsWeek": 46,
+      "runsWeek": 49,
       "lastPush": "2026-11-23T14:16:12Z",
       "todayFrom": {
         "at": 0,
@@ -853,6 +897,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T18:15:54.004Z",
+  "updatedAt": "2026-11-23T18:23:24.595Z",
   "lastSeenPush": "2026-11-23T17:47:05Z"
 }
