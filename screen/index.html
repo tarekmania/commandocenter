@@ -229,9 +229,11 @@ ${final ? '<span style="color:#c9d4ee;font-size:30px;font-weight:700;letter-spac
 const DETAIL_MS = 20000, MAP_MS = 40000;
 let viewIdx = -1, viewTimer = null, cycleStarted = false;
 
+// The station the train is heading to.
 function targetStation(l) {
-  const k = l.steps.findIndex(st => st.some(x => !x.done));
-  return k < 0 ? l.stations.length - 1 : k;
+  const n = l.stations.length;
+  if (l.at === 0 && l.progress === 0 && l.steps[0].some(x => !x.done)) return 0;
+  return Math.min(l.at + 1, n - 1);
 }
 
 function detailHtml(l) {
@@ -239,7 +241,7 @@ function detailHtml(l) {
   const idx = (state.lines || []).findIndex(x => x.id === l.id) + 1;
   const tgt = targetStation(l);
   const finished = l.steps.every(st => st.every(x => x.done));
-  const nowStep = finished ? null : l.steps[tgt].find(x => !x.done);
+  const nowStep = finished ? null : (l.steps[tgt].find(x => !x.done) || l.steps.flat().find(x => !x.done));
   // Timetable grid: one column per station; the station's node sits at the head of its column.
   const CL = 56, CR = 1864, GAP = 28, RY = 372;
   const colW = Math.round((CR - CL - GAP * (n - 1)) / n);
@@ -247,13 +249,13 @@ function detailHtml(l) {
   const xs = l.stations.map((_, k) => colX(k) + 10);
   const RX0 = xs[0], RX1 = xs[n - 1];
   const posX = (at, p) => at >= n - 1 ? xs[n - 1] : xs[at] + p * (xs[at + 1] - xs[at]);
-  const tX = finished ? xs[n - 1] : (tgt === 0 ? xs[0] : posX(l.at, l.progress));
+  const tX = finished ? xs[n - 1] : posX(l.at, l.progress);
   const tf = l.todayFrom || { at: l.at, progress: l.progress };
   const fromX = Math.min(posX(tf.at, tf.progress), tX);
   const held = l.state === 'held', parked = l.state === 'parked';
   const running = l.state === 'moving' && l.lastPush && (Date.now() - Date.parse(l.lastPush) < RUN_MS);
-  const left = l.steps.slice(tgt).flat().filter(x => !x.done).length;
-  const stationsLeft = finished ? 0 : n - tgt;
+  const left = l.steps.flat().filter(x => !x.done).length;
+  const stationsLeft = l.steps.filter(st => st.some(x => !x.done)).length;
   let status, stc;
   if (held) { status = 'Held ' + daysSince(l.held && l.held.since) + ' days · ' + ((l.held && l.held.reason) || ''); stc = '#ff8a80'; }
   else if (parked) { status = 'Parked · last push ' + ago(l.lastPush); stc = '#a9b8d8'; }

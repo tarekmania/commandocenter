@@ -47,6 +47,7 @@ function parseRoadmap(md) {
   return real.length >= 2 ? { goal, stations: real } : null;
 }
 
+const ROADMAP_VERSION = 2; // keep in step with finalize.mjs
 const INCLUDE_FORKS = ['tarekmania/GTA6-Asset-Info'];
 
 const repos = [];
@@ -68,7 +69,7 @@ for (const r of repos) {
   const id = r.name.toLowerCase();
   const known = lineFile(id);
   // A line without a roadmap yet gets its whole history, so the rater can draft the big picture once.
-  const needsDraft = !known || !known.goal || !Array.isArray(known.stations) || typeof known.stations[0] !== 'object';
+  const needsDraft = !known || known.v !== ROADMAP_VERSION || !known.goal || !Array.isArray(known.stations) || typeof known.stations[0] !== 'object';
   const commits = (await gh(`/repos/${r.full_name}/commits?since=${since14}&per_page=100`)) || [];
   let history = null;
   if (needsDraft) {

@@ -63,15 +63,17 @@ Only these four fields per line. The script takes name, goal, stations, task and
 
 **Goal.** One sentence, at most 90 characters, saying what the world looks like when the project is done, from the view of its users or of Tarek. An outcome, not a feature list and not a technology. Good: "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio". Bad: "Build an accounting app with React and Supabase". Write the goal once and keep it; change it only when Tarek's notes or `ROADMAP.md` say so, or the work has clearly turned to a different aim.
 
-**Stations.** 4 to 6 milestones from the start of the project to the goal, in order, each 1 to 3 words, plain English. Each station is a result someone could see or use ("Booking flow live", not "Refactoring"). The last station is the goal reached. Plan the whole route, including the stations nobody has started yet: the screen is there to show the big picture, so a route that stops at today's work is wrong.
+**Stations.** 4 to 6 milestones from the start of the project to the goal, in order, each 1 to 3 words, plain English. Each station is a result someone could see or use ("Booking flow live", not "Refactoring"). Group the history into results; a route is not a changelog.
+
+**The route must reach the goal.** The last station is the goal reached, and the stations before it are what still has to happen to get there. Ask yourself: is the goal sentence true today? If not, the route is not finished, and at least the last station and its steps must still be open. Typical late stations are the ones code alone does not finish: launch, first customers, paying users, adoption, a public release, a complete reference. Plan them even when nobody has started them: the screen exists to show the big picture, so a route that ends at today's work is wrong.
 
 **Steps.** 2 to 8 per station, each at most 40 characters, a concrete piece of work that is either done or not ("Import open items from bexio"). Future stations get the steps that will obviously be needed; mark them not done.
 
-**Drafting** (`needsDraft: true`): read the whole `history` and the `readme` and design the full route once. Tick a step `done` only when the history shows it was finished, and put the commit sha into `ref`. When the history is long, earlier stations will be fully done: that is right.
+**Drafting** (`needsDraft: true`): read the whole `history` and the `readme` and design the full route once. If a line file already exists, use it as a starting point: keep its name and a good goal, keep ticks that the history backs, and rework the stations under the rules above. Tick a step `done` only when the history shows it was finished, and put the commit sha into `ref`. When the history is long, earlier stations will be fully done: that is right.
 
 **Keeping it current** (every run, for lines that already have a roadmap):
 - Read the commits of the last 14 days and the open pull requests.
-- Tick a step `done` when a commit finishes it, with the sha in `ref`. Never untick a step unless the evidence shows the work was undone.
+- Tick a step `done` when a commit on the default branch finishes it, with the sha in `ref`. Work that only sits in an open pull request is not done yet; say so in `task` ("5 pull requests wait for merge"). Never untick a step unless the evidence shows the work was undone.
 - When commits show work that no step covers but that belongs to a station, add a step there (already `done` if it is finished).
 - Keep names and order stable. Do not reword steps or stations for style. Add a station only when the project's aim has clearly grown; remove one only when Tarek's notes say so.
 

@@ -1,7 +1,9 @@
 // Runs after the rater. Merges each line's roadmap (lines/<id>.json) into the screen state,
 // computes the train position from the steps, adds the facts that must not come from AI,
 // and falls back to the previous values wherever the rater's output is broken.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+
+const ROADMAP_VERSION = 2; // bump to make the rater redraft every route from the full history
 
 const read = (p, fallback) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; } };
 const evidence = read('work/evidence.json', { repos: [] });
@@ -31,15 +33,15 @@ function cleanRoute(stations) {
   return out;
 }
 
-// Position: `at` = last station whose steps are all done (counting from the start),
-// `progress` = share of done steps in the station the train is heading to.
+// Position, in stations: each station counts by the share of its steps that are done, so loose
+// ends in an early station do not pin the train to the start. The first station is the origin.
 function position(route) {
-  let d = 0;
-  while (d < route.length && route[d].steps.every(s => s.done)) d++;
-  if (d >= route.length) return { at: route.length - 1, progress: 0 };
-  if (d === 0) return { at: 0, progress: 0 };
-  const next = route[d].steps;
-  return { at: d - 1, progress: Math.round((next.filter(s => s.done).length / next.length) * 100) / 100 };
+  const n = route.length;
+  const sum = route.reduce((a, s) => a + s.steps.filter(x => x.done).length / s.steps.length, 0);
+  if (route.every(s => s.steps.every(x => x.done))) return { at: n - 1, progress: 0 };
+  const p = Math.min(n - 1 - 0.01, Math.max(0, sum - 1));
+  const at = Math.floor(p);
+  return { at, progress: Math.round((p - at) * 100) / 100 };
 }
 
 function validState(s) {
@@ -77,6 +79,7 @@ for (const l of base.lines) {
   }
 
   const pos = position(route);
+
   const all = route.flatMap(s => s.steps);
   const out = {
     id: l.id,
@@ -117,4 +120,12 @@ const result = {
   lastSeenPush: evidence.lastSeenPush || prev?.lastSeenPush || null
 };
 writeFileSync('state.json', JSON.stringify(result, null, 2) + '\n');
+
+// Mark every valid roadmap as drafted under the current rules, so the next run only keeps it current.
+for (const f of readdirSync('lines').filter(f => f.endsWith('.json'))) {
+  const file = read(`lines/${f}`, null);
+  if (file && cleanRoute(file.stations) && file.goal && file.v !== ROADMAP_VERSION) {
+    writeFileSync(`lines/${f}`, JSON.stringify({ ...file, v: ROADMAP_VERSION }, null, 2) + '\n');
+  }
+}
 console.log(`state ok: ${lines.length} lines, ${result.depot.length} in depot, ${lines.reduce((a, l) => a + l.stepsTotal, 0)} steps`);
