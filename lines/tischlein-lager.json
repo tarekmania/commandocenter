@@ -1,0 +1,48 @@
+{
+  "id": "tischlein-lager",
+  "repo": "tarekmania/tischlein-lager",
+  "name": "Tischlein Lager",
+  "goal": "Tischlein's food-bank warehouse runs picking, stock and deliveries in one 3D app",
+  "stations": [
+    { "name": "Warehouse model", "steps": [
+      { "t": "Scaffold, layout & domain model", "done": true, "ref": "83543e5" },
+      { "t": "Static 3D scene from layout", "done": true, "ref": "2af0aed" },
+      { "t": "Seed inventory & tooltips", "done": true, "ref": "dc6b3ab" },
+      { "t": "Real layout, fleet & tour plan", "done": true, "ref": "7208f64" },
+      { "t": "Sim clock, vehicles & workers", "done": true, "ref": "b594083" }
+    ] },
+    { "name": "Picking & stock ops", "steps": [
+      { "t": "Picklists & Lieferschein", "done": true, "ref": "ed8137f" },
+      { "t": "Stock entries & expiry rules", "done": true, "ref": "f301b9d" },
+      { "t": "Driver app: trips & Spender", "done": true, "ref": "67fec99" },
+      { "t": "Barcode scan & Excel import", "done": true, "ref": "834a006" }
+    ] },
+    { "name": "Live mode", "steps": [
+      { "t": "Live mode: roles, multi-site", "done": true, "ref": "846bc61" },
+      { "t": "Transfers & institutions", "done": true, "ref": "680202b" },
+      { "t": "Direct storage at goods-in", "done": true, "ref": "1f9a5f1" },
+      { "t": "Test access for test deploy", "done": true, "ref": "7a2189e" }
+    ] },
+    { "name": "Presentation & rollout", "steps": [
+      { "t": "Weight-based F&G/FriPro goods", "done": true, "ref": "9a588f9" },
+      { "t": "5 presentation docs for staff", "done": true, "ref": "14d9aad" },
+      { "t": "Review fixes on stock overview", "done": true, "ref": "f0f7486" }
+    ] },
+    { "name": "Launch", "steps": [
+      { "t": "Test deploy on Cloudflare Pages", "done": true, "ref": "483b3e4" },
+      { "t": "Go live for the real team", "done": false }
+    ] }
+  ],
+  "task": "Review fixes on the FP/FG stock overview",
+  "held": null,
+  "evidence": [
+    "f0f7486 Merge: Step 24, corrections of the overview (FP and FG by Warengruppe and weight)",
+    "ba4f1ab Step 24 (corrections): frames back to their margin, one Palette, Vonto wording",
+    "174cb51 Step 24 (corrections): review fixes of the document",
+    "a9ea8a3 Step 24 (corrections): FG handed out by SOLL in the Verteilung",
+    "f1c0f05 Merge: Step 25, cold rooms without places and one overview document",
+    "8925d2b Merge: Step 23, barcode scan, import from Excel, start stock, stock comparison",
+    "834a6af Merge step 13: no automatic replenishment, transfers between sites, Auslagerung to institutions",
+    "54ce769 Merge Step 11: Live mode, multiple sites and Supabase"
+  ]
+}

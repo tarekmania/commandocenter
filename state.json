@@ -1,11 +1,12 @@
 {
-  "headline": "Five lines are moving. EasyRep Sales is parked.",
+  "headline": "Five lines are moving. EasyRep Sales' route is finished and moves to the depot.",
   "lines": [
     {
       "id": "bilaro",
       "repo": "tarekmania/bilaro",
       "name": "Bilaro",
       "color": "#3cb46e",
+      "goal": "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio",
       "stations": [
         "Core bookkeeping",
         "bexio takeover",
@@ -13,8 +14,102 @@
         "Year-end closing",
         "AI connector"
       ],
-      "at": 3,
-      "progress": 0.65,
+      "steps": [
+        [
+          {
+            "t": "Chart of accounts and journal",
+            "done": true
+          },
+          {
+            "t": "Receipts and bank reconciliation",
+            "done": true
+          },
+          {
+            "t": "VAT handling",
+            "done": true
+          },
+          {
+            "t": "Financial statements (Bilanz/ER)",
+            "done": true
+          },
+          {
+            "t": "Period picker across the app",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Import bexio contacts & invoices",
+            "done": true
+          },
+          {
+            "t": "Balance takeover by cut-off date",
+            "done": true
+          },
+          {
+            "t": "Fix takeover issues from feedback",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Mandatory two-factor sign-in",
+            "done": true
+          },
+          {
+            "t": "Team roles and invitations",
+            "done": true
+          },
+          {
+            "t": "Stripe subscription & webhook",
+            "done": true
+          },
+          {
+            "t": "Pay supplier invoices via payment file",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Year-end closing assistant",
+            "done": true
+          },
+          {
+            "t": "VAT reconciliation and MWST-XML export",
+            "done": true
+          },
+          {
+            "t": "Dunning fees and default interest",
+            "done": true
+          },
+          {
+            "t": "Fixed assets with depreciation",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "MCP server with OAuth consent",
+            "done": true
+          },
+          {
+            "t": "Consent page expiry handling",
+            "done": true
+          },
+          {
+            "t": "Read tools: search, ledger, accounts",
+            "done": true
+          },
+          {
+            "t": "Write tools with preview & confirm",
+            "done": true
+          }
+        ]
+      ],
+      "at": 4,
+      "progress": 0,
+      "stepsDone": 20,
+      "stepsTotal": 20,
       "state": "moving",
       "task": "Claude connector: write tools with confirmation",
       "held": null,
@@ -30,6 +125,7 @@
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
       "color": "#f2892b",
+      "goal": "GTA VI's asset formats are fully documented, from containers to collision",
       "stations": [
         "Containers & resources",
         "Textures",
@@ -37,16 +133,110 @@
         "Map, world & collision",
         "Full coverage"
       ],
-      "at": 1,
-      "progress": 0.7,
+      "steps": [
+        [
+          {
+            "t": "RPF9 header & payload layout",
+            "done": true
+          },
+          {
+            "t": "Resource/system & graphics pages",
+            "done": true
+          },
+          {
+            "t": "RPF9 TOC encryption",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Texture dicts & Xbox BC tiling",
+            "done": true
+          },
+          {
+            "t": "ttpf store layouts (Gfx10, 1-byte)",
+            "done": true
+          },
+          {
+            "t": "BCPack BC1 decode (98.4% coverage)",
+            "done": true
+          },
+          {
+            "t": "BCPack BC3/4/5/6H/7 decode",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Drawables, LODs, skeletons, skinning",
+            "done": true
+          },
+          {
+            "t": "Vehicle parts, damage, handling data",
+            "done": true
+          },
+          {
+            "t": "Ped clothing skinning & body shape",
+            "done": true
+          },
+          {
+            "t": "Ped head faces via material presets",
+            "done": true
+          },
+          {
+            "t": "Wheel scale, liveries, colours",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Meta resources & LOD hierarchy",
+            "done": true
+          },
+          {
+            "t": "Collision bounds & surface ids",
+            "done": true
+          },
+          {
+            "t": "Navmesh, lights & road graph",
+            "done": true
+          },
+          {
+            "t": "Collision ID to name mapping",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Audio, PSO object graph, shaders",
+            "done": true
+          },
+          {
+            "t": "Video (Bink2) & UI atlases",
+            "done": true
+          },
+          {
+            "t": "Close remaining BCPack codecs",
+            "done": false
+          },
+          {
+            "t": "Map all hash keys to names",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 14,
+      "stepsTotal": 20,
       "state": "moving",
       "task": "Documenting ped shapes and material presets",
       "held": null,
       "runsWeek": 49,
       "lastPush": "2026-11-23T14:16:12Z",
       "todayFrom": {
-        "at": 1,
-        "progress": 0.6
+        "at": 0,
+        "progress": 0
       }
     },
     {
@@ -54,6 +244,7 @@
       "repo": "tarekmania/easyrep",
       "name": "EasyRep",
       "color": "#8fb3ff",
+      "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
       "stations": [
         "Telematics core",
         "Website relaunch",
@@ -61,8 +252,98 @@
         "App redesign",
         "Lead system"
       ],
+      "steps": [
+        [
+          {
+            "t": "Demo tenant & trip processing",
+            "done": true
+          },
+          {
+            "t": "MFK (vehicle inspection) tracking",
+            "done": true
+          },
+          {
+            "t": "Billing export",
+            "done": true
+          },
+          {
+            "t": "Location filter for the fleet",
+            "done": true
+          },
+          {
+            "t": "Faster per-vehicle trip scan",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "New homepage (Wise-style)",
+            "done": true
+          },
+          {
+            "t": "Press & ETH credibility section",
+            "done": true
+          },
+          {
+            "t": "Realistic app screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Garage partner page /werkstaetten",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
+          },
+          {
+            "t": "Garage portal screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Per-user redesign switch",
+            "done": true
+          },
+          {
+            "t": "Login, forgot & reset redesigned",
+            "done": true
+          },
+          {
+            "t": "Overview, map & zones redesigned",
+            "done": true
+          },
+          {
+            "t": "New login shown to everyone",
+            "done": true
+          },
+          {
+            "t": "Security hardening pass",
+            "done": true
+          },
+          {
+            "t": "Vehicle list & page redesign",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Capture leads from the site",
+            "done": false
+          },
+          {
+            "t": "Hand off leads to sales",
+            "done": false
+          }
+        ]
+      ],
       "at": 2,
-      "progress": 0.6,
+      "progress": 0.83,
+      "stepsDone": 16,
+      "stepsTotal": 19,
       "state": "moving",
       "task": "App redesign behind a switch",
       "held": null,
@@ -78,6 +359,7 @@
       "repo": "tarekmania/tutti-price-expert",
       "name": "Tutti",
       "color": "#c98b4f",
+      "goal": "Tutti finds underpriced tutti.ch car listings automatically, ready for a flip",
       "stations": [
         "API client",
         "Flip finder",
@@ -85,16 +367,62 @@
         "Report export",
         "Market tuning"
       ],
-      "at": 3,
-      "progress": 0.5,
+      "steps": [
+        [
+          {
+            "t": "tutti.ch API client (no Puppeteer)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "On-demand scan for good listings",
+            "done": false
+          },
+          {
+            "t": "Km-adjusted market value & filter",
+            "done": false
+          },
+          {
+            "t": "PureTech belt cost adjustment",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Browser scan with live progress",
+            "done": false
+          },
+          {
+            "t": "Deals & settings UI",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "PDF/HTML analysis report",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Tune thresholds per segment",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 0,
+      "stepsTotal": 8,
       "state": "moving",
-      "task": "Refining flip finder: market value, filters",
+      "task": "Building flip finder, web app and PDF export",
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-17T19:23:14Z",
       "todayFrom": {
-        "at": 3,
-        "progress": 0.5
+        "at": 0,
+        "progress": 0
       }
     },
     {
@@ -102,45 +430,95 @@
       "repo": "tarekmania/noble-drive-redo",
       "name": "Noble Drive",
       "color": "#d94f9a",
+      "goal": "Customers book Noble Drive's cars online end-to-end, staff-free",
       "stations": [
         "Vehicle catalog",
         "Booking flow",
         "Admin tools",
         "Launch"
       ],
+      "steps": [
+        [
+          {
+            "t": "Vehicle listing with logos",
+            "done": true
+          },
+          {
+            "t": "Grouped models, live availability",
+            "done": true
+          },
+          {
+            "t": "Multi-language site (DE/EN)",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Signature, contract & checkout",
+            "done": true
+          },
+          {
+            "t": "Pay-on-pickup wording update",
+            "done": true
+          },
+          {
+            "t": "Hourly billing",
+            "done": true
+          },
+          {
+            "t": "Payment step in checkout",
+            "done": true
+          },
+          {
+            "t": "Booking button re-enabled",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Collapsible admin sidebar",
+            "done": true
+          },
+          {
+            "t": "Booking delete with confirm dialog",
+            "done": true
+          },
+          {
+            "t": "Protocol/log on bookings",
+            "done": true
+          },
+          {
+            "t": "Locked down public writes/uploads",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Custom domain & DNS",
+            "done": true
+          },
+          {
+            "t": "Email notification infra",
+            "done": true
+          },
+          {
+            "t": "SMS/Twilio notifications",
+            "done": false
+          }
+        ]
+      ],
       "at": 2,
-      "progress": 0.7,
+      "progress": 0.67,
+      "stepsDone": 14,
+      "stepsTotal": 15,
       "state": "moving",
       "task": "Polishing booking flow and admin tools",
       "held": null,
-      "runsWeek": 8,
+      "runsWeek": 4,
       "lastPush": "2026-11-16T23:42:46Z",
       "todayFrom": {
         "at": 2,
-        "progress": 0.7
-      }
-    },
-    {
-      "id": "easyrep-sales",
-      "repo": "tarekmania/easyrep-sales",
-      "name": "EasyRep Sales",
-      "color": "#f4c430",
-      "stations": [
-        "Needs analysis",
-        "PDF proposals",
-        "Vehicle import",
-        "Pricing setup"
-      ],
-      "at": 2,
-      "progress": 0.8,
-      "state": "parked",
-      "task": "Adjusting prices and content",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-04T18:36:01Z",
-      "todayFrom": {
-        "at": 2,
-        "progress": 0.8
+        "progress": 0.67
       }
     }
   ],
@@ -154,9 +532,14 @@
       "id": "tischlein-lager",
       "repo": "tarekmania/tischlein-lager",
       "name": "Tischlein Lager"
+    },
+    {
+      "id": "easyrep-sales",
+      "repo": "tarekmania/easyrep-sales",
+      "name": "EasyRep Sales"
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T15:58:07.149Z",
+  "updatedAt": "2026-11-23T16:40:43.652Z",
   "lastSeenPush": "2026-11-23T14:43:25Z"
 }
