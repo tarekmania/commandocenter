@@ -58,7 +58,7 @@ Only these four fields per line. The script takes name, goal, stations, task and
 
 **Sources, strongest first.**
 1. `roadmap` (the project's own `ROADMAP.md`): copy goal, station names, steps and done flags exactly. Do not add, rename or tick anything yourself.
-2. `tarekGoals`: Tarek's own words. His goal, his stations, his priorities win over your judgement. Fit the steps around them.
+2. `tarekGoals`: Tarek's own words. Use his goal sentence as written and his stations in his order, named as he wrote them before any brackets; the text in brackets says what belongs in that station, so turn it into steps. Fit all other steps around them. Lines under "Done (Tarek's word)" are evidence: tick the matching steps and put "Tarek" into `ref`. When his notes change the goal or the stations, rework the route to match them in the same run.
 3. `projectMd`, then the README, the commit history and open pull requests: your own draft.
 
 **Goal.** One sentence, at most 90 characters, saying what the world looks like when the project is done, from the view of its users or of Tarek. An outcome, not a feature list and not a technology. Good: "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio". Bad: "Build an accounting app with React and Supabase". Write the goal once and keep it; change it only when Tarek's notes or `ROADMAP.md` say so, or the work has clearly turned to a different aim.

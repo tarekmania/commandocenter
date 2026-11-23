@@ -1,0 +1,13 @@
+# Noble Drive
+
+Goal: B&G Autovermietung's customers book and pay online, and the team runs everything from one admin
+
+Stations (in this order):
+1. Vehicle catalog (listing, availability, DE/EN)
+2. Booking flow (contract, signature, payment, hourly billing)
+3. Admin & CRM (bookings, customers, protocol, secure uploads)
+4. Live (own domain, e-mail and SMS notifications)
+5. Handed over (client accepted the system and uses it daily)
+
+Notes:
+- Client project for B&G Autovermietung.

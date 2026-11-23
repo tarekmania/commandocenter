@@ -3,7 +3,7 @@
 // and falls back to the previous values wherever the rater's output is broken.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 
-const ROADMAP_VERSION = 2; // bump to make the rater redraft every route from the full history
+const ROADMAP_VERSION = 3; // bump to make the rater redraft every route from the full history
 
 const read = (p, fallback) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; } };
 const evidence = read('work/evidence.json', { repos: [] });
