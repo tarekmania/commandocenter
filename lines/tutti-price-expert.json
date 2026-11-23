@@ -2,13 +2,17 @@
   "id": "tutti-price-expert",
   "repo": "tarekmania/tutti-price-expert",
   "name": "Tutti",
-  "goal": "Tutti finds underpriced tutti.ch car listings automatically, ready for a flip",
+  "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
   "stations": [
     {
       "name": "API client",
       "steps": [
         {
-          "t": "tutti.ch API client (no Puppeteer)",
+          "t": "Fetch listings via tutti.ch's JSON API",
+          "done": false
+        },
+        {
+          "t": "Remove Puppeteer scraper",
           "done": false
         }
       ]
@@ -27,11 +31,15 @@
         {
           "t": "PureTech belt cost adjustment",
           "done": false
+        },
+        {
+          "t": "Budget per search",
+          "done": false
         }
       ]
     },
     {
-      "name": "Local web app",
+      "name": "Web app",
       "steps": [
         {
           "t": "Browser scan with live progress",
@@ -40,12 +48,7 @@
         {
           "t": "Deals & settings UI",
           "done": false
-        }
-      ]
-    },
-    {
-      "name": "Report export",
-      "steps": [
+        },
         {
           "t": "PDF/HTML analysis report",
           "done": false
@@ -53,10 +56,27 @@
       ]
     },
     {
-      "name": "Market tuning",
+      "name": "Online & shareable",
       "steps": [
         {
-          "t": "Tune thresholds per segment",
+          "t": "Deploy to flip.easyrep.ch",
+          "done": false
+        },
+        {
+          "t": "Usable by others (not just local)",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "First profitable flip",
+      "steps": [
+        {
+          "t": "Car bought through Tutti",
+          "done": false
+        },
+        {
+          "t": "Car sold with profit",
           "done": false
         }
       ]
@@ -71,5 +91,5 @@
     "open PR #2: Flip finder: on-demand scan for profitable used-car listings",
     "open PR #1: tutti.ch JSON API client instead of Puppeteer scraper"
   ],
-  "v": 2
+  "v": 3
 }

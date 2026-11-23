@@ -2,7 +2,7 @@
   "id": "gta6-asset-info",
   "repo": "tarekmania/GTA6-Asset-Info",
   "name": "GTA6 Asset Info",
-  "goal": "GTA VI's asset formats are fully documented, from containers to collision",
+  "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
   "stations": [
     {
       "name": "Containers & resources",
@@ -16,6 +16,11 @@
           "t": "Resource/system & graphics pages",
           "done": true,
           "ref": "bad5bc2"
+        },
+        {
+          "t": "Audio (ADAT), PSO graph & shaders",
+          "done": true,
+          "ref": "9feb253"
         },
         {
           "t": "RPF9 TOC encryption",
@@ -40,6 +45,11 @@
           "t": "BCPack BC1 decode (98.4% coverage)",
           "done": true,
           "ref": "e9d9ca5"
+        },
+        {
+          "t": "Video (Bink2) & UI atlases",
+          "done": true,
+          "ref": "f76ffb8"
         },
         {
           "t": "BCPack BC3/4/5/6H/7 decode",
@@ -101,21 +111,22 @@
       ]
     },
     {
-      "name": "Full coverage",
+      "name": "Fully named",
       "steps": [
         {
-          "t": "Audio, PSO object graph, shaders",
+          "t": "Shader & parameter names resolved",
           "done": true,
-          "ref": "9feb253"
+          "ref": "3739c82"
         },
         {
-          "t": "Video (Bink2) & UI atlases",
+          "t": "Material names via lowercase JOAAT",
           "done": true,
-          "ref": "f76ffb8"
+          "ref": "a124af5"
         },
         {
-          "t": "Close remaining BCPack codecs",
-          "done": false
+          "t": "Map field hashes verified (PSIN overlap)",
+          "done": true,
+          "ref": "1ddcacd"
         },
         {
           "t": "Map all hash keys to names",
@@ -136,5 +147,5 @@
     "a2b53f7 ttpf: d1 bits 10-19 are the array size; array and cube-map layouts",
     "bad5bc2 structure: byte-level layout notes for RPF9, resources/textures, AWC audio, PSO and object graph"
   ],
-  "v": 2
+  "v": 3
 }

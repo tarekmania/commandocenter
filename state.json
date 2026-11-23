@@ -1,18 +1,18 @@
 {
-  "headline": "Six lines are moving. No line is held or parked.",
+  "headline": "Six lines are moving. EasyRep Sales is parked after shipping its needs-analysis tool.",
   "lines": [
     {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
       "name": "EasyRep",
       "color": "#8fb3ff",
-      "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
+      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
       "stations": [
         "Telematics core",
-        "Website relaunch",
-        "Partner page",
+        "Website that converts",
         "App redesign",
-        "Lead system"
+        "Lead machine",
+        "Paying fleets"
       ],
       "steps": [
         [
@@ -35,6 +35,14 @@
           {
             "t": "Faster per-vehicle trip scan",
             "done": true
+          },
+          {
+            "t": "Alerts & fault codes",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
           }
         ],
         [
@@ -47,17 +55,11 @@
             "done": true
           },
           {
-            "t": "Realistic app screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
             "t": "Garage partner page /werkstaetten",
             "done": true
           },
           {
-            "t": "Invoicing through the platform",
+            "t": "Realistic app screenshots",
             "done": true
           },
           {
@@ -89,6 +91,10 @@
           {
             "t": "Vehicle list & page redesign",
             "done": false
+          },
+          {
+            "t": "New design becomes default for all",
+            "done": false
           }
         ],
         [
@@ -99,21 +105,43 @@
           {
             "t": "Hand off leads to sales",
             "done": false
+          },
+          {
+            "t": "50 cold mails a day",
+            "done": false
+          },
+          {
+            "t": "Workshop campaign",
+            "done": false
+          },
+          {
+            "t": "Demo bookings",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "First large fleet contract signed",
+            "done": false
+          },
+          {
+            "t": "More paying fleets live",
+            "done": false
           }
         ]
       ],
-      "at": 2,
-      "progress": 0.83,
-      "stepsDone": 16,
-      "stepsTotal": 19,
+      "at": 1,
+      "progress": 0.71,
+      "stepsDone": 17,
+      "stepsTotal": 26,
       "state": "moving",
       "task": "Fixing MCP preview build tooling",
       "held": null,
       "runsWeek": 18,
       "lastPush": "2026-11-23T17:00:23Z",
       "todayFrom": {
-        "at": 2,
-        "progress": 0.6
+        "at": 1,
+        "progress": 0.71
       }
     },
     {
@@ -197,39 +225,43 @@
       "repo": "tarekmania/bilaro",
       "name": "Bilaro",
       "color": "#3cb46e",
-      "goal": "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio",
+      "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
       "stations": [
         "Core bookkeeping",
         "bexio takeover",
-        "Billing & security",
-        "Year-end closing",
+        "Year-end & VAT",
         "AI connector",
-        "Customers"
+        "Tester-ready",
+        "Paying customers"
       ],
       "steps": [
         [
           {
-            "t": "Chart of accounts and journal",
+            "t": "Chart of accounts, journal & statements",
             "done": true
           },
           {
-            "t": "Receipts and bank reconciliation",
+            "t": "Receipts, bank & VAT",
             "done": true
           },
           {
-            "t": "VAT handling",
+            "t": "Period picker & open invoices",
             "done": true
           },
           {
-            "t": "Financial statements (Bilanz/ER)",
+            "t": "Dunning fees and default interest",
             "done": true
           },
           {
-            "t": "Period picker across the app",
+            "t": "Two-factor sign-in & team roles",
             "done": true
           },
           {
-            "t": "Open invoices, xls import, contact merge",
+            "t": "Stripe subscription & webhook",
+            "done": true
+          },
+          {
+            "t": "Pay supplier invoices via payment file",
             "done": true
           }
         ],
@@ -249,33 +281,11 @@
         ],
         [
           {
-            "t": "Mandatory two-factor sign-in",
-            "done": true
-          },
-          {
-            "t": "Team roles and invitations",
-            "done": true
-          },
-          {
-            "t": "Stripe subscription & webhook",
-            "done": true
-          },
-          {
-            "t": "Pay supplier invoices via payment file",
-            "done": true
-          }
-        ],
-        [
-          {
             "t": "Year-end closing assistant",
             "done": true
           },
           {
             "t": "VAT reconciliation and MWST-XML export",
-            "done": true
-          },
-          {
-            "t": "Dunning fees and default interest",
             "done": true
           },
           {
@@ -303,18 +313,36 @@
         ],
         [
           {
-            "t": "First paying customer",
+            "t": "Tester round 1: takeover & MWST",
+            "done": true
+          },
+          {
+            "t": "Tester round 2: invoices & contacts",
+            "done": true
+          },
+          {
+            "t": "Design on the level of the best tools",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Own company's books in Bilaro",
             "done": false
           },
           {
-            "t": "An SME fully off bexio",
+            "t": "Public pricing and sign-up",
+            "done": false
+          },
+          {
+            "t": "First SME fully off bexio",
             "done": false
           }
         ]
       ],
-      "at": 4,
-      "progress": 0,
-      "stepsDone": 21,
+      "at": 3,
+      "progress": 0.67,
+      "stepsDone": 19,
       "stepsTotal": 23,
       "state": "moving",
       "task": "Tester feedback round 2: invoices & contacts",
@@ -331,13 +359,13 @@
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
       "color": "#f2892b",
-      "goal": "GTA VI's asset formats are fully documented, from containers to collision",
+      "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
       "stations": [
         "Containers & resources",
         "Textures",
         "Models, vehicles & peds",
         "Map, world & collision",
-        "Full coverage"
+        "Fully named"
       ],
       "steps": [
         [
@@ -347,6 +375,10 @@
           },
           {
             "t": "Resource/system & graphics pages",
+            "done": true
+          },
+          {
+            "t": "Audio (ADAT), PSO graph & shaders",
             "done": true
           },
           {
@@ -365,6 +397,10 @@
           },
           {
             "t": "BCPack BC1 decode (98.4% coverage)",
+            "done": true
+          },
+          {
+            "t": "Video (Bink2) & UI atlases",
             "done": true
           },
           {
@@ -414,16 +450,16 @@
         ],
         [
           {
-            "t": "Audio, PSO object graph, shaders",
+            "t": "Shader & parameter names resolved",
             "done": true
           },
           {
-            "t": "Video (Bink2) & UI atlases",
+            "t": "Material names via lowercase JOAAT",
             "done": true
           },
           {
-            "t": "Close remaining BCPack codecs",
-            "done": false
+            "t": "Map field hashes verified (PSIN overlap)",
+            "done": true
           },
           {
             "t": "Map all hash keys to names",
@@ -432,9 +468,9 @@
         ]
       ],
       "at": 2,
-      "progress": 0.47,
-      "stepsDone": 14,
-      "stepsTotal": 20,
+      "progress": 0.85,
+      "stepsDone": 17,
+      "stepsTotal": 22,
       "state": "moving",
       "task": "Documenting ped shapes and material presets",
       "held": null,
@@ -450,18 +486,22 @@
       "repo": "tarekmania/tutti-price-expert",
       "name": "Tutti",
       "color": "#c98b4f",
-      "goal": "Tutti finds underpriced tutti.ch car listings automatically, ready for a flip",
+      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
       "stations": [
         "API client",
         "Flip finder",
-        "Local web app",
-        "Report export",
-        "Market tuning"
+        "Web app",
+        "Online & shareable",
+        "First profitable flip"
       ],
       "steps": [
         [
           {
-            "t": "tutti.ch API client (no Puppeteer)",
+            "t": "Fetch listings via tutti.ch's JSON API",
+            "done": false
+          },
+          {
+            "t": "Remove Puppeteer scraper",
             "done": false
           }
         ],
@@ -477,6 +517,10 @@
           {
             "t": "PureTech belt cost adjustment",
             "done": false
+          },
+          {
+            "t": "Budget per search",
+            "done": false
           }
         ],
         [
@@ -487,9 +531,7 @@
           {
             "t": "Deals & settings UI",
             "done": false
-          }
-        ],
-        [
+          },
           {
             "t": "PDF/HTML analysis report",
             "done": false
@@ -497,7 +539,21 @@
         ],
         [
           {
-            "t": "Tune thresholds per segment",
+            "t": "Deploy to flip.easyrep.ch",
+            "done": false
+          },
+          {
+            "t": "Usable by others (not just local)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Car bought through Tutti",
+            "done": false
+          },
+          {
+            "t": "Car sold with profit",
             "done": false
           }
         ]
@@ -505,7 +561,7 @@
       "at": 0,
       "progress": 0,
       "stepsDone": 0,
-      "stepsTotal": 8,
+      "stepsTotal": 13,
       "state": "moving",
       "task": "5 pull requests wait for merge",
       "held": null,
@@ -521,12 +577,13 @@
       "repo": "tarekmania/noble-drive-redo",
       "name": "Noble Drive",
       "color": "#d94f9a",
-      "goal": "Customers book Noble Drive's cars online end-to-end, staff-free",
+      "goal": "B&G Autovermietung's customers book and pay online, staff runs it all from one admin",
       "stations": [
         "Vehicle catalog",
         "Booking flow",
-        "Admin tools",
-        "Launch"
+        "Admin & CRM",
+        "Live",
+        "Handed over"
       ],
       "steps": [
         [
@@ -596,29 +653,110 @@
             "t": "SMS/Twilio notifications",
             "done": false
           }
+        ],
+        [
+          {
+            "t": "Client accepts the booking system",
+            "done": false
+          },
+          {
+            "t": "Client uses it daily",
+            "done": false
+          }
         ]
       ],
       "at": 2,
       "progress": 0.67,
       "stepsDone": 14,
-      "stepsTotal": 15,
+      "stepsTotal": 17,
       "state": "moving",
       "task": "Polishing booking flow and admin tools",
       "held": null,
-      "runsWeek": 4,
+      "runsWeek": 8,
       "lastPush": "2026-11-16T23:42:46Z",
       "todayFrom": {
         "at": 2,
         "progress": 0.67
       }
-    }
-  ],
-  "depot": [
+    },
     {
       "id": "easyrep-sales",
       "repo": "tarekmania/easyrep-sales",
-      "name": "EasyRep Sales"
-    },
+      "name": "EasyRep Sales",
+      "color": "#a8c83a",
+      "goal": "Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal",
+      "stations": [
+        "Needs analysis",
+        "Proposal",
+        "Team rollout",
+        "Used in real deals"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Standard question flow",
+            "done": true
+          },
+          {
+            "t": "Save/load analysis as a file",
+            "done": true
+          },
+          {
+            "t": "Import vehicle lists (Excel)",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Branded PDF proposal in-browser",
+            "done": true
+          },
+          {
+            "t": "Solutions text mapped to customer pains",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Editable prices & content",
+            "done": true
+          },
+          {
+            "t": "Per-industry question order",
+            "done": true
+          },
+          {
+            "t": "Shared with the whole sales team",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Proposals sent to real prospects",
+            "done": false
+          },
+          {
+            "t": "Feedback worked into the tool",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.67,
+      "stepsDone": 7,
+      "stepsTotal": 10,
+      "state": "parked",
+      "task": "Shipped the browser-based needs analysis tool",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-04T18:36:01Z",
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.67
+      }
+    }
+  ],
+  "depot": [
     {
       "id": "tempo30",
       "repo": "tarekmania/tempo30",
@@ -631,6 +769,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T17:04:43.413Z",
+  "updatedAt": "2026-11-23T17:40:49.017Z",
   "lastSeenPush": "2026-11-23T17:00:23Z"
 }

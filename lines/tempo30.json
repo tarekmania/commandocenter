@@ -2,7 +2,7 @@
   "id": "tempo30",
   "repo": "tarekmania/tempo30",
   "name": "Tempo 30",
-  "goal": "Tempo30 ships a detailed, drivable Zurich with traffic, races and police on itch.io",
+  "goal": "Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that players buy",
   "stations": [
     {
       "name": "Core driving",
@@ -26,11 +26,21 @@
           "t": "Handling Profile B tuned",
           "done": true,
           "ref": "1312818"
+        },
+        {
+          "t": "Sound: engines, crashes, sirens",
+          "done": true,
+          "ref": "c63d0ea"
+        },
+        {
+          "t": "Stutter/perf fixes & logging",
+          "done": true,
+          "ref": "fa16648"
         }
       ]
     },
     {
-      "name": "Zurich city build",
+      "name": "Zurich city",
       "steps": [
         {
           "t": "Import POLYGON City/Town",
@@ -56,11 +66,24 @@
           "t": "Street dressing: billboards, ads",
           "done": true,
           "ref": "633b8e5"
+        },
+        {
+          "t": "Pigeons & radio (city atmosphere)",
+          "done": true,
+          "ref": "5b047e8"
+        },
+        {
+          "t": "Fix city survey round 2 bugs",
+          "done": false
+        },
+        {
+          "t": "Final map at 15-20 km (full city)",
+          "done": false
         }
       ]
     },
     {
-      "name": "Traffic & transit",
+      "name": "Traffic & police",
       "steps": [
         {
           "t": "Trams & line buses running",
@@ -110,30 +133,35 @@
       ]
     },
     {
-      "name": "Release polish",
+      "name": "Public reveal",
       "steps": [
         {
-          "t": "itch.io publish tooling",
-          "done": true,
-          "ref": "92cc8a3"
+          "t": "Steam page live",
+          "done": false
         },
         {
-          "t": "Sound: engines, crashes, sirens",
-          "done": true,
-          "ref": "c63d0ea"
+          "t": "First Reddit post",
+          "done": false
         },
         {
-          "t": "Pigeons, radio & fine system",
-          "done": true,
-          "ref": "5b047e8"
+          "t": "Public demo build",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Early Access",
+      "steps": [
+        {
+          "t": "Paid release on Steam",
+          "done": false
         },
         {
-          "t": "Stutter/perf fixes & logging",
-          "done": true,
-          "ref": "fa16648"
+          "t": "Many districts beyond Zentrum",
+          "done": false
         },
         {
-          "t": "Fix city survey round 2 bugs",
+          "t": "English and German localisation",
           "done": false
         }
       ]
@@ -151,5 +179,5 @@
     "92cc8a3 itch.io publish via butler",
     "7a8fb04 Merge mp-phase1: multiplayer phase 1 (rooms by code, shared police, traffic, trams, buses)"
   ],
-  "v": 2
+  "v": 3
 }

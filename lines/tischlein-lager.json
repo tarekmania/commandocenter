@@ -2,7 +2,7 @@
   "id": "tischlein-lager",
   "repo": "tarekmania/tischlein-lager",
   "name": "Tischlein Lager",
-  "goal": "Tischlein's food-bank warehouse runs picking, stock and deliveries in one 3D app",
+  "goal": "Tischlein deck dich runs its warehouses on this tool instead of Rocklog, and buys it",
   "stations": [
     {
       "name": "Warehouse model",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "name": "Picking & stock ops",
+      "name": "Picking & stock",
       "steps": [
         {
           "t": "Picklists & Lieferschein",
@@ -48,20 +48,30 @@
           "ref": "f301b9d"
         },
         {
-          "t": "Driver app: trips & Spender",
-          "done": true,
-          "ref": "67fec99"
-        },
-        {
           "t": "Barcode scan & Excel import",
           "done": true,
           "ref": "834a006"
+        },
+        {
+          "t": "Direct storage at goods-in",
+          "done": true,
+          "ref": "1f9a5f1"
+        },
+        {
+          "t": "Weight-based F&G/FriPro goods",
+          "done": true,
+          "ref": "9a588f9"
         }
       ]
     },
     {
-      "name": "Live mode",
+      "name": "Drivers & sites",
       "steps": [
+        {
+          "t": "Driver app: trips & Spender",
+          "done": true,
+          "ref": "67fec99"
+        },
         {
           "t": "Live mode: roles, multi-site",
           "done": true,
@@ -73,25 +83,15 @@
           "ref": "680202b"
         },
         {
-          "t": "Direct storage at goods-in",
-          "done": true,
-          "ref": "1f9a5f1"
-        },
-        {
-          "t": "Test access for test deploy",
+          "t": "Test access for stakeholders",
           "done": true,
           "ref": "7a2189e"
         }
       ]
     },
     {
-      "name": "Presentation & rollout",
+      "name": "Presented",
       "steps": [
-        {
-          "t": "Weight-based F&G/FriPro goods",
-          "done": true,
-          "ref": "9a588f9"
-        },
         {
           "t": "5 presentation docs for staff",
           "done": true,
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "name": "Launch",
+      "name": "Pilot",
       "steps": [
         {
           "t": "Test deploy on Cloudflare Pages",
@@ -113,7 +113,20 @@
           "ref": "483b3e4"
         },
         {
-          "t": "Go live for the real team",
+          "t": "Real team in Staufen using it daily",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Sold & rolled out",
+      "steps": [
+        {
+          "t": "Contract signed",
+          "done": false
+        },
+        {
+          "t": "Rocklog switched off",
           "done": false
         }
       ]
@@ -131,5 +144,5 @@
     "834a6af Merge step 13: no automatic replenishment, transfers between sites, Auslagerung to institutions",
     "54ce769 Merge Step 11: Live mode, multiple sites and Supabase"
   ],
-  "v": 2
+  "v": 3
 }

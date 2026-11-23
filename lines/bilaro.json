@@ -2,40 +2,45 @@
   "id": "bilaro",
   "repo": "tarekmania/bilaro",
   "name": "Bilaro",
-  "goal": "Swiss SMEs keep their whole bookkeeping in Bilaro instead of bexio",
+  "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
   "stations": [
     {
       "name": "Core bookkeeping",
       "steps": [
         {
-          "t": "Chart of accounts and journal",
-          "done": true,
-          "ref": "c1f7ac4"
-        },
-        {
-          "t": "Receipts and bank reconciliation",
-          "done": true,
-          "ref": "3784811"
-        },
-        {
-          "t": "VAT handling",
-          "done": true,
-          "ref": "7b345c4"
-        },
-        {
-          "t": "Financial statements (Bilanz/ER)",
+          "t": "Chart of accounts, journal & statements",
           "done": true,
           "ref": "56c1913"
         },
         {
-          "t": "Period picker across the app",
+          "t": "Receipts, bank & VAT",
           "done": true,
-          "ref": "955ef6e"
+          "ref": "7b345c4"
         },
         {
-          "t": "Open invoices, xls import, contact merge",
+          "t": "Period picker & open invoices",
           "done": true,
           "ref": "2738741"
+        },
+        {
+          "t": "Dunning fees and default interest",
+          "done": true,
+          "ref": "5028250"
+        },
+        {
+          "t": "Two-factor sign-in & team roles",
+          "done": true,
+          "ref": "9681925"
+        },
+        {
+          "t": "Stripe subscription & webhook",
+          "done": true,
+          "ref": "c26f7a9"
+        },
+        {
+          "t": "Pay supplier invoices via payment file",
+          "done": true,
+          "ref": "032833d"
         }
       ]
     },
@@ -60,32 +65,7 @@
       ]
     },
     {
-      "name": "Billing & security",
-      "steps": [
-        {
-          "t": "Mandatory two-factor sign-in",
-          "done": true,
-          "ref": "9681925"
-        },
-        {
-          "t": "Team roles and invitations",
-          "done": true,
-          "ref": "ae50bae"
-        },
-        {
-          "t": "Stripe subscription & webhook",
-          "done": true,
-          "ref": "c26f7a9"
-        },
-        {
-          "t": "Pay supplier invoices via payment file",
-          "done": true,
-          "ref": "032833d"
-        }
-      ]
-    },
-    {
-      "name": "Year-end closing",
+      "name": "Year-end & VAT",
       "steps": [
         {
           "t": "Year-end closing assistant",
@@ -94,11 +74,6 @@
         },
         {
           "t": "VAT reconciliation and MWST-XML export",
-          "done": true,
-          "ref": "5028250"
-        },
-        {
-          "t": "Dunning fees and default interest",
           "done": true,
           "ref": "5028250"
         },
@@ -135,14 +110,37 @@
       ]
     },
     {
-      "name": "Customers",
+      "name": "Tester-ready",
       "steps": [
         {
-          "t": "First paying customer",
+          "t": "Tester round 1: takeover & MWST",
+          "done": true,
+          "ref": "f5a647b"
+        },
+        {
+          "t": "Tester round 2: invoices & contacts",
+          "done": true,
+          "ref": "2738741"
+        },
+        {
+          "t": "Design on the level of the best tools",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Paying customers",
+      "steps": [
+        {
+          "t": "Own company's books in Bilaro",
           "done": false
         },
         {
-          "t": "An SME fully off bexio",
+          "t": "Public pricing and sign-up",
+          "done": false
+        },
+        {
+          "t": "First SME fully off bexio",
           "done": false
         }
       ]
@@ -160,5 +158,5 @@
     "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen",
     "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen"
   ],
-  "v": 2
+  "v": 3
 }

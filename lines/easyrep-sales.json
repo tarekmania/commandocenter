@@ -2,7 +2,7 @@
   "id": "easyrep-sales",
   "repo": "tarekmania/easyrep-sales",
   "name": "EasyRep Sales",
-  "goal": "EasyRep sales reps run a standard needs analysis and leave with a PDF proposal",
+  "goal": "Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal",
   "stations": [
     {
       "name": "Needs analysis",
@@ -16,22 +16,7 @@
           "t": "Save/load analysis as a file",
           "done": true,
           "ref": "2428a56"
-        }
-      ]
-    },
-    {
-      "name": "PDF proposals",
-      "steps": [
-        {
-          "t": "Branded PDF proposal in-browser",
-          "done": true,
-          "ref": "2428a56"
-        }
-      ]
-    },
-    {
-      "name": "Vehicle import",
-      "steps": [
+        },
         {
           "t": "Import vehicle lists (Excel)",
           "done": true,
@@ -40,7 +25,22 @@
       ]
     },
     {
-      "name": "Pricing setup",
+      "name": "Proposal",
+      "steps": [
+        {
+          "t": "Branded PDF proposal in-browser",
+          "done": true,
+          "ref": "2428a56"
+        },
+        {
+          "t": "Solutions text mapped to customer pains",
+          "done": true,
+          "ref": "2428a56"
+        }
+      ]
+    },
+    {
+      "name": "Team rollout",
       "steps": [
         {
           "t": "Editable prices & content",
@@ -51,6 +51,23 @@
           "t": "Per-industry question order",
           "done": true,
           "ref": "2428a56"
+        },
+        {
+          "t": "Shared with the whole sales team",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Used in real deals",
+      "steps": [
+        {
+          "t": "Proposals sent to real prospects",
+          "done": false
+        },
+        {
+          "t": "Feedback worked into the tool",
+          "done": false
         }
       ]
     }
@@ -60,5 +77,5 @@
   "evidence": [
     "2428a56 EasyRep Bedarfsanalyse: Browser-Version für GitHub Pages"
   ],
-  "v": 2
+  "v": 3
 }

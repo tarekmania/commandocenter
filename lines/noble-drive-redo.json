@@ -2,7 +2,7 @@
   "id": "noble-drive-redo",
   "repo": "tarekmania/noble-drive-redo",
   "name": "Noble Drive",
-  "goal": "Customers book Noble Drive's cars online end-to-end, staff-free",
+  "goal": "B&G Autovermietung's customers book and pay online, staff runs it all from one admin",
   "stations": [
     {
       "name": "Vehicle catalog",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "name": "Admin tools",
+      "name": "Admin & CRM",
       "steps": [
         {
           "t": "Collapsible admin sidebar",
@@ -80,7 +80,7 @@
       ]
     },
     {
-      "name": "Launch",
+      "name": "Live",
       "steps": [
         {
           "t": "Custom domain & DNS",
@@ -97,6 +97,19 @@
           "done": false
         }
       ]
+    },
+    {
+      "name": "Handed over",
+      "steps": [
+        {
+          "t": "Client accepts the booking system",
+          "done": false
+        },
+        {
+          "t": "Client uses it daily",
+          "done": false
+        }
+      ]
     }
   ],
   "task": "Polishing booking flow and admin tools",
@@ -110,5 +123,5 @@
     "f9b8816 Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert",
     "935a55a Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert"
   ],
-  "v": 2
+  "v": 3
 }

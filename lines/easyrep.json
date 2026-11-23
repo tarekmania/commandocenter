@@ -2,7 +2,7 @@
   "id": "easyrep",
   "repo": "tarekmania/easyrep",
   "name": "EasyRep",
-  "goal": "SME vehicle fleets and their garages run tracking, service and billing in EasyRep",
+  "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
   "stations": [
     {
       "name": "Telematics core",
@@ -31,11 +31,21 @@
           "t": "Faster per-vehicle trip scan",
           "done": true,
           "ref": "767d14d"
+        },
+        {
+          "t": "Alerts & fault codes",
+          "done": true,
+          "ref": "d13370e"
+        },
+        {
+          "t": "Invoicing through the platform",
+          "done": true,
+          "ref": "ee0d6a0"
         }
       ]
     },
     {
-      "name": "Website relaunch",
+      "name": "Website that converts",
       "steps": [
         {
           "t": "New homepage (Wise-style)",
@@ -48,24 +58,14 @@
           "ref": "c577c32"
         },
         {
-          "t": "Realistic app screenshots",
-          "done": true,
-          "ref": "7cc3e17"
-        }
-      ]
-    },
-    {
-      "name": "Partner page",
-      "steps": [
-        {
           "t": "Garage partner page /werkstaetten",
           "done": true,
           "ref": "b84206e"
         },
         {
-          "t": "Invoicing through the platform",
+          "t": "Realistic app screenshots",
           "done": true,
-          "ref": "ee0d6a0"
+          "ref": "7cc3e17"
         },
         {
           "t": "Garage portal screenshots",
@@ -105,11 +105,15 @@
         {
           "t": "Vehicle list & page redesign",
           "done": false
+        },
+        {
+          "t": "New design becomes default for all",
+          "done": false
         }
       ]
     },
     {
-      "name": "Lead system",
+      "name": "Lead machine",
       "steps": [
         {
           "t": "Capture leads from the site",
@@ -117,6 +121,31 @@
         },
         {
           "t": "Hand off leads to sales",
+          "done": false
+        },
+        {
+          "t": "50 cold mails a day",
+          "done": false
+        },
+        {
+          "t": "Workshop campaign",
+          "done": false
+        },
+        {
+          "t": "Demo bookings",
+          "done": false
+        }
+      ]
+    },
+    {
+      "name": "Paying fleets",
+      "steps": [
+        {
+          "t": "First large fleet contract signed",
+          "done": false
+        },
+        {
+          "t": "More paying fleets live",
           "done": false
         }
       ]
@@ -134,5 +163,5 @@
     "578ab1e Merge pull request #11: Redesign group 3: overview, map and zones",
     "d13370e Redesign group 3: overview, map and zones in the new design"
   ],
-  "v": 2
+  "v": 3
 }
