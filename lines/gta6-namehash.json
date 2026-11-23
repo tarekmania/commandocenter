@@ -46,6 +46,11 @@
           "t": "Mark matches as candidates, not confirmed",
           "done": true,
           "ref": "02149cc"
+        },
+        {
+          "t": "Confirmed tier from other RE projects",
+          "done": true,
+          "ref": "c96156d"
         }
       ]
     },
@@ -85,9 +90,10 @@
       ]
     }
   ],
-  "task": "Mark hash matches as candidates, not confirmed",
+  "task": "Added a confirmed vs candidate hash tier",
   "held": null,
   "evidence": [
+    "c96156d Add a confirmed layer: resolve as confirmed or candidate",
     "02149cc Frame resolver output as candidates, not confirmed names",
     "1e38c45 gta6-namehash: shared joaat hash to name resolver for GTA 6"
   ],

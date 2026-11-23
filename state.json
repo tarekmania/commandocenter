@@ -1,5 +1,5 @@
 {
-  "headline": "Bilaro reached AI connector. Six lines are moving, EasyRep Sales is parked.",
+  "headline": "Six lines are moving. EasyRep Sales is parked.",
   "lines": [
     {
       "id": "gta6-namehash",
@@ -44,6 +44,10 @@
           {
             "t": "Mark matches as candidates, not confirmed",
             "done": true
+          },
+          {
+            "t": "Confirmed tier from other RE projects",
+            "done": true
           }
         ],
         [
@@ -77,13 +81,13 @@
       ],
       "at": 1,
       "progress": 0.25,
-      "stepsDone": 8,
-      "stepsTotal": 13,
+      "stepsDone": 9,
+      "stepsTotal": 14,
       "state": "moving",
-      "task": "Mark hash matches as candidates, not confirmed",
+      "task": "Added a confirmed vs candidate hash tier",
       "held": null,
-      "runsWeek": 2,
-      "lastPush": "2026-11-23T17:47:05Z",
+      "runsWeek": 3,
+      "lastPush": "2026-11-23T18:50:26Z",
       "todayFrom": {
         "at": 1,
         "progress": 0
@@ -897,6 +901,6 @@
     }
   ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T18:23:24.595Z",
-  "lastSeenPush": "2026-11-23T17:47:05Z"
+  "updatedAt": "2026-11-23T18:55:02.391Z",
+  "lastSeenPush": "2026-11-23T18:50:26Z"
 }
