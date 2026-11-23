@@ -5,6 +5,7 @@ import SCREEN from '../../screen/index.html';
 
 const API = 'https://api.github.com';
 const CC = 'tarekmania/commandocenter';
+const INCLUDE_FORKS = ['tarekmania/GTA6-Asset-Info'];
 
 const gh = (path, token, init = {}) => fetch(API + path, {
   ...init,
@@ -26,7 +27,7 @@ async function readState(env) {
 async function checkForPushes(env) {
   const reposRes = await gh('/user/repos?per_page=15&sort=pushed&affiliation=owner,collaborator,organization_member', env.CC_READ_TOKEN);
   if (!reposRes.ok) return 'repos ' + reposRes.status;
-  const repos = (await reposRes.json()).filter(r => r.full_name !== CC && !r.fork);
+  const repos = (await reposRes.json()).filter(r => r.full_name !== CC && (!r.fork || INCLUDE_FORKS.includes(r.full_name)));
   const newest = repos.reduce((m, r) => (r.pushed_at > m ? r.pushed_at : m), '');
   const stateText = await readState(env);
   const lastSeen = stateText ? (JSON.parse(stateText).lastSeenPush || '') : '';
