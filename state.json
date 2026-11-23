@@ -1,6 +1,125 @@
 {
-  "headline": "EasyRep Sales is parked; no pushes in 19 days.",
+  "headline": "Five lines are moving. EasyRep Sales is parked.",
   "lines": [
+    {
+      "id": "bilaro",
+      "repo": "tarekmania/bilaro",
+      "name": "Bilaro",
+      "color": "#3cb46e",
+      "stations": [
+        "Core bookkeeping",
+        "bexio takeover",
+        "Billing & security",
+        "Year-end closing",
+        "AI connector"
+      ],
+      "at": 3,
+      "progress": 0.4,
+      "state": "moving",
+      "task": "Building the Claude/MCP connector",
+      "held": null,
+      "runsWeek": 4,
+      "lastPush": "2026-11-23T14:32:18Z",
+      "todayFrom": {
+        "at": 3,
+        "progress": 0.4
+      }
+    },
+    {
+      "id": "gta6-asset-info",
+      "repo": "tarekmania/GTA6-Asset-Info",
+      "name": "GTA6 Asset Info",
+      "color": "#f2892b",
+      "stations": [
+        "Containers & resources",
+        "Textures",
+        "Models, vehicles & peds",
+        "Map, world & collision",
+        "Full coverage"
+      ],
+      "at": 1,
+      "progress": 0.6,
+      "state": "moving",
+      "task": "Documenting ped shapes and BCPack decoding",
+      "held": null,
+      "runsWeek": 49,
+      "lastPush": "2026-11-23T14:16:12Z",
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.6
+      }
+    },
+    {
+      "id": "easyrep",
+      "repo": "tarekmania/easyrep",
+      "name": "EasyRep",
+      "color": "#8fb3ff",
+      "stations": [
+        "Telematics core",
+        "Website relaunch",
+        "Partner page",
+        "App redesign",
+        "Lead system"
+      ],
+      "at": 2,
+      "progress": 0.6,
+      "state": "moving",
+      "task": "App redesign behind a switch",
+      "held": null,
+      "runsWeek": 14,
+      "lastPush": "2026-11-19T17:58:16Z",
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.6
+      }
+    },
+    {
+      "id": "tutti-price-expert",
+      "repo": "tarekmania/tutti-price-expert",
+      "name": "Tutti",
+      "color": "#c98b4f",
+      "stations": [
+        "API client",
+        "Flip finder",
+        "Local web app",
+        "Report export",
+        "Market tuning"
+      ],
+      "at": 3,
+      "progress": 0.5,
+      "state": "moving",
+      "task": "Refining flip finder: market value, filters",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-17T19:23:14Z",
+      "todayFrom": {
+        "at": 3,
+        "progress": 0.5
+      }
+    },
+    {
+      "id": "noble-drive-redo",
+      "repo": "tarekmania/noble-drive-redo",
+      "name": "Noble Drive",
+      "color": "#d94f9a",
+      "stations": [
+        "Vehicle catalog",
+        "Booking flow",
+        "Admin tools",
+        "Launch"
+      ],
+      "at": 2,
+      "progress": 0.7,
+      "state": "moving",
+      "task": "Polishing booking flow and admin tools",
+      "held": null,
+      "runsWeek": 8,
+      "lastPush": "2026-11-16T23:42:46Z",
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.7
+      }
+    },
     {
       "id": "easyrep-sales",
       "repo": "tarekmania/easyrep-sales",
@@ -25,8 +144,19 @@
       }
     }
   ],
-  "depot": [],
+  "depot": [
+    {
+      "id": "tempo30",
+      "repo": "tarekmania/tempo30",
+      "name": "Tempo 30"
+    },
+    {
+      "id": "tischlein-lager",
+      "repo": "tarekmania/tischlein-lager",
+      "name": "Tischlein Lager"
+    }
+  ],
   "day": "2026-11-23",
-  "updatedAt": "2026-11-23T14:23:21.306Z",
-  "lastSeenPush": "2026-11-04T18:36:01Z"
+  "updatedAt": "2026-11-23T14:44:42.880Z",
+  "lastSeenPush": "2026-11-23T14:32:18Z"
 }

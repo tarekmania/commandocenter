@@ -1,0 +1,17 @@
+{
+  "id": "noble-drive-redo",
+  "repo": "tarekmania/noble-drive-redo",
+  "name": "Noble Drive",
+  "stations": ["Vehicle catalog", "Booking flow", "Admin tools", "Launch"],
+  "at": 2,
+  "progress": 0.7,
+  "task": "Polishing booking flow and admin tools",
+  "held": null,
+  "evidence": [
+    "ac14156 Buchungsbutton auf der Hauptseite wieder freigeschaltet",
+    "c4eb854 Add booking delete with confirmation dialog in admin booking detail",
+    "9d4feb4 Fahrzeuge mit Status ausser 'Verfügbar' online nicht buchbar; Buchungen/Sperren für Besucher sichtbar",
+    "f9b8816 Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert",
+    "e51ce33 Scale vehicle logos to fit inside card image areas"
+  ]
+}

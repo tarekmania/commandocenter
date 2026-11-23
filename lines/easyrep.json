@@ -1,0 +1,18 @@
+{
+  "id": "easyrep",
+  "repo": "tarekmania/easyrep",
+  "name": "EasyRep",
+  "stations": ["Telematics core", "Website relaunch", "Partner page", "App redesign", "Lead system"],
+  "at": 2,
+  "progress": 0.6,
+  "task": "App redesign behind a switch",
+  "held": null,
+  "evidence": [
+    "79346b1 App redesign, group 1: switch, app shell, states, 404 (#9)",
+    "373e2fe App redesign group 2: login, forgot and reset password (#10)",
+    "d13370e Redesign group 3: overview, map and zones in the new design (#11)",
+    "open PR #14: Redesign group 4: vehicle list and vehicle page",
+    "open PR #13: Demo Haustechnik: enable the new UI beta",
+    "767d14d process-trips: replace fleet-wide telemetry scan in safety net with indexed per-vehicle probe"
+  ]
+}

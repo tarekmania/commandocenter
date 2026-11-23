@@ -1,0 +1,17 @@
+{
+  "id": "tutti-price-expert",
+  "repo": "tarekmania/tutti-price-expert",
+  "name": "Tutti",
+  "stations": ["API client", "Flip finder", "Local web app", "Report export", "Market tuning"],
+  "at": 3,
+  "progress": 0.5,
+  "task": "Refining flip finder: market value, filters",
+  "held": null,
+  "evidence": [
+    "open PR #1: tutti.ch JSON API client instead of Puppeteer scraper",
+    "open PR #2: Flip finder: on-demand scan for profitable used-car listings",
+    "open PR #3: Local web app: scans from the browser, live progress, deals and settings",
+    "open PR #4: Analysis report as PDF and HTML",
+    "open PR #5: Flip finder: km-adjusted market value, engine filter, PureTech belt cost"
+  ]
+}
