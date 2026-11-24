@@ -1,6 +1,6 @@
 // Builds the screen state. No AI decisions here: the route comes from projects/<id>.md
 // (or the rater's first draft for new repos), the state from the push dates, the order from the most recent work.
-import { readFileSync, writeFileSync } from 'node:fs';
+import fs, { readFileSync, writeFileSync } from 'node:fs';
 import { parseProject } from './route.mjs';
 
 const read = (p, fallback) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; } };
@@ -54,7 +54,20 @@ const prevLine = id => prev?.lines?.find(l => l.id === id) || null;
 const newDay = !prev || prev.day !== zurichDay;
 const candidates = [];
 
-for (const e of evidence.repos) {
+// Projects without a repo yet (planned in chats) come from their project file alone.
+// Their "last work" is the newest day written in the file.
+const sources = [...evidence.repos];
+for (const f of (fs.existsSync('projects') ? fs.readdirSync('projects') : [])) {
+  const id = f.replace(/\.md$/, '');
+  if (!f.endsWith('.md') || f === 'README.md' || sources.some(e => e.id === id)) continue;
+  const md = text(`projects/${f}`);
+  const pr = parseProject(md);
+  if (!pr || (pr.setup.repo && !/^(none|-|)$/i.test(pr.setup.repo.trim()))) continue;
+  const days = (md.match(/\b20\d\d-\d\d-\d\d\b/g) || []).sort();
+  sources.push({ id, repo: null, pushedAt: days.length ? days[days.length - 1] + 'T12:00:00Z' : null, commits7d: 0 });
+}
+
+for (const e of sources) {
   const id = e.id;
   const file = read(`lines/${id}.json`, {}) || {};
   if (file.project === false) continue;
@@ -86,7 +99,7 @@ for (const e of evidence.repos) {
     stepsTotal: all.length,
     doneToday: all.filter(s => s.done && s.on === zurichDay).length,
     state,
-    task: str(file.task, 60) || p?.task || '',
+    task: str(file.task, 60) || p?.task || (all.find(x => !x.done) ? 'Next: ' + all.find(x => !x.done).t : ''),
     held,
     runsWeek: Math.min(99, e.commits7d || 0),
     lastPush: e.pushedAt || p?.lastPush || null,

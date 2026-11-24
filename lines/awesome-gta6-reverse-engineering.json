@@ -1,0 +1,9 @@
+{
+  "id": "awesome-gta6-reverse-engineering",
+  "repo": "tarekmania/awesome-gta6-reverse-engineering",
+  "name": "Awesome GTA6 RE (fork)",
+  "task": "Listed gta6-namehash in the scene's list",
+  "held": null,
+  "project": false,
+  "evidence": ["76e1201 gta6-namehash: current hash count, SixNG import", "1764d38 Add gta6-namehash to Format Documentation & Research"]
+}

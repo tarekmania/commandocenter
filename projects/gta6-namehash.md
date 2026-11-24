@@ -35,13 +35,14 @@ Goal: GTA 6 tool authors resolve any hash to a name instead of guessing
 > used by SixNG and GTA6 Asset Info, known in the scene
 - [x] Release with a clear README and licence · 1e38c45
 - [ ] Release v0.1 tagged
-- [ ] Announced in the GTA 6 research scene
-- [ ] Used by SixNG
+- [x] Announced in the GTA 6 research scene · awesome-gta6-reverse-engineering · 2026-11-23
+- [ ] Used by SixNG (import pull request waiting upstream)
 - [ ] Used inside GTA6 Asset Info
 
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-24 Listing in the scene's awesome list counts as the announcement; Tarek's fork of that list stays off the map, its work belongs here
 - 2026-11-24 The sources check pull request is reviewed and merged by the station master (Merge auto), no review by Tarek
 - 2026-11-24 First release v0.1 is tagged once the sources check is merged
 

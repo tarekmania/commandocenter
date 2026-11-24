@@ -6,7 +6,7 @@ Read `STANDARD.md` and `PRIORITY.md` first; their rules always apply.
 
 ## 0. Take in new projects
 
-The rater finds every repo Tarek works on by itself and writes a first draft of its route into `lines/<id>.json`. For every line file with a `stations` draft and `"project": true` that has no `projects/<id>.md` yet, create the project file before anything else:
+The rater finds every repo Tarek works on by itself and writes a first draft of its route into `lines/<id>.json`. When a new repo belongs to a project file with `Repo: none` (same project under another name, for example `health` for Health Center), set that file's Repo, keep its route, and write a decision line instead of creating a second file. For every other line file with a `stations` draft and `"project": true` that has no `projects/<id>.md` yet, create the project file before anything else:
 
 - Use the template in `STANDARD.md`. Take name, goal, stations and steps (with their done marks and references) from the line file, and improve them where the repo or Tarek's chats (step 2) show better ones.
 - Repo: the `repo` field of the line file.
@@ -14,6 +14,7 @@ The rater finds every repo Tarek works on by itself and writes a first draft of 
 - Cadence and Merge: choose them by the rules in `STANDARD.md`.
 - Decisions: one line with the goal and setup you chose and why.
 - Put the id into `PRIORITY.md` where it belongs.
+- Projects Tarek talks about in chats that have no repo and no project file yet: create the project file with `Repo: none` and profile `plan`.
 
 ## 1. Hear Tarek
 

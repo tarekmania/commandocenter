@@ -13,7 +13,10 @@ Review budget: 3 open pull requests from the station master in total, across the
 7. tempo30
 8. gta6-namehash
 9. gta6-asset-info
+10. sixng
+11. health-center
 
 ## Decisions
+- 2026-11-24 Added sixng and health-center at the end: new lines, nothing waits on them yet
 
 - 2026-11-24 Order kept: the live products with customers and clients first, then internal tools, then side projects.

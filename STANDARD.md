@@ -24,7 +24,7 @@ The `<id>` is the line id on the map (the repo name in lower case). This file is
 
 1. **Setup**
    - **Profile**: how agents may work on this project (see below).
-   - **Repo**: the GitHub repo the work happens in.
+   - **Repo**: the GitHub repo the work happens in, or `none` while a project only exists as a plan. Such a project is on the map from its file alone.
    - **Cadence**: `daily`, `weekly` or `paused`. How often the station master works on it.
    - **Merge**: `tarek` (only Tarek merges) or `auto` (the station master merges its own pull requests after review and green checks).
    - **Notes**: project rules every agent must follow, including rules Tarek set.
@@ -65,7 +65,7 @@ Claude chooses it per project, by one rule: `auto` where a mistake reaches no cu
 
 ## Adding a project
 
-Nothing to do. Every repo Tarek pushes to shows up on the map by itself, and the station master creates its project file from this template on its next run and decides its setup. To keep a repo out of the nightly work, its cadence is `paused`.
+Nothing to do. Every repo Tarek pushes to shows up on the map by itself (forks too, as soon as he has his own commits in them), and the station master creates its project file from this template on its next run and decides its setup. To keep a repo out of the nightly work, its cadence is `paused`. A project that only exists in chats so far gets a project file with `Repo: none`, written by the chat or the station master.
 
 ## Template
 

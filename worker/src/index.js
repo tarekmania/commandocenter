@@ -41,7 +41,7 @@ async function readState(env) {
 async function checkForPushes(env) {
   const reposRes = await gh('/user/repos?per_page=15&sort=pushed&affiliation=owner,collaborator,organization_member', env.CC_READ_TOKEN);
   if (!reposRes.ok) return 'repos ' + reposRes.status;
-  const repos = (await reposRes.json()).filter(r => r.full_name !== CC && (!r.fork || INCLUDE_FORKS.includes(r.full_name)));
+  const repos = (await reposRes.json()).filter(r => r.full_name !== CC && (!r.fork || INCLUDE_FORKS.includes(r.full_name) || Date.now() - Date.parse(r.pushed_at) < 30 * 864e5));
   const newest = repos.reduce((m, r) => (r.pushed_at > m ? r.pushed_at : m), '');
   const stateText = await readState(env);
   const lastSeen = stateText ? (JSON.parse(stateText).lastSeenPush || '') : '';
@@ -68,7 +68,7 @@ async function diagnose(env) {
 
   const r = await gh('/user/repos?per_page=100&sort=pushed&affiliation=owner,collaborator,organization_member', env.CC_READ_TOKEN);
   const repos = r.ok ? await r.json() : [];
-  const counted = repos.filter(x => x.full_name !== CC && (!x.fork || INCLUDE_FORKS.includes(x.full_name)));
+  const counted = repos.filter(x => x.full_name !== CC && (!x.fork || INCLUDE_FORKS.includes(x.full_name) || Date.now() - Date.parse(x.pushed_at) < 30 * 864e5));
   const newest = counted.reduce((m, x) => (x.pushed_at > m.pushed_at ? x : m), { pushed_at: '' });
   out.readToken = { status: r.status, reposVisible: repos.length, privateVisible: repos.filter(x => x.private).length,
     newestPush: newest.full_name ? newest.full_name + ' ' + newest.pushed_at : null };

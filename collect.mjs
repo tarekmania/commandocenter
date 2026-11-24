@@ -68,9 +68,14 @@ console.log(`token sees ${repos.length} repos: ${repos.map(r => r.full_name).joi
 const evidence = [];
 for (const r of repos) {
   if (r.full_name === SELF || r.archived) continue;
-  if (r.fork && !INCLUDE_FORKS.includes(r.full_name)) continue;
   const ageDays = (now - Date.parse(r.pushed_at)) / DAY;
   if (ageDays > 120) continue;
+  // A fork counts when Tarek has his own commits in it in the last 30 days (contribution work).
+  if (r.fork && !INCLUDE_FORKS.includes(r.full_name)) {
+    if (ageDays > 30) continue;
+    const mine = await gh(`/repos/${r.full_name}/commits?author=${r.owner.login}&since=${new Date(now - 30 * DAY).toISOString()}&per_page=1`);
+    if (!mine || !mine.length) continue;
+  }
   const id = r.name.toLowerCase();
   const pf = projectFile(id);
   const known = lineFile(id);
@@ -78,6 +83,8 @@ for (const r of repos) {
   let head = commits[0]?.sha;
   if (!head) head = (await gh(`/repos/${r.full_name}/branches/${encodeURIComponent(r.default_branch)}`))?.commit?.sha || null;
   head = head ? head.slice(0, 12) : null;
+  // A repo rated "not a project" (profile page, tutorial, a fork that only lists Tarek's tool) stays off until a project file exists.
+  if (!pf && known && known.project === false) continue;
   const pfHash = pf ? hash(pf) : null;
   const hasDraft = !!(known && known.goal && Array.isArray(known.stations) && typeof known.stations[0] === 'object');
   const changed = FULL || prevHeads[id] !== head || prevPf[id] !== pfHash || (!pf && !hasDraft);
