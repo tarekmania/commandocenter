@@ -39,4 +39,4 @@ The `<id>` is the line id on the map (the repo name in lower case). Every file h
 
 ## Adding a project
 
-Add `projects/<id>.md` with the parts above, then a scheduled task named "Station master: <name>" whose prompt is: "Follow WORKER.md in tarekmania/commandocenter for project <id>." Everything else (rating, map, detail view) picks it up by itself.
+Add `projects/<id>.md` with the parts above and add the project's repo to the repositories of the "Station master" scheduled task. Everything else (rating, map, detail view, the nightly work) picks it up by itself.
