@@ -1,6 +1,217 @@
 {
-  "headline": "Seven lines are moving; Bilaro shipped Swiss payroll. EasyRep Sales is parked.",
+  "headline": "Seven lines are moving; EasyRep shipped its garage portal. EasyRep Sales is parked.",
   "lines": [
+    {
+      "id": "easyrep",
+      "repo": "tarekmania/easyrep",
+      "name": "EasyRep",
+      "color": "#8fb3ff",
+      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
+      "stations": [
+        "Telematics core",
+        "Website that converts",
+        "App redesign",
+        "Lead machine",
+        "Paying fleets"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Demo tenant & trip processing",
+            "done": true
+          },
+          {
+            "t": "MFK (vehicle inspection) tracking",
+            "done": true
+          },
+          {
+            "t": "Billing export",
+            "done": true
+          },
+          {
+            "t": "Location filter for the fleet",
+            "done": true
+          },
+          {
+            "t": "Faster per-vehicle trip scan",
+            "done": true
+          },
+          {
+            "t": "Alerts & fault codes",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "New homepage (Wise-style)",
+            "done": true
+          },
+          {
+            "t": "Press & ETH credibility section",
+            "done": true
+          },
+          {
+            "t": "Garage partner page /werkstaetten",
+            "done": true
+          },
+          {
+            "t": "Realistic app screenshots",
+            "done": true
+          },
+          {
+            "t": "Garage portal screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Per-user redesign switch",
+            "done": true
+          },
+          {
+            "t": "Login, forgot & reset redesigned",
+            "done": true
+          },
+          {
+            "t": "Overview, map & zones redesigned",
+            "done": true
+          },
+          {
+            "t": "New login shown to everyone",
+            "done": true
+          },
+          {
+            "t": "Security hardening pass",
+            "done": true
+          },
+          {
+            "t": "Vehicle list and vehicle page",
+            "done": true
+          },
+          {
+            "t": "Trips and driving behaviour",
+            "done": true
+          },
+          {
+            "t": "Alerts and service orders",
+            "done": true
+          },
+          {
+            "t": "Users, invitations and settings",
+            "done": true
+          },
+          {
+            "t": "Devices and connections under settings",
+            "done": true
+          },
+          {
+            "t": "Reports and exports",
+            "done": true
+          },
+          {
+            "t": "Driver area redesigned (phone first)",
+            "done": true
+          },
+          {
+            "t": "Garage portal and onboarding (group 9)",
+            "done": true
+          },
+          {
+            "t": "Phone layout checked on all screens",
+            "done": false
+          },
+          {
+            "t": "New design default for all customers",
+            "done": false
+          },
+          {
+            "t": "Old design removed",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Qualified leads from Google Maps signals",
+            "done": false
+          },
+          {
+            "t": "Lead scoring by fleet size and industry",
+            "done": false
+          },
+          {
+            "t": "Mail domains warmed up",
+            "done": false
+          },
+          {
+            "t": "50 cold mails a day running",
+            "done": false
+          },
+          {
+            "t": "Workshop partner campaign live",
+            "done": false
+          },
+          {
+            "t": "Savings calculator on the homepage",
+            "done": false
+          },
+          {
+            "t": "Demo booking from mail to calendar",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Large fleet contract signed",
+            "done": false
+          },
+          {
+            "t": "Trackers installed on the contract fleet",
+            "done": false
+          },
+          {
+            "t": "First fleet won through a workshop",
+            "done": false
+          },
+          {
+            "t": "5 paying fleets",
+            "done": false
+          },
+          {
+            "t": "10 paying fleets",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.81,
+      "stepsDone": 25,
+      "stepsTotal": 40,
+      "state": "moving",
+      "task": "Garage portal screens for workshops shipped",
+      "held": null,
+      "runsWeek": 38,
+      "lastPush": "2026-11-24T18:11:21Z",
+      "needs": [
+        {
+          "t": "Review the open redesign PRs: alerts, workshop, group 8 inventory",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/easyrep/pull/16",
+          "links": [
+            "https://github.com/tarekmania/easyrep/pull/16",
+            "https://github.com/tarekmania/easyrep/pull/17",
+            "https://github.com/tarekmania/easyrep/pull/18"
+          ]
+        }
+      ],
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.38
+      }
+    },
     {
       "id": "bilaro",
       "repo": "tarekmania/bilaro",
@@ -191,217 +402,6 @@
       "todayFrom": {
         "at": 3,
         "progress": 0.29
-      }
-    },
-    {
-      "id": "easyrep",
-      "repo": "tarekmania/easyrep",
-      "name": "EasyRep",
-      "color": "#8fb3ff",
-      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
-      "stations": [
-        "Telematics core",
-        "Website that converts",
-        "App redesign",
-        "Lead machine",
-        "Paying fleets"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Demo tenant & trip processing",
-            "done": true
-          },
-          {
-            "t": "MFK (vehicle inspection) tracking",
-            "done": true
-          },
-          {
-            "t": "Billing export",
-            "done": true
-          },
-          {
-            "t": "Location filter for the fleet",
-            "done": true
-          },
-          {
-            "t": "Faster per-vehicle trip scan",
-            "done": true
-          },
-          {
-            "t": "Alerts & fault codes",
-            "done": true
-          },
-          {
-            "t": "Invoicing through the platform",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "New homepage (Wise-style)",
-            "done": true
-          },
-          {
-            "t": "Press & ETH credibility section",
-            "done": true
-          },
-          {
-            "t": "Garage partner page /werkstaetten",
-            "done": true
-          },
-          {
-            "t": "Realistic app screenshots",
-            "done": true
-          },
-          {
-            "t": "Garage portal screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Per-user redesign switch",
-            "done": true
-          },
-          {
-            "t": "Login, forgot & reset redesigned",
-            "done": true
-          },
-          {
-            "t": "Overview, map & zones redesigned",
-            "done": true
-          },
-          {
-            "t": "New login shown to everyone",
-            "done": true
-          },
-          {
-            "t": "Security hardening pass",
-            "done": true
-          },
-          {
-            "t": "Vehicle list and vehicle page",
-            "done": true
-          },
-          {
-            "t": "Trips and driving behaviour",
-            "done": true
-          },
-          {
-            "t": "Alerts and service orders",
-            "done": true
-          },
-          {
-            "t": "Users, invitations and settings",
-            "done": true
-          },
-          {
-            "t": "Devices and connections under settings",
-            "done": true
-          },
-          {
-            "t": "Reports and exports",
-            "done": true
-          },
-          {
-            "t": "Driver area redesigned (phone first)",
-            "done": true
-          },
-          {
-            "t": "Garage portal and onboarding (group 9)",
-            "done": false
-          },
-          {
-            "t": "Phone layout checked on all screens",
-            "done": false
-          },
-          {
-            "t": "New design default for all customers",
-            "done": false
-          },
-          {
-            "t": "Old design removed",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Qualified leads from Google Maps signals",
-            "done": false
-          },
-          {
-            "t": "Lead scoring by fleet size and industry",
-            "done": false
-          },
-          {
-            "t": "Mail domains warmed up",
-            "done": false
-          },
-          {
-            "t": "50 cold mails a day running",
-            "done": false
-          },
-          {
-            "t": "Workshop partner campaign live",
-            "done": false
-          },
-          {
-            "t": "Savings calculator on the homepage",
-            "done": false
-          },
-          {
-            "t": "Demo booking from mail to calendar",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Large fleet contract signed",
-            "done": false
-          },
-          {
-            "t": "Trackers installed on the contract fleet",
-            "done": false
-          },
-          {
-            "t": "First fleet won through a workshop",
-            "done": false
-          },
-          {
-            "t": "5 paying fleets",
-            "done": false
-          },
-          {
-            "t": "10 paying fleets",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.75,
-      "stepsDone": 24,
-      "stepsTotal": 40,
-      "state": "moving",
-      "task": "App redesign: settings & driver area shipped",
-      "held": null,
-      "runsWeek": 34,
-      "lastPush": "2026-11-24T17:58:37Z",
-      "needs": [
-        {
-          "t": "Review the open redesign PRs: alerts, workshop, group 8 inventory",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/easyrep/pull/16",
-          "links": [
-            "https://github.com/tarekmania/easyrep/pull/16",
-            "https://github.com/tarekmania/easyrep/pull/17",
-            "https://github.com/tarekmania/easyrep/pull/18"
-          ]
-        }
-      ],
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.38
       }
     },
     {
@@ -1200,6 +1200,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T18:11:22.171Z",
-  "lastSeenPush": "2026-11-24T18:04:01Z"
+  "updatedAt": "2026-11-24T18:18:02.608Z",
+  "lastSeenPush": "2026-11-24T18:11:21Z"
 }

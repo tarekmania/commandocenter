@@ -139,7 +139,8 @@
         },
         {
           "t": "Garage portal and onboarding (group 9)",
-          "done": false
+          "done": true,
+          "ref": "a2a67ec"
         },
         {
           "t": "Phone layout checked on all screens",
@@ -214,17 +215,17 @@
       ]
     }
   ],
-  "task": "App redesign: settings & driver area shipped",
+  "task": "Garage portal screens for workshops shipped",
   "held": null,
   "evidence": [
+    "a2a67ec Merge pull request #23: New UI, workshop portal customers",
+    "88a306f Merge pull request #22: New UI, workshop portal orders",
+    "4dee065 New UI: workshop portal customers",
+    "37e641d New UI: workshop portal orders",
     "c6b459a Merge pull request #21: New UI, driver area (group 9b)",
     "6ad4328 Merge pull request #20: New UI, settings (group 9a)",
     "1b1d2d9 Merge pull request #19: New UI, reports and devices (group 8)",
-    "afb65ac Merge pull request #17: New UI, workshop (group 7)",
-    "11c601b Merge pull request #16: New UI, alerts (group 6)",
-    "0f31569 New UI: driver area (phone first)",
-    "457d3e3 New UI: settings with section menu",
-    "7ec6a9b New UI: reports and devices (Entwurf 3)"
+    "afb65ac Merge pull request #17: New UI, workshop (group 7)"
   ],
   "v": 4
 }
