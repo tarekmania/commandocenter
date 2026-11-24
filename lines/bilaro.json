@@ -41,6 +41,11 @@
           "t": "Pay supplier invoices via payment file",
           "done": true,
           "ref": "032833d"
+        },
+        {
+          "t": "Swiss payroll: payslips & Lohnausweis",
+          "done": true,
+          "ref": "752ce99"
         }
       ]
     },
@@ -178,17 +183,17 @@
       ]
     }
   ],
-  "task": "Phone receipts PR waits for merge",
+  "task": "Swiss payroll shipped: payslips & Lohnausweis",
   "held": null,
   "evidence": [
+    "c955241 Payroll: official Lohnausweis Formular 11 (pdf-lib), KS 45 source-tax rate income, L-GAV 2026 values",
     "open PR #1: Receipts from the phone: installable app and phone link",
+    "bfda129 Payroll: print fixes (Lohnausweis on one page, no page header), shorter labels, mobile run list",
+    "e078deb Payroll: extra runs without basic wage and without a second yearly-maximum share",
+    "752ce99 Payroll: employees, monthly runs, Swiss social insurances, source tax, GAV presets, booking, pain.001 payout, payslips, Lohnausweis",
     "2738741 Tester round 2: open invoices from the journal, xls reader, contact dedupe/merge, contact persons, due date edit, article numbers",
     "ee02c4d Claude connector: prepare and act tools (contacts, drafts, issue, bank, receipts, manual booking, reversal) with preview and confirm code",
-    "a5c1051 Claude connector: read tools (search, overview, documents, receipts, bank, statements, ledger, accounts, contacts)",
-    "0dab1ca Consent page: show the 10-minute expiry and explain an expired request",
-    "2c92149 Claude connector: MCP server on mcp.bilaro.ch, OAuth consent page, connected apps and app restrictions",
-    "f5a647b bexio-Übernahme und MWST nach Tester-Feedback",
-    "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen"
+    "a5c1051 Claude connector: read tools (search, overview, documents, receipts, bank, statements, ledger, accounts, contacts)"
   ],
   "v": 4
 }

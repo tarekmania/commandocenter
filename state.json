@@ -1,6 +1,198 @@
 {
-  "headline": "EasyRep shipped settings and the driver area today; EasyRep Sales is parked.",
+  "headline": "Seven lines are moving; Bilaro shipped Swiss payroll. EasyRep Sales is parked.",
   "lines": [
+    {
+      "id": "bilaro",
+      "repo": "tarekmania/bilaro",
+      "name": "Bilaro",
+      "color": "#3cb46e",
+      "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
+      "stations": [
+        "Core bookkeeping",
+        "bexio takeover",
+        "Year-end & VAT",
+        "AI connector",
+        "Tester-ready",
+        "Paying customers"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Chart of accounts, journal & statements",
+            "done": true
+          },
+          {
+            "t": "Receipts, bank & VAT",
+            "done": true
+          },
+          {
+            "t": "Period picker & open invoices",
+            "done": true
+          },
+          {
+            "t": "Dunning fees and default interest",
+            "done": true
+          },
+          {
+            "t": "Two-factor sign-in & team roles",
+            "done": true
+          },
+          {
+            "t": "Stripe subscription & webhook",
+            "done": true
+          },
+          {
+            "t": "Pay supplier invoices via payment file",
+            "done": true
+          },
+          {
+            "t": "Swiss payroll: payslips & Lohnausweis",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Import bexio contacts & invoices",
+            "done": true
+          },
+          {
+            "t": "Balance takeover by cut-off date",
+            "done": true
+          },
+          {
+            "t": "Fix takeover issues from feedback",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Year-end closing assistant",
+            "done": true
+          },
+          {
+            "t": "VAT reconciliation and MWST-XML export",
+            "done": true
+          },
+          {
+            "t": "Fixed assets with depreciation",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "MCP server with OAuth consent",
+            "done": true
+          },
+          {
+            "t": "Consent page expiry handling",
+            "done": true
+          },
+          {
+            "t": "Read tools: search, ledger, accounts",
+            "done": true
+          },
+          {
+            "t": "Write tools with preview & confirm",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Tester round 1: takeover & MWST",
+            "done": true
+          },
+          {
+            "t": "Tester round 2: invoices & contacts",
+            "done": true
+          },
+          {
+            "t": "Tester round 3: bank import & receipts",
+            "done": false
+          },
+          {
+            "t": "Design pass on all main screens",
+            "done": false
+          },
+          {
+            "t": "Receipt upload from the phone",
+            "done": false
+          },
+          {
+            "t": "Real bexio imports of 3 test companies",
+            "done": false
+          },
+          {
+            "t": "Help texts and first-login guide",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Own company closes 2026 in Bilaro",
+            "done": false
+          },
+          {
+            "t": "Pricing page on bilaro.ch",
+            "done": false
+          },
+          {
+            "t": "Self sign-up with trial and Stripe",
+            "done": false
+          },
+          {
+            "t": "First fiduciary partner using Bilaro",
+            "done": false
+          },
+          {
+            "t": "First 3 paying SMEs",
+            "done": false
+          },
+          {
+            "t": "First SME fully off bexio",
+            "done": false
+          },
+          {
+            "t": "10 paying SMEs",
+            "done": false
+          }
+        ]
+      ],
+      "at": 3,
+      "progress": 0.29,
+      "stepsDone": 20,
+      "stepsTotal": 32,
+      "state": "moving",
+      "task": "Swiss payroll shipped: payslips & Lohnausweis",
+      "held": null,
+      "runsWeek": 10,
+      "lastPush": "2026-11-24T18:04:01Z",
+      "needs": [
+        {
+          "t": "Review and merge the phone receipts PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/bilaro/pull/1",
+          "links": [
+            "https://github.com/tarekmania/bilaro/pull/1"
+          ]
+        },
+        {
+          "t": "Run tester round 3 (bank import & receipts) with the testers and share the feedback",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
+        {
+          "t": "Provide bexio export files of 3 test companies for the real import test",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        }
+      ],
+      "todayFrom": {
+        "at": 3,
+        "progress": 0.29
+      }
+    },
     {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
@@ -197,9 +389,14 @@
       "lastPush": "2026-11-24T17:58:37Z",
       "needs": [
         {
-          "t": "Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), work",
+          "t": "Review the open redesign PRs: alerts, workshop, group 8 inventory",
           "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/easyrep/pull/18"
+          "link": "https://github.com/tarekmania/easyrep/pull/16",
+          "links": [
+            "https://github.com/tarekmania/easyrep/pull/16",
+            "https://github.com/tarekmania/easyrep/pull/17",
+            "https://github.com/tarekmania/easyrep/pull/18"
+          ]
         }
       ],
       "todayFrom": {
@@ -356,17 +553,22 @@
         {
           "t": "Review the EasyRep trip import PR",
           "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/tischlein-lager/pull/1"
+          "link": "https://github.com/tarekmania/tischlein-lager/pull/1",
+          "links": [
+            "https://github.com/tarekmania/tischlein-lager/pull/1"
+          ]
         },
         {
           "t": "Schedule the on-site presentation to management in Staufen",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         },
         {
-          "t": "Give the plates of the Tischlein vans and confirm the tour gap (120 min) for the EasyRep m",
+          "t": "Give the plates of the Tischlein vans and confirm the tour gap (120 min) for the EasyRep match",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         }
       ],
       "todayFrom": {
@@ -500,17 +702,22 @@
         {
           "t": "Review and merge the live test checklist PR",
           "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1"
+          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1",
+          "links": [
+            "https://github.com/tarekmania/noble-drive-redo/pull/1"
+          ]
         },
         {
-          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check",
+          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         },
         {
           "t": "Plan the admin walkthrough with the B&G team",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         }
       ],
       "todayFrom": {
@@ -613,12 +820,16 @@
         {
           "t": "Review the sources check PR",
           "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/gta6-namehash/pull/1"
+          "link": "https://github.com/tarekmania/gta6-namehash/pull/1",
+          "links": [
+            "https://github.com/tarekmania/gta6-namehash/pull/1"
+          ]
         },
         {
-          "t": "Decide on a first release (tag v0.1 and GitHub release) now that README and licence are in",
+          "t": "Decide on a first release (tag v0.1 and GitHub release) now that README and licence are in place",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         }
       ],
       "todayFrom": {
@@ -758,197 +969,17 @@
       "lastPush": "2026-11-24T17:22:20Z",
       "needs": [
         {
-          "t": "Open the upstream PR from https://github.com/tarekmania/gta6-asset-info/tree/station/names",
+          "t": "Open the upstream PR from — \"Name eight more hashes\": case-sensitive joaat matches that fit the notes' meaning: clipDictionaryName, clipName (§17), ScaleY, Scal",
           "since": "2026-11-24",
-          "link": null
+          "link": "https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24",
+          "links": [
+            "https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24"
+          ]
         }
       ],
       "todayFrom": {
         "at": 2,
         "progress": 0.6
-      }
-    },
-    {
-      "id": "bilaro",
-      "repo": "tarekmania/bilaro",
-      "name": "Bilaro",
-      "color": "#3cb46e",
-      "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
-      "stations": [
-        "Core bookkeeping",
-        "bexio takeover",
-        "Year-end & VAT",
-        "AI connector",
-        "Tester-ready",
-        "Paying customers"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Chart of accounts, journal & statements",
-            "done": true
-          },
-          {
-            "t": "Receipts, bank & VAT",
-            "done": true
-          },
-          {
-            "t": "Period picker & open invoices",
-            "done": true
-          },
-          {
-            "t": "Dunning fees and default interest",
-            "done": true
-          },
-          {
-            "t": "Two-factor sign-in & team roles",
-            "done": true
-          },
-          {
-            "t": "Stripe subscription & webhook",
-            "done": true
-          },
-          {
-            "t": "Pay supplier invoices via payment file",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Import bexio contacts & invoices",
-            "done": true
-          },
-          {
-            "t": "Balance takeover by cut-off date",
-            "done": true
-          },
-          {
-            "t": "Fix takeover issues from feedback",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Year-end closing assistant",
-            "done": true
-          },
-          {
-            "t": "VAT reconciliation and MWST-XML export",
-            "done": true
-          },
-          {
-            "t": "Fixed assets with depreciation",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "MCP server with OAuth consent",
-            "done": true
-          },
-          {
-            "t": "Consent page expiry handling",
-            "done": true
-          },
-          {
-            "t": "Read tools: search, ledger, accounts",
-            "done": true
-          },
-          {
-            "t": "Write tools with preview & confirm",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Tester round 1: takeover & MWST",
-            "done": true
-          },
-          {
-            "t": "Tester round 2: invoices & contacts",
-            "done": true
-          },
-          {
-            "t": "Tester round 3: bank import & receipts",
-            "done": false
-          },
-          {
-            "t": "Design pass on all main screens",
-            "done": false
-          },
-          {
-            "t": "Receipt upload from the phone",
-            "done": false
-          },
-          {
-            "t": "Real bexio imports of 3 test companies",
-            "done": false
-          },
-          {
-            "t": "Help texts and first-login guide",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Own company closes 2026 in Bilaro",
-            "done": false
-          },
-          {
-            "t": "Pricing page on bilaro.ch",
-            "done": false
-          },
-          {
-            "t": "Self sign-up with trial and Stripe",
-            "done": false
-          },
-          {
-            "t": "First fiduciary partner using Bilaro",
-            "done": false
-          },
-          {
-            "t": "First 3 paying SMEs",
-            "done": false
-          },
-          {
-            "t": "First SME fully off bexio",
-            "done": false
-          },
-          {
-            "t": "10 paying SMEs",
-            "done": false
-          }
-        ]
-      ],
-      "at": 3,
-      "progress": 0.29,
-      "stepsDone": 19,
-      "stepsTotal": 31,
-      "state": "moving",
-      "task": "Phone receipts PR waits for merge",
-      "held": null,
-      "runsWeek": 6,
-      "lastPush": "2026-11-24T17:17:55Z",
-      "needs": [
-        {
-          "t": "Review and merge the phone receipts PR",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/bilaro/pull/1"
-        },
-        {
-          "t": "Run tester round 3 (bank import & receipts) with the testers and share the feedback",
-          "since": "2026-11-24",
-          "link": null
-        },
-        {
-          "t": "Provide bexio export files of 3 test companies for the real import test",
-          "since": "2026-11-24",
-          "link": null
-        }
-      ],
-      "todayFrom": {
-        "at": 3,
-        "progress": 0.29
       }
     },
     {
@@ -1039,9 +1070,12 @@
       "lastPush": "2026-11-17T19:23:14Z",
       "needs": [
         {
-          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so mer",
+          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so merge in order 1→5, or merge #5 alone and close the others. Checked on #5",
           "since": "2026-11-24",
-          "link": null
+          "link": "https://github.com/tarekmania/tutti-price-expert/pull/5",
+          "links": [
+            "https://github.com/tarekmania/tutti-price-expert/pull/5"
+          ]
         }
       ],
       "todayFrom": {
@@ -1134,19 +1168,22 @@
       "lastPush": "2026-11-04T18:36:01Z",
       "needs": [
         {
-          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who u",
+          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         },
         {
-          "t": "Decide what an industry template should add beyond today's per-industry question order and",
+          "t": "Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or pre",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         },
         {
-          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go i",
+          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go into it",
           "since": "2026-11-24",
-          "link": null
+          "link": null,
+          "links": []
         }
       ],
       "todayFrom": {
@@ -1163,6 +1200,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T18:04:22.700Z",
-  "lastSeenPush": "2026-11-24T17:58:37Z"
+  "updatedAt": "2026-11-24T18:11:22.171Z",
+  "lastSeenPush": "2026-11-24T18:04:01Z"
 }
