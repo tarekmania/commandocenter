@@ -64,6 +64,11 @@
         {
           "t": "Add more public name lists",
           "done": false
+        },
+        {
+          "t": "Checked RDR2 lists: not used",
+          "done": true,
+          "ref": "777215f"
         }
       ]
     },
@@ -90,9 +95,10 @@
       ]
     }
   ],
-  "task": "Refreshed the confirmed hash layer",
+  "task": "Checked RDR2 lists, kept GTA V sources only",
   "held": null,
   "evidence": [
+    "777215f Sources: GTA V lists only; RDR2 lists checked and not used",
     "d600231 Refresh confirmed layer",
     "fa69270 Refresh confirmed layer",
     "c96156d Add a confirmed layer: resolve as confirmed or candidate",
