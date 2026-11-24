@@ -1,103 +1,6 @@
 {
-  "headline": "Five lines are moving. Noble Drive and EasyRep Sales are parked.",
+  "headline": "Six lines are moving. EasyRep Sales is parked.",
   "lines": [
-    {
-      "id": "gta6-namehash",
-      "repo": "tarekmania/gta6-namehash",
-      "name": "GTA6 Namehash",
-      "color": "#f4c430",
-      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
-      "stations": [
-        "Hash dictionary",
-        "CLI lookup",
-        "Wider coverage",
-        "Adoption"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Joaat hashing: exact & lowercase",
-            "done": true
-          },
-          {
-            "t": "Build dictionary from public sources",
-            "done": true
-          },
-          {
-            "t": "~309k names, ~498k hashes committed",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Resolve hashes via CLI or stdin",
-            "done": true
-          },
-          {
-            "t": "Resolve hashes across files/trees",
-            "done": true
-          },
-          {
-            "t": "List unresolved hashes",
-            "done": true
-          },
-          {
-            "t": "Mark matches as candidates, not confirmed",
-            "done": true
-          },
-          {
-            "t": "Confirmed tier from other RE projects",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Close remaining format-note hashes",
-            "done": false
-          },
-          {
-            "t": "Add more public name lists",
-            "done": false
-          },
-          {
-            "t": "Checked RDR2 lists: not used",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Release with a clear README and licence",
-            "done": true
-          },
-          {
-            "t": "Announced in the GTA 6 research scene",
-            "done": false
-          },
-          {
-            "t": "Used by SixNG",
-            "done": false
-          },
-          {
-            "t": "Used inside GTA6 Asset Info",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.58,
-      "stepsDone": 10,
-      "stepsTotal": 15,
-      "state": "moving",
-      "task": "Checked RDR2 lists, kept GTA V sources only",
-      "held": null,
-      "runsWeek": 6,
-      "lastPush": "2026-11-24T17:23:59Z",
-      "needs": [],
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.25
-      }
-    },
     {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
@@ -202,7 +105,15 @@
             "done": false
           },
           {
+            "t": "Devices and connections under settings",
+            "done": false
+          },
+          {
             "t": "Reports and exports",
+            "done": false
+          },
+          {
+            "t": "Garage portal and onboarding (group 9)",
             "done": false
           },
           {
@@ -272,18 +183,276 @@
         ]
       ],
       "at": 1,
-      "progress": 0.54,
+      "progress": 0.47,
       "stepsDone": 19,
-      "stepsTotal": 37,
+      "stepsTotal": 39,
       "state": "moving",
       "task": "App redesign: trips & drivers shipped",
       "held": null,
       "runsWeek": 24,
-      "lastPush": "2026-11-24T17:23:47Z",
-      "needs": [],
+      "lastPush": "2026-11-24T17:28:34Z",
+      "needs": [
+        {
+          "t": "Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), work",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/easyrep/pull/18"
+        }
+      ],
       "todayFrom": {
         "at": 1,
         "progress": 0.38
+      }
+    },
+    {
+      "id": "noble-drive-redo",
+      "repo": "tarekmania/noble-drive-redo",
+      "name": "Noble Drive",
+      "color": "#d94f9a",
+      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
+      "stations": [
+        "Vehicle catalog",
+        "Booking flow",
+        "Admin & CRM",
+        "Live",
+        "Handed over"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Vehicle listing with logos",
+            "done": true
+          },
+          {
+            "t": "Grouped models, live availability",
+            "done": true
+          },
+          {
+            "t": "Multi-language site (DE/EN)",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Signature, contract & checkout",
+            "done": true
+          },
+          {
+            "t": "Pay-on-pickup wording update",
+            "done": true
+          },
+          {
+            "t": "Hourly billing",
+            "done": true
+          },
+          {
+            "t": "Payment step in checkout",
+            "done": true
+          },
+          {
+            "t": "Booking button re-enabled",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Collapsible admin sidebar",
+            "done": true
+          },
+          {
+            "t": "Booking delete with confirm dialog",
+            "done": true
+          },
+          {
+            "t": "Protocol/log on bookings",
+            "done": true
+          },
+          {
+            "t": "Locked down public writes/uploads",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Custom domain & DNS",
+            "done": true
+          },
+          {
+            "t": "Email notification infra",
+            "done": true
+          },
+          {
+            "t": "SMS notifications",
+            "done": true
+          },
+          {
+            "t": "Booking and reminder mails tested end to end",
+            "done": false
+          },
+          {
+            "t": "Real payment tested with a live booking",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Admin walkthrough with the client team",
+            "done": false
+          },
+          {
+            "t": "Test week with real bookings",
+            "done": false
+          },
+          {
+            "t": "Client feedback fixed",
+            "done": false
+          },
+          {
+            "t": "Client signs off",
+            "done": false
+          },
+          {
+            "t": "Final invoice paid",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.6,
+      "stepsDone": 15,
+      "stepsTotal": 22,
+      "state": "moving",
+      "task": "Live test checklist PR waits for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-24T17:27:05Z",
+      "needs": [
+        {
+          "t": "Review and merge the live test checklist PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1"
+        },
+        {
+          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check",
+          "since": "2026-11-24",
+          "link": null
+        },
+        {
+          "t": "Plan the admin walkthrough with the B&G team",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.4
+      }
+    },
+    {
+      "id": "gta6-namehash",
+      "repo": "tarekmania/gta6-namehash",
+      "name": "GTA6 Namehash",
+      "color": "#f4c430",
+      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
+      "stations": [
+        "Hash dictionary",
+        "CLI lookup",
+        "Wider coverage",
+        "Adoption"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Joaat hashing: exact & lowercase",
+            "done": true
+          },
+          {
+            "t": "Build dictionary from public sources",
+            "done": true
+          },
+          {
+            "t": "~309k names, ~498k hashes committed",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Resolve hashes via CLI or stdin",
+            "done": true
+          },
+          {
+            "t": "Resolve hashes across files/trees",
+            "done": true
+          },
+          {
+            "t": "List unresolved hashes",
+            "done": true
+          },
+          {
+            "t": "Mark matches as candidates, not confirmed",
+            "done": true
+          },
+          {
+            "t": "Confirmed tier from other RE projects",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Close remaining format-note hashes",
+            "done": false
+          },
+          {
+            "t": "Add more public name lists",
+            "done": false
+          },
+          {
+            "t": "Checked RDR2 lists: not used",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Release with a clear README and licence",
+            "done": true
+          },
+          {
+            "t": "Announced in the GTA 6 research scene",
+            "done": false
+          },
+          {
+            "t": "Used by SixNG",
+            "done": false
+          },
+          {
+            "t": "Used inside GTA6 Asset Info",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.58,
+      "stepsDone": 10,
+      "stepsTotal": 15,
+      "state": "moving",
+      "task": "RAGE-StringsDatabase PR waits for merge",
+      "held": null,
+      "runsWeek": 6,
+      "lastPush": "2026-11-24T17:23:59Z",
+      "needs": [
+        {
+          "t": "Review the sources check PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/gta6-namehash/pull/1"
+        },
+        {
+          "t": "Decide on a first release (tag v0.1 and GitHub release) now that README and licence are in",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.25
       }
     },
     {
@@ -416,7 +585,13 @@
       "held": null,
       "runsWeek": 49,
       "lastPush": "2026-11-24T17:22:20Z",
-      "needs": [],
+      "needs": [
+        {
+          "t": "Open the upstream PR from https://github.com/tarekmania/gta6-asset-info/tree/station/names",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
       "todayFrom": {
         "at": 2,
         "progress": 0.6
@@ -579,11 +754,27 @@
       "stepsDone": 19,
       "stepsTotal": 31,
       "state": "moving",
-      "task": "Tester round 2: invoices & contacts",
+      "task": "Phone receipts PR waits for merge",
       "held": null,
       "runsWeek": 6,
       "lastPush": "2026-11-24T17:17:55Z",
-      "needs": [],
+      "needs": [
+        {
+          "t": "Review and merge the phone receipts PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/bilaro/pull/1"
+        },
+        {
+          "t": "Run tester round 3 (bank import & receipts) with the testers and share the feedback",
+          "since": "2026-11-24",
+          "link": null
+        },
+        {
+          "t": "Provide bexio export files of 3 test companies for the real import test",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
       "todayFrom": {
         "at": 3,
         "progress": 0.29
@@ -682,134 +873,6 @@
       }
     },
     {
-      "id": "noble-drive-redo",
-      "repo": "tarekmania/noble-drive-redo",
-      "name": "Noble Drive",
-      "color": "#d94f9a",
-      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
-      "stations": [
-        "Vehicle catalog",
-        "Booking flow",
-        "Admin & CRM",
-        "Live",
-        "Handed over"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Vehicle listing with logos",
-            "done": true
-          },
-          {
-            "t": "Grouped models, live availability",
-            "done": true
-          },
-          {
-            "t": "Multi-language site (DE/EN)",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Signature, contract & checkout",
-            "done": true
-          },
-          {
-            "t": "Pay-on-pickup wording update",
-            "done": true
-          },
-          {
-            "t": "Hourly billing",
-            "done": true
-          },
-          {
-            "t": "Payment step in checkout",
-            "done": true
-          },
-          {
-            "t": "Booking button re-enabled",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Collapsible admin sidebar",
-            "done": true
-          },
-          {
-            "t": "Booking delete with confirm dialog",
-            "done": true
-          },
-          {
-            "t": "Protocol/log on bookings",
-            "done": true
-          },
-          {
-            "t": "Locked down public writes/uploads",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Custom domain & DNS",
-            "done": true
-          },
-          {
-            "t": "Email notification infra",
-            "done": true
-          },
-          {
-            "t": "SMS notifications",
-            "done": false
-          },
-          {
-            "t": "Booking and reminder mails tested end to end",
-            "done": false
-          },
-          {
-            "t": "Real payment tested with a live booking",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Admin walkthrough with the client team",
-            "done": false
-          },
-          {
-            "t": "Test week with real bookings",
-            "done": false
-          },
-          {
-            "t": "Client feedback fixed",
-            "done": false
-          },
-          {
-            "t": "Client signs off",
-            "done": false
-          },
-          {
-            "t": "Final invoice paid",
-            "done": false
-          }
-        ]
-      ],
-      "at": 2,
-      "progress": 0.4,
-      "stepsDone": 14,
-      "stepsTotal": 22,
-      "state": "parked",
-      "task": "Booking delete confirmation in admin",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-16T23:42:46Z",
-      "needs": [],
-      "todayFrom": {
-        "at": 2,
-        "progress": 0.4
-      }
-    },
-    {
       "id": "easyrep-sales",
       "repo": "tarekmania/easyrep-sales",
       "name": "EasyRep Sales",
@@ -892,7 +955,23 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-04T18:36:01Z",
-      "needs": [],
+      "needs": [
+        {
+          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who u",
+          "since": "2026-11-24",
+          "link": null
+        },
+        {
+          "t": "Decide what an industry template should add beyond today's per-industry question order and",
+          "since": "2026-11-24",
+          "link": null
+        },
+        {
+          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go i",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
       "todayFrom": {
         "at": 1,
         "progress": 0.4
@@ -912,6 +991,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T17:28:44.621Z",
-  "lastSeenPush": "2026-11-24T17:23:59Z"
+  "updatedAt": "2026-11-24T17:38:10.381Z",
+  "lastSeenPush": "2026-11-24T17:28:34Z"
 }

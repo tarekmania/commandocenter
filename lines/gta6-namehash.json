@@ -95,9 +95,10 @@
       ]
     }
   ],
-  "task": "Checked RDR2 lists, kept GTA V sources only",
+  "task": "RAGE-StringsDatabase PR waits for merge",
   "held": null,
   "evidence": [
+    "open PR #1: Sources: RAGE-StringsDatabase checked, README coverage updated",
     "777215f Sources: GTA V lists only; RDR2 lists checked and not used",
     "d600231 Refresh confirmed layer",
     "fa69270 Refresh confirmed layer",

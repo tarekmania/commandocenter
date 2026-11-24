@@ -135,6 +135,10 @@
           "ref": "a8bdb33"
         },
         {
+          "t": "Local ghost cars (before phase 2)",
+          "done": false
+        },
+        {
           "t": "Multiplayer phase 2: races & modes online",
           "done": false
         }
@@ -186,14 +190,14 @@
   "task": "Version 0.2.5: street dressing round 2",
   "held": null,
   "evidence": [
+    "prompts/tempo30/2026-11-24-local-ghosts.md: local ghosts planned",
     "8cbdae0 Version 0.2.5",
     "633b8e5 Street dressing round 2: billboards at the Swiss poster sizes",
     "493de27 Street dressing round 1: our ads in one atlas, billboards on walls",
     "da9e944 City survey round 2 (report only, nothing fixed)",
     "f85dc37 Batch 4: Zentrum rebuilt and imported (drive maps, road graph, lines)",
     "a39c441 Version 0.2.0: multiplayer phase 1 (changelog section)",
-    "92cc8a3 itch.io publish via butler",
-    "7a8fb04 Merge mp-phase1: multiplayer phase 1 (rooms by code, shared police, traffic, trams, buses)"
+    "92cc8a3 itch.io publish via butler"
   ],
   "v": 4
 }

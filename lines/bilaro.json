@@ -178,17 +178,17 @@
       ]
     }
   ],
-  "task": "Tester round 2: invoices & contacts",
+  "task": "Phone receipts PR waits for merge",
   "held": null,
   "evidence": [
+    "open PR #1: Receipts from the phone: installable app and phone link",
     "2738741 Tester round 2: open invoices from the journal, xls reader, contact dedupe/merge, contact persons, due date edit, article numbers",
     "ee02c4d Claude connector: prepare and act tools (contacts, drafts, issue, bank, receipts, manual booking, reversal) with preview and confirm code",
     "a5c1051 Claude connector: read tools (search, overview, documents, receipts, bank, statements, ledger, accounts, contacts)",
     "0dab1ca Consent page: show the 10-minute expiry and explain an expired request",
     "2c92149 Claude connector: MCP server on mcp.bilaro.ch, OAuth consent page, connected apps and app restrictions",
     "f5a647b bexio-Übernahme und MWST nach Tester-Feedback",
-    "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen",
-    "032833d Phase 2: Lieferantenrechnungen per Zahlungsdatei (pain.001) bezahlen"
+    "e263b20 Website: Jahresabschluss, MWST-XML, Zahlungsdatei, Zwei-Faktor und bexio-Kundenrechnungen"
   ],
   "v": 4
 }

@@ -94,7 +94,8 @@
         },
         {
           "t": "SMS notifications",
-          "done": false
+          "done": true,
+          "ref": "Tarek"
         },
         {
           "t": "Booking and reminder mails tested end to end",
@@ -132,9 +133,10 @@
       ]
     }
   ],
-  "task": "Booking delete confirmation in admin",
+  "task": "Live test checklist PR waits for merge",
   "held": null,
   "evidence": [
+    "open PR #1: Live test checklist; SMS key check before claiming the send",
     "c4eb854 Add booking delete with confirmation dialog in admin booking detail",
     "a3ce082 Rename Barzahlung to Bezahlung vor Ort across booking, emails and admin",
     "e51ce33 Scale vehicle logos to fit inside card image areas (object-contain)",
