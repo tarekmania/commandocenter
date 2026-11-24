@@ -39,4 +39,29 @@ The `<id>` is the line id on the map (the repo name in lower case). Every file h
 
 ## Adding a project
 
-Add `projects/<id>.md` with the parts above and add the project's repo to the repositories of the "Station master" scheduled task. Everything else (rating, map, detail view, the nightly work) picks it up by itself.
+Nothing to do. Every repo Tarek pushes to shows up on the map by itself, and the station master creates its project file from this template on its next run, with a guessed setup and a Needs Tarek item to confirm it. To keep a repo out of the nightly work, set its cadence to `paused`.
+
+## Template
+
+```
+# <Name>
+
+Setup:
+- Profile: build | lovable | contribute | local | plan
+- Repo: <owner>/<repo>
+- Cadence: daily | weekly | paused
+- Notes: <rules for agents on this project>
+
+Goal: <one sentence>
+
+Stations (in this order):
+1. <Station> (<what belongs to it>)
+
+Plan (open steps, in order; tick only with evidence):
+<Station>:
+- <step>
+
+## Needs Tarek
+
+## Log
+```

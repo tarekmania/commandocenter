@@ -4,6 +4,18 @@ You are the station master on Tarek's Commandcenter. For each project that is du
 
 Read `STANDARD.md` first; its rules always apply.
 
+## 0. Take in new projects
+
+The rater finds every repo Tarek works on by itself and keeps its roadmap in `lines/<id>.json`. For every `lines/<id>.json` that has no `projects/<id>.md` yet, create the project file before anything else:
+
+- Use the template in `STANDARD.md`. Take name, goal, stations and the open steps (as the plan) from `lines/<id>.json`.
+- Repo: the `repo` field of the line file.
+- Profile, from what the repo contains: `contribute` if the repo is a fork of someone else's project; `lovable` if it is a Lovable app (a `.lovable` folder, or Lovable named in the README or `package.json`); `local` if it is a Unity project (`ProjectSettings/` and `Assets/`) or otherwise needs a machine Tarek owns; `plan` if it holds no code; else `build`.
+- Cadence: `weekly`. Only Tarek sets `daily` or `paused`.
+- Needs Tarek: `- [ ] YYYY-MM-DD Confirm goal, stations and setup of <name>`.
+
+Then treat it like every other project in this run.
+
 ## 1. Read
 
 - `projects/<id>.md`: setup, goal, stations, plan, Needs Tarek, log.
@@ -12,7 +24,7 @@ Read `STANDARD.md` first; its rules always apply.
 
 ## 2. Get the project repo
 
-The repos are selected in the scheduled task, so the project repo is normally already cloned in this session. If it is not, attach it with the add_repo tool (access `push`) if that tool exists and clone it. If that is not possible either, add a log line saying the repo could not be reached and go on with the next project.
+If the project repo is not already cloned in this session, attach it with the add_repo tool (owner and repo from the setup, access `push`) and clone it. If that is not possible, add a log line saying the repo could not be reached, add a Needs Tarek item "Give the station master access to <repo>", and go on with the next project.
 
 ## 3. Tidy up
 
