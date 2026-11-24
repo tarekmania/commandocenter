@@ -206,12 +206,6 @@
       "lastPush": "2026-11-24T18:52:43Z",
       "needs": [
         {
-          "t": "New station «Payroll» added from today's work; say if it belongs somewhere else or what is still missing in it",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        },
-        {
           "t": "Review and merge the phone receipts PR",
           "since": "2026-11-24",
           "link": "https://github.com/tarekmania/bilaro/pull/1",
@@ -230,6 +224,16 @@
           "since": "2026-11-24",
           "link": null,
           "links": []
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: main deploys the live app that testers use"
         }
       ],
       "profile": "build",
@@ -446,6 +450,12 @@
           ]
         }
       ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: live product with paying fleets, synced with Lovable"
+        }
+      ],
       "profile": "lovable",
       "draft": false,
       "todayFrom": {
@@ -615,10 +625,20 @@
           "links": []
         },
         {
-          "t": "Give the plates of the Tischlein vans and confirm the tour gap (120 min) for the EasyRep match",
+          "t": "Enter the plates of the Tischlein vans in the tool's settings for the EasyRep match (not in this public repo)",
           "since": "2026-11-24",
           "link": null,
           "links": []
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "The EasyRep match keeps a 120 min gap between two trips as one tour; it can be changed in the settings later"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: built for a client who will run its warehouses on it"
         }
       ],
       "profile": "build",
@@ -773,6 +793,12 @@
           "links": []
         }
       ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: client project, B&G's customers book on it"
+        }
+      ],
       "profile": "build",
       "draft": false,
       "todayFrom": {
@@ -849,6 +875,10 @@
             "done": true
           },
           {
+            "t": "Release v0.1 tagged",
+            "done": false
+          },
+          {
             "t": "Announced in the GTA 6 research scene",
             "done": false
           },
@@ -863,29 +893,24 @@
         ]
       ],
       "at": 1,
-      "progress": 0.58,
+      "progress": 0.53,
       "stepsDone": 10,
-      "stepsTotal": 15,
+      "stepsTotal": 16,
       "doneToday": 0,
       "state": "moving",
       "task": "RAGE-StringsDatabase PR waits for merge",
       "held": null,
       "runsWeek": 6,
       "lastPush": "2026-11-24T17:23:59Z",
-      "needs": [
+      "needs": [],
+      "decisions": [
         {
-          "t": "Review the sources check PR",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/gta6-namehash/pull/1",
-          "links": [
-            "https://github.com/tarekmania/gta6-namehash/pull/1"
-          ]
+          "on": "2026-11-24",
+          "t": "The sources check pull request is reviewed and merged by the station master (Merge auto), no review by Tarek"
         },
         {
-          "t": "Decide on a first release (tag v0.1 and GitHub release) now that README and licence are in place",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
+          "on": "2026-11-24",
+          "t": "First release v0.1 is tagged once the sources check is merged"
         }
       ],
       "profile": "build",
@@ -1036,6 +1061,12 @@
           ]
         }
       ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: pull requests to the upstream project go out under his name"
+        }
+      ],
       "profile": "contribute",
       "draft": false,
       "todayFrom": {
@@ -1130,14 +1161,15 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-17T19:23:14Z",
-      "needs": [
+      "needs": [],
+      "decisions": [
         {
-          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so merge in order 1→5, or merge #5 alone and close the others. Checked on #5",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/tutti-price-expert/pull/5",
-          "links": [
-            "https://github.com/tarekmania/tutti-price-expert/pull/5"
-          ]
+          "on": "2026-11-24",
+          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
         }
       ],
       "profile": "build",
@@ -1198,11 +1230,11 @@
             "done": false
           },
           {
-            "t": "Templates for the top industries",
+            "t": "Example analysis for the top industries",
             "done": false
           },
           {
-            "t": "Link to it from the demo booking mail",
+            "t": "Tool linked in the sales team's demo prep",
             "done": false
           }
         ],
@@ -1237,18 +1269,20 @@
           "since": "2026-11-24",
           "link": null,
           "links": []
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Merge is auto: internal tool for the sales team, no database, a bad change is undone with one revert"
         },
         {
-          "t": "Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or pre",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
+          "on": "2026-11-24",
+          "t": "Industry templates get a filled example analysis per industry; preset answers are left out so every talk stays open"
         },
         {
-          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go into it",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
+          "on": "2026-11-24",
+          "t": "«Demo booking mail» is read as the confirmation mail a prospect gets after booking a demo; the internal tool link stays out of it, so the step becomes «Tool lin"
         }
       ],
       "profile": "build",
@@ -1278,7 +1312,7 @@
     "gta6-asset-info": "#f2892b"
   },
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T19:10:01.492Z",
+  "updatedAt": "2026-11-24T19:17:09.038Z",
   "lastSeenPush": "2026-11-24T19:08:00Z",
   "heads": {
     "tarekmania": "b2d08ae91ebd",
@@ -1294,14 +1328,14 @@
   },
   "projectHashes": {
     "tarekmania": null,
-    "bilaro": "7033c5754a43",
-    "easyrep": "358403e611a6",
-    "tischlein-lager": "afee8ddc543d",
-    "noble-drive-redo": "124661619fe4",
-    "gta6-namehash": "0c1fab59c403",
-    "gta6-asset-info": "8a6a62603671",
-    "tutti-price-expert": "6e1adcab1e52",
-    "easyrep-sales": "227cfa057411",
-    "tempo30": "4a746257a620"
+    "bilaro": "f96e10df49a3",
+    "easyrep": "7ad8d47c0d33",
+    "tischlein-lager": "e004e5b4456a",
+    "noble-drive-redo": "61e443482e69",
+    "gta6-namehash": "aedd0f27f08c",
+    "gta6-asset-info": "b25b85e0d161",
+    "tutti-price-expert": "632beaa70abd",
+    "easyrep-sales": "cca5fc229bc5",
+    "tempo30": "7a9c3f0822eb"
   }
 }
