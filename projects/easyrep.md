@@ -73,6 +73,9 @@ Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A st
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Merge stays with Tarek: live product with paying fleets, synced with Lovable
+
 ## Needs Tarek
 - [ ] 2026-11-24 Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), workshop (https://github.com/tarekmania/easyrep/pull/17), group 8 inventory (https://github.com/tarekmania/easyrep/pull/18)
 

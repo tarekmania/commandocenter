@@ -52,6 +52,9 @@ Goal: Every GTA VI asset format is documented and named, so the scene can read a
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Merge stays with Tarek: pull requests to the upstream project go out under his name
+
 ## Needs Tarek
 - [ ] 2026-11-24 Open the upstream PR from https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24 — "Name eight more hashes": case-sensitive joaat matches that fit the notes' meaning: clipDictionaryName, clipName (§17), ScaleY, ScaleX, Indices, AspectRatio (§11), volOuterColour (§7), probably Category (§19).
 

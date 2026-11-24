@@ -58,10 +58,14 @@ Goal: Tischlein deck dich runs its warehouses on this tool instead of Rocklog, a
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 The EasyRep match keeps a 120 min gap between two trips as one tour; it can be changed in the settings later
+- 2026-11-24 Merge stays with Tarek: built for a client who will run its warehouses on it
+
 ## Needs Tarek
 - [ ] 2026-11-24 Review the EasyRep trip import PR (https://github.com/tarekmania/tischlein-lager/pull/1)
 - [ ] 2026-11-24 Schedule the on-site presentation to management in Staufen
-- [ ] 2026-11-24 Give the plates of the Tischlein vans and confirm the tour gap (120 min) for the EasyRep match
+- [ ] 2026-11-24 Enter the plates of the Tischlein vans in the tool's settings for the EasyRep match (not in this public repo)
 
 ## Log
 - 2026-11-24: Built the import of EasyRep's trip export («Fahrten einzeln») into the driver-record comparison, with tests (https://github.com/tarekmania/tischlein-lager/pull/1)

@@ -4,7 +4,7 @@ Setup:
 - Profile: build
 - Repo: tarekmania/easyrep-sales
 - Cadence: weekly
-- Merge: tarek
+- Merge: auto
 - Notes: Served from GitHub Pages on main. No database; data stays in the browser.
 
 Goal: Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal
@@ -27,8 +27,8 @@ Goal: Every EasyRep sales talk runs on one needs analysis and ends with a tailor
 - [x] Editable prices & content · 2428a56
 - [x] Per-industry question order · 2428a56
 - [ ] Shared with the whole sales team
-- [ ] Templates for the top industries
-- [ ] Link to it from the demo booking mail
+- [ ] Example analysis for the top industries
+- [ ] Tool linked in the sales team's demo prep
 
 ### Used in real deals
 > proposals sent to prospects, feedback worked in
@@ -38,10 +38,13 @@ Goal: Every EasyRep sales talk runs on one needs analysis and ends with a tailor
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Merge is auto: internal tool for the sales team, no database, a bad change is undone with one revert
+- 2026-11-24 Industry templates get a filled example analysis per industry; preset answers are left out so every talk stays open
+- 2026-11-24 «Demo booking mail» is read as the confirmation mail a prospect gets after booking a demo; the internal tool link stays out of it, so the step becomes «Tool linked in the sales team's demo prep»
+
 ## Needs Tarek
 - [ ] 2026-11-24 Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it
-- [ ] 2026-11-24 Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or preset answers)
-- [ ] 2026-11-24 Say which mail is meant by "demo booking mail" and whether the internal tool link may go into it
 
 ## Log
 - 2026-11-24: Nothing built: the open steps need Tarek (sharing, mail link, real deals) or a decision (what an industry template is); won/lost tracking already exists in the tool

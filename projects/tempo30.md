@@ -21,7 +21,7 @@ Goal: Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that playe
 - [x] Stutter/perf fixes & logging · fa16648
 
 ### Zurich city
-> drivable Zurich, landmarks, street dressing; final map about 15 to 20 km
+> drivable Zurich, landmarks, street dressing
 - [x] Import POLYGON City/Town · b98b01a
 - [x] Zurich landmarks (3 churches) · 2332811
 - [x] Facade kit per building type · 4bc9ff4
@@ -30,7 +30,6 @@ Goal: Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that playe
 - [x] Pigeons & radio (city atmosphere) · 5b047e8
 - [ ] Fix city survey round 2 bugs
 - [ ] Re-run city survey after fixes
-- [ ] More districts, map 15-20 km
 
 ### Traffic & police
 > traffic, trams, buses, pedestrians, chases, fines
@@ -48,6 +47,10 @@ Goal: Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that playe
 - [ ] Local ghost cars (before phase 2)
 - [ ] Multiplayer phase 2: races & modes online
 
+### City growth
+> more districts, final map about 15 to 20 km
+- [ ] More districts, map 15-20 km
+
 ### Public reveal
 > Steam page, first Reddit post, demo build
 - [ ] Name and trademark check
@@ -64,9 +67,11 @@ Goal: Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that playe
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Order follows the repo's multiplayer plan: more districts move into a new station «City growth» after multiplayer phase 2; the open survey fixes stay in «Zurich city»
+
 ## Needs Tarek
 - [ ] 2026-11-24 Run the local ghosts prompt in Claude Code and playtest it (prompts/tempo30/2026-11-24-local-ghosts.md)
-- [ ] 2026-11-24 Confirm the order: the repo's multiplayer plan puts city growth after multiplayer phase 2, while the stations list Zurich city first; the plan above follows the repo
 
 ## Log
 - 2026-11-24: Wrote the Claude Code prompt for local ghost cars, the planned step before multiplayer phase 2 (prompts/tempo30/2026-11-24-local-ghosts.md); plan reordered to match the repo's multiplayer plan

@@ -53,6 +53,9 @@ Goal: B&G Autovermietung's customers book and pay online, and the team runs ever
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Merge stays with Tarek: client project, B&G's customers book on it
+
 ## Needs Tarek
 - [ ] 2026-11-24 Review and merge the live test checklist PR (https://github.com/tarekmania/noble-drive-redo/pull/1)
 - [ ] 2026-11-24 Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists

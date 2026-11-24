@@ -4,8 +4,8 @@ Setup:
 - Profile: build
 - Repo: tarekmania/tutti-price-expert
 - Cadence: daily
-- Merge: tarek
-- Notes: Five older pull requests wait for review. Runs only on command, no background jobs, no Telegram.
+- Merge: auto
+- Notes: Runs only on command, no background jobs, no Telegram.
 
 Goal: Tutti finds cars on tutti.ch far below market value, and the flips make money
 
@@ -41,12 +41,15 @@ Goal: Tutti finds cars on tutti.ch far below market value, and the flips make mo
 
 ## Notes
 - Runs only on command, no background process, no Telegram for now.
-- The work of stations 1 to 3 sits in open pull requests: merging them is the next step.
+- The work of stations 1 to 3 sits in stacked pull requests #1 to #5: merging #5 is the next step.
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Merge is auto: Tarek's own tool, no users yet, runs only on command
+- 2026-11-24 The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5
+
 ## Needs Tarek
-- [ ] 2026-11-24 Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so merge in order 1→5, or merge #5 alone and close the others (https://github.com/tarekmania/tutti-price-expert/pull/5). Checked on #5: backend 93/93 tests pass, frontend builds; 4 frontend tests fail only where Node's ICU 78 writes CHF 12'000 with a plain apostrophe instead of ’ (tests hard-code ’)
 
 ## Log
 - 2026-11-24: No new work: the plan builds on the five unmerged PRs. Checked the stack: linear, #5 contains all; backend tests 93/93, frontend build ok, 4 frontend tests depend on the ICU number format

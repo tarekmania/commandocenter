@@ -77,8 +77,11 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 
 ## Done (Tarek's word)
 
+## Decisions
+- 2026-11-24 Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping
+- 2026-11-24 Merge stays with Tarek: main deploys the live app that testers use
+
 ## Needs Tarek
-- [ ] 2026-11-24 New station «Payroll» added from today's work; say if it belongs somewhere else or what is still missing in it
 - [ ] 2026-11-24 Review and merge the phone receipts PR (https://github.com/tarekmania/bilaro/pull/1)
 - [ ] 2026-11-24 Run tester round 3 (bank import & receipts) with the testers and share the feedback
 - [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test

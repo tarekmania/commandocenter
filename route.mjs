@@ -5,7 +5,7 @@ const clean = s => String(s || '').trim();
 
 export function parseProject(md) {
   if (!md) return null;
-  const out = { name: null, setup: {}, goal: null, stations: [], needs: [], done: [] };
+  const out = { name: null, setup: {}, goal: null, stations: [], needs: [], done: [], decisions: [] };
   const lines = md.split('\n');
   let section = null, station = null;
   for (const raw of lines) {
@@ -14,7 +14,7 @@ export function parseProject(md) {
     if ((m = line.match(/^# (.+)$/)) && !out.name) { out.name = clean(m[1]); continue; }
     if ((m = line.match(/^## (.+)$/))) {
       const t = clean(m[1]).toLowerCase();
-      section = t.startsWith('route') ? 'route' : t.startsWith('needs') ? 'needs' : t.startsWith('done') ? 'done' : t.startsWith('log') ? 'log' : 'other';
+      section = t.startsWith('route') ? 'route' : t.startsWith('needs') ? 'needs' : t.startsWith('done') ? 'done' : t.startsWith('decision') ? 'decisions' : t.startsWith('log') ? 'log' : 'other';
       station = null;
       continue;
     }
@@ -38,6 +38,8 @@ export function parseProject(md) {
     }
     if (section === 'needs' && (m = line.match(/^\s*[-*]\s+\[ \]\s+(.+)$/))) out.needs.push(clean(m[1]));
     if (section === 'done' && (m = line.match(/^\s*[-*]\s+(.+)$/))) out.done.push(clean(m[1]));
+    // "- YYYY-MM-DD what Claude decided, and why"
+    if (section === 'decisions' && (m = line.match(/^\s*[-*]\s+(?:(\d{4}-\d{2}-\d{2})\s*[:·-]?\s*)?(.+)$/))) out.decisions.push({ on: m[1] || null, t: clean(m[2]) });
   }
   out.stations = out.stations.filter(s => s.steps.length);
   return out;

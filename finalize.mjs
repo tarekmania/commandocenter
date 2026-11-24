@@ -91,6 +91,7 @@ for (const e of evidence.repos) {
     runsWeek: Math.min(99, e.commits7d || 0),
     lastPush: e.pushedAt || p?.lastPush || null,
     needs: needsOf(proj?.needs || []),
+    decisions: (proj?.decisions || []).slice().sort((a, b) => String(b.on || '').localeCompare(String(a.on || ''))).slice(0, 6).map(d => ({ on: d.on, t: str(d.t.replace(/\(?\s*https?:\/\/[^\s)]+\)?/g, '').trim(), 160) })),
     profile: proj?.setup?.profile || null,
     draft: !proj
   };
