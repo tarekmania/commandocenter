@@ -1,5 +1,5 @@
 // Builds the screen state. No AI decisions here: the route comes from projects/<id>.md
-// (or the rater's first draft for new repos), the state from the push dates, the order from PRIORITY.md.
+// (or the rater's first draft for new repos), the state from the push dates, the order from the most recent work.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseProject } from './route.mjs';
 
@@ -14,8 +14,6 @@ const str = (v, max) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, m
 const PALETTE = ['#f4c430', '#3cb46e', '#f2892b', '#8fb3ff', '#c98b4f', '#d94f9a', '#a8c83a', '#1fb5b0', '#e8706a', '#b39ddb'];
 const MAX_ON_MAP = 8;
 
-const priority = (text('PRIORITY.md') || '').split('\n').map(l => (l.match(/^\s*\d+\.\s+([\w.-]+)/) || [])[1]).filter(Boolean);
-const rank = id => { const i = priority.indexOf(id); return i < 0 ? 999 : i; };
 
 function cleanRoute(stations) {
   if (!Array.isArray(stations) || stations.length < 2 || stations.length > 8) return null;
@@ -97,11 +95,11 @@ for (const e of evidence.repos) {
   candidates.push(out);
 }
 
-// The map: held lines always, then by Tarek's priority, then by the most recent push. Depot lines stay off.
-const byPriority = (a, b) => rank(a.id) - rank(b.id) || String(b.lastPush).localeCompare(String(a.lastPush));
-const live = candidates.filter(l => l.state !== 'depot').sort(byPriority);
-const onMap = [...live.filter(l => l.state === 'held'), ...live.filter(l => l.state !== 'held')].slice(0, MAX_ON_MAP).sort(byPriority);
-const depot = candidates.filter(l => !onMap.includes(l)).sort(byPriority);
+// The map: the line worked on last is on top. Held lines are always on the map. Depot lines stay off.
+const byLastWork = (a, b) => String(b.lastPush).localeCompare(String(a.lastPush));
+const live = candidates.filter(l => l.state !== 'depot').sort(byLastWork);
+const onMap = [...live.filter(l => l.state === 'held'), ...live.filter(l => l.state !== 'held')].slice(0, MAX_ON_MAP).sort(byLastWork);
+const depot = candidates.filter(l => !onMap.includes(l)).sort(byLastWork);
 
 // Colors stay with their line; new lines take the first free one.
 const used = new Set();

@@ -1,6 +1,6 @@
 # Priority
 
-Tarek's order of importance. It decides which project gets his review time first, and the order of the lines on the map. Change it any time; it applies from the next run.
+Tarek's order of importance. It decides which project gets his review time first. Change it any time; it applies from the next run.
 
 Review budget: 3 open pull requests from the station master in total, across all projects.
 

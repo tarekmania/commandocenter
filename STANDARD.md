@@ -21,7 +21,7 @@ The `<id>` is the line id on the map (the repo name in lower case). This file is
 
 ## Priority and review budget: `PRIORITY.md`
 
-One ordered list of project ids, most important first, and the review budget: how many open pull requests from the station master may wait for Tarek at the same time, across all projects. Tarek's review time is the scarce resource; the list decides who gets it. The map shows the lines in this order. Changing it takes one edit and applies from the next run.
+One ordered list of project ids, most important first, and the review budget: how many open pull requests from the station master may wait for Tarek at the same time, across all projects. Tarek's review time is the scarce resource; the list decides who gets it. The map is not ordered by it: there, the line worked on last is on top. Changing it takes one edit and applies from the next run.
 
 ## Profiles
 
