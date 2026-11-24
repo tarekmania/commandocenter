@@ -194,7 +194,7 @@
       "task": "App redesign: settings & driver area shipped",
       "held": null,
       "runsWeek": 34,
-      "lastPush": "2026-11-24T17:50:45Z",
+      "lastPush": "2026-11-24T17:58:37Z",
       "needs": [
         {
           "t": "Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), work",
@@ -1163,6 +1163,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T17:56:52.576Z",
-  "lastSeenPush": "2026-11-24T17:50:45Z"
+  "updatedAt": "2026-11-24T18:04:22.700Z",
+  "lastSeenPush": "2026-11-24T17:58:37Z"
 }
