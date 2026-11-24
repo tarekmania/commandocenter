@@ -17,7 +17,7 @@ The rater finds every repo Tarek works on by itself and writes a first draft of 
 
 ## 1. Hear Tarek
 
-Before working on any project, find out what Tarek said since the last run (the date of the newest log line in `projects/*.md`, or the last 7 days). Use what this session offers, and skip what it does not:
+Chats normally record what Tarek says right away through the Commandcenter connector (commits saying "Recorded from a Claude chat"). This step catches what they missed. Before working on any project, find out what Tarek said since the last run (the date of the newest log line in `projects/*.md`, or the last 7 days). Use what this session offers, and skip what it does not:
 
 - Memory: read the memory files about his projects (`/areas/…`, matched by project name and aliases).
 - Past chats: list the recent chats since that date and search them by project name (for example "Bilaro", "Tempo30", "flip finder").

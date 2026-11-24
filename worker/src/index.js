@@ -1,7 +1,9 @@
 // Commandcenter worker
 // 1. Every minute: looks for new pushes in Tarek's repos and wakes the rater in GitHub Actions.
 // 2. Serves the wall screen and its state to the Mac mini (protected by SCREEN_KEY).
+// 3. /mcp/<token>: the Commandcenter connector, so Claude chats write project changes straight into the repo.
 import SCREEN from '../../screen/index.html';
+import { handleMcp, connectorToken } from './mcp.js';
 
 const API = 'https://api.github.com';
 const CC = 'tarekmania/commandocenter';
@@ -99,11 +101,19 @@ export default {
 
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname.startsWith('/mcp/') && env.SCREEN_KEY) {
+      if (url.pathname.slice(5).replace(/\/$/, '') !== await connectorToken(env)) return new Response('Not found', { status: 404 });
+      return handleMcp(request, env);
+    }
     const key = url.searchParams.get('key');
     if (!env.SCREEN_KEY || key !== env.SCREEN_KEY) return new Response('Not found', { status: 404 });
 
     if (url.pathname === '/diag') {
       return new Response(JSON.stringify(await diagnose(env), null, 2), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
+    }
+
+    if (url.pathname === '/connector') {
+      return new Response(`${url.origin}/mcp/${await connectorToken(env)}\n`, { headers: { 'content-type': 'text/plain', 'cache-control': 'no-store' } });
     }
 
     if (url.pathname === '/screen-version') {

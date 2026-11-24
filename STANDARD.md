@@ -14,7 +14,7 @@ What Tarek says always wins over what Claude decided: in a chat, in "## Done (Ta
 
 ## Listening to Tarek
 
-Tarek talks about his projects in Claude chats, not in these files. The station master reads what he said (step 2 of `WORKER.md`) and turns it into changes. Any Claude session that has this repo and talks with Tarek about a project updates the project file in the same session.
+Tarek talks about his projects in Claude chats, not in these files. Every chat has the Commandcenter connector (served by the worker at `/mcp/…`): when Tarek says something about a project, the chat records it in the project file right away, as one commit to `main`, and the screen follows within minutes. Any Claude session that has this repo does the same with git. The station master's step 1 catches up on whatever a chat missed.
 
 Only Tarek's own words count. A suggestion Claude made in a chat is not a decision until Tarek agreed to it. This repo is public: write only the project-level result (a goal, a station, a step, a rule), never personal details, client names beyond the project name, prices, contract terms, plates or other personal data.
 
