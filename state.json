@@ -1,5 +1,5 @@
 {
-  "headline": "Bilaro reached Payroll. Six lines are moving.",
+  "headline": "Bilaro reached Payroll. Seven lines are moving.",
   "lines": [
     {
       "id": "gta6-namehash",
@@ -74,10 +74,11 @@
           },
           {
             "t": "Announced in the GTA 6 research scene",
-            "done": false
+            "done": true,
+            "on": "2026-11-23"
           },
           {
-            "t": "Used by SixNG",
+            "t": "Used by SixNG (import pull request waiting upstream)",
             "done": false
           },
           {
@@ -87,8 +88,8 @@
         ]
       ],
       "at": 1,
-      "progress": 0.53,
-      "stepsDone": 10,
+      "progress": 0.73,
+      "stepsDone": 11,
       "stepsTotal": 16,
       "doneToday": 0,
       "state": "moving",
@@ -98,6 +99,10 @@
       "lastPush": "2026-11-24T21:51:36Z",
       "needs": [],
       "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Listing in the scene's awesome list counts as the announcement; Tarek's fork of that list stays off the map, its work belongs here"
+        },
         {
           "on": "2026-11-24",
           "t": "The sources check pull request is reviewed and merged by the station master (Merge auto), no review by Tarek"
@@ -1076,6 +1081,124 @@
       "color": "#f2892b"
     },
     {
+      "id": "health-center",
+      "repo": null,
+      "name": "Health Center",
+      "goal": "One Android app holds food, training, notes and watch data, and an AI answers from all of it",
+      "stations": [
+        "Plan",
+        "Food",
+        "Training",
+        "Body and watch",
+        "AI overview"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Features and requirements set",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Data model for food, training, notes and body data",
+            "done": false
+          },
+          {
+            "t": "Stack chosen: Android web app with its own data store",
+            "done": false
+          },
+          {
+            "t": "Repo created and linked here",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Log a meal by chat, voice or photo",
+            "done": false
+          },
+          {
+            "t": "Calorie estimate per meal",
+            "done": false
+          },
+          {
+            "t": "Save recipes, also from Instagram cooking videos",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Exercises with sets and reps",
+            "done": false
+          },
+          {
+            "t": "Training plans",
+            "done": false
+          },
+          {
+            "t": "History per exercise",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Notes on sensations and issues",
+            "done": false
+          },
+          {
+            "t": "Smartwatch connected: heart rate and steps",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "AI answers from all the data",
+            "done": false
+          },
+          {
+            "t": "Weekly overview",
+            "done": false
+          },
+          {
+            "t": "Used every day on the phone",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 1,
+      "stepsTotal": 15,
+      "doneToday": 1,
+      "state": "moving",
+      "task": "Next: Data model for food, training, notes and body data",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-24T12:00:00Z",
+      "needs": [],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "Added to the Commandcenter without a repo: the plan exists in chats; the line shows up now and gets its repo when one is created"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Profile plan for now: the station master writes the data model and stack proposal into docs/health-center/ before any code"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge auto: Tarek's own app with no other users"
+        }
+      ],
+      "profile": "plan",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      },
+      "color": "#a8c83a"
+    },
+    {
       "id": "tutti-price-expert",
       "repo": "tarekmania/tutti-price-expert",
       "name": "Tutti",
@@ -1179,122 +1302,14 @@
         "progress": 0
       },
       "color": "#c98b4f"
-    },
-    {
-      "id": "easyrep-sales",
-      "repo": "tarekmania/easyrep-sales",
-      "name": "EasyRep Sales",
-      "goal": "Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal",
-      "stations": [
-        "Needs analysis",
-        "Proposal",
-        "Team rollout",
-        "Used in real deals"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Standard question flow",
-            "done": true
-          },
-          {
-            "t": "Save/load analysis as a file",
-            "done": true
-          },
-          {
-            "t": "Import vehicle lists (Excel)",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Branded PDF proposal in-browser",
-            "done": true
-          },
-          {
-            "t": "Solutions text mapped to customer pains",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Editable prices & content",
-            "done": true
-          },
-          {
-            "t": "Per-industry question order",
-            "done": true
-          },
-          {
-            "t": "Shared with the whole sales team",
-            "done": false
-          },
-          {
-            "t": "Example analysis for the top industries",
-            "done": false
-          },
-          {
-            "t": "Tool linked in the sales team's demo prep",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "First 5 proposals sent to prospects",
-            "done": false
-          },
-          {
-            "t": "Sales team feedback worked in",
-            "done": false
-          },
-          {
-            "t": "Outcome noted per proposal (won or lost)",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.4,
-      "stepsDone": 7,
-      "stepsTotal": 13,
-      "doneToday": 0,
-      "state": "parked",
-      "task": "Shipped the browser-based needs analysis tool",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-04T18:36:01Z",
-      "needs": [
-        {
-          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        }
-      ],
-      "decisions": [
-        {
-          "on": "2026-11-24",
-          "t": "Merge is auto: internal tool for the sales team, no database, a bad change is undone with one revert"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Industry templates get a filled example analysis per industry; preset answers are left out so every talk stays open"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "«Demo booking mail» is read as the confirmation mail a prospect gets after booking a demo; the internal tool link stays out of it, so the step becomes «Tool lin"
-        }
-      ],
-      "profile": "build",
-      "draft": false,
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.4
-      },
-      "color": "#a8c83a"
     }
   ],
   "depot": [
+    {
+      "id": "easyrep-sales",
+      "repo": "tarekmania/easyrep-sales",
+      "name": "EasyRep Sales"
+    },
     {
       "id": "tempo30",
       "repo": "tarekmania/tempo30",
@@ -1309,14 +1324,14 @@
     "easyrep-sales": "#a8c83a",
     "tutti-price-expert": "#c98b4f",
     "gta6-namehash": "#f4c430",
-    "gta6-asset-info": "#f2892b"
+    "gta6-asset-info": "#f2892b",
+    "health-center": "#a8c83a"
   },
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T21:54:40.361Z",
+  "updatedAt": "2026-11-24T22:59:09.209Z",
   "lastSeenPush": "2026-11-24T21:51:36Z",
   "heads": {
     "gta6-namehash": "298f10202679",
-    "tarekmania": "b2d08ae91ebd",
     "bilaro": "7ffc176dbf6c",
     "easyrep": "a2a67ec99969",
     "tischlein-lager": "f0f748616592",
@@ -1327,8 +1342,7 @@
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
-    "gta6-namehash": "aedd0f27f08c",
-    "tarekmania": null,
+    "gta6-namehash": "473d30021663",
     "bilaro": "f96e10df49a3",
     "easyrep": "7ad8d47c0d33",
     "tischlein-lager": "e004e5b4456a",
