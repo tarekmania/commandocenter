@@ -22,8 +22,12 @@ Team rollout:
 Used in real deals:
 - First 5 proposals sent to prospects
 - Sales team feedback worked in
-- Outcome noted per proposal (won or lost)
+- Outcome noted per proposal (won or lost) (the tool has the status, won amount and loss reason; open until real proposals carry it)
 
 ## Needs Tarek
+- [ ] 2026-11-24 Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it
+- [ ] 2026-11-24 Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or preset answers)
+- [ ] 2026-11-24 Say which mail is meant by "demo booking mail" and whether the internal tool link may go into it
 
 ## Log
+- 2026-11-24: Nothing built: the open steps need Tarek (sharing, mail link, real deals) or a decision (what an industry template is); won/lost tracking already exists in the tool
