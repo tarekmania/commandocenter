@@ -2,17 +2,17 @@
   "id": "bilaro",
   "repo": "tarekmania/bilaro",
   "name": "Bilaro",
-  "task": "Payroll: official Lohnausweis form shipped",
+  "task": "Walkthrough fixes: takeover, bank, mobile UI",
   "held": null,
   "project": true,
   "evidence": [
+    "7ffc176 Walkthrough fixes: bexio takeover, bank booking, feedback button, mobile UI",
     "open PR #1: Receipts from the phone: installable app and phone link",
     "c955241 Payroll: official Lohnausweis Formular 11, KS 45 source-tax rate, L-GAV 2026 values",
     "bfda129 Payroll: print fixes (Lohnausweis one page, no header), mobile run list",
     "e078deb Payroll: extra runs without basic wage or second yearly-max share",
     "752ce99 Payroll: employees, monthly runs, social insurances, source tax, GAV presets",
     "2738741 Tester round 2: open invoices, .xls reader, contact dedupe/merge",
-    "ee02c4d Claude connector: prepare and act tools with preview and confirm",
-    "a5c1051 Claude connector: read tools (search, ledger, accounts, contacts)"
+    "ee02c4d Claude connector: prepare and act tools with preview and confirm"
   ]
 }
