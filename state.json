@@ -182,7 +182,7 @@
       "task": "App redesign: trips & drivers shipped",
       "held": null,
       "runsWeek": 24,
-      "lastPush": "2026-11-24T16:14:25Z",
+      "lastPush": "2026-11-24T16:39:37Z",
       "needs": [],
       "todayFrom": {
         "at": 1,
@@ -912,6 +912,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T16:22:02.825Z",
-  "lastSeenPush": "2026-11-24T16:14:25Z"
+  "updatedAt": "2026-11-24T16:44:23.914Z",
+  "lastSeenPush": "2026-11-24T16:39:37Z"
 }
