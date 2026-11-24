@@ -2,6 +2,194 @@
   "headline": "Five lines are moving. Noble Drive and EasyRep Sales are parked.",
   "lines": [
     {
+      "id": "easyrep",
+      "repo": "tarekmania/easyrep",
+      "name": "EasyRep",
+      "color": "#8fb3ff",
+      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
+      "stations": [
+        "Telematics core",
+        "Website that converts",
+        "App redesign",
+        "Lead machine",
+        "Paying fleets"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Demo tenant & trip processing",
+            "done": true
+          },
+          {
+            "t": "MFK (vehicle inspection) tracking",
+            "done": true
+          },
+          {
+            "t": "Billing export",
+            "done": true
+          },
+          {
+            "t": "Location filter for the fleet",
+            "done": true
+          },
+          {
+            "t": "Faster per-vehicle trip scan",
+            "done": true
+          },
+          {
+            "t": "Alerts & fault codes",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "New homepage (Wise-style)",
+            "done": true
+          },
+          {
+            "t": "Press & ETH credibility section",
+            "done": true
+          },
+          {
+            "t": "Garage partner page /werkstaetten",
+            "done": true
+          },
+          {
+            "t": "Realistic app screenshots",
+            "done": true
+          },
+          {
+            "t": "Garage portal screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Per-user redesign switch",
+            "done": true
+          },
+          {
+            "t": "Login, forgot & reset redesigned",
+            "done": true
+          },
+          {
+            "t": "Overview, map & zones redesigned",
+            "done": true
+          },
+          {
+            "t": "New login shown to everyone",
+            "done": true
+          },
+          {
+            "t": "Security hardening pass",
+            "done": true
+          },
+          {
+            "t": "Vehicle list and vehicle page",
+            "done": true
+          },
+          {
+            "t": "Trips and driving behaviour",
+            "done": false
+          },
+          {
+            "t": "Alerts and service orders",
+            "done": false
+          },
+          {
+            "t": "Users, invitations and settings",
+            "done": false
+          },
+          {
+            "t": "Reports and exports",
+            "done": false
+          },
+          {
+            "t": "Phone layout checked on all screens",
+            "done": false
+          },
+          {
+            "t": "New design default for all customers",
+            "done": false
+          },
+          {
+            "t": "Old design removed",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Qualified leads from Google Maps signals",
+            "done": false
+          },
+          {
+            "t": "Lead scoring by fleet size and industry",
+            "done": false
+          },
+          {
+            "t": "Mail domains warmed up",
+            "done": false
+          },
+          {
+            "t": "50 cold mails a day running",
+            "done": false
+          },
+          {
+            "t": "Workshop partner campaign live",
+            "done": false
+          },
+          {
+            "t": "Savings calculator on the homepage",
+            "done": false
+          },
+          {
+            "t": "Demo booking from mail to calendar",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Large fleet contract signed",
+            "done": false
+          },
+          {
+            "t": "Trackers installed on the contract fleet",
+            "done": false
+          },
+          {
+            "t": "First fleet won through a workshop",
+            "done": false
+          },
+          {
+            "t": "5 paying fleets",
+            "done": false
+          },
+          {
+            "t": "10 paying fleets",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.46,
+      "stepsDone": 18,
+      "stepsTotal": 37,
+      "state": "moving",
+      "task": "Vehicle list and page added to the redesign",
+      "held": null,
+      "runsWeek": 22,
+      "lastPush": "2026-11-24T15:25:25Z",
+      "needs": [],
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.38
+      }
+    },
+    {
       "id": "gta6-asset-info",
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
@@ -131,6 +319,7 @@
       "held": null,
       "runsWeek": 49,
       "lastPush": "2026-11-24T15:10:24Z",
+      "needs": [],
       "todayFrom": {
         "at": 2,
         "progress": 0.6
@@ -223,196 +412,10 @@
       "held": null,
       "runsWeek": 5,
       "lastPush": "2026-11-24T13:52:15Z",
+      "needs": [],
       "todayFrom": {
         "at": 1,
         "progress": 0.25
-      }
-    },
-    {
-      "id": "easyrep",
-      "repo": "tarekmania/easyrep",
-      "name": "EasyRep",
-      "color": "#8fb3ff",
-      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
-      "stations": [
-        "Telematics core",
-        "Website that converts",
-        "App redesign",
-        "Lead machine",
-        "Paying fleets"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Demo tenant & trip processing",
-            "done": true
-          },
-          {
-            "t": "MFK (vehicle inspection) tracking",
-            "done": true
-          },
-          {
-            "t": "Billing export",
-            "done": true
-          },
-          {
-            "t": "Location filter for the fleet",
-            "done": true
-          },
-          {
-            "t": "Faster per-vehicle trip scan",
-            "done": true
-          },
-          {
-            "t": "Alerts & fault codes",
-            "done": true
-          },
-          {
-            "t": "Invoicing through the platform",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "New homepage (Wise-style)",
-            "done": true
-          },
-          {
-            "t": "Press & ETH credibility section",
-            "done": true
-          },
-          {
-            "t": "Garage partner page /werkstaetten",
-            "done": true
-          },
-          {
-            "t": "Realistic app screenshots",
-            "done": true
-          },
-          {
-            "t": "Garage portal screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Per-user redesign switch",
-            "done": true
-          },
-          {
-            "t": "Login, forgot & reset redesigned",
-            "done": true
-          },
-          {
-            "t": "Overview, map & zones redesigned",
-            "done": true
-          },
-          {
-            "t": "New login shown to everyone",
-            "done": true
-          },
-          {
-            "t": "Security hardening pass",
-            "done": true
-          },
-          {
-            "t": "Vehicle list and vehicle page",
-            "done": false
-          },
-          {
-            "t": "Trips and driving behaviour",
-            "done": false
-          },
-          {
-            "t": "Alerts and service orders",
-            "done": false
-          },
-          {
-            "t": "Users, invitations and settings",
-            "done": false
-          },
-          {
-            "t": "Reports and exports",
-            "done": false
-          },
-          {
-            "t": "Phone layout checked on all screens",
-            "done": false
-          },
-          {
-            "t": "New design default for all customers",
-            "done": false
-          },
-          {
-            "t": "Old design removed",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Qualified leads from Google Maps signals",
-            "done": false
-          },
-          {
-            "t": "Lead scoring by fleet size and industry",
-            "done": false
-          },
-          {
-            "t": "Mail domains warmed up",
-            "done": false
-          },
-          {
-            "t": "50 cold mails a day running",
-            "done": false
-          },
-          {
-            "t": "Workshop partner campaign live",
-            "done": false
-          },
-          {
-            "t": "Savings calculator on the homepage",
-            "done": false
-          },
-          {
-            "t": "Demo booking from mail to calendar",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Large fleet contract signed",
-            "done": false
-          },
-          {
-            "t": "Trackers installed on the contract fleet",
-            "done": false
-          },
-          {
-            "t": "First fleet won through a workshop",
-            "done": false
-          },
-          {
-            "t": "5 paying fleets",
-            "done": false
-          },
-          {
-            "t": "10 paying fleets",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.38,
-      "stepsDone": 17,
-      "stepsTotal": 37,
-      "state": "moving",
-      "task": "Restoring MCP preview build tooling",
-      "held": null,
-      "runsWeek": 18,
-      "lastPush": "2026-11-23T17:00:23Z",
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.38
       }
     },
     {
@@ -576,6 +579,7 @@
       "held": null,
       "runsWeek": 6,
       "lastPush": "2026-11-23T16:37:43Z",
+      "needs": [],
       "todayFrom": {
         "at": 3,
         "progress": 0.29
@@ -667,6 +671,7 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-17T19:23:14Z",
+      "needs": [],
       "todayFrom": {
         "at": 0,
         "progress": 0
@@ -794,6 +799,7 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-16T23:42:46Z",
+      "needs": [],
       "todayFrom": {
         "at": 2,
         "progress": 0.4
@@ -882,6 +888,7 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-04T18:36:01Z",
+      "needs": [],
       "todayFrom": {
         "at": 1,
         "progress": 0.4
@@ -901,6 +908,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T15:15:29.300Z",
-  "lastSeenPush": "2026-11-24T15:10:24Z"
+  "updatedAt": "2026-11-24T15:30:47.620Z",
+  "lastSeenPush": "2026-11-24T15:25:25Z"
 }
