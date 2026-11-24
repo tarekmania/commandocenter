@@ -179,10 +179,10 @@
       "stepsDone": 18,
       "stepsTotal": 37,
       "state": "moving",
-      "task": "Vehicle list and page added to the redesign",
+      "task": "PR open: trips & drivers redesign (group 5)",
       "held": null,
       "runsWeek": 22,
-      "lastPush": "2026-11-24T15:25:25Z",
+      "lastPush": "2026-11-24T15:51:06Z",
       "needs": [],
       "todayFrom": {
         "at": 1,
@@ -908,6 +908,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T15:48:49.551Z",
-  "lastSeenPush": "2026-11-24T15:25:25Z"
+  "updatedAt": "2026-11-24T15:56:13.925Z",
+  "lastSeenPush": "2026-11-24T15:51:06Z"
 }
