@@ -20,9 +20,9 @@ Notes:
 
 Plan (open steps, in order; tick only with evidence):
 Live:
-- SMS notifications
-- Booking and reminder mails tested end to end
-- Real payment tested with a live booking
+- SMS notifications (built: confirmation, pickup and return reminders; live test open)
+- Booking and reminder mails tested end to end (checklist: docs/live-test.md in #1)
+- Real payment tested with a live booking (same checklist)
 Handed over:
 - Admin walkthrough with the client team
 - Test week with real bookings
@@ -31,5 +31,9 @@ Handed over:
 - Final invoice paid
 
 ## Needs Tarek
+- [ ] 2026-11-24 Review and merge the live test checklist PR (https://github.com/tarekmania/noble-drive-redo/pull/1)
+- [ ] 2026-11-24 Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists
+- [ ] 2026-11-24 Plan the admin walkthrough with the B&G team
 
 ## Log
+- 2026-11-24: SMS found already built; wrote the live test checklist and fixed a stuck-pending SMS case when the gateway key is missing (https://github.com/tarekmania/noble-drive-redo/pull/1)
