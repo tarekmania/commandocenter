@@ -1,5 +1,5 @@
 {
-  "headline": "Six lines are moving. EasyRep Sales is parked.",
+  "headline": "Seven lines are moving. EasyRep Sales is parked.",
   "lines": [
     {
       "id": "easyrep",
@@ -190,7 +190,7 @@
       "task": "App redesign: trips & drivers shipped",
       "held": null,
       "runsWeek": 24,
-      "lastPush": "2026-11-24T17:28:34Z",
+      "lastPush": "2026-11-24T17:34:36Z",
       "needs": [
         {
           "t": "Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), work",
@@ -201,6 +201,173 @@
       "todayFrom": {
         "at": 1,
         "progress": 0.38
+      }
+    },
+    {
+      "id": "tischlein-lager",
+      "repo": "tarekmania/tischlein-lager",
+      "name": "Tischlein Lager",
+      "color": "#1fb5b0",
+      "goal": "Tischlein deck dich runs its warehouses on this tool instead of Rocklog, and buys it",
+      "stations": [
+        "Warehouse model",
+        "Picking & stock",
+        "Drivers & sites",
+        "Presented",
+        "Pilot",
+        "Sold & rolled out"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Scaffold, layout & domain model",
+            "done": true
+          },
+          {
+            "t": "Static 3D scene from layout",
+            "done": true
+          },
+          {
+            "t": "Seed inventory & tooltips",
+            "done": true
+          },
+          {
+            "t": "Real layout, fleet & tour plan",
+            "done": true
+          },
+          {
+            "t": "Sim clock, vehicles & workers",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Picklists & Lieferschein",
+            "done": true
+          },
+          {
+            "t": "Stock entries & expiry rules",
+            "done": true
+          },
+          {
+            "t": "Barcode scan & Excel import",
+            "done": true
+          },
+          {
+            "t": "Direct storage at goods-in",
+            "done": true
+          },
+          {
+            "t": "Weight-based F&G/FriPro goods",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Driver app: trips & Spender",
+            "done": true
+          },
+          {
+            "t": "Live mode: roles, multi-site",
+            "done": true
+          },
+          {
+            "t": "Transfers & institutions",
+            "done": true
+          },
+          {
+            "t": "Test access for stakeholders",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "5 presentation docs for staff",
+            "done": true
+          },
+          {
+            "t": "Review fixes on stock overview",
+            "done": true
+          },
+          {
+            "t": "On-site presentation to management",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Test deploy on Cloudflare Pages",
+            "done": true
+          },
+          {
+            "t": "Pilot with the real team in Staufen",
+            "done": false
+          },
+          {
+            "t": "Drivers use the phone app daily",
+            "done": false
+          },
+          {
+            "t": "Pilot feedback fixed",
+            "done": false
+          },
+          {
+            "t": "Vans tracked with EasyRep trackers",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Offer and price sent",
+            "done": false
+          },
+          {
+            "t": "Contract signed",
+            "done": false
+          },
+          {
+            "t": "Data moved over from Rocklog",
+            "done": false
+          },
+          {
+            "t": "Rocklog switched off",
+            "done": false
+          },
+          {
+            "t": "Second site onboarded",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.87,
+      "stepsDone": 17,
+      "stepsTotal": 27,
+      "state": "moving",
+      "task": "EasyRep trip import PR waits for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-24T17:31:15Z",
+      "needs": [
+        {
+          "t": "Review the EasyRep trip import PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/tischlein-lager/pull/1"
+        },
+        {
+          "t": "Schedule the on-site presentation to management in Staufen",
+          "since": "2026-11-24",
+          "link": null
+        },
+        {
+          "t": "Give the plates of the Tischlein vans and confirm the tour gap (120 min) for the EasyRep m",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.87
       }
     },
     {
@@ -866,7 +1033,13 @@
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-17T19:23:14Z",
-      "needs": [],
+      "needs": [
+        {
+          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so mer",
+          "since": "2026-11-24",
+          "link": null
+        }
+      ],
       "todayFrom": {
         "at": 0,
         "progress": 0
@@ -983,14 +1156,9 @@
       "id": "tempo30",
       "repo": "tarekmania/tempo30",
       "name": "Tempo 30"
-    },
-    {
-      "id": "tischlein-lager",
-      "repo": "tarekmania/tischlein-lager",
-      "name": "Tischlein Lager"
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T17:38:10.381Z",
-  "lastSeenPush": "2026-11-24T17:28:34Z"
+  "updatedAt": "2026-11-24T17:44:35.822Z",
+  "lastSeenPush": "2026-11-24T17:34:36Z"
 }

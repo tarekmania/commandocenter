@@ -160,17 +160,17 @@
       ]
     }
   ],
-  "task": "Review fixes on the FP/FG stock overview",
+  "task": "EasyRep trip import PR waits for merge",
   "held": null,
   "evidence": [
+    "open PR #1: Read EasyRep's trip export into the driver-record comparison",
     "f0f7486 Merge: Step 24, corrections of the overview (FP and FG by Warengruppe and weight)",
     "ba4f1ab Step 24 (corrections): frames back to their margin, one Palette, Vonto wording",
     "174cb51 Step 24 (corrections): review fixes of the document",
     "a9ea8a3 Step 24 (corrections): FG handed out by SOLL in the Verteilung",
     "f1c0f05 Merge: Step 25, cold rooms without places and one overview document",
     "8925d2b Merge: Step 23, barcode scan, import from Excel, start stock, stock comparison",
-    "834a6af Merge step 13: no automatic replenishment, transfers between sites, Auslagerung to institutions",
-    "54ce769 Merge Step 11: Live mode, multiple sites and Supabase"
+    "834a6af Merge step 13: no automatic replenishment, transfers between sites, Auslagerung to institutions"
   ],
   "v": 4
 }
