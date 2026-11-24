@@ -13,7 +13,7 @@ The `<id>` is the line id on the map (the repo name in lower case). This file is
    - **Merge**: `tarek` (only Tarek merges) or `auto` (the station master may merge its own pull requests once the checks pass).
    - **Notes**: project rules every agent must follow.
 2. **Goal**: one sentence, Tarek's words. Only Tarek changes it.
-3. **## Route**: one `### <Station>` heading per milestone, in order, an optional `> what belongs to it` line, then the steps as checkboxes: `- [ ] step` or `- [x] step · <reference>`. Only Tarek changes the stations. The station master keeps the open steps current. The rater ticks steps when commits or merged pull requests show them done.
+3. **## Route**: one `### <Station>` heading per milestone, in order, an optional `> what belongs to it` line, then the steps as checkboxes: `- [ ] step` or `- [x] step · <reference> · <day done>`. Only Tarek changes the stations. The station master keeps the open steps current. The rater ticks steps when commits or merged pull requests show them done, and adds work no step foresaw, so nothing real goes missing.
 4. **## Notes** (optional): background for agents.
 5. **## Done (Tarek's word)**: milestones no commit can show, one per line. They count as evidence.
 6. **## Needs Tarek**: open items only Tarek can do, as `- [ ] YYYY-MM-DD what is needed (link)`. Agents add and remove them; Tarek answers in a chat or by acting (merging, signing, deciding).

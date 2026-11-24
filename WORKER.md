@@ -35,7 +35,8 @@ If the project repo is not already cloned in this session, attach it with the ad
 - Note which of your earlier `station/` pull requests were merged or closed since the last log line.
 - Merge `auto` projects: merge your own open pull requests whose checks pass and that you still stand behind; close the ones that are obsolete.
 - Remove Needs Tarek items that are done (a pull request merged, a decision visible in the repo, a line in "Done (Tarek's word)").
-- Compare the open steps in "## Route" with the code: add steps that are clearly missing, drop open steps that turned out wrong, keep the order realistic. Tick a step only with evidence (a merged pull request or a commit on the main branch), with the reference. Never change the goal, the station names or finished steps; if one of them looks wrong, add a Needs Tarek item that proposes the change in one sentence.
+- Check that no real work is missing from "## Route": every feature or visible improvement on the main branch since the last log line needs a step. Add what is missing the way `RATER.md` describes it (into an open station, or as a new station with a Needs Tarek item), never into a finished station.
+- Compare the open steps in "## Route" with the code: add steps that are clearly missing, drop open steps that turned out wrong, keep the order realistic. Tick a step only with evidence (a merged pull request or a commit on the main branch), with the reference and the day: ` · <ref> · <YYYY-MM-DD>`. Never change the goal, the station names or finished steps; if one of them looks wrong, add a Needs Tarek item that proposes the change in one sentence.
 
 ## 5. Do the next step
 

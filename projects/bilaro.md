@@ -12,7 +12,7 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 ## Route
 
 ### Core bookkeeping
-> journal, receipts, bank, VAT, statements, invoices, dunning
+> journal, receipts, bank, VAT, statements, invoices, dunning, billing, roles
 - [x] Chart of accounts, journal & statements · 56c1913
 - [x] Receipts, bank & VAT · 7b345c4
 - [x] Period picker & open invoices · 2738741
@@ -20,7 +20,6 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 - [x] Two-factor sign-in & team roles · 9681925
 - [x] Stripe subscription & webhook · c26f7a9
 - [x] Pay supplier invoices via payment file · 032833d
-- [x] Swiss payroll: payslips & Lohnausweis · 752ce99
 
 ### bexio takeover
 > import from bexio export files, balances by cut-off date
@@ -40,6 +39,17 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 - [x] Consent page expiry handling · 0dab1ca
 - [x] Read tools: search, ledger, accounts · a5c1051
 - [x] Write tools with preview & confirm · ee02c4d
+
+### Payroll
+> employees, monthly runs, social insurances, source tax, payslips, Lohnausweis
+- [x] Employees and monthly pay runs · 752ce99 · 2026-11-24
+- [x] Social insurances, source tax, GAV presets · 752ce99 · 2026-11-24
+- [x] Payslips, booking and pain.001 payout · 752ce99 · 2026-11-24
+- [x] Extra runs without basic wage · e078deb · 2026-11-24
+- [x] Print fixes and mobile run list · bfda129 · 2026-11-24
+- [x] Official Lohnausweis (Formular 11) · c955241 · 2026-11-24
+- [x] Source-tax rate income and L-GAV 2026 · c955241 · 2026-11-24
+- [ ] Payroll run with a real company's data
 
 ### Tester-ready
 > feedback rounds fixed, design on the level of the best tools
@@ -68,6 +78,7 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 ## Done (Tarek's word)
 
 ## Needs Tarek
+- [ ] 2026-11-24 New station «Payroll» added from today's work; say if it belongs somewhere else or what is still missing in it
 - [ ] 2026-11-24 Review and merge the phone receipts PR (https://github.com/tarekmania/bilaro/pull/1)
 - [ ] 2026-11-24 Run tester round 3 (bank import & receipts) with the testers and share the feedback
 - [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test

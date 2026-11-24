@@ -21,7 +21,11 @@ function cleanRoute(stations) {
   for (const s of stations) {
     const name = str(s && s.name, 40);
     if (!name || !Array.isArray(s.steps) || s.steps.length < 1 || s.steps.length > 20) return null;
-    out.push({ name, steps: s.steps.map(x => ({ t: str(x && x.t, 80) || '…', done: x && x.done === true })) });
+    out.push({ name, steps: s.steps.map(x => {
+      const step = { t: str(x && x.t, 80) || '…', done: x && x.done === true };
+      if (step.done && x.on) step.on = x.on;
+      return step;
+    }) });
   }
   return out;
 }
@@ -80,6 +84,7 @@ for (const e of evidence.repos) {
     progress: pos.progress,
     stepsDone: all.filter(s => s.done).length,
     stepsTotal: all.length,
+    doneToday: all.filter(s => s.done && s.on === zurichDay).length,
     state,
     task: str(file.task, 60) || p?.task || '',
     held,

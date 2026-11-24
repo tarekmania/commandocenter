@@ -27,10 +27,12 @@ export function parseProject(md) {
       if ((m = line.match(/^### (?:\d+[.)]\s*)?(.+)$/))) { station = { name: clean(m[1]).slice(0, 40), desc: '', steps: [] }; out.stations.push(station); continue; }
       if (station && (m = line.match(/^>\s*(.+)$/))) { station.desc = clean(m[1]); continue; }
       if (station && (m = line.match(/^\s*[-*]\s+\[( |x|X)\]\s+(.+)$/))) {
-        let t = clean(m[2]), ref = null;
-        const r = t.match(/\s+·\s+(\S+)$/);
-        if (r) { ref = r[1]; t = t.slice(0, r.index).trim(); }
-        station.steps.push({ t: t.slice(0, 80), done: m[1] !== ' ', ref });
+        // "- [x] step · <ref> · <YYYY-MM-DD>": reference and the day it was done are both optional.
+        const parts = clean(m[2]).split(/\s+·\s+/);
+        const t = parts.shift();
+        const on = parts.find(x => /^\d{4}-\d{2}-\d{2}$/.test(x)) || null;
+        const ref = parts.find(x => x !== on) || null;
+        station.steps.push({ t: t.slice(0, 80), done: m[1] !== ' ', ref, on });
       }
       continue;
     }
@@ -46,7 +48,7 @@ export function routeSection(stations) {
   for (const st of stations) {
     s += `\n### ${st.name}\n`;
     if (st.desc) s += `> ${st.desc}\n`;
-    for (const x of st.steps) s += `- [${x.done ? 'x' : ' '}] ${x.t}${x.ref ? ' · ' + x.ref : ''}\n`;
+    for (const x of st.steps) s += `- [${x.done ? 'x' : ' '}] ${x.t}${x.ref ? ' · ' + x.ref : ''}${x.on ? ' · ' + x.on : ''}\n`;
   }
   return s;
 }

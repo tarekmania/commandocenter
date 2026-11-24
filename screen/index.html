@@ -177,7 +177,7 @@ function lineHtml(l, i, y) {
   else if (parked) { status = 'Parked · ' + ago(l.lastPush); sub = l.task || ''; stc = '#a9b8d8'; }
   else if (running) { status = 'Agent working · ' + ago(l.lastPush); sub = l.task || ''; stc = '#fff'; }
   else { status = 'Moving · last push ' + ago(l.lastPush); sub = l.task || ''; stc = '#dfe6f5'; }
-  h += `<div class="abs" style="left:1592px;top:${y - 22}px;width:290px;display:flex;flex-direction:column;gap:1px"><span style="font-size:20px;font-weight:800;color:${stc};white-space:nowrap;display:flex;align-items:center;gap:10px">${esc(status)}</span><span style="font-size:16px;font-weight:600;color:#a9b8d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(sub)}</span></div>`;
+  h += `<div class="abs" style="left:1592px;top:${y - 22}px;width:290px;display:flex;flex-direction:column;gap:1px"><span style="font-size:20px;font-weight:800;color:${stc};white-space:nowrap;display:flex;align-items:center;gap:10px">${esc(status)}</span><span style="font-size:16px;font-weight:600;color:#a9b8d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${l.doneToday ? `<span style="color:#fff;font-weight:800">+${l.doneToday} today</span> · ` : ''}${esc(sub)}</span></div>`;
   return h;
 }
 
@@ -276,7 +276,8 @@ function detailHtml(l) {
     if (folded[k]) return 0;
     if (isDone[k]) return st.length;
     const dn = st.filter(x => x.done).length;
-    return st.length - dn + (dn ? (ui.showDone.has(k) ? dn + 1 : 1) : 0);
+    const td = st.filter(isToday).length, old = dn - td;
+    return st.length - dn + td + (old ? (ui.showDone.has(k) ? old + 1 : 1) : 0);
   };
   const many = Math.max(...l.stations.map((_, k) => visibleRows(k))) > 9;
   const xs = l.stations.map((_, k) => colX(k) + 10);
@@ -304,9 +305,9 @@ function detailHtml(l) {
   h += `<div class="abs" style="left:64px;top:168px;width:1340px;display:flex;flex-direction:column;gap:10px">
 <span class="mono" style="font-size:16px;font-weight:600;letter-spacing:3px;color:${c}">DESTINATION</span>
 <span class="clamp2" style="font-size:48px;font-weight:800;line-height:1.12;letter-spacing:-.5px">${esc(l.goal || l.stations[n - 1])}</span></div>
-<div class="abs" style="left:1460px;top:168px;width:400px;display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+<div class="abs" style="left:1340px;top:168px;width:520px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right">
 <span style="font-size:64px;font-weight:800;line-height:1">${l.stepsDone}<span style="color:#6d7ea3"> / ${l.stepsTotal}</span></span>
-<span style="font-size:20px;font-weight:700;color:#a9b8d8">steps done · ${finished ? 'all stations reached' : 'heading to station ' + (tgt + 1) + ' of ' + n}</span></div>`;
+<span style="font-size:20px;font-weight:700;color:#a9b8d8">steps done${l.doneToday ? ` · <span style="color:#fff">${l.doneToday} today</span>` : ''} · ${finished ? 'all stations reached' : 'heading to station ' + (tgt + 1) + ' of ' + n}</span></div>`;
   // target column panel
   if (!finished) {
     h += `<div class="abs" style="left:${colX(tgt) - 16}px;top:334px;width:${widths[tgt] + 32}px;height:588px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid ${c}55"></div>`;
@@ -329,6 +330,7 @@ function detailHtml(l) {
       h += `<div class="abs tap" data-toggle="station:${k}" role="button" tabindex="0" aria-label="Show the steps of ${esc(name)}" style="left:${cx - 10}px;top:394px;width:${w + 20}px;padding:8px 10px;box-sizing:border-box;border-radius:12px;display:flex;flex-direction:column;gap:10px">
 <span class="clamp2" style="font-size:21px;line-height:1.2;font-weight:800;color:#dfe6f5">${esc(name)}</span>
 <span style="display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700;color:#a9b8d8"><span style="width:20px;height:20px;border-radius:10px;background:${c};color:${G};font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span>${st.length} steps done</span>
+${st.filter(isToday).length ? `<span style="font-size:16px;font-weight:800;color:#fff">+${st.filter(isToday).length} today</span>` : ''}
 <span style="font-size:15px;font-weight:700;color:${c}">Show steps ▾</span></div>`;
       return;
     }
@@ -343,17 +345,20 @@ function detailHtml(l) {
         ? `<span style="width:20px;height:20px;border-radius:10px;background:${c};color:${G};font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;margin-top:3px">✓</span>`
         : (isNow ? `<span class="nowdot" style="width:20px;height:20px;border-radius:10px;background:#fff;flex:none;margin-top:3px"></span>`
                  : `<span style="width:20px;height:20px;border-radius:10px;box-sizing:border-box;border:3px solid #4a5b85;flex:none;margin-top:3px"></span>`);
-      const col = x.done ? '#c9d4ee' : (isNow ? '#fff' : '#8b9bc2');
-      return `<div style="display:flex;gap:12px;align-items:flex-start${isNow ? ';background:' + c + '26;margin:0 -10px;padding:6px 10px;border-radius:8px' : ''}">${icon}<span class="clamp2" style="font-size:${fs}px;line-height:1.25;font-weight:${isNow ? 800 : 600};color:${col}">${esc(x.t)}</span></div>`;
+      const col = x.done ? (isToday(x) ? '#fff' : '#c9d4ee') : (isNow ? '#fff' : '#8b9bc2');
+      const tag = isToday(x) ? `<span class="mono" style="font-size:12px;font-weight:700;color:${G};background:#fff;border-radius:6px;padding:2px 6px 1px;margin-left:8px;vertical-align:3px">TODAY</span>` : '';
+      return `<div style="display:flex;gap:12px;align-items:flex-start${isNow ? ';background:' + c + '26;margin:0 -10px;padding:6px 10px;border-radius:8px' : ''}">${icon}<span class="clamp2" style="font-size:${fs}px;line-height:1.25;font-weight:${isNow ? 800 : 600};color:${col}">${esc(x.t)}${tag}</span></div>`;
     };
-    const dn = st.filter(x => x.done), op = st.filter(x => !x.done);
+    // Today's finished steps always stay visible; older ones fold into one row.
+    const today = st.filter(isToday), dn = st.filter(x => x.done && !isToday(x)), op = st.filter(x => !x.done);
     let rows = '';
     if (isDone[k]) rows = st.map(row).join('');
     else {
       rows += op.map(row).join('');
+      rows += today.map(row).join('');
       if (dn.length) {
         const openDone = ui.showDone.has(k);
-        rows += `<div class="tap" data-toggle="done:${k}" role="button" tabindex="0" style="display:flex;gap:12px;align-items:center;margin:0 -10px;padding:4px 10px;border-radius:8px"><span style="width:20px;height:20px;border-radius:10px;background:${c};color:${G};font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:${fs}px;font-weight:700;color:#a9b8d8">${dn.length} done</span><span style="font-size:15px;font-weight:700;color:${c}">${openDone ? 'Hide ▴' : 'Show ▾'}</span></div>`;
+        rows += `<div class="tap" data-toggle="done:${k}" role="button" tabindex="0" style="display:flex;gap:12px;align-items:center;margin:0 -10px;padding:4px 10px;border-radius:8px"><span style="width:20px;height:20px;border-radius:10px;background:${c};color:${G};font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">✓</span><span style="font-size:${fs}px;font-weight:700;color:#a9b8d8">${dn.length} done earlier</span><span style="font-size:15px;font-weight:700;color:${c}">${openDone ? 'Hide ▴' : 'Show ▾'}</span></div>`;
         if (openDone) rows += dn.map(row).join('');
       }
     }
@@ -375,6 +380,8 @@ ${ui.needs && needs.length ? `<div class="abs" style="left:48px;right:48px;botto
 const detailLines = () => (state && state.lines || []).filter(l => Array.isArray(l.steps) && l.steps.length === l.stations.length);
 let openId = null;
 let ui = { open: new Set(), showDone: new Set(), needs: false };
+const todayZurich = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Zurich' });
+const isToday = x => !!(x && x.done && x.on && x.on === todayZurich());
 // Links stay behind the "Open" button; the text shows only the words.
 const cleanNeed = t => String(t || '').replace(/\(?\s*https?:\/\/[^\s)]+\)?/g, '').replace(/\s+([,.;:])/g, '$1').replace(/[\s,;:(]+$/, '').replace(/\s{2,}/g, ' ').trim();
 

@@ -13,9 +13,13 @@ Your job in this run: for every project that changed since the last run, record 
 
 ## For a project that has a project file
 
-1. **Tick steps in its "## Route" section.** A step becomes done when a commit on the main branch or a merged pull request finishes it: change `- [ ]` to `- [x]` and add ` · <short sha>` (or ` · #<pull request number>`) at the end of the line. A line under "## Done (Tarek's word)" also counts: then the reference is ` · Tarek`. Untick a step only when the evidence shows the work was undone. Work that only sits in an open pull request is not done.
-2. **Change nothing else in the project file.** Not the wording of steps, not their order, not the goal, the setup, the notes, Needs Tarek or the log. The station master and Tarek own those.
-3. **Write `lines/<id>.json`:**
+1. **Tick steps in its "## Route" section.** A step becomes done when a commit on the main branch or a merged pull request finishes it: change `- [ ]` to `- [x]` and add ` · <short sha> · <YYYY-MM-DD>` (or ` · #<pull request number> · <YYYY-MM-DD>`) at the end of the line, with the day of the commit or merge in Zurich time. A line under "## Done (Tarek's word)" also counts: then the reference is ` · Tarek · <day>`. Untick a step only when the evidence shows the work was undone. Work that only sits in an open pull request is not done.
+2. **Never let real work disappear.** Plans are never complete: Tarek often builds things no step foresaw. Go through the commits and merged pull requests; for every piece of real work (a feature, a module, a visible improvement; not small fixes or chores) that no step covers:
+   - If it belongs to an existing station that is still open, add it there as a done step, in the right place.
+   - If it is a new capability no station covers (for example payroll in an accounting app), add a new station for it, named in 1 to 3 words, placed before the first station that still has open steps, with one done step per real piece of work and, where obvious, the open steps that finish it. Then add `- [ ] <today> New station «<name>» added from <day>'s work; say if it belongs somewhere else or what is still missing in it` under "## Needs Tarek".
+   - Never stuff it into a station that is already finished, where it would vanish from view.
+3. **Change nothing else in the project file.** Not the wording or order of existing steps, not the goal, the existing station names, the setup, the notes, the other Needs Tarek items or the log. The station master and Tarek own those.
+4. **Write `lines/<id>.json`:**
 
 ```json
 {
@@ -65,4 +69,4 @@ Write `lines/<id>.json` with a first draft of the route, so the project shows up
 
 ## Honesty
 
-Every tick and every drafted step must come from the evidence. Never invent progress, dates or reasons. When the evidence shows nothing new for a project, leave its files unchanged.
+Every tick, every added step and every drafted step must come from the evidence. Never invent progress, dates or reasons. When the evidence shows nothing new for a project, leave its files unchanged.
