@@ -21,10 +21,12 @@ Notes:
 
 Plan (open steps, in order; tick only with evidence):
 Fully named:
-- Next names PR batched from the watcher
-- Collision ids named
-- Hash keys mapped with gta6-namehash
+- Next names PR: branch station/names-batch-2026-11-24 ready (8 names)
+- Collision ids named: 257 of 398 ids named upstream (#165, 84 % of triangles); the rest needs game data
+- Hash keys mapped with gta6-namehash: every hash in the notes that the dictionary can resolve is named or in the branch above; the rest needs new name sources or the executable
 
 ## Needs Tarek
+- [ ] 2026-11-24 Open the upstream PR from https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24 — "Name eight more hashes": case-sensitive joaat matches that fit the notes' meaning: clipDictionaryName, clipName (§17), ScaleY, ScaleX, Indices, AspectRatio (§11), volOuterColour (§7), probably Category (§19).
 
 ## Log
+- 2026-11-24: Ran gta6-namehash over current upstream notes; 8 new names verified and prepared on station/names-batch-2026-11-24 (based on upstream main). Upstream merged #165 (collision surface names) today.
