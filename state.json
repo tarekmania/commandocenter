@@ -1,5 +1,5 @@
 {
-  "headline": "Bilaro reached Payroll. Seven lines are moving.",
+  "headline": "Eight lines are moving.",
   "lines": [
     {
       "id": "gta6-namehash",
@@ -116,7 +116,7 @@
       "draft": false,
       "todayFrom": {
         "at": 1,
-        "progress": 0.25
+        "progress": 0.73
       },
       "color": "#f4c430"
     },
@@ -317,7 +317,7 @@
       "progress": 0.16,
       "stepsDone": 26,
       "stepsTotal": 39,
-      "doneToday": 7,
+      "doneToday": 0,
       "state": "moving",
       "task": "Walkthrough fixes: takeover, bank, mobile UI",
       "held": null,
@@ -358,8 +358,8 @@
       "profile": "build",
       "draft": false,
       "todayFrom": {
-        "at": 3,
-        "progress": 0.29
+        "at": 4,
+        "progress": 0.16
       },
       "color": "#3cb46e"
     },
@@ -579,7 +579,7 @@
       "draft": false,
       "todayFrom": {
         "at": 1,
-        "progress": 0.38
+        "progress": 0.81
       },
       "color": "#8fb3ff"
     },
@@ -922,7 +922,7 @@
       "draft": false,
       "todayFrom": {
         "at": 2,
-        "progress": 0.4
+        "progress": 0.6
       },
       "color": "#d94f9a"
     },
@@ -1081,6 +1081,82 @@
       "color": "#f2892b"
     },
     {
+      "id": "sixng",
+      "repo": "tarekmania/SixNG",
+      "name": "SixNG",
+      "goal": "SixNG names every GTA VI struct and field by itself, straight from gta6-namehash",
+      "stations": [
+        "Struct and field names",
+        "Namehash import",
+        "Names without hand work"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Struct names merged upstream",
+            "done": true
+          },
+          {
+            "t": "Map-format structs and more fields merged upstream",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Import a namehash dictionary as last resort",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Import pull request merged upstream",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "SixNG ships with the namehash dictionary",
+            "done": false
+          },
+          {
+            "t": "Names confirmed in SixNG flow back into namehash",
+            "done": false
+          },
+          {
+            "t": "Maintainer updates names without Tarek",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0.5,
+      "stepsDone": 3,
+      "stepsTotal": 7,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "Namehash import PR submitted upstream",
+      "held": null,
+      "runsWeek": 67,
+      "lastPush": "2026-11-24T16:04:17Z",
+      "needs": [],
+      "decisions": [
+        {
+          "on": "2026-11-24",
+          "t": "SixNG is its own line: Tarek's own work lives in this fork (namehash import), next to GTA6 Asset Info"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Goal is that the maintainer uses gta6-namehash directly, so names stop depending on Tarek's pull requests (Tarek, chat)"
+        }
+      ],
+      "profile": "contribute",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0.5
+      },
+      "color": "#c98b4f"
+    },
+    {
       "id": "health-center",
       "repo": null,
       "name": "Health Center",
@@ -1169,7 +1245,7 @@
       "progress": 0,
       "stepsDone": 1,
       "stepsTotal": 15,
-      "doneToday": 1,
+      "doneToday": 0,
       "state": "moving",
       "task": "Next: Data model for food, training, notes and body data",
       "held": null,
@@ -1197,114 +1273,14 @@
         "progress": 0
       },
       "color": "#a8c83a"
-    },
-    {
-      "id": "tutti-price-expert",
-      "repo": "tarekmania/tutti-price-expert",
-      "name": "Tutti",
-      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
-      "stations": [
-        "API client",
-        "Flip finder",
-        "Web app",
-        "Online & shareable",
-        "First profitable flip"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Review and merge the API client PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the flip finder PRs",
-            "done": false
-          },
-          {
-            "t": "Budget per search setting",
-            "done": false
-          },
-          {
-            "t": "Cost traps per model (belts, gearboxes)",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the web app PR",
-            "done": false
-          },
-          {
-            "t": "Merge the report PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Running on the own server",
-            "done": false
-          },
-          {
-            "t": "Reachable at flip.easyrep.ch",
-            "done": false
-          },
-          {
-            "t": "Login so only invited people can scan",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "First scan with a real budget",
-            "done": false
-          },
-          {
-            "t": "Car inspected and bought",
-            "done": false
-          },
-          {
-            "t": "Car sold with profit",
-            "done": false
-          },
-          {
-            "t": "Profit noted per flip in the tool",
-            "done": false
-          }
-        ]
-      ],
-      "at": 0,
-      "progress": 0,
-      "stepsDone": 0,
-      "stepsTotal": 13,
-      "doneToday": 0,
-      "state": "parked",
-      "task": "5 pull requests wait for merge",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-17T19:23:14Z",
-      "needs": [],
-      "decisions": [
-        {
-          "on": "2026-11-24",
-          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
-        }
-      ],
-      "profile": "build",
-      "draft": false,
-      "todayFrom": {
-        "at": 0,
-        "progress": 0
-      },
-      "color": "#c98b4f"
     }
   ],
   "depot": [
+    {
+      "id": "tutti-price-expert",
+      "repo": "tarekmania/tutti-price-expert",
+      "name": "Tutti"
+    },
     {
       "id": "easyrep-sales",
       "repo": "tarekmania/easyrep-sales",
@@ -1325,10 +1301,11 @@
     "tutti-price-expert": "#c98b4f",
     "gta6-namehash": "#f4c430",
     "gta6-asset-info": "#f2892b",
-    "health-center": "#a8c83a"
+    "health-center": "#a8c83a",
+    "sixng": "#c98b4f"
   },
-  "day": "2026-11-24",
-  "updatedAt": "2026-11-24T22:59:09.209Z",
+  "day": "2026-11-25",
+  "updatedAt": "2026-11-24T23:10:17.322Z",
   "lastSeenPush": "2026-11-24T21:51:36Z",
   "heads": {
     "gta6-namehash": "298f10202679",
@@ -1337,6 +1314,7 @@
     "tischlein-lager": "f0f748616592",
     "noble-drive-redo": "c4eb854d1cee",
     "gta6-asset-info": "648739f9e9a4",
+    "sixng": "a4063d38097d",
     "tutti-price-expert": "bdab0928cebc",
     "easyrep-sales": "2428a56e7198",
     "tempo30": "8cbdae01efa4"
@@ -1348,6 +1326,7 @@
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "61e443482e69",
     "gta6-asset-info": "b25b85e0d161",
+    "sixng": "d01caa9a8695",
     "tutti-price-expert": "632beaa70abd",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"

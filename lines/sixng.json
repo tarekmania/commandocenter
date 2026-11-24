@@ -1,0 +1,11 @@
+{
+  "id": "sixng",
+  "repo": "tarekmania/SixNG",
+  "name": "SixNG",
+  "task": "Namehash import PR submitted upstream",
+  "held": null,
+  "project": true,
+  "evidence": [
+    "880fdfd Import a namehash dictionary as last resort"
+  ]
+}
