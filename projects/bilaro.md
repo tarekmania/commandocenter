@@ -37,5 +37,9 @@ Paying customers:
 - 10 paying SMEs
 
 ## Needs Tarek
+- [ ] 2026-11-24 Review and merge the phone receipts PR (https://github.com/tarekmania/bilaro/pull/1)
+- [ ] 2026-11-24 Run tester round 3 (bank import & receipts) with the testers and share the feedback
+- [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test
 
 ## Log
+- 2026-11-24: Receipt upload from the phone: installable web app (manifest, icons, shortcut) and phone link on Belege; build, lint and 310 tests ok (https://github.com/tarekmania/bilaro/pull/1)
