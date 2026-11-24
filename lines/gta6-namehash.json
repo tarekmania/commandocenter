@@ -98,6 +98,7 @@
   "task": "RAGE-StringsDatabase PR waits for merge",
   "held": null,
   "evidence": [
+    "298f102 Refresh confirmed layer",
     "open PR #1: Sources: RAGE-StringsDatabase checked, README coverage updated",
     "777215f Sources: GTA V lists only; RDR2 lists checked and not used",
     "d600231 Refresh confirmed layer",
