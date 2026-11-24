@@ -116,7 +116,10 @@ setInterval(tick, 10000); tick();
 function render() {
   if (!state) return;
   document.getElementById('headline').innerHTML = esc(state.headline);
-  document.getElementById('fresh').textContent = state.updatedAt ? 'updated ' + ago(state.updatedAt) : '';
+  const fresh = document.getElementById('fresh');
+  const stale = state.updatedAt && Date.now() - Date.parse(state.updatedAt) > 26 * 3600000;
+  fresh.textContent = state.updatedAt ? (stale ? 'not updated for ' + ago(state.updatedAt).replace(' ago', '') + ' · check the rating' : 'updated ' + ago(state.updatedAt)) : '';
+  fresh.style.color = stale ? '#ff8a80' : '';
   const lines = state.lines || [];
   const groupOf = l => l.state === 'moving' ? 0 : (l.state === 'held' ? 1 : 2);
   const groups = new Set(lines.map(groupOf)).size;
@@ -147,7 +150,7 @@ function lineHtml(l, i, y) {
   const held = l.state === 'held', parked = l.state === 'parked';
   const c = l.color, fut = c + '45';
   let h = '';
-  h += `<div class="abs" style="left:64px;top:${y - 20}px;width:250px;display:flex;justify-content:flex-end"><span style="position:relative;background:${c};color:${G};font-size:20px;font-weight:800;padding:7px 15px 4px;border-radius:8px;white-space:nowrap;display:flex;align-items:center;gap:10px"><span style="width:24px;height:24px;border-radius:12px;background:${G};color:${c};font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:-3px">${i + 1}</span>${esc(l.name)}${Array.isArray(l.needs) && l.needs.length ? `<span style="position:absolute;right:-12px;top:-12px;min-width:26px;height:26px;padding:0 6px;box-sizing:border-box;border-radius:13px;background:${AMBER};color:${G};border:3px solid ${G};font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center">${l.needs.length}</span>` : ''}</span></div>`;
+  h += `<div class="abs" style="left:64px;top:${y - 20}px;width:250px;display:flex;justify-content:flex-end"><span style="position:relative;background:${c};color:${G};font-size:20px;font-weight:800;padding:7px 15px 4px;border-radius:8px;white-space:nowrap;display:flex;align-items:center;gap:10px"><span style="width:24px;height:24px;border-radius:12px;background:${G};color:${c};font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:-3px">${i + 1}</span>${esc(l.name)}${Array.isArray(l.needs) && l.needs.length ? `<span style="position:absolute;left:-12px;top:-12px;min-width:26px;height:26px;padding:0 6px;box-sizing:border-box;border-radius:13px;background:${AMBER};color:${G};border:3px solid ${G};font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center">${l.needs.length}</span>` : ''}</span></div>`;
   h += `<div class="abs" style="left:${X0}px;top:${y - 6}px;width:${Math.round(tX - X0)}px;height:12px;border-radius:6px 0 0 6px;background:${c}"></div>`;
   h += `<div class="abs" style="left:${Math.round(tX)}px;top:${y - 6}px;width:${Math.round(X1 - tX)}px;height:12px;border-radius:0 6px 6px 0;background:${fut}"></div>`;
   if (tX - fromX > 2) h += `<div class="abs" style="left:${Math.round(fromX)}px;top:${y - 6}px;width:${Math.round(tX - fromX)}px;height:12px;background:#fff;box-shadow:0 0 14px 3px ${c}"></div>`;
