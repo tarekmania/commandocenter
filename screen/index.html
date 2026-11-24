@@ -33,6 +33,11 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 #arrival.on{display:block}
 #detail{position:absolute;inset:0;background:#101f44;z-index:40;opacity:0;visibility:hidden;transition:opacity .8s,visibility 0s .8s}
 #detail.on{opacity:1;visibility:visible;transition:opacity .8s}
+.hit{position:absolute;left:24px;right:24px;z-index:20;cursor:pointer;border-radius:12px;transition:background .2s}
+.hit:hover{background:rgba(255,255,255,.045)}
+[data-line].row{cursor:pointer}
+.navbtn{display:flex;align-items:center;justify-content:center;height:56px;min-width:56px;padding:0 20px;border-radius:28px;border:2px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;font:800 22px Overpass,sans-serif;cursor:pointer}
+.navbtn:hover{background:rgba(255,255,255,.14)}
 .clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @keyframes nowDot{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
 .nowdot{animation:nowDot 1.8s ease-out infinite}
@@ -61,7 +66,7 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 </div>
 </div>
 </header>
-<div id="map" role="img" aria-label="Network map: each project is a rail line, stations are milestones, trains are AI agents at work"></div>
+<div id="map" role="group" aria-label="Network map: each project is a rail line, stations are milestones, trains are AI agents at work"></div>
 <div id="lower"></div>
 <div id="detail"></div>
 <div id="arrival"></div>
@@ -119,6 +124,8 @@ function render() {
     lastGroup = g;
     const y = Math.round(206 + i * gap + extra);
     html += lineHtml(l, i, y);
+    const hh = Math.max(56, Math.min(gap || 120, 120));
+    if (Array.isArray(l.steps)) html += `<div class="hit" data-line="${esc(l.id)}" role="button" tabindex="0" aria-label="Open ${esc(l.name)}" style="top:${Math.round(y - hh / 2)}px;height:${hh}px"></div>`;
   });
   if (!lines.length) html = `<p class="abs" style="left:330px;top:300px;font-size:32px;color:#a9b8d8">No project lines yet. The first rating fills this map.</p>`;
   document.getElementById('map').innerHTML = html;
@@ -168,7 +175,7 @@ function lineHtml(l, i, y) {
 
 function lowerHtml(lines) {
   const running = lines.filter(l => l.state === 'moving' && l.lastPush && (Date.now() - Date.parse(l.lastPush) < RUN_MS));
-  let rows = running.slice(0, 5).map((l, i) => `<div style="height:36px;margin-bottom:4px;display:flex;align-items:center;gap:20px;padding:0 16px;background:#0a1530;border-radius:4px;position:relative;font-size:18px;font-weight:600" class="mono row"><span class="abs" style="left:0;right:0;top:18px;height:1px;background:#1b2a54;z-index:0"></span><span style="width:12px;height:12px;border-radius:3px;background:${l.color};flex:none"></span><span style="width:200px;flex:none;letter-spacing:.5px">${esc(l.name.toUpperCase())}</span><span style="flex:1;color:#dfe6f5;font-family:Overpass,sans-serif;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(l.task || '')}</span><span class="flap" style="animation-delay:${(i * 1.8).toFixed(1)}s;color:#f4c430;flex:none">${esc(ago(l.lastPush).toUpperCase())}</span></div>`).join('');
+  let rows = running.slice(0, 5).map((l, i) => `<div style="height:36px;margin-bottom:4px;display:flex;align-items:center;gap:20px;padding:0 16px;background:#0a1530;border-radius:4px;position:relative;font-size:18px;font-weight:600" class="mono row" data-line="${esc(l.id)}"><span class="abs" style="left:0;right:0;top:18px;height:1px;background:#1b2a54;z-index:0"></span><span style="width:12px;height:12px;border-radius:3px;background:${l.color};flex:none"></span><span style="width:200px;flex:none;letter-spacing:.5px">${esc(l.name.toUpperCase())}</span><span style="flex:1;color:#dfe6f5;font-family:Overpass,sans-serif;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(l.task || '')}</span><span class="flap" style="animation-delay:${(i * 1.8).toFixed(1)}s;color:#f4c430;flex:none">${esc(ago(l.lastPush).toUpperCase())}</span></div>`).join('');
   if (!rows) {
     const latest = lines.filter(l => l.lastPush).sort((a, b) => b.lastPush.localeCompare(a.lastPush))[0];
     rows = `<p style="margin:6px 0 0;font-size:20px;color:#a9b8d8">No agent is working right now.${latest ? ' Last push: ' + esc(latest.name) + ', ' + esc(ago(latest.lastPush)) + '.' : ''}</p>`;
@@ -226,7 +233,7 @@ ${final ? '<span style="color:#c9d4ee;font-size:30px;font-weight:700;letter-spac
 
 
 // ---------- Line detail: the whole route with every step ----------
-const DETAIL_MS = 20000, MAP_MS = 40000;
+const DETAIL_MS = 120000;
 let viewIdx = -1, viewTimer = null, cycleStarted = false;
 
 // The station the train is heading to.
@@ -275,7 +282,7 @@ function detailHtml(l) {
   h += `<div class="abs" style="left:56px;top:44px;right:56px;display:flex;justify-content:space-between;align-items:center">
 <div style="display:flex;align-items:center;gap:28px"><span style="display:flex;align-items:center;gap:14px;background:${c};color:${G};font-size:40px;font-weight:800;padding:10px 24px 6px;border-radius:12px;line-height:1"><span style="width:42px;height:42px;border-radius:21px;background:${G};color:${c};font-size:24px;display:flex;align-items:center;justify-content:center;margin-top:-4px">${idx || ''}</span>${esc(l.name)}</span>
 <span style="font-size:24px;font-weight:800;color:${stc};white-space:nowrap">${esc(status)}</span></div>
-<span class="mono" style="font-size:44px;font-weight:600">${new Date().toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Zurich' })}</span></div>`;
+<div style="display:flex;align-items:center;gap:14px"><button class="navbtn" data-nav="prev" aria-label="Previous line">‹</button><button class="navbtn" data-nav="next" aria-label="Next line">›</button><button class="navbtn" data-nav="map">Map</button></div></div>`;
   // goal + totals
   h += `<div class="abs" style="left:64px;top:168px;width:1340px;display:flex;flex-direction:column;gap:10px">
 <span class="mono" style="font-size:16px;font-weight:600;letter-spacing:3px;color:${c}">DESTINATION</span>
@@ -328,38 +335,45 @@ function detailHtml(l) {
   h += `<div class="abs" style="left:64px;right:64px;top:956px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px">
 <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:18px;font-weight:700;color:#a9b8d8">${held ? 'Waiting for' : (parked ? 'Last work on this line' : 'The agent works on')}</span><span style="font-size:28px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(held ? ((l.held && l.held.reason) || l.task) : l.task)}</span></div>
 <div style="display:flex;flex-direction:column;gap:4px;text-align:right"><span style="font-size:18px;font-weight:700;color:#a9b8d8">${finished ? 'Destination reached' : 'Still to go'}</span><span style="font-size:28px;font-weight:800;white-space:nowrap">${finished ? 'All ' + n + ' stations' : left + (left === 1 ? ' open step' : ' open steps')}</span></div></div>
-<div class="abs" style="left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.06)"><div class="drain" style="height:6px;background:${c};animation-duration:${DETAIL_MS / 1000}s"></div></div>`;
+<div class="abs" style="left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.06)"><div class="drain" style="height:6px;background:${c};animation-duration:${DETAIL_MS / 1000}s;opacity:.6"></div></div>`;
   return `<div role="img" aria-label="${esc(l.name)}: ${l.stepsDone} of ${l.stepsTotal} steps done towards ${esc(l.goal || '')}">${h}</div>`;
 }
 
 const detailLines = () => (state && state.lines || []).filter(l => Array.isArray(l.steps) && l.steps.length === l.stations.length);
+let openId = null;
 
+// A detail screen opens on a click and goes back to the map by itself after a while,
+// so the wall always returns to the overview.
 function showDetail(l) {
   const el = document.getElementById('detail');
-  if (!l) { el.classList.remove('on'); return; }
+  clearTimeout(viewTimer);
+  if (!l) { el.classList.remove('on'); openId = null; return; }
+  openId = l.id;
   el.innerHTML = detailHtml(l);
   el.classList.add('on');
+  if (!Q.get('view')) viewTimer = setTimeout(() => showDetail(null), DETAIL_MS);
 }
 
-function cycle() {
-  clearTimeout(viewTimer);
-  const forced = Q.get('view');
-  if (forced) {
-    showDetail(forced === 'map' ? null : detailLines().find(l => l.id === forced));
-    viewTimer = setTimeout(cycle, 30000);
-    return;
-  }
-  const el = document.getElementById('detail');
+function step(dir) {
   const list = detailLines();
-  if (el.classList.contains('on') || !list.length || Q.get('rotate') === '0') {
-    showDetail(null);
-    viewTimer = setTimeout(cycle, MAP_MS);
-  } else {
-    viewIdx = (viewIdx + 1) % list.length;
-    showDetail(list[viewIdx]);
-    viewTimer = setTimeout(cycle, DETAIL_MS);
-  }
+  if (!list.length) return;
+  const i = list.findIndex(l => l.id === openId);
+  showDetail(list[(i + dir + list.length) % list.length]);
 }
+
+document.addEventListener('click', e => {
+  const nav = e.target.closest('[data-nav]');
+  if (nav) { const d = nav.dataset.nav; d === 'map' ? showDetail(null) : step(d === 'next' ? 1 : -1); return; }
+  if (e.target.closest('#arrival')) { document.getElementById('arrival').classList.remove('on'); return; }
+  const hit = e.target.closest('[data-line]');
+  if (hit) showDetail(detailLines().find(l => l.id === hit.dataset.line));
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') showDetail(null);
+  else if (openId && e.key === 'ArrowRight') step(1);
+  else if (openId && e.key === 'ArrowLeft') step(-1);
+  else if (!openId && e.key === 'Enter' && e.target.dataset && e.target.dataset.line) showDetail(detailLines().find(l => l.id === e.target.dataset.line));
+});
 
 async function load() {
   try {
@@ -370,7 +384,8 @@ async function load() {
     state = s;
     (s.lines || []).forEach(l => { shown[l.id] = l.at; });
     render();
-    if (!cycleStarted) { cycleStarted = true; viewTimer = setTimeout(cycle, Q.get('view') ? 0 : MAP_MS); }
+    if (!cycleStarted && Q.get('view')) { cycleStarted = true; showDetail(detailLines().find(l => l.id === Q.get('view'))); }
+    else if (openId && !detailLines().some(x => x.id === openId)) showDetail(null);
     const forced = Q.get('arrive') && (s.lines || []).find(l => l.id === Q.get('arrive'));
     if (arrived || forced) showArrival(arrived || forced);
   } catch (e) {
