@@ -93,6 +93,7 @@
   "task": "Refreshed the confirmed hash layer",
   "held": null,
   "evidence": [
+    "d600231 Refresh confirmed layer",
     "fa69270 Refresh confirmed layer",
     "c96156d Add a confirmed layer: resolve as confirmed or candidate",
     "02149cc Frame resolver output as candidates, not confirmed names",
