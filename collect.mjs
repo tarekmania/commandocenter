@@ -73,8 +73,15 @@ for (const r of repos) {
   // A fork counts when Tarek has his own commits in it in the last 30 days (contribution work).
   if (r.fork && !INCLUDE_FORKS.includes(r.full_name)) {
     if (ageDays > 30) continue;
-    const mine = await gh(`/repos/${r.full_name}/commits?author=${r.owner.login}&since=${new Date(now - 30 * DAY).toISOString()}&per_page=1`);
-    if (!mine || !mine.length) continue;
+    // His work in a fork usually sits on a branch for an upstream pull request, so look at every branch.
+    const since30 = new Date(now - 30 * DAY).toISOString();
+    const branches = ((await gh(`/repos/${r.full_name}/branches?per_page=30`)) || []).map(b => b.name).slice(0, 12);
+    let mine = false;
+    for (const b of [r.default_branch, ...branches.filter(b => b !== r.default_branch)]) {
+      const c = await gh(`/repos/${r.full_name}/commits?sha=${encodeURIComponent(b)}&author=${r.owner.login}&since=${since30}&per_page=1`);
+      if (c && c.length) { mine = true; break; }
+    }
+    if (!mine) continue;
   }
   const id = r.name.toLowerCase();
   const pf = projectFile(id);
