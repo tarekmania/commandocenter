@@ -2,98 +2,6 @@
   "headline": "Five lines are moving. Noble Drive and EasyRep Sales are parked.",
   "lines": [
     {
-      "id": "gta6-namehash",
-      "repo": "tarekmania/gta6-namehash",
-      "name": "GTA6 Namehash",
-      "color": "#f4c430",
-      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
-      "stations": [
-        "Hash dictionary",
-        "CLI lookup",
-        "Wider coverage",
-        "Adoption"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Joaat hashing: exact & lowercase",
-            "done": true
-          },
-          {
-            "t": "Build dictionary from public sources",
-            "done": true
-          },
-          {
-            "t": "~309k names, ~498k hashes committed",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Resolve hashes via CLI or stdin",
-            "done": true
-          },
-          {
-            "t": "Resolve hashes across files/trees",
-            "done": true
-          },
-          {
-            "t": "List unresolved hashes",
-            "done": true
-          },
-          {
-            "t": "Mark matches as candidates, not confirmed",
-            "done": true
-          },
-          {
-            "t": "Confirmed tier from other RE projects",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Close remaining format-note hashes",
-            "done": false
-          },
-          {
-            "t": "Add more public name lists",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Release with a clear README and licence",
-            "done": true
-          },
-          {
-            "t": "Announced in the GTA 6 research scene",
-            "done": false
-          },
-          {
-            "t": "Used by SixNG",
-            "done": false
-          },
-          {
-            "t": "Used inside GTA6 Asset Info",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.25,
-      "stepsDone": 9,
-      "stepsTotal": 14,
-      "state": "moving",
-      "task": "Refreshed the confirmed hash layer",
-      "held": null,
-      "runsWeek": 4,
-      "lastPush": "2026-11-24T05:50:26Z",
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.25
-      }
-    },
-    {
       "id": "gta6-asset-info",
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
@@ -222,10 +130,102 @@
       "task": "Ped head faces documented via material presets",
       "held": null,
       "runsWeek": 49,
-      "lastPush": "2026-11-23T21:50:13Z",
+      "lastPush": "2026-11-24T12:27:23Z",
       "todayFrom": {
         "at": 2,
         "progress": 0.6
+      }
+    },
+    {
+      "id": "gta6-namehash",
+      "repo": "tarekmania/gta6-namehash",
+      "name": "GTA6 Namehash",
+      "color": "#f4c430",
+      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
+      "stations": [
+        "Hash dictionary",
+        "CLI lookup",
+        "Wider coverage",
+        "Adoption"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Joaat hashing: exact & lowercase",
+            "done": true
+          },
+          {
+            "t": "Build dictionary from public sources",
+            "done": true
+          },
+          {
+            "t": "~309k names, ~498k hashes committed",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Resolve hashes via CLI or stdin",
+            "done": true
+          },
+          {
+            "t": "Resolve hashes across files/trees",
+            "done": true
+          },
+          {
+            "t": "List unresolved hashes",
+            "done": true
+          },
+          {
+            "t": "Mark matches as candidates, not confirmed",
+            "done": true
+          },
+          {
+            "t": "Confirmed tier from other RE projects",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Close remaining format-note hashes",
+            "done": false
+          },
+          {
+            "t": "Add more public name lists",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Release with a clear README and licence",
+            "done": true
+          },
+          {
+            "t": "Announced in the GTA 6 research scene",
+            "done": false
+          },
+          {
+            "t": "Used by SixNG",
+            "done": false
+          },
+          {
+            "t": "Used inside GTA6 Asset Info",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.25,
+      "stepsDone": 9,
+      "stepsTotal": 14,
+      "state": "moving",
+      "task": "Refreshed the confirmed hash layer",
+      "held": null,
+      "runsWeek": 4,
+      "lastPush": "2026-11-24T05:50:26Z",
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.25
       }
     },
     {
@@ -901,6 +901,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T05:54:56.684Z",
-  "lastSeenPush": "2026-11-24T05:50:26Z"
+  "updatedAt": "2026-11-24T12:32:26.181Z",
+  "lastSeenPush": "2026-11-24T12:27:23Z"
 }
