@@ -114,19 +114,28 @@
         },
         {
           "t": "Alerts and service orders",
-          "done": false
+          "done": true,
+          "ref": "afb65ac"
         },
         {
           "t": "Users, invitations and settings",
-          "done": false
+          "done": true,
+          "ref": "457d3e3"
         },
         {
           "t": "Devices and connections under settings",
-          "done": false
+          "done": true,
+          "ref": "7ec6a9b"
         },
         {
           "t": "Reports and exports",
-          "done": false
+          "done": true,
+          "ref": "7ec6a9b"
+        },
+        {
+          "t": "Driver area redesigned (phone first)",
+          "done": true,
+          "ref": "0f31569"
         },
         {
           "t": "Garage portal and onboarding (group 9)",
@@ -205,17 +214,17 @@
       ]
     }
   ],
-  "task": "App redesign: trips & drivers shipped",
+  "task": "App redesign: settings & driver area shipped",
   "held": null,
   "evidence": [
-    "5dbc42f Merge pull request #15: New UI, trips and drivers (group 5)",
-    "b52e578 New UI: trips, trip page, drivers and driver page (Entwurf 3)",
-    "2def20f Merge pull request #14: Redesign group 4, vehicle list and vehicle page",
-    "02ff424 New UI: full-width content, vehicle names on overview and map",
-    "14e81f7 Restore generated MCP banner to unblock preview builds",
-    "59ee5ca Save preview tooling dependency update",
-    "2116350 Demo Haustechnik: enable the new UI beta (PR #13)",
-    "d3e9b5a Harden selected security findings: pin email function lookup, validate contact form, scope logo and feedback storage, block leaked passwords"
+    "c6b459a Merge pull request #21: New UI, driver area (group 9b)",
+    "6ad4328 Merge pull request #20: New UI, settings (group 9a)",
+    "1b1d2d9 Merge pull request #19: New UI, reports and devices (group 8)",
+    "afb65ac Merge pull request #17: New UI, workshop (group 7)",
+    "11c601b Merge pull request #16: New UI, alerts (group 6)",
+    "0f31569 New UI: driver area (phone first)",
+    "457d3e3 New UI: settings with section menu",
+    "7ec6a9b New UI: reports and devices (Entwurf 3)"
   ],
   "v": 4
 }

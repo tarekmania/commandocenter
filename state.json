@@ -1,5 +1,5 @@
 {
-  "headline": "Seven lines are moving. EasyRep Sales is parked.",
+  "headline": "EasyRep shipped settings and the driver area today; EasyRep Sales is parked.",
   "lines": [
     {
       "id": "easyrep",
@@ -98,19 +98,23 @@
           },
           {
             "t": "Alerts and service orders",
-            "done": false
+            "done": true
           },
           {
             "t": "Users, invitations and settings",
-            "done": false
+            "done": true
           },
           {
             "t": "Devices and connections under settings",
-            "done": false
+            "done": true
           },
           {
             "t": "Reports and exports",
-            "done": false
+            "done": true
+          },
+          {
+            "t": "Driver area redesigned (phone first)",
+            "done": true
           },
           {
             "t": "Garage portal and onboarding (group 9)",
@@ -183,14 +187,14 @@
         ]
       ],
       "at": 1,
-      "progress": 0.47,
-      "stepsDone": 19,
-      "stepsTotal": 39,
+      "progress": 0.75,
+      "stepsDone": 24,
+      "stepsTotal": 40,
       "state": "moving",
-      "task": "App redesign: trips & drivers shipped",
+      "task": "App redesign: settings & driver area shipped",
       "held": null,
-      "runsWeek": 24,
-      "lastPush": "2026-11-24T17:34:36Z",
+      "runsWeek": 34,
+      "lastPush": "2026-11-24T17:50:45Z",
       "needs": [
         {
           "t": "Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), work",
@@ -1159,6 +1163,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T17:44:35.822Z",
-  "lastSeenPush": "2026-11-24T17:34:36Z"
+  "updatedAt": "2026-11-24T17:56:52.576Z",
+  "lastSeenPush": "2026-11-24T17:50:45Z"
 }
