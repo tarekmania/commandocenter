@@ -22,11 +22,11 @@ Notes:
 
 Plan (open steps, in order; tick only with evidence):
 App redesign:
-- Vehicle list and vehicle page
-- Trips and driving behaviour
-- Alerts and service orders
-- Users, invitations and settings
-- Reports and exports
+- Alerts and service orders (in review: #16 alerts, #17 workshop)
+- Users, invitations and settings (group 8, step 1 and 2; inventory in #18)
+- Devices and connections under settings (group 8, step 3)
+- Reports and exports (group 8, step 4)
+- Garage portal and onboarding in the new design (group 9)
 - Phone layout checked on all screens
 - New design default for all customers
 - Old design removed
@@ -46,5 +46,7 @@ Paying fleets:
 - 10 paying fleets
 
 ## Needs Tarek
+- [ ] 2026-11-24 Review the open redesign PRs: alerts (https://github.com/tarekmania/easyrep/pull/16), workshop (https://github.com/tarekmania/easyrep/pull/17), group 8 inventory (https://github.com/tarekmania/easyrep/pull/18)
 
 ## Log
+- 2026-11-24: Vehicles (group 4) and trips/drivers (group 5) are merged; prepared group 8: mockups copied and inventory of settings, devices and reports written (https://github.com/tarekmania/easyrep/pull/18)
