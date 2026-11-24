@@ -1,5 +1,5 @@
 {
-  "headline": "Seven lines are moving.",
+  "headline": "Bilaro reached Payroll. Seven lines are moving.",
   "lines": [
     {
       "id": "easyrep",
@@ -189,6 +189,7 @@
       "progress": 0.81,
       "stepsDone": 25,
       "stepsTotal": 40,
+      "doneToday": 0,
       "state": "moving",
       "task": "Garage portal screens for workshops shipped",
       "held": null,
@@ -224,6 +225,7 @@
         "bexio takeover",
         "Year-end & VAT",
         "AI connector",
+        "Payroll",
         "Tester-ready",
         "Paying customers"
       ],
@@ -255,10 +257,6 @@
           },
           {
             "t": "Pay supplier invoices via payment file",
-            "done": true
-          },
-          {
-            "t": "Swiss payroll: payslips & Lohnausweis",
             "done": true
           }
         ],
@@ -306,6 +304,47 @@
           {
             "t": "Write tools with preview & confirm",
             "done": true
+          }
+        ],
+        [
+          {
+            "t": "Employees and monthly pay runs",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Social insurances, source tax, GAV presets",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Payslips, booking and pain.001 payout",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Extra runs without basic wage",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Print fixes and mobile run list",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Official Lohnausweis (Formular 11)",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Source-tax rate income and L-GAV 2026",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Payroll run with a real company's data",
+            "done": false
           }
         ],
         [
@@ -369,16 +408,23 @@
           }
         ]
       ],
-      "at": 3,
-      "progress": 0.29,
-      "stepsDone": 20,
-      "stepsTotal": 32,
+      "at": 4,
+      "progress": 0.16,
+      "stepsDone": 26,
+      "stepsTotal": 39,
+      "doneToday": 7,
       "state": "moving",
-      "task": "Swiss payroll shipped: payslips & Lohnausweis",
+      "task": "Payroll: official Lohnausweis form shipped",
       "held": null,
-      "runsWeek": 10,
+      "runsWeek": 9,
       "lastPush": "2026-11-24T18:04:01Z",
       "needs": [
+        {
+          "t": "New station «Payroll» added from today's work; say if it belongs somewhere else or what is still missing in it",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
         {
           "t": "Review and merge the phone receipts PR",
           "since": "2026-11-24",
@@ -547,6 +593,7 @@
       "progress": 0.87,
       "stepsDone": 17,
       "stepsTotal": 27,
+      "doneToday": 0,
       "state": "moving",
       "task": "EasyRep trip import PR waits for merge",
       "held": null,
@@ -698,6 +745,7 @@
       "progress": 0.6,
       "stepsDone": 15,
       "stepsTotal": 22,
+      "doneToday": 0,
       "state": "moving",
       "task": "Live test checklist PR waits for merge",
       "held": null,
@@ -818,6 +866,7 @@
       "progress": 0.58,
       "stepsDone": 10,
       "stepsTotal": 15,
+      "doneToday": 0,
       "state": "moving",
       "task": "RAGE-StringsDatabase PR waits for merge",
       "held": null,
@@ -971,6 +1020,7 @@
       "progress": 0.6,
       "stepsDone": 17,
       "stepsTotal": 24,
+      "doneToday": 0,
       "state": "moving",
       "task": "Ped head faces documented via material presets",
       "held": null,
@@ -1074,6 +1124,7 @@
       "progress": 0,
       "stepsDone": 0,
       "stepsTotal": 13,
+      "doneToday": 0,
       "state": "moving",
       "task": "5 pull requests wait for merge",
       "held": null,
@@ -1174,6 +1225,7 @@
       "progress": 0.4,
       "stepsDone": 7,
       "stepsTotal": 13,
+      "doneToday": 0,
       "state": "parked",
       "task": "Shipped the browser-based needs analysis tool",
       "held": null,
@@ -1226,7 +1278,7 @@
     "gta6-asset-info": "#f2892b"
   },
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T18:33:51.182Z",
+  "updatedAt": "2026-11-24T18:55:59.406Z",
   "lastSeenPush": "2026-11-24T18:11:21Z",
   "heads": {
     "easyrep": "a2a67ec99969",
@@ -1241,7 +1293,7 @@
   },
   "projectHashes": {
     "easyrep": "358403e611a6",
-    "bilaro": "24caf5ce51b0",
+    "bilaro": "7033c5754a43",
     "tischlein-lager": "afee8ddc543d",
     "noble-drive-redo": "124661619fe4",
     "gta6-namehash": "0c1fab59c403",
