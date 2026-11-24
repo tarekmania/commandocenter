@@ -4,32 +4,59 @@ Setup:
 - Profile: build
 - Repo: tarekmania/tischlein-lager
 - Cadence: weekly
+- Merge: tarek
 - Notes: Built for Tischlein deck dich. Anything the client sees or decides is a Needs Tarek item.
 
 Goal: Tischlein deck dich runs its warehouses on this tool instead of Rocklog, and buys it
 
-Stations (in this order):
-1. Warehouse model (3D warehouse, real layout, stock)
-2. Picking & stock (picklists, goods-in, expiry, barcode, Excel import)
-3. Drivers & sites (driver app on the phone, several sites, management overview)
-4. Presented (documents and presentation for the team and management)
-5. Pilot (the real team in Staufen works with it)
-6. Sold & rolled out (contract signed, Rocklog switched off)
+## Route
 
-Plan (open steps, in order; tick only with evidence):
-Presented:
-- On-site presentation to management
-Pilot:
-- Pilot with the real team in Staufen
-- Drivers use the phone app daily
-- Pilot feedback fixed
-- Vans tracked with EasyRep trackers (CSV import of EasyRep trips into the comparison: #1; next: upload in the admin, real plates)
-Sold & rolled out:
-- Offer and price sent
-- Contract signed
-- Data moved over from Rocklog
-- Rocklog switched off
-- Second site onboarded
+### Warehouse model
+> 3D warehouse, real layout, stock
+- [x] Scaffold, layout & domain model · 83543e5
+- [x] Static 3D scene from layout · 2af0aed
+- [x] Seed inventory & tooltips · dc6b3ab
+- [x] Real layout, fleet & tour plan · 7208f64
+- [x] Sim clock, vehicles & workers · b594083
+
+### Picking & stock
+> picklists, goods-in, expiry, barcode, Excel import
+- [x] Picklists & Lieferschein · ed8137f
+- [x] Stock entries & expiry rules · f301b9d
+- [x] Barcode scan & Excel import · 834a006
+- [x] Direct storage at goods-in · 1f9a5f1
+- [x] Weight-based F&G/FriPro goods · 9a588f9
+
+### Drivers & sites
+> driver app on the phone, several sites, management overview
+- [x] Driver app: trips & Spender · 67fec99
+- [x] Live mode: roles, multi-site · 846bc61
+- [x] Transfers & institutions · 680202b
+- [x] Test access for stakeholders · 7a2189e
+
+### Presented
+> documents and presentation for the team and management
+- [x] 5 presentation docs for staff · 14d9aad
+- [x] Review fixes on stock overview · f0f7486
+- [ ] On-site presentation to management
+
+### Pilot
+> the real team in Staufen works with it
+- [x] Test deploy on Cloudflare Pages · 483b3e4
+- [ ] Pilot with the real team in Staufen
+- [ ] Drivers use the phone app daily
+- [ ] Pilot feedback fixed
+- [ ] Vans tracked with EasyRep trackers
+
+### Sold & rolled out
+> contract signed, Rocklog switched off
+- [ ] Offer and price sent
+- [ ] Contract signed
+- [ ] Data moved over from Rocklog
+- [ ] Rocklog switched off
+- [ ] Second site onboarded
+
+## Done (Tarek's word)
 
 ## Needs Tarek
 - [ ] 2026-11-24 Review the EasyRep trip import PR (https://github.com/tarekmania/tischlein-lager/pull/1)

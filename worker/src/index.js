@@ -18,6 +18,18 @@ const gh = (path, token, init = {}) => fetch(API + path, {
   }
 });
 
+// The screen is read from the repo, so changes to screen/index.html go live without a deploy.
+// The copy bundled at deploy time is the fallback.
+let screenCache = { at: 0, html: null };
+async function readScreen(env) {
+  if (screenCache.html && Date.now() - screenCache.at < 60000) return screenCache.html;
+  try {
+    const res = await gh(`/repos/${CC}/contents/screen/index.html`, env.CC_DISPATCH_TOKEN, { headers: { Accept: 'application/vnd.github.raw' } });
+    if (res.ok) { const html = await res.text(); if (html.includes('</html>')) { screenCache = { at: Date.now(), html }; return html; } }
+  } catch {}
+  return screenCache.html || SCREEN;
+}
+
 async function readState(env) {
   const res = await gh(`/repos/${CC}/contents/state.json`, env.CC_DISPATCH_TOKEN, { headers: { Accept: 'application/vnd.github.raw' } });
   if (!res.ok) return null;
@@ -94,6 +106,12 @@ export default {
       return new Response(JSON.stringify(await diagnose(env), null, 2), { headers: { 'content-type': 'application/json', 'cache-control': 'no-store' } });
     }
 
+    if (url.pathname === '/screen-version') {
+      const html = await readScreen(env);
+      let h = 0; for (let i = 0; i < html.length; i++) h = (h * 31 + html.charCodeAt(i)) | 0;
+      return new Response(String(h >>> 0), { headers: { 'cache-control': 'no-store' } });
+    }
+
     if (url.pathname === '/state.json') {
       const cache = caches.default;
       const cacheKey = new Request(url.origin + '/state.json');
@@ -108,7 +126,7 @@ export default {
     }
 
     if (url.pathname === '/') {
-      return new Response(SCREEN, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
+      return new Response(await readScreen(env), { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
     }
     return new Response('Not found', { status: 404 });
   }

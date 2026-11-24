@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '7 5 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['projects/**', 'PRIORITY.md', 'route.mjs', 'finalize.mjs']
 
 concurrency:
   group: rate
@@ -33,15 +36,18 @@ jobs:
         env:
           GH_READ_TOKEN: ${{ secrets.CC_READ_TOKEN }}
           CC_REPO: ${{ github.repository }}
+          FULL: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
         run: node collect.mjs
 
       - name: Keep the previous state
         run: if [ -f state.json ]; then cp state.json work/prev-state.json; fi
 
-      - name: Rate with Claude
+      - name: Rate with Claude (only the projects that changed)
+        if: hashFiles('work/changed.txt') != ''
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
+          if [ ! -s work/changed.txt ]; then echo "no project changed"; exit 0; fi
           npm install -g @anthropic-ai/claude-code
           claude -p "Follow the instructions in RATER.md exactly. Today is $(TZ=Europe/Zurich date +%Y-%m-%d)." --allowedTools "Read,Write,Edit,Glob" --permission-mode acceptEdits --max-turns 150
 
@@ -52,7 +58,7 @@ jobs:
         run: |
           git config user.name "commandcenter-bot"
           git config user.email "commandcenter-bot@users.noreply.github.com"
-          git add state.json lines
+          git add state.json lines projects
           if git diff --cached --quiet; then echo "nothing changed"; exit 0; fi
           git commit -m "Update state $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; git rebase --abort 2>/dev/null; sleep 5; done

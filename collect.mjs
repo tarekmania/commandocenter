@@ -1,5 +1,6 @@
 // Collects evidence from GitHub for the rater. No AI here: only facts.
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const TOKEN = process.env.GH_READ_TOKEN;
 const SELF = process.env.CC_REPO || 'tarekmania/commandocenter';
@@ -22,7 +23,12 @@ const DAY = 86400000;
 const now = Date.now();
 const since14 = new Date(now - 14 * DAY).toISOString();
 const lineFile = id => { try { return JSON.parse(readFileSync(`lines/${id}.json`, 'utf8')); } catch { return null; } };
-const goalNote = id => { try { return readFileSync(`projects/${id}.md`, 'utf8').slice(0, 6000); } catch { return null; } };
+const projectFile = id => { try { return readFileSync(`projects/${id}.md`, 'utf8'); } catch { return null; } };
+const hash = s => createHash('sha1').update(s || '').digest('hex').slice(0, 12);
+const prevState = (() => { try { return JSON.parse(readFileSync('state.json', 'utf8')); } catch { return {}; } })();
+const prevHeads = prevState.heads || {}, prevPf = prevState.projectHashes || {};
+// FULL=1 (manual run) rates every project; otherwise only projects whose main branch or project file changed.
+const FULL = process.env.FULL === '1';
 
 // ROADMAP.md in a project repo is the source of truth when it exists.
 // Format: "# Goal" + one line, then "## <station>" headings with "- [x] step" / "- [ ] step" lists.
@@ -47,7 +53,6 @@ function parseRoadmap(md) {
   return real.length >= 2 ? { goal, stations: real } : null;
 }
 
-const ROADMAP_VERSION = 4; // keep in step with finalize.mjs
 const INCLUDE_FORKS = ['tarekmania/GTA6-Asset-Info'];
 
 const repos = [];
@@ -67,10 +72,20 @@ for (const r of repos) {
   const ageDays = (now - Date.parse(r.pushed_at)) / DAY;
   if (ageDays > 120) continue;
   const id = r.name.toLowerCase();
+  const pf = projectFile(id);
   const known = lineFile(id);
-  // A line without a roadmap yet gets its whole history, so the rater can draft the big picture once.
-  const needsDraft = !known || known.v !== ROADMAP_VERSION || !known.goal || !Array.isArray(known.stations) || typeof known.stations[0] !== 'object';
   const commits = (await gh(`/repos/${r.full_name}/commits?since=${since14}&per_page=100`)) || [];
+  let head = commits[0]?.sha;
+  if (!head) head = (await gh(`/repos/${r.full_name}/branches/${encodeURIComponent(r.default_branch)}`))?.commit?.sha || null;
+  head = head ? head.slice(0, 12) : null;
+  const pfHash = pf ? hash(pf) : null;
+  const hasDraft = !!(known && known.goal && Array.isArray(known.stations) && typeof known.stations[0] === 'object');
+  const changed = FULL || prevHeads[id] !== head || prevPf[id] !== pfHash || (!pf && !hasDraft);
+  const commits7d = commits.filter(c => (now - Date.parse(c.commit.author?.date || c.commit.committer?.date)) < 7 * DAY).length;
+  const base = { id, repo: r.full_name, pushedAt: r.pushed_at, head, pfHash, commits7d, hasProjectFile: !!pf, changed };
+  if (!changed) { evidence.push(base); continue; }
+  // A repo without a project file and without a draft gets its whole history, so the rater can draft the big picture once.
+  const needsDraft = !pf && !hasDraft;
   let history = null;
   if (needsDraft) {
     history = [];
@@ -82,14 +97,13 @@ for (const r of repos) {
     }
   }
   const roadmapMd = await gh(`/repos/${r.full_name}/contents/ROADMAP.md`, true);
-  const project = await gh(`/repos/${r.full_name}/contents/PROJECT.md`, true);
   const readme = needsDraft ? await gh(`/repos/${r.full_name}/readme`, true) : null;
   const pulls = (await gh(`/repos/${r.full_name}/pulls?state=open&per_page=20`)) || [];
+  const merged = ((await gh(`/repos/${r.full_name}/pulls?state=closed&per_page=20&sort=updated&direction=desc`)) || [])
+    .filter(p => p.merged_at && (now - Date.parse(p.merged_at)) < 14 * DAY);
   evidence.push({
-    id,
-    repo: r.full_name,
+    ...base,
     description: r.description || '',
-    pushedAt: r.pushed_at,
     defaultBranch: r.default_branch,
     needsDraft,
     commits14d: commits.map(c => ({
@@ -98,10 +112,9 @@ for (const r of repos) {
       message: (c.commit.message || '').split('\n').filter(Boolean).slice(0, 3).join(' / ').slice(0, 240)
     })),
     history,
-    openPulls: pulls.map(p => ({ number: p.number, title: p.title.slice(0, 160), updatedAt: p.updated_at })),
+    openPulls: pulls.map(p => ({ number: p.number, title: p.title.slice(0, 160), branch: p.head?.ref, updatedAt: p.updated_at })),
+    mergedPulls: merged.map(p => ({ number: p.number, title: p.title.slice(0, 160), branch: p.head?.ref, mergedAt: p.merged_at, sha: (p.merge_commit_sha || '').slice(0, 7) })),
     roadmap: parseRoadmap(roadmapMd),
-    projectMd: project ? project.slice(0, 8000) : null,
-    tarekGoals: goalNote(id),
     readme: readme ? readme.slice(0, 8000) : null
   });
 }
@@ -109,4 +122,6 @@ for (const r of repos) {
 mkdirSync('work', { recursive: true });
 const lastSeenPush = evidence.reduce((m, e) => (e.pushedAt > m ? e.pushedAt : m), '');
 writeFileSync('work/evidence.json', JSON.stringify({ collectedAt: new Date().toISOString(), lastSeenPush, repos: evidence }, null, 2));
-console.log(`evidence for ${evidence.length} repos, last push ${lastSeenPush}`);
+const changedIds = evidence.filter(e => e.changed).map(e => e.id);
+writeFileSync('work/changed.txt', changedIds.join('\n'));
+console.log(`evidence for ${evidence.length} repos, last push ${lastSeenPush}, changed: ${changedIds.join(', ') || 'none'}`);

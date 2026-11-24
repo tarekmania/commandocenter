@@ -420,6 +420,21 @@ document.addEventListener('keydown', e => {
   else if (!openId && e.key === 'Enter' && e.target.dataset && e.target.dataset.line) showDetail(detailLines().find(l => l.id === e.target.dataset.line));
 });
 
+// A new screen version in the repo reloads the page by itself, but never while a detail view is open.
+let screenVersion = null;
+async function checkVersion() {
+  if (Q.get('preview')) return;
+  try {
+    const r = await fetch('screen-version' + location.search, { cache: 'no-store' });
+    if (!r.ok) return;
+    const v = await r.text();
+    if (screenVersion && v !== screenVersion && !openId) location.reload();
+    screenVersion = v;
+  } catch {}
+}
+setInterval(checkVersion, 300000);
+checkVersion();
+
 async function load() {
   try {
     const res = await fetch(PREVIEW ? 'preview/' + encodeURIComponent(PREVIEW) + '.json' : '/state.json?key=' + encodeURIComponent(KEY), { cache: 'no-store' });

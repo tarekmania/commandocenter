@@ -4,25 +4,41 @@ Setup:
 - Profile: build
 - Repo: tarekmania/gta6-namehash
 - Cadence: weekly
+- Merge: auto
 - Notes: A separate scheduled task already refreshes confirmed.json; do not touch that file.
 
 Goal: GTA 6 tool authors resolve any hash to a name instead of guessing
 
-Stations (in this order):
-1. Hash dictionary (joaat exact and lowercase, names from public sources)
-2. CLI lookup (resolve hashes from files or stdin, list unresolved)
-3. Wider coverage (more public name lists, remaining format hashes)
-4. Adoption (used by SixNG and GTA6 Asset Info, known in the scene)
+## Route
 
-Plan (open steps, in order; tick only with evidence):
-Wider coverage:
-- Close remaining format-note hashes (1,322 of 1,706 unresolved; GTA V and RDR2 public lists exhausted, needs new sources such as the executable's strings)
-- Add more public name lists (RAGE-StringsDatabase checked, adds nothing: #1)
-Adoption:
-- Release with a clear README and licence (README and MIT licence exist; tag and release are Tarek's)
-- Announced in the GTA 6 research scene
-- Used by SixNG
-- Used inside GTA6 Asset Info
+### Hash dictionary
+> joaat exact and lowercase, names from public sources
+- [x] Joaat hashing: exact & lowercase · 1e38c45
+- [x] Build dictionary from public sources · 1e38c45
+- [x] ~309k names, ~498k hashes committed · 1e38c45
+
+### CLI lookup
+> resolve hashes from files or stdin, list unresolved
+- [x] Resolve hashes via CLI or stdin · 1e38c45
+- [x] Resolve hashes across files/trees · 1e38c45
+- [x] List unresolved hashes · 1e38c45
+- [x] Mark matches as candidates, not confirmed · 02149cc
+- [x] Confirmed tier from other RE projects · c96156d
+
+### Wider coverage
+> more public name lists, remaining format hashes
+- [ ] Close remaining format-note hashes
+- [ ] Add more public name lists
+- [x] Checked RDR2 lists: not used · 777215f
+
+### Adoption
+> used by SixNG and GTA6 Asset Info, known in the scene
+- [x] Release with a clear README and licence · 1e38c45
+- [ ] Announced in the GTA 6 research scene
+- [ ] Used by SixNG
+- [ ] Used inside GTA6 Asset Info
+
+## Done (Tarek's word)
 
 ## Needs Tarek
 - [ ] 2026-11-24 Review the sources check PR (https://github.com/tarekmania/gta6-namehash/pull/1)

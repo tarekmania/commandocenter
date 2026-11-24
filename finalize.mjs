@@ -1,34 +1,29 @@
-// Runs after the rater. Merges each line's roadmap (lines/<id>.json) into the screen state,
-// computes the train position from the steps, adds the facts that must not come from AI,
-// and falls back to the previous values wherever the rater's output is broken.
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-
-const ROADMAP_VERSION = 4; // bump to make the rater redraft every route from the full history
+// Builds the screen state. No AI decisions here: the route comes from projects/<id>.md
+// (or the rater's first draft for new repos), the state from the push dates, the order from PRIORITY.md.
+import { readFileSync, writeFileSync } from 'node:fs';
+import { parseProject } from './route.mjs';
 
 const read = (p, fallback) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return fallback; } };
+const text = p => { try { return readFileSync(p, 'utf8'); } catch { return null; } };
 const evidence = read('work/evidence.json', { repos: [] });
-const prev = read('work/prev-state.json', null);
-const next = read('state.json', null);
+const prev = read('work/prev-state.json', null) || read('state.json', null);
 
+const DAY = 86400000, now = Date.now();
 const zurichDay = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Zurich' });
-const ev = id => evidence.repos.find(r => r.id === id) || null;
-const hex = /^#[0-9a-fA-F]{6}$/;
-const states = new Set(['moving', 'held', 'parked']);
 const str = (v, max) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null);
+const PALETTE = ['#f4c430', '#3cb46e', '#f2892b', '#8fb3ff', '#c98b4f', '#d94f9a', '#a8c83a', '#1fb5b0', '#e8706a', '#b39ddb'];
+const MAX_ON_MAP = 8;
+
+const priority = (text('PRIORITY.md') || '').split('\n').map(l => (l.match(/^\s*\d+\.\s+([\w.-]+)/) || [])[1]).filter(Boolean);
+const rank = id => { const i = priority.indexOf(id); return i < 0 ? 999 : i; };
 
 function cleanRoute(stations) {
   if (!Array.isArray(stations) || stations.length < 2 || stations.length > 8) return null;
   const out = [];
   for (const s of stations) {
     const name = str(s && s.name, 40);
-    if (!name || !Array.isArray(s.steps) || s.steps.length < 1 || s.steps.length > 16) return null;
-    const steps = [];
-    for (const st of s.steps) {
-      const t = str(st && st.t, 60);
-      if (!t) return null;
-      steps.push({ t, done: st.done === true });
-    }
-    out.push({ name, steps });
+    if (!name || !Array.isArray(s.steps) || s.steps.length < 1 || s.steps.length > 20) return null;
+    out.push({ name, steps: s.steps.map(x => ({ t: str(x && x.t, 80) || '…', done: x && x.done === true })) });
   }
   return out;
 }
@@ -37,110 +32,108 @@ function cleanRoute(stations) {
 // ends in an early station do not pin the train to the start. The first station is the origin.
 function position(route) {
   const n = route.length;
-  const sum = route.reduce((a, s) => a + s.steps.filter(x => x.done).length / s.steps.length, 0);
   if (route.every(s => s.steps.every(x => x.done))) return { at: n - 1, progress: 0 };
+  const sum = route.reduce((a, s) => a + s.steps.filter(x => x.done).length / s.steps.length, 0);
   const p = Math.min(n - 1 - 0.01, Math.max(0, sum - 1));
   const at = Math.floor(p);
   return { at, progress: Math.round((p - at) * 100) / 100 };
 }
 
-function validState(s) {
-  if (!s || typeof s.headline !== 'string' || !Array.isArray(s.lines) || !Array.isArray(s.depot)) return false;
-  if (s.lines.length > 8) return false;
-  return s.lines.every(l => l && l.id && states.has(l.state) && hex.test(l.color || ''));
-}
-
-let base;
-if (validState(next)) base = next;
-else if (prev) { console.error('rater state invalid, keeping previous state'); base = prev; }
-else { console.error('rater state invalid and no previous state'); process.exit(1); }
-
-const prevLine = id => prev?.lines?.find(l => l.id === id);
-
-// Open "Needs Tarek" items from projects/<id>.md: lines like "- [ ] 2026-11-24 Review PR #12 (https://...)".
-function needsOf(id) {
-  let md = '';
-  try { md = readFileSync(`projects/${id}.md`, 'utf8'); } catch { return []; }
-  const sec = md.split(/^## /m).find(x => /^Needs Tarek/i.test(x));
-  if (!sec) return [];
-  return sec.split('\n').map(l => l.match(/^\s*[-*]\s+\[ \]\s+(?:(\d{4}-\d{2}-\d{2})\s+)?(.+?)\s*$/)).filter(Boolean).slice(0, 8).map(m => {
+function needsOf(items) {
+  return items.slice(0, 8).map(raw => {
+    const m = raw.match(/^(?:(\d{4}-\d{2}-\d{2})\s+)?(.+)$/);
     const links = (m[2].match(/https?:\/\/[^)\s,]+/g) || []).slice(0, 4);
-    const link = links[0] || null;
     const t = m[2].replace(/\(?\s*https?:\/\/[^\s)]+\)?/g, '').replace(/\s+([,.;:])/g, '$1').replace(/[\s,;:(]+$/, '').replace(/\s{2,}/g, ' ').trim();
-    return { t: t.slice(0, 160), since: m[1] || null, link, links };
+    return { t: t.slice(0, 160), since: m[1] || null, link: links[0] || null, links };
   });
 }
+
+const prevLine = id => prev?.lines?.find(l => l.id === id) || null;
 const newDay = !prev || prev.day !== zurichDay;
-const lines = [];
+const candidates = [];
 
-for (const l of base.lines) {
-  const file = read(`lines/${l.id}.json`, {});
-  const p = prevLine(l.id);
-  const e = ev(l.id);
+for (const e of evidence.repos) {
+  const id = e.id;
+  const file = read(`lines/${id}.json`, {}) || {};
+  if (file.project === false) continue;
+  const proj = parseProject(text(`projects/${id}.md`));
+  const p = prevLine(id);
 
-  // The project's own ROADMAP.md always wins.
-  let route = cleanRoute(e?.roadmap?.stations) || cleanRoute(file.stations);
-  let goal = str(e?.roadmap?.goal, 120) || str(file.goal, 120);
-  if (!route && p && Array.isArray(p.steps)) {
-    console.error(`${l.id}: roadmap invalid, keeping previous`);
-    route = p.stations.map((name, i) => ({ name, steps: p.steps[i] || [] }));
-    goal = goal || p.goal || null;
-  }
-  if (!route) {
-    if (p) { console.error(`${l.id}: no usable roadmap, keeping the previous line as it was`); lines.push({ ...p, lastPush: e?.pushedAt || p.lastPush }); }
-    else console.error(`${l.id}: no usable roadmap, line skipped`);
-    continue;
-  }
+  // Route: the repo's own ROADMAP.md, else the project file, else the rater's first draft.
+  let route = cleanRoute(e.roadmap?.stations) || cleanRoute(proj?.stations) || cleanRoute(file.stations);
+  if (!route && p && Array.isArray(p.steps)) route = p.stations.map((name, i) => ({ name, steps: p.steps[i] || [] }));
+  if (!route) { console.error(`${id}: no route yet, skipped`); continue; }
+  const goal = str(e.roadmap?.goal, 140) || str(proj?.goal, 140) || str(file.goal, 140) || p?.goal || null;
+
+  const ageDays = e.pushedAt ? (now - Date.parse(e.pushedAt)) / DAY : 999;
+  const held = file.held && str(file.held.reason, 40) ? { reason: str(file.held.reason, 40), since: str(file.held.since, 10) || zurichDay } : null;
+  const state = held ? 'held' : ageDays <= 7 ? 'moving' : ageDays <= 21 ? 'parked' : 'depot';
 
   const pos = position(route);
-
   const all = route.flatMap(s => s.steps);
   const out = {
-    id: l.id,
-    repo: file.repo || e?.repo || p?.repo || null,
-    name: str(file.name, 30) || p?.name || l.id,
-    color: l.color,
-    goal: goal || null,
+    id,
+    repo: e.repo,
+    name: str(proj?.name, 30) || str(file.name, 30) || p?.name || id,
+    goal,
     stations: route.map(s => s.name),
     steps: route.map(s => s.steps),
     at: pos.at,
     progress: pos.progress,
     stepsDone: all.filter(s => s.done).length,
     stepsTotal: all.length,
-    state: l.state,
+    state,
     task: str(file.task, 60) || p?.task || '',
-    held: l.state === 'held' && file.held && str(file.held.reason, 40)
-      ? { reason: str(file.held.reason, 40), since: str(file.held.since, 10) || zurichDay }
-      : null,
-    runsWeek: Number.isInteger(l.runsWeek) ? Math.min(99, Math.max(0, l.runsWeek)) : (p?.runsWeek || 0),
-    lastPush: e?.pushedAt || p?.lastPush || null,
-    needs: needsOf(l.id)
+    held,
+    runsWeek: Math.min(99, e.commits7d || 0),
+    lastPush: e.pushedAt || p?.lastPush || null,
+    needs: needsOf(proj?.needs || []),
+    profile: proj?.setup?.profile || null,
+    draft: !proj
   };
-  if (out.state === 'held' && !out.held) out.held = { reason: 'held', since: zurichDay };
-
-  if (newDay) out.todayFrom = p ? { at: p.at, progress: p.progress } : { at: out.at, progress: out.progress };
+  if (newDay) out.todayFrom = p && p.stations?.length === out.stations.length ? { at: p.at, progress: p.progress } : { at: out.at, progress: out.progress };
   else out.todayFrom = p?.todayFrom || { at: out.at, progress: out.progress };
-  if (out.todayFrom.at > out.at || (out.todayFrom.at === out.at && out.todayFrom.progress > out.progress + 0.001)) {
-    out.todayFrom = { at: out.at, progress: out.progress };
-  }
-  lines.push(out);
+  if (out.todayFrom.at > out.at || (out.todayFrom.at === out.at && out.todayFrom.progress > out.progress + 0.001)) out.todayFrom = { at: out.at, progress: out.progress };
+  candidates.push(out);
 }
+
+// The map: held lines always, then by Tarek's priority, then by the most recent push. Depot lines stay off.
+const byPriority = (a, b) => rank(a.id) - rank(b.id) || String(b.lastPush).localeCompare(String(a.lastPush));
+const live = candidates.filter(l => l.state !== 'depot').sort(byPriority);
+const onMap = [...live.filter(l => l.state === 'held'), ...live.filter(l => l.state !== 'held')].slice(0, MAX_ON_MAP).sort(byPriority);
+const depot = candidates.filter(l => !onMap.includes(l)).sort(byPriority);
+
+// Colors stay with their line; new lines take the first free one.
+const used = new Set();
+const prevColor = id => prev?.colors?.[id] || prevLine(id)?.color || null;
+for (const l of onMap) { const c = prevColor(l.id); if (c && !used.has(c)) { l.color = c; used.add(c); } }
+for (const l of onMap) if (!l.color) { l.color = PALETTE.find(c => !used.has(c)) || PALETTE[0]; used.add(l.color); }
+const colors = { ...(prev?.colors || {}) };
+for (const l of onMap) colors[l.id] = l.color;
+
+// Headline: facts only, for people walking past the wall.
+const list = a => a.length <= 1 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1];
+const words = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight'];
+const count = n => `${words[n] || n} line${n === 1 ? ' is' : 's are'} moving.`;
+const moving = onMap.filter(l => l.state === 'moving'), heldL = onMap.filter(l => l.state === 'held');
+const reached = onMap.filter(l => l.todayFrom && l.at > l.todayFrom.at);
+let headline = reached.length ? `${list(reached.slice(0, 2).map(l => `${l.name} reached ${l.stations[l.at]}`))}.` : count(moving.length);
+if (heldL.length) headline += ` ${list(heldL.map(l => l.name))} ${heldL.length === 1 ? 'is' : 'are'} held at a signal.`;
+else if (reached.length) headline += ' ' + count(moving.length);
+
+const heads = {}, projectHashes = {};
+for (const e of evidence.repos) { heads[e.id] = e.head; projectHashes[e.id] = e.pfHash; }
 
 const result = {
-  headline: base.headline.slice(0, 120),
-  lines,
-  depot: base.depot.map(d => ({ id: d.id, repo: d.repo || null, name: d.name || d.id })),
+  headline: headline.slice(0, 120),
+  lines: onMap,
+  depot: depot.map(d => ({ id: d.id, repo: d.repo, name: d.name })),
+  colors,
   day: zurichDay,
   updatedAt: new Date().toISOString(),
-  lastSeenPush: evidence.lastSeenPush || prev?.lastSeenPush || null
+  lastSeenPush: evidence.lastSeenPush || prev?.lastSeenPush || null,
+  heads,
+  projectHashes
 };
 writeFileSync('state.json', JSON.stringify(result, null, 2) + '\n');
-
-// Mark every valid roadmap as drafted under the current rules, so the next run only keeps it current.
-for (const f of readdirSync('lines').filter(f => f.endsWith('.json'))) {
-  const file = read(`lines/${f}`, null);
-  if (file && cleanRoute(file.stations) && file.goal && file.v !== ROADMAP_VERSION) {
-    writeFileSync(`lines/${f}`, JSON.stringify({ ...file, v: ROADMAP_VERSION }, null, 2) + '\n');
-  }
-}
-console.log(`state ok: ${lines.length} lines, ${result.depot.length} in depot, ${lines.reduce((a, l) => a + l.stepsTotal, 0)} steps`);
+console.log(`state ok: ${onMap.length} lines, ${depot.length} in depot, ${onMap.reduce((a, l) => a + l.stepsTotal, 0)} steps`);
