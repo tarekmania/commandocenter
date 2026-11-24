@@ -1,11 +1,10 @@
 {
-  "headline": "Seven lines are moving; EasyRep shipped its garage portal. EasyRep Sales is parked.",
+  "headline": "Seven lines are moving.",
   "lines": [
     {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
       "name": "EasyRep",
-      "color": "#8fb3ff",
       "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
       "stations": [
         "Telematics core",
@@ -207,16 +206,18 @@
           ]
         }
       ],
+      "profile": "lovable",
+      "draft": false,
       "todayFrom": {
         "at": 1,
         "progress": 0.38
-      }
+      },
+      "color": "#8fb3ff"
     },
     {
       "id": "bilaro",
       "repo": "tarekmania/bilaro",
       "name": "Bilaro",
-      "color": "#3cb46e",
       "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
       "stations": [
         "Core bookkeeping",
@@ -399,16 +400,169 @@
           "links": []
         }
       ],
+      "profile": "build",
+      "draft": false,
       "todayFrom": {
         "at": 3,
         "progress": 0.29
-      }
+      },
+      "color": "#3cb46e"
+    },
+    {
+      "id": "noble-drive-redo",
+      "repo": "tarekmania/noble-drive-redo",
+      "name": "Noble Drive",
+      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
+      "stations": [
+        "Vehicle catalog",
+        "Booking flow",
+        "Admin & CRM",
+        "Live",
+        "Handed over"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Vehicle listing with logos",
+            "done": true
+          },
+          {
+            "t": "Grouped models, live availability",
+            "done": true
+          },
+          {
+            "t": "Multi-language site (DE/EN)",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Signature, contract & checkout",
+            "done": true
+          },
+          {
+            "t": "Pay-on-pickup wording update",
+            "done": true
+          },
+          {
+            "t": "Hourly billing",
+            "done": true
+          },
+          {
+            "t": "Payment step in checkout",
+            "done": true
+          },
+          {
+            "t": "Booking button re-enabled",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Collapsible admin sidebar",
+            "done": true
+          },
+          {
+            "t": "Booking delete with confirm dialog",
+            "done": true
+          },
+          {
+            "t": "Protocol/log on bookings",
+            "done": true
+          },
+          {
+            "t": "Locked down public writes/uploads",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Custom domain & DNS",
+            "done": true
+          },
+          {
+            "t": "Email notification infra",
+            "done": true
+          },
+          {
+            "t": "SMS notifications",
+            "done": true
+          },
+          {
+            "t": "Booking and reminder mails tested end to end",
+            "done": false
+          },
+          {
+            "t": "Real payment tested with a live booking",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Admin walkthrough with the client team",
+            "done": false
+          },
+          {
+            "t": "Test week with real bookings",
+            "done": false
+          },
+          {
+            "t": "Client feedback fixed",
+            "done": false
+          },
+          {
+            "t": "Client signs off",
+            "done": false
+          },
+          {
+            "t": "Final invoice paid",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.6,
+      "stepsDone": 15,
+      "stepsTotal": 22,
+      "state": "moving",
+      "task": "Live test checklist PR waits for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-24T17:27:05Z",
+      "needs": [
+        {
+          "t": "Review and merge the live test checklist PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1",
+          "links": [
+            "https://github.com/tarekmania/noble-drive-redo/pull/1"
+          ]
+        },
+        {
+          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
+        {
+          "t": "Plan the admin walkthrough with the B&G team",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.4
+      },
+      "color": "#d94f9a"
     },
     {
       "id": "tischlein-lager",
       "repo": "tarekmania/tischlein-lager",
       "name": "Tischlein Lager",
-      "color": "#1fb5b0",
       "goal": "Tischlein deck dich runs its warehouses on this tool instead of Rocklog, and buys it",
       "stations": [
         "Warehouse model",
@@ -571,165 +725,231 @@
           "links": []
         }
       ],
+      "profile": "build",
+      "draft": false,
       "todayFrom": {
         "at": 2,
         "progress": 0.87
-      }
+      },
+      "color": "#1fb5b0"
     },
     {
-      "id": "noble-drive-redo",
-      "repo": "tarekmania/noble-drive-redo",
-      "name": "Noble Drive",
-      "color": "#d94f9a",
-      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
+      "id": "easyrep-sales",
+      "repo": "tarekmania/easyrep-sales",
+      "name": "EasyRep Sales",
+      "goal": "Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal",
       "stations": [
-        "Vehicle catalog",
-        "Booking flow",
-        "Admin & CRM",
-        "Live",
-        "Handed over"
+        "Needs analysis",
+        "Proposal",
+        "Team rollout",
+        "Used in real deals"
       ],
       "steps": [
         [
           {
-            "t": "Vehicle listing with logos",
+            "t": "Standard question flow",
             "done": true
           },
           {
-            "t": "Grouped models, live availability",
+            "t": "Save/load analysis as a file",
             "done": true
           },
           {
-            "t": "Multi-language site (DE/EN)",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Signature, contract & checkout",
-            "done": true
-          },
-          {
-            "t": "Pay-on-pickup wording update",
-            "done": true
-          },
-          {
-            "t": "Hourly billing",
-            "done": true
-          },
-          {
-            "t": "Payment step in checkout",
-            "done": true
-          },
-          {
-            "t": "Booking button re-enabled",
+            "t": "Import vehicle lists (Excel)",
             "done": true
           }
         ],
         [
           {
-            "t": "Collapsible admin sidebar",
+            "t": "Branded PDF proposal in-browser",
             "done": true
           },
           {
-            "t": "Booking delete with confirm dialog",
-            "done": true
-          },
-          {
-            "t": "Protocol/log on bookings",
-            "done": true
-          },
-          {
-            "t": "Locked down public writes/uploads",
+            "t": "Solutions text mapped to customer pains",
             "done": true
           }
         ],
         [
           {
-            "t": "Custom domain & DNS",
+            "t": "Editable prices & content",
             "done": true
           },
           {
-            "t": "Email notification infra",
+            "t": "Per-industry question order",
             "done": true
           },
           {
-            "t": "SMS notifications",
-            "done": true
-          },
-          {
-            "t": "Booking and reminder mails tested end to end",
+            "t": "Shared with the whole sales team",
             "done": false
           },
           {
-            "t": "Real payment tested with a live booking",
+            "t": "Templates for the top industries",
+            "done": false
+          },
+          {
+            "t": "Link to it from the demo booking mail",
             "done": false
           }
         ],
         [
           {
-            "t": "Admin walkthrough with the client team",
+            "t": "First 5 proposals sent to prospects",
             "done": false
           },
           {
-            "t": "Test week with real bookings",
+            "t": "Sales team feedback worked in",
             "done": false
           },
           {
-            "t": "Client feedback fixed",
-            "done": false
-          },
-          {
-            "t": "Client signs off",
-            "done": false
-          },
-          {
-            "t": "Final invoice paid",
+            "t": "Outcome noted per proposal (won or lost)",
             "done": false
           }
         ]
       ],
-      "at": 2,
-      "progress": 0.6,
-      "stepsDone": 15,
-      "stepsTotal": 22,
-      "state": "moving",
-      "task": "Live test checklist PR waits for merge",
+      "at": 1,
+      "progress": 0.4,
+      "stepsDone": 7,
+      "stepsTotal": 13,
+      "state": "parked",
+      "task": "Shipped the browser-based needs analysis tool",
       "held": null,
       "runsWeek": 0,
-      "lastPush": "2026-11-24T17:27:05Z",
+      "lastPush": "2026-11-04T18:36:01Z",
       "needs": [
         {
-          "t": "Review and merge the live test checklist PR",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1",
-          "links": [
-            "https://github.com/tarekmania/noble-drive-redo/pull/1"
-          ]
-        },
-        {
-          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists",
+          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it",
           "since": "2026-11-24",
           "link": null,
           "links": []
         },
         {
-          "t": "Plan the admin walkthrough with the B&G team",
+          "t": "Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or pre",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
+        {
+          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go into it",
           "since": "2026-11-24",
           "link": null,
           "links": []
         }
       ],
+      "profile": "build",
+      "draft": false,
       "todayFrom": {
-        "at": 2,
+        "at": 1,
         "progress": 0.4
-      }
+      },
+      "color": "#a8c83a"
+    },
+    {
+      "id": "tutti-price-expert",
+      "repo": "tarekmania/tutti-price-expert",
+      "name": "Tutti",
+      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
+      "stations": [
+        "API client",
+        "Flip finder",
+        "Web app",
+        "Online & shareable",
+        "First profitable flip"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Review and merge the API client PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the flip finder PRs",
+            "done": false
+          },
+          {
+            "t": "Budget per search setting",
+            "done": false
+          },
+          {
+            "t": "Cost traps per model (belts, gearboxes)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the web app PR",
+            "done": false
+          },
+          {
+            "t": "Merge the report PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Running on the own server",
+            "done": false
+          },
+          {
+            "t": "Reachable at flip.easyrep.ch",
+            "done": false
+          },
+          {
+            "t": "Login so only invited people can scan",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "First scan with a real budget",
+            "done": false
+          },
+          {
+            "t": "Car inspected and bought",
+            "done": false
+          },
+          {
+            "t": "Car sold with profit",
+            "done": false
+          },
+          {
+            "t": "Profit noted per flip in the tool",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 0,
+      "stepsTotal": 13,
+      "state": "moving",
+      "task": "5 pull requests wait for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-17T19:23:14Z",
+      "needs": [
+        {
+          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so merge in order 1→5, or merge #5 alone and close the others. Checked on #5",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/tutti-price-expert/pull/5",
+          "links": [
+            "https://github.com/tarekmania/tutti-price-expert/pull/5"
+          ]
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      },
+      "color": "#c98b4f"
     },
     {
       "id": "gta6-namehash",
       "repo": "tarekmania/gta6-namehash",
       "name": "GTA6 Namehash",
-      "color": "#f4c430",
       "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
       "stations": [
         "Hash dictionary",
@@ -832,16 +1052,18 @@
           "links": []
         }
       ],
+      "profile": "build",
+      "draft": false,
       "todayFrom": {
         "at": 1,
         "progress": 0.25
-      }
+      },
+      "color": "#f4c430"
     },
     {
       "id": "gta6-asset-info",
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
-      "color": "#f2892b",
       "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
       "stations": [
         "Containers & resources",
@@ -977,219 +1199,13 @@
           ]
         }
       ],
+      "profile": "contribute",
+      "draft": false,
       "todayFrom": {
         "at": 2,
         "progress": 0.6
-      }
-    },
-    {
-      "id": "tutti-price-expert",
-      "repo": "tarekmania/tutti-price-expert",
-      "name": "Tutti",
-      "color": "#c98b4f",
-      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
-      "stations": [
-        "API client",
-        "Flip finder",
-        "Web app",
-        "Online & shareable",
-        "First profitable flip"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Review and merge the API client PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the flip finder PRs",
-            "done": false
-          },
-          {
-            "t": "Budget per search setting",
-            "done": false
-          },
-          {
-            "t": "Cost traps per model (belts, gearboxes)",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the web app PR",
-            "done": false
-          },
-          {
-            "t": "Merge the report PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Running on the own server",
-            "done": false
-          },
-          {
-            "t": "Reachable at flip.easyrep.ch",
-            "done": false
-          },
-          {
-            "t": "Login so only invited people can scan",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "First scan with a real budget",
-            "done": false
-          },
-          {
-            "t": "Car inspected and bought",
-            "done": false
-          },
-          {
-            "t": "Car sold with profit",
-            "done": false
-          },
-          {
-            "t": "Profit noted per flip in the tool",
-            "done": false
-          }
-        ]
-      ],
-      "at": 0,
-      "progress": 0,
-      "stepsDone": 0,
-      "stepsTotal": 13,
-      "state": "moving",
-      "task": "5 pull requests wait for merge",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-17T19:23:14Z",
-      "needs": [
-        {
-          "t": "Review and merge the five stacked PRs; they form one line (#1 ⊂ #2 ⊂ #3 ⊂ #4 ⊂ #5), so merge in order 1→5, or merge #5 alone and close the others. Checked on #5",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/tutti-price-expert/pull/5",
-          "links": [
-            "https://github.com/tarekmania/tutti-price-expert/pull/5"
-          ]
-        }
-      ],
-      "todayFrom": {
-        "at": 0,
-        "progress": 0
-      }
-    },
-    {
-      "id": "easyrep-sales",
-      "repo": "tarekmania/easyrep-sales",
-      "name": "EasyRep Sales",
-      "color": "#a8c83a",
-      "goal": "Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal",
-      "stations": [
-        "Needs analysis",
-        "Proposal",
-        "Team rollout",
-        "Used in real deals"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Standard question flow",
-            "done": true
-          },
-          {
-            "t": "Save/load analysis as a file",
-            "done": true
-          },
-          {
-            "t": "Import vehicle lists (Excel)",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Branded PDF proposal in-browser",
-            "done": true
-          },
-          {
-            "t": "Solutions text mapped to customer pains",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Editable prices & content",
-            "done": true
-          },
-          {
-            "t": "Per-industry question order",
-            "done": true
-          },
-          {
-            "t": "Shared with the whole sales team",
-            "done": false
-          },
-          {
-            "t": "Templates for the top industries",
-            "done": false
-          },
-          {
-            "t": "Link to it from the demo booking mail",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "First 5 proposals sent to prospects",
-            "done": false
-          },
-          {
-            "t": "Sales team feedback worked in",
-            "done": false
-          },
-          {
-            "t": "Outcome noted per proposal (won or lost)",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.4,
-      "stepsDone": 7,
-      "stepsTotal": 13,
-      "state": "parked",
-      "task": "Shipped the browser-based needs analysis tool",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-04T18:36:01Z",
-      "needs": [
-        {
-          "t": "Share the tool with the sales team (GitHub Pages link or the shared version) and say who uses it",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        },
-        {
-          "t": "Decide what an industry template should add beyond today's per-industry question order and proposal sentence (e.g. a ready example analysis per industry, or pre",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        },
-        {
-          "t": "Say which mail is meant by \"demo booking mail\" and whether the internal tool link may go into it",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        }
-      ],
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.4
-      }
+      },
+      "color": "#f2892b"
     }
   ],
   "depot": [
@@ -1199,7 +1215,39 @@
       "name": "Tempo 30"
     }
   ],
+  "colors": {
+    "easyrep": "#8fb3ff",
+    "bilaro": "#3cb46e",
+    "noble-drive-redo": "#d94f9a",
+    "tischlein-lager": "#1fb5b0",
+    "easyrep-sales": "#a8c83a",
+    "tutti-price-expert": "#c98b4f",
+    "gta6-namehash": "#f4c430",
+    "gta6-asset-info": "#f2892b"
+  },
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T18:18:02.608Z",
-  "lastSeenPush": "2026-11-24T18:11:21Z"
+  "updatedAt": "2026-11-24T18:28:18.364Z",
+  "lastSeenPush": "2026-11-24T18:11:21Z",
+  "heads": {
+    "easyrep": "a2a67ec99969",
+    "bilaro": "c9552416c236",
+    "tischlein-lager": "f0f748616592",
+    "noble-drive-redo": "c4eb854d1cee",
+    "gta6-namehash": "777215fa8273",
+    "gta6-asset-info": "648739f9e9a4",
+    "tutti-price-expert": "bdab0928cebc",
+    "easyrep-sales": "2428a56e7198",
+    "tempo30": "8cbdae01efa4"
+  },
+  "projectHashes": {
+    "easyrep": "358403e611a6",
+    "bilaro": "24caf5ce51b0",
+    "tischlein-lager": "afee8ddc543d",
+    "noble-drive-redo": "124661619fe4",
+    "gta6-namehash": "0c1fab59c403",
+    "gta6-asset-info": "8a6a62603671",
+    "tutti-price-expert": "6e1adcab1e52",
+    "easyrep-sales": "227cfa057411",
+    "tempo30": "4a746257a620"
+  }
 }
