@@ -64,8 +64,10 @@ function needsOf(id) {
   const sec = md.split(/^## /m).find(x => /^Needs Tarek/i.test(x));
   if (!sec) return [];
   return sec.split('\n').map(l => l.match(/^\s*[-*]\s+\[ \]\s+(?:(\d{4}-\d{2}-\d{2})\s+)?(.+?)\s*$/)).filter(Boolean).slice(0, 8).map(m => {
-    const link = (m[2].match(/\((https?:\/\/[^)\s]+)\)\s*$/) || [])[1] || null;
-    return { t: m[2].replace(/\s*\(https?:\/\/[^)\s]+\)\s*$/, '').slice(0, 90), since: m[1] || null, link };
+    const links = (m[2].match(/https?:\/\/[^)\s,]+/g) || []).slice(0, 4);
+    const link = links[0] || null;
+    const t = m[2].replace(/\(?\s*https?:\/\/[^\s)]+\)?/g, '').replace(/\s+([,.;:])/g, '$1').replace(/[\s,;:(]+$/, '').replace(/\s{2,}/g, ' ').trim();
+    return { t: t.slice(0, 160), since: m[1] || null, link, links };
   });
 }
 const newDay = !prev || prev.day !== zurichDay;
