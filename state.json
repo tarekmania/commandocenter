@@ -2,6 +2,103 @@
   "headline": "Five lines are moving. Noble Drive and EasyRep Sales are parked.",
   "lines": [
     {
+      "id": "gta6-namehash",
+      "repo": "tarekmania/gta6-namehash",
+      "name": "GTA6 Namehash",
+      "color": "#f4c430",
+      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
+      "stations": [
+        "Hash dictionary",
+        "CLI lookup",
+        "Wider coverage",
+        "Adoption"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Joaat hashing: exact & lowercase",
+            "done": true
+          },
+          {
+            "t": "Build dictionary from public sources",
+            "done": true
+          },
+          {
+            "t": "~309k names, ~498k hashes committed",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Resolve hashes via CLI or stdin",
+            "done": true
+          },
+          {
+            "t": "Resolve hashes across files/trees",
+            "done": true
+          },
+          {
+            "t": "List unresolved hashes",
+            "done": true
+          },
+          {
+            "t": "Mark matches as candidates, not confirmed",
+            "done": true
+          },
+          {
+            "t": "Confirmed tier from other RE projects",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Close remaining format-note hashes",
+            "done": false
+          },
+          {
+            "t": "Add more public name lists",
+            "done": false
+          },
+          {
+            "t": "Checked RDR2 lists: not used",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Release with a clear README and licence",
+            "done": true
+          },
+          {
+            "t": "Announced in the GTA 6 research scene",
+            "done": false
+          },
+          {
+            "t": "Used by SixNG",
+            "done": false
+          },
+          {
+            "t": "Used inside GTA6 Asset Info",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.58,
+      "stepsDone": 10,
+      "stepsTotal": 15,
+      "state": "moving",
+      "task": "Checked RDR2 lists, kept GTA V sources only",
+      "held": null,
+      "runsWeek": 6,
+      "lastPush": "2026-11-24T17:23:59Z",
+      "needs": [],
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.25
+      }
+    },
+    {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
       "name": "EasyRep",
@@ -182,11 +279,147 @@
       "task": "App redesign: trips & drivers shipped",
       "held": null,
       "runsWeek": 24,
-      "lastPush": "2026-11-24T17:19:53Z",
+      "lastPush": "2026-11-24T17:23:47Z",
       "needs": [],
       "todayFrom": {
         "at": 1,
         "progress": 0.38
+      }
+    },
+    {
+      "id": "gta6-asset-info",
+      "repo": "tarekmania/GTA6-Asset-Info",
+      "name": "GTA6 Asset Info",
+      "color": "#f2892b",
+      "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
+      "stations": [
+        "Containers & resources",
+        "Textures",
+        "Models, vehicles & peds",
+        "Map, world & collision",
+        "Fully named"
+      ],
+      "steps": [
+        [
+          {
+            "t": "RPF9 header & payload layout",
+            "done": true
+          },
+          {
+            "t": "Resource/system & graphics pages",
+            "done": true
+          },
+          {
+            "t": "Audio (ADAT), PSO graph & shaders",
+            "done": true
+          },
+          {
+            "t": "RPF9 TOC encryption",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Texture dicts & Xbox BC tiling",
+            "done": true
+          },
+          {
+            "t": "ttpf store layouts (Gfx10, 1-byte)",
+            "done": true
+          },
+          {
+            "t": "BCPack BC1 decode (98.4% coverage)",
+            "done": true
+          },
+          {
+            "t": "Video (Bink2) & UI atlases",
+            "done": true
+          },
+          {
+            "t": "BCPack BC3/4/5/6H/7 decode",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Drawables, LODs, skeletons, skinning",
+            "done": true
+          },
+          {
+            "t": "Vehicle parts, damage, handling data",
+            "done": true
+          },
+          {
+            "t": "Ped clothing skinning & body shape",
+            "done": true
+          },
+          {
+            "t": "Ped head faces via material presets",
+            "done": true
+          },
+          {
+            "t": "Wheel scale, liveries, colours",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Meta resources & LOD hierarchy",
+            "done": true
+          },
+          {
+            "t": "Collision bounds & surface ids",
+            "done": true
+          },
+          {
+            "t": "Navmesh, lights & road graph",
+            "done": true
+          },
+          {
+            "t": "Collision ID to name mapping",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Shader & parameter names resolved",
+            "done": true
+          },
+          {
+            "t": "Material names via lowercase JOAAT",
+            "done": true
+          },
+          {
+            "t": "Map field hashes verified (PSIN overlap)",
+            "done": true
+          },
+          {
+            "t": "Next names PR batched from the watcher",
+            "done": false
+          },
+          {
+            "t": "Collision ids named",
+            "done": false
+          },
+          {
+            "t": "Hash keys mapped with gta6-namehash",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.6,
+      "stepsDone": 17,
+      "stepsTotal": 24,
+      "state": "moving",
+      "task": "Ped head faces documented via material presets",
+      "held": null,
+      "runsWeek": 49,
+      "lastPush": "2026-11-24T17:22:20Z",
+      "needs": [],
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.6
       }
     },
     {
@@ -354,239 +587,6 @@
       "todayFrom": {
         "at": 3,
         "progress": 0.29
-      }
-    },
-    {
-      "id": "gta6-namehash",
-      "repo": "tarekmania/gta6-namehash",
-      "name": "GTA6 Namehash",
-      "color": "#f4c430",
-      "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
-      "stations": [
-        "Hash dictionary",
-        "CLI lookup",
-        "Wider coverage",
-        "Adoption"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Joaat hashing: exact & lowercase",
-            "done": true
-          },
-          {
-            "t": "Build dictionary from public sources",
-            "done": true
-          },
-          {
-            "t": "~309k names, ~498k hashes committed",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Resolve hashes via CLI or stdin",
-            "done": true
-          },
-          {
-            "t": "Resolve hashes across files/trees",
-            "done": true
-          },
-          {
-            "t": "List unresolved hashes",
-            "done": true
-          },
-          {
-            "t": "Mark matches as candidates, not confirmed",
-            "done": true
-          },
-          {
-            "t": "Confirmed tier from other RE projects",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Close remaining format-note hashes",
-            "done": false
-          },
-          {
-            "t": "Add more public name lists",
-            "done": false
-          },
-          {
-            "t": "Checked RDR2 lists: not used",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Release with a clear README and licence",
-            "done": true
-          },
-          {
-            "t": "Announced in the GTA 6 research scene",
-            "done": false
-          },
-          {
-            "t": "Used by SixNG",
-            "done": false
-          },
-          {
-            "t": "Used inside GTA6 Asset Info",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.58,
-      "stepsDone": 10,
-      "stepsTotal": 15,
-      "state": "moving",
-      "task": "Checked RDR2 lists, kept GTA V sources only",
-      "held": null,
-      "runsWeek": 6,
-      "lastPush": "2026-11-24T16:09:15Z",
-      "needs": [],
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.25
-      }
-    },
-    {
-      "id": "gta6-asset-info",
-      "repo": "tarekmania/GTA6-Asset-Info",
-      "name": "GTA6 Asset Info",
-      "color": "#f2892b",
-      "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
-      "stations": [
-        "Containers & resources",
-        "Textures",
-        "Models, vehicles & peds",
-        "Map, world & collision",
-        "Fully named"
-      ],
-      "steps": [
-        [
-          {
-            "t": "RPF9 header & payload layout",
-            "done": true
-          },
-          {
-            "t": "Resource/system & graphics pages",
-            "done": true
-          },
-          {
-            "t": "Audio (ADAT), PSO graph & shaders",
-            "done": true
-          },
-          {
-            "t": "RPF9 TOC encryption",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Texture dicts & Xbox BC tiling",
-            "done": true
-          },
-          {
-            "t": "ttpf store layouts (Gfx10, 1-byte)",
-            "done": true
-          },
-          {
-            "t": "BCPack BC1 decode (98.4% coverage)",
-            "done": true
-          },
-          {
-            "t": "Video (Bink2) & UI atlases",
-            "done": true
-          },
-          {
-            "t": "BCPack BC3/4/5/6H/7 decode",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Drawables, LODs, skeletons, skinning",
-            "done": true
-          },
-          {
-            "t": "Vehicle parts, damage, handling data",
-            "done": true
-          },
-          {
-            "t": "Ped clothing skinning & body shape",
-            "done": true
-          },
-          {
-            "t": "Ped head faces via material presets",
-            "done": true
-          },
-          {
-            "t": "Wheel scale, liveries, colours",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Meta resources & LOD hierarchy",
-            "done": true
-          },
-          {
-            "t": "Collision bounds & surface ids",
-            "done": true
-          },
-          {
-            "t": "Navmesh, lights & road graph",
-            "done": true
-          },
-          {
-            "t": "Collision ID to name mapping",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Shader & parameter names resolved",
-            "done": true
-          },
-          {
-            "t": "Material names via lowercase JOAAT",
-            "done": true
-          },
-          {
-            "t": "Map field hashes verified (PSIN overlap)",
-            "done": true
-          },
-          {
-            "t": "Next names PR batched from the watcher",
-            "done": false
-          },
-          {
-            "t": "Collision ids named",
-            "done": false
-          },
-          {
-            "t": "Hash keys mapped with gta6-namehash",
-            "done": false
-          }
-        ]
-      ],
-      "at": 2,
-      "progress": 0.6,
-      "stepsDone": 17,
-      "stepsTotal": 24,
-      "state": "moving",
-      "task": "Ped head faces documented via material presets",
-      "held": null,
-      "runsWeek": 49,
-      "lastPush": "2026-11-24T15:10:24Z",
-      "needs": [],
-      "todayFrom": {
-        "at": 2,
-        "progress": 0.6
       }
     },
     {
@@ -912,6 +912,6 @@
     }
   ],
   "day": "2026-11-24",
-  "updatedAt": "2026-11-24T17:23:04.941Z",
-  "lastSeenPush": "2026-11-24T17:19:53Z"
+  "updatedAt": "2026-11-24T17:28:44.621Z",
+  "lastSeenPush": "2026-11-24T17:23:59Z"
 }
