@@ -1,5 +1,11 @@
 # GTA6 Namehash
 
+Setup:
+- Profile: build
+- Repo: tarekmania/gta6-namehash
+- Cadence: weekly
+- Notes: A separate scheduled task already refreshes confirmed.json; do not touch that file.
+
 Goal: GTA 6 tool authors resolve any hash to a name instead of guessing
 
 Stations (in this order):
@@ -17,3 +23,7 @@ Adoption:
 - Announced in the GTA 6 research scene
 - Used by SixNG
 - Used inside GTA6 Asset Info
+
+## Needs Tarek
+
+## Log

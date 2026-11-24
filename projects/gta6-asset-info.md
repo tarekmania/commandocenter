@@ -1,5 +1,11 @@
 # GTA6 Asset Info
 
+Setup:
+- Profile: contribute
+- Repo: tarekmania/GTA6-Asset-Info
+- Cadence: weekly
+- Notes: Fork of TrinitronClient/GTA6-Asset-Info. Prepare changes on a branch in the fork; opening the upstream pull request is a Needs Tarek item. Pull request texts short and factual, only the change.
+
 Goal: Every GTA VI asset format is documented and named, so the scene can read all of it
 
 Stations (in this order):
@@ -18,3 +24,7 @@ Fully named:
 - Next names PR batched from the watcher
 - Collision ids named
 - Hash keys mapped with gta6-namehash
+
+## Needs Tarek
+
+## Log

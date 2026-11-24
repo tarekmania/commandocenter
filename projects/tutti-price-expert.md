@@ -1,5 +1,11 @@
 # Tutti
 
+Setup:
+- Profile: build
+- Repo: tarekmania/tutti-price-expert
+- Cadence: daily
+- Notes: Five older pull requests wait for review. Runs only on command, no background jobs, no Telegram.
+
 Goal: Tutti finds cars on tutti.ch far below market value, and the flips make money
 
 Stations (in this order):
@@ -32,3 +38,7 @@ First profitable flip:
 - Car inspected and bought
 - Car sold with profit
 - Profit noted per flip in the tool
+
+## Needs Tarek
+
+## Log

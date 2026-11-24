@@ -56,6 +56,18 @@ else if (prev) { console.error('rater state invalid, keeping previous state'); b
 else { console.error('rater state invalid and no previous state'); process.exit(1); }
 
 const prevLine = id => prev?.lines?.find(l => l.id === id);
+
+// Open "Needs Tarek" items from projects/<id>.md: lines like "- [ ] 2026-11-24 Review PR #12 (https://...)".
+function needsOf(id) {
+  let md = '';
+  try { md = readFileSync(`projects/${id}.md`, 'utf8'); } catch { return []; }
+  const sec = md.split(/^## /m).find(x => /^Needs Tarek/i.test(x));
+  if (!sec) return [];
+  return sec.split('\n').map(l => l.match(/^\s*[-*]\s+\[ \]\s+(?:(\d{4}-\d{2}-\d{2})\s+)?(.+?)\s*$/)).filter(Boolean).slice(0, 8).map(m => {
+    const link = (m[2].match(/\((https?:\/\/[^)\s]+)\)\s*$/) || [])[1] || null;
+    return { t: m[2].replace(/\s*\(https?:\/\/[^)\s]+\)\s*$/, '').slice(0, 90), since: m[1] || null, link };
+  });
+}
 const newDay = !prev || prev.day !== zurichDay;
 const lines = [];
 
@@ -99,7 +111,8 @@ for (const l of base.lines) {
       ? { reason: str(file.held.reason, 40), since: str(file.held.since, 10) || zurichDay }
       : null,
     runsWeek: Number.isInteger(l.runsWeek) ? Math.min(99, Math.max(0, l.runsWeek)) : (p?.runsWeek || 0),
-    lastPush: e?.pushedAt || p?.lastPush || null
+    lastPush: e?.pushedAt || p?.lastPush || null,
+    needs: needsOf(l.id)
   };
   if (out.state === 'held' && !out.held) out.held = { reason: 'held', since: zurichDay };
 

@@ -1,5 +1,11 @@
 # EasyRep
 
+Setup:
+- Profile: lovable
+- Repo: tarekmania/easyrep
+- Cadence: daily
+- Notes: Lovable syncs main both ways. Never push to main. No database migrations or Supabase changes without a Needs Tarek item. The new design stays behind the switch.
+
 Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story
 
 Stations (in this order):
@@ -38,3 +44,7 @@ Paying fleets:
 - First fleet won through a workshop
 - 5 paying fleets
 - 10 paying fleets
+
+## Needs Tarek
+
+## Log

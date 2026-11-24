@@ -1,5 +1,11 @@
 # Noble Drive
 
+Setup:
+- Profile: build
+- Repo: tarekmania/noble-drive-redo
+- Cadence: daily
+- Notes: Client project for B&G Autovermietung. Anything the client sees or decides is a Needs Tarek item.
+
 Goal: B&G Autovermietung's customers book and pay online, and the team runs everything from one admin
 
 Stations (in this order):
@@ -23,3 +29,7 @@ Handed over:
 - Client feedback fixed
 - Client signs off
 - Final invoice paid
+
+## Needs Tarek
+
+## Log

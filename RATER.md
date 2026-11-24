@@ -9,7 +9,7 @@ Your job in this run: read the evidence, keep every project's roadmap true and c
 - `work/evidence.json`: facts collected from GitHub just now. Per repo: last push, commits of the last 14 days, open pull requests, and when they exist:
   - `roadmap`: the parsed `ROADMAP.md` of the project repo (goal, stations, steps with done flags),
   - `projectMd`: the project's `PROJECT.md`,
-  - `tarekGoals`: notes Tarek gave about this project's goal and direction (from `goals/<id>.md`),
+  - `tarekGoals`: notes Tarek gave about this project's goal and direction (from `projects/<id>.md`: setup, goal, stations, plan, Needs Tarek, log),
   - `history` and `readme`: the full commit history and the README, only for lines whose roadmap still has to be drafted (`needsDraft: true`).
 - `lines/<id>.json`: each project's roadmap as you kept it in earlier runs. May be missing or in an old format (stations as plain strings, no goal) for lines that need a draft.
 - `state.json`: the state the screen shows right now. May be missing.
@@ -78,6 +78,8 @@ Only these four fields per line. The script takes name, goal, stations, task and
 - Tick a step `done` when a commit on the default branch finishes it, with the sha in `ref`. Work that only sits in an open pull request is not done yet; say so in `task` ("5 pull requests wait for merge"). Never untick a step unless the evidence shows the work was undone.
 - When commits show work that no step covers but that belongs to a station, add a step there (already `done` if it is finished).
 - Keep names and order stable. Do not reword steps or stations for style. Add a station only when the project's aim has clearly grown; remove one only when Tarek's notes say so.
+
+**Needs Tarek and Log.** The "Needs Tarek" list and the "Log" in a project file are written by the station master. Use the log as evidence of work (with its pull request links); open items under "Needs Tarek" alone do not make a line `held`. Never edit files in `projects/`.
 
 **Honesty.** Every `done` and every new step must come from the evidence. Put the commit shas or files you used into `evidence` (at most 8 items, newest first). Never invent progress, dates or reasons. When the evidence says nothing new about a line, leave its file unchanged.
 

@@ -57,7 +57,8 @@ html,body{margin:0;height:100%;background:#101f44;overflow:hidden}
 <div style="display:flex;flex-direction:column;gap:7px;font-size:16px;color:#c9d4ee">
 <span style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:12px;border-radius:6px;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25)"></span>AI agent working</span>
 <span style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:8px;background:#fff;box-shadow:0 0 10px 2px #f4c430"></span>Moved today</span>
-<span style="display:flex;align-items:center;gap:10px"><span style="width:14px;height:14px;border-radius:7px;background:#ff4d4d;border:3px solid #fff;box-sizing:border-box;margin:0 6px"></span>Held, needs you</span>
+<span style="display:flex;align-items:center;gap:10px"><span style="width:14px;height:14px;border-radius:7px;background:#ff4d4d;border:3px solid #fff;box-sizing:border-box;margin:0 6px"></span>Held</span>
+<span style="display:flex;align-items:center;gap:10px"><span style="font-size:13px;font-weight:800;color:#101f44;background:#ffb347;border-radius:9px;padding:2px 8px 0">1</span>Needs you</span>
 </div>
 <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
 <span id="date" style="font-size:16px;font-weight:700;letter-spacing:1px;color:#c9d4ee"></span>
@@ -143,7 +144,7 @@ function lineHtml(l, i, y) {
   const held = l.state === 'held', parked = l.state === 'parked';
   const c = l.color, fut = c + '45';
   let h = '';
-  h += `<div class="abs" style="left:64px;top:${y - 20}px;width:250px;display:flex;justify-content:flex-end"><span style="background:${c};color:${G};font-size:20px;font-weight:800;padding:7px 15px 4px;border-radius:8px;white-space:nowrap;display:flex;align-items:center;gap:10px"><span style="width:24px;height:24px;border-radius:12px;background:${G};color:${c};font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:-3px">${i + 1}</span>${esc(l.name)}</span></div>`;
+  h += `<div class="abs" style="left:64px;top:${y - 20}px;width:250px;display:flex;justify-content:flex-end"><span style="position:relative;background:${c};color:${G};font-size:20px;font-weight:800;padding:7px 15px 4px;border-radius:8px;white-space:nowrap;display:flex;align-items:center;gap:10px"><span style="width:24px;height:24px;border-radius:12px;background:${G};color:${c};font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:-3px">${i + 1}</span>${esc(l.name)}${Array.isArray(l.needs) && l.needs.length ? `<span style="position:absolute;right:-12px;top:-12px;min-width:26px;height:26px;padding:0 6px;box-sizing:border-box;border-radius:13px;background:${AMBER};color:${G};border:3px solid ${G};font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center">${l.needs.length}</span>` : ''}</span></div>`;
   h += `<div class="abs" style="left:${X0}px;top:${y - 6}px;width:${Math.round(tX - X0)}px;height:12px;border-radius:6px 0 0 6px;background:${c}"></div>`;
   h += `<div class="abs" style="left:${Math.round(tX)}px;top:${y - 6}px;width:${Math.round(X1 - tX)}px;height:12px;border-radius:0 6px 6px 0;background:${fut}"></div>`;
   if (tX - fromX > 2) h += `<div class="abs" style="left:${Math.round(fromX)}px;top:${y - 6}px;width:${Math.round(tX - fromX)}px;height:12px;background:#fff;box-shadow:0 0 14px 3px ${c}"></div>`;
@@ -164,12 +165,13 @@ function lineHtml(l, i, y) {
   const tc = parked ? '#6d7ea3' : '#fff';
   const tsh = running ? `0 0 0 4px ${c}88, 0 6px 14px rgba(0,0,0,.45)` : '0 4px 10px rgba(0,0,0,.4)';
   h += `<div class="abs" style="left:${Math.round(tX - 18)}px;top:${y - 9}px;width:36px;height:18px;border-radius:9px;background:${tc};box-shadow:${tsh};font-size:12px;font-weight:800;color:${G};display:flex;align-items:center;justify-content:center">${parked ? 'P' : ''}</div>`;
+  const needs = Array.isArray(l.needs) ? l.needs : [];
   let status, sub, stc;
   if (held) { status = 'Held ' + daysSince(l.held && l.held.since) + ' days'; sub = (l.held && l.held.reason) || l.task || ''; stc = '#ff8a80'; }
   else if (parked) { status = 'Parked · ' + ago(l.lastPush); sub = l.task || ''; stc = '#a9b8d8'; }
   else if (running) { status = 'Agent working · ' + ago(l.lastPush); sub = l.task || ''; stc = '#fff'; }
   else { status = 'Moving · last push ' + ago(l.lastPush); sub = l.task || ''; stc = '#dfe6f5'; }
-  h += `<div class="abs" style="left:1592px;top:${y - 22}px;width:290px;display:flex;flex-direction:column;gap:1px"><span style="font-size:20px;font-weight:800;color:${stc};white-space:nowrap">${esc(status)}</span><span style="font-size:16px;font-weight:600;color:#a9b8d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(sub)}</span></div>`;
+  h += `<div class="abs" style="left:1592px;top:${y - 22}px;width:290px;display:flex;flex-direction:column;gap:1px"><span style="font-size:20px;font-weight:800;color:${stc};white-space:nowrap;display:flex;align-items:center;gap:10px">${esc(status)}</span><span style="font-size:16px;font-weight:600;color:#a9b8d8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(sub)}</span></div>`;
   return h;
 }
 
@@ -233,7 +235,7 @@ ${final ? '<span style="color:#c9d4ee;font-size:30px;font-weight:700;letter-spac
 
 
 // ---------- Line detail: the whole route with every step ----------
-const DETAIL_MS = 120000;
+const DETAIL_MS = 120000, AMBER = '#ffb347';
 let viewIdx = -1, viewTimer = null, cycleStarted = false;
 
 // The station the train is heading to.
@@ -332,9 +334,10 @@ function detailHtml(l) {
   h += `<div class="abs" style="left:${Math.round(tX - 24)}px;top:${RY - 12}px;width:48px;height:24px;border-radius:12px;background:${tc};box-shadow:${running ? `0 0 0 5px ${c}88,` : ''}0 6px 14px rgba(0,0,0,.45);font-size:14px;font-weight:800;color:${G};display:flex;align-items:center;justify-content:center">${parked ? 'P' : ''}</div>`;
   if (held && !finished) h += `<div class="abs" style="left:${Math.round(xs[tgt] - 58)}px;top:${RY - 15}px;width:30px;height:30px;border-radius:15px;background:#ff4d4d;border:6px solid #fff;box-sizing:border-box"></div>`;
   // bottom strip
-  h += `<div class="abs" style="left:64px;right:64px;top:956px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px">
+  const needs = Array.isArray(l.needs) ? l.needs : [];
+  h += `<div class="abs" style="left:64px;right:64px;top:956px;display:grid;grid-template-columns:${needs.length ? 'minmax(0,1fr) minmax(0,1.2fr) auto' : 'repeat(2,minmax(0,1fr))'};gap:56px">
 <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:18px;font-weight:700;color:#a9b8d8">${held ? 'Waiting for' : (parked ? 'Last work on this line' : 'The agent works on')}</span><span style="font-size:28px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(held ? ((l.held && l.held.reason) || l.task) : l.task)}</span></div>
-<div style="display:flex;flex-direction:column;gap:4px;text-align:right"><span style="font-size:18px;font-weight:700;color:#a9b8d8">${finished ? 'Destination reached' : 'Still to go'}</span><span style="font-size:28px;font-weight:800;white-space:nowrap">${finished ? 'All ' + n + ' stations' : left + (left === 1 ? ' open step' : ' open steps')}</span></div></div>
+${needs.length ? `<div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span style="font-size:18px;font-weight:700;color:${AMBER}">Needs you${needs.length > 1 ? ' · ' + needs.length + ' things' : ''}</span><span style="font-size:28px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(needs[0].t)}</span></div>` : ''}<div style="display:flex;flex-direction:column;gap:4px;text-align:right"><span style="font-size:18px;font-weight:700;color:#a9b8d8">${finished ? 'Destination reached' : 'Still to go'}</span><span style="font-size:28px;font-weight:800;white-space:nowrap">${finished ? 'All ' + n + ' stations' : left + (left === 1 ? ' open step' : ' open steps')}</span></div></div>
 <div class="abs" style="left:0;right:0;bottom:0;height:6px;background:rgba(255,255,255,.06)"><div class="drain" style="height:6px;background:${c};animation-duration:${DETAIL_MS / 1000}s;opacity:.6"></div></div>`;
   return `<div role="img" aria-label="${esc(l.name)}: ${l.stepsDone} of ${l.stepsTotal} steps done towards ${esc(l.goal || '')}">${h}</div>`;
 }

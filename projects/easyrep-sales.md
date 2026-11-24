@@ -1,5 +1,11 @@
 # EasyRep Sales
 
+Setup:
+- Profile: build
+- Repo: tarekmania/easyrep-sales
+- Cadence: weekly
+- Notes: Served from GitHub Pages on main. No database; data stays in the browser.
+
 Goal: Every EasyRep sales talk runs on one needs analysis and ends with a tailored proposal
 
 Stations (in this order):
@@ -17,3 +23,7 @@ Used in real deals:
 - First 5 proposals sent to prospects
 - Sales team feedback worked in
 - Outcome noted per proposal (won or lost)
+
+## Needs Tarek
+
+## Log

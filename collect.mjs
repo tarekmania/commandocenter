@@ -22,7 +22,7 @@ const DAY = 86400000;
 const now = Date.now();
 const since14 = new Date(now - 14 * DAY).toISOString();
 const lineFile = id => { try { return JSON.parse(readFileSync(`lines/${id}.json`, 'utf8')); } catch { return null; } };
-const goalNote = id => { try { return readFileSync(`goals/${id}.md`, 'utf8').slice(0, 6000); } catch { return null; } };
+const goalNote = id => { try { return readFileSync(`projects/${id}.md`, 'utf8').slice(0, 6000); } catch { return null; } };
 
 // ROADMAP.md in a project repo is the source of truth when it exists.
 // Format: "# Goal" + one line, then "## <station>" headings with "- [x] step" / "- [ ] step" lists.

@@ -1,5 +1,11 @@
 # Bilaro
 
+Setup:
+- Profile: build
+- Repo: tarekmania/bilaro
+- Cadence: daily
+- Notes: main deploys to Cloudflare, so all work goes through pull requests.
+
 Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 
 Stations (in this order):
@@ -29,3 +35,7 @@ Paying customers:
 - First 3 paying SMEs
 - First SME fully off bexio
 - 10 paying SMEs
+
+## Needs Tarek
+
+## Log

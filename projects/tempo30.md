@@ -1,5 +1,11 @@
 # Tempo 30
 
+Setup:
+- Profile: local
+- Repo: tarekmania/tempo30
+- Cadence: weekly
+- Notes: Unity project with Git LFS on Tarek's PC. Agents plan and write the Claude Code prompt for the next step; Tarek runs it and playtests himself.
+
 Goal: Tempo30 is on Steam: a funny multiplayer arcade racer in Zurich that players buy
 
 Stations (in this order):
@@ -25,3 +31,7 @@ Early Access:
 - English and German texts and voices
 - Price set
 - Early Access release on Steam
+
+## Needs Tarek
+
+## Log

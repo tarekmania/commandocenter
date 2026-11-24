@@ -1,5 +1,11 @@
 # Tischlein Lager
 
+Setup:
+- Profile: build
+- Repo: tarekmania/tischlein-lager
+- Cadence: weekly
+- Notes: Built for Tischlein deck dich. Anything the client sees or decides is a Needs Tarek item.
+
 Goal: Tischlein deck dich runs its warehouses on this tool instead of Rocklog, and buys it
 
 Stations (in this order):
@@ -24,3 +30,7 @@ Sold & rolled out:
 - Data moved over from Rocklog
 - Rocklog switched off
 - Second site onboarded
+
+## Needs Tarek
+
+## Log
