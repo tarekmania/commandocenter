@@ -557,19 +557,16 @@
       "held": null,
       "runsWeek": 38,
       "lastPush": "2026-11-24T18:11:21Z",
-      "needs": [
-        {
-          "t": "Review the open redesign PRs: alerts, workshop, group 8 inventory",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/easyrep/pull/16",
-          "links": [
-            "https://github.com/tarekmania/easyrep/pull/16",
-            "https://github.com/tarekmania/easyrep/pull/17",
-            "https://github.com/tarekmania/easyrep/pull/18"
-          ]
-        }
-      ],
+      "needs": [],
       "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Phone check done as a code audit first; the fixes go into one pull request when the review budget has room"
+        },
         {
           "on": "2026-11-24",
           "t": "Merge stays with Tarek: live product with paying fleets, synced with Lovable"
@@ -1305,7 +1302,7 @@
     "sixng": "#c98b4f"
   },
   "day": "2026-11-25",
-  "updatedAt": "2026-11-24T23:10:17.322Z",
+  "updatedAt": "2026-11-25T01:32:36.911Z",
   "lastSeenPush": "2026-11-24T21:51:36Z",
   "heads": {
     "gta6-namehash": "298f10202679",
@@ -1322,7 +1319,7 @@
   "projectHashes": {
     "gta6-namehash": "473d30021663",
     "bilaro": "f96e10df49a3",
-    "easyrep": "7ad8d47c0d33",
+    "easyrep": "e73eef9752f5",
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "61e443482e69",
     "gta6-asset-info": "b25b85e0d161",
