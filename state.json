@@ -822,7 +822,7 @@
       "state": "moving",
       "task": "Garage portal screens for workshops shipped",
       "held": null,
-      "runsWeek": 38,
+      "runsWeek": 36,
       "lastPush": "2026-11-24T18:11:21Z",
       "needs": [],
       "decisions": [
@@ -1351,11 +1351,6 @@
   ],
   "depot": [
     {
-      "id": "sixng",
-      "repo": "tarekmania/SixNG",
-      "name": "SixNG"
-    },
-    {
       "id": "easyrep-sales",
       "repo": "tarekmania/easyrep-sales",
       "name": "EasyRep Sales"
@@ -1379,7 +1374,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-25",
-  "updatedAt": "2026-11-25T01:45:14.121Z",
+  "updatedAt": "2026-11-25T15:38:01.673Z",
   "lastSeenPush": "2026-11-25T01:33:49Z",
   "heads": {
     "tutti-price-expert": "bdab0928cebc",
@@ -1401,7 +1396,7 @@
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "97754a62cbc9",
     "gta6-asset-info": "b25b85e0d161",
-    "sixng": "3913a7ea39d7",
+    "sixng": "7857f0cd8c5c",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"
   }

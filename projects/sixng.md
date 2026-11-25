@@ -62,6 +62,14 @@ Goal: SixNG names every GTA VI struct and field by itself, straight from gta6-na
 - [x] macOS support: file manager, settings, memory budget · e4d1380 · 2026-11-21
 - [x] Universal macOS app, CI for Windows/macOS/Linux · e077498 · 2026-11-22
 
+### Interior entities
+> interior-local and group-local placement scope, read from MLO files
+- [x] Mark interior-local and group-local placements (interior-entities) · 9381c68 · 2026-11-21
+
+### Video extraction
+> Bink cutscene videos and UI texture atlases carved from the install
+- [x] Carve Bink videos, export UI texture stores · 3399080 · 2026-11-21
+
 ### Names without hand work
 > new names reach SixNG through the dictionary, not one pull request per name
 - [ ] Users get the dictionary without a manual download (release asset of gta6-namehash that `sixng names --namehash` points to in the README)
@@ -72,6 +80,8 @@ Goal: SixNG names every GTA VI struct and field by itself, straight from gta6-na
 - 2026-11-24 Pull request for the namehash import submitted upstream
 
 ## Decisions
+- 2026-11-25 New station «Video extraction» from 2026-11-21's work, placed before «Names without hand work»
+- 2026-11-25 New station «Interior entities» from 2026-11-21's work, placed before «Names without hand work»
 - 2026-11-25 New station «Textures» from 2026-11-22's work, placed before «Names without hand work»
 - 2026-11-25 New station «Peds & clothing» from 2026-11-22's work, placed before «Names without hand work»
 - 2026-11-25 New station «Map 3D» from 2026-11-22's work, placed before «Names without hand work»
