@@ -14,7 +14,7 @@ Goal: One Android app holds food, training, notes and watch data, and an AI answ
 ### Plan
 > what it does, how the data is stored, which stack
 - [x] Features and requirements set · Tarek · 2026-11-24
-- [ ] Data model for food, training, notes and body data
+- [x] Data model for food, training, notes and body data · docs/health-center/2026-11-25-data-model.md · 2026-11-25
 - [ ] Stack chosen: Android web app with its own data store
 - [ ] Repo created and linked here
 
@@ -45,6 +45,8 @@ Goal: One Android app holds food, training, notes and watch data, and an AI answ
 - 2026-11-24 Features set: recipes, calories by chat, voice or photo, health notes, training with sets and plans, smartwatch data, AI over all data
 
 ## Decisions
+- 2026-11-25 Data model written as one timeline table plus detail tables and a nightly daily summary, so the AI reads a month in 30 rows; the stack must answer five test questions (docs/health-center/2026-11-25-data-model.md)
+- 2026-11-25 Stack step notes that watch data from Health Connect needs a native bridge: a pure web app cannot read it
 - 2026-11-24 Added to the Commandcenter without a repo: the plan exists in chats; the line shows up now and gets its repo when one is created
 - 2026-11-24 Profile plan for now: the station master writes the data model and stack proposal into docs/health-center/ before any code
 - 2026-11-24 Merge auto: Tarek's own app with no other users
@@ -52,3 +54,4 @@ Goal: One Android app holds food, training, notes and watch data, and an AI answ
 ## Needs Tarek
 
 ## Log
+- 2026-11-25: Wrote the data model for food, training, notes and watch data with five test questions (docs/health-center/2026-11-25-data-model.md)
