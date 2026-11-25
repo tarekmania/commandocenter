@@ -2,6 +2,128 @@
   "headline": "Eight lines are moving.",
   "lines": [
     {
+      "id": "tutti-price-expert",
+      "repo": "tarekmania/tutti-price-expert",
+      "name": "Tutti",
+      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
+      "stations": [
+        "API client",
+        "Flip finder",
+        "Web app",
+        "Online & shareable",
+        "First profitable flip"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Review and merge the API client PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the flip finder PRs",
+            "done": false
+          },
+          {
+            "t": "Budget per search setting",
+            "done": false
+          },
+          {
+            "t": "Cost traps per model (belts, gearboxes)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the web app PR",
+            "done": false
+          },
+          {
+            "t": "Merge the report PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Running on the own server",
+            "done": false
+          },
+          {
+            "t": "Reachable at flip.easyrep.ch",
+            "done": false
+          },
+          {
+            "t": "Login so only invited people can scan",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "First scan with a real budget",
+            "done": false
+          },
+          {
+            "t": "Car inspected and bought",
+            "done": false
+          },
+          {
+            "t": "Car sold with profit",
+            "done": false
+          },
+          {
+            "t": "Profit noted per flip in the tool",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 0,
+      "stepsTotal": 13,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "Fixed ICU number-format test failures",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-25T01:33:49Z",
+      "needs": [
+        {
+          "t": "Merge #6 into fix-valuation, then #5 → #1 down to master, or merge #5 into master and close #1 to #4",
+          "since": "2026-11-25",
+          "link": "https://github.com/tarekmania/tutti-price-expert/pull/6",
+          "links": [
+            "https://github.com/tarekmania/tutti-price-expert/pull/6"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "The station master does not merge the stack itself: #1 to #5 are not its own pull requests and the scheduled run says never merge; merging goes to Tarek"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Fixed the ICU test failures in the app, not in the tests: format.ts now always prints ’, so the app looks the same on every machine"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      },
+      "color": "#c98b4f"
+    },
+    {
       "id": "gta6-namehash",
       "repo": "tarekmania/gta6-namehash",
       "name": "GTA6 Namehash",
@@ -1173,132 +1295,14 @@
         "at": 0,
         "progress": 0.5
       },
-      "color": "#c98b4f"
-    },
-    {
-      "id": "health-center",
-      "repo": null,
-      "name": "Health Center",
-      "goal": "One Android app holds food, training, notes and watch data, and an AI answers from all of it",
-      "stations": [
-        "Plan",
-        "Food",
-        "Training",
-        "Body and watch",
-        "AI overview"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Features and requirements set",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Data model for food, training, notes and body data",
-            "done": false
-          },
-          {
-            "t": "Stack chosen: Android web app with its own data store",
-            "done": false
-          },
-          {
-            "t": "Repo created and linked here",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Log a meal by chat, voice or photo",
-            "done": false
-          },
-          {
-            "t": "Calorie estimate per meal",
-            "done": false
-          },
-          {
-            "t": "Save recipes, also from Instagram cooking videos",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Exercises with sets and reps",
-            "done": false
-          },
-          {
-            "t": "Training plans",
-            "done": false
-          },
-          {
-            "t": "History per exercise",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Notes on sensations and issues",
-            "done": false
-          },
-          {
-            "t": "Smartwatch connected: heart rate and steps",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "AI answers from all the data",
-            "done": false
-          },
-          {
-            "t": "Weekly overview",
-            "done": false
-          },
-          {
-            "t": "Used every day on the phone",
-            "done": false
-          }
-        ]
-      ],
-      "at": 0,
-      "progress": 0,
-      "stepsDone": 1,
-      "stepsTotal": 15,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "Next: Data model for food, training, notes and body data",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-24T12:00:00Z",
-      "needs": [],
-      "decisions": [
-        {
-          "on": "2026-11-24",
-          "t": "Added to the Commandcenter without a repo: the plan exists in chats; the line shows up now and gets its repo when one is created"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Profile plan for now: the station master writes the data model and stack proposal into docs/health-center/ before any code"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge auto: Tarek's own app with no other users"
-        }
-      ],
-      "profile": "plan",
-      "draft": false,
-      "todayFrom": {
-        "at": 0,
-        "progress": 0
-      },
       "color": "#a8c83a"
     }
   ],
   "depot": [
     {
-      "id": "tutti-price-expert",
-      "repo": "tarekmania/tutti-price-expert",
-      "name": "Tutti"
+      "id": "health-center",
+      "repo": null,
+      "name": "Health Center"
     },
     {
       "id": "easyrep-sales",
@@ -1321,12 +1325,13 @@
     "gta6-namehash": "#f4c430",
     "gta6-asset-info": "#f2892b",
     "health-center": "#a8c83a",
-    "sixng": "#c98b4f"
+    "sixng": "#a8c83a"
   },
   "day": "2026-11-25",
-  "updatedAt": "2026-11-25T01:35:24.933Z",
-  "lastSeenPush": "2026-11-24T21:51:36Z",
+  "updatedAt": "2026-11-25T01:38:56.780Z",
+  "lastSeenPush": "2026-11-25T01:33:49Z",
   "heads": {
+    "tutti-price-expert": "bdab0928cebc",
     "gta6-namehash": "298f10202679",
     "bilaro": "7ffc176dbf6c",
     "easyrep": "a2a67ec99969",
@@ -1334,11 +1339,11 @@
     "noble-drive-redo": "c4eb854d1cee",
     "gta6-asset-info": "648739f9e9a4",
     "sixng": "a4063d38097d",
-    "tutti-price-expert": "bdab0928cebc",
     "easyrep-sales": "2428a56e7198",
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
+    "tutti-price-expert": "695a55deaf8a",
     "gta6-namehash": "473d30021663",
     "bilaro": "442eddaf5c39",
     "easyrep": "e73eef9752f5",
@@ -1346,7 +1351,6 @@
     "noble-drive-redo": "97754a62cbc9",
     "gta6-asset-info": "b25b85e0d161",
     "sixng": "d01caa9a8695",
-    "tutti-price-expert": "632beaa70abd",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"
   }

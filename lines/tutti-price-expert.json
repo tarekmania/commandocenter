@@ -2,94 +2,15 @@
   "id": "tutti-price-expert",
   "repo": "tarekmania/tutti-price-expert",
   "name": "Tutti",
-  "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
-  "stations": [
-    {
-      "name": "API client",
-      "steps": [
-        {
-          "t": "Review and merge the API client PR",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Flip finder",
-      "steps": [
-        {
-          "t": "Merge the flip finder PRs",
-          "done": false
-        },
-        {
-          "t": "Budget per search setting",
-          "done": false
-        },
-        {
-          "t": "Cost traps per model (belts, gearboxes)",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Web app",
-      "steps": [
-        {
-          "t": "Merge the web app PR",
-          "done": false
-        },
-        {
-          "t": "Merge the report PR",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Online & shareable",
-      "steps": [
-        {
-          "t": "Running on the own server",
-          "done": false
-        },
-        {
-          "t": "Reachable at flip.easyrep.ch",
-          "done": false
-        },
-        {
-          "t": "Login so only invited people can scan",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "First profitable flip",
-      "steps": [
-        {
-          "t": "First scan with a real budget",
-          "done": false
-        },
-        {
-          "t": "Car inspected and bought",
-          "done": false
-        },
-        {
-          "t": "Car sold with profit",
-          "done": false
-        },
-        {
-          "t": "Profit noted per flip in the tool",
-          "done": false
-        }
-      ]
-    }
-  ],
-  "task": "5 pull requests wait for merge",
+  "task": "Fixed ICU number-format test failures",
   "held": null,
+  "project": true,
   "evidence": [
+    "open PR #6: Swiss group separator ’ on every ICU version",
     "open PR #5: Flip finder: km-adjusted market value, engine filter, PureTech belt cost",
     "open PR #4: Analysis report as PDF and HTML",
     "open PR #3: Local web app: scans from the browser, live progress, deals and settings",
     "open PR #2: Flip finder: on-demand scan for profitable used-car listings",
     "open PR #1: tutti.ch JSON API client instead of Puppeteer scraper"
-  ],
-  "v": 4
+  ]
 }
