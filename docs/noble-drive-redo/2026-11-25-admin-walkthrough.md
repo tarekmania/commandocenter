@@ -18,7 +18,7 @@ Step: "Admin walkthrough with the client team" (station Handed over). Script for
 | 25-35 | Fahrzeuge | Availability, manual status and blocks («Sperre hinzufügen») with optional auto reset, upcoming bookings per vehicle | Block a car for service until a date |
 | 35-40 | Verträge | Generated rental contracts, signed or not, printed or not | Print an unprinted contract |
 | 40-45 | Fahrer / Kunden | Driver licence check and validity, customers with and without bookings | Find a customer's history |
-| 45-50 | Behördenauskunft | Who drove a car at a given date and time (for fines and police requests) | Look up a vehicle at a past time |
+| 45-50 | Behörden-Auskunft (admins only) | Who drove a car at a given date and time (for fines and police requests) | Look up a vehicle at a past time |
 | 50-55 | Berichte / Aktivität | Revenue per month and per vehicle, top vehicles; full log of every admin action | — |
 | 55-60 | Questions | Collect wishes and problems | — |
 
