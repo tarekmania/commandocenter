@@ -262,6 +262,11 @@
             "done": true
           },
           {
+            "t": "Walkthrough fixes: takeover, bank lines, mobile",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
             "t": "Tester round 3: bank import & receipts",
             "done": false
           },
@@ -278,7 +283,12 @@
             "done": false
           },
           {
-            "t": "Help texts and first-login guide",
+            "t": "First-login guide with setup tasks",
+            "done": true,
+            "on": "2026-11-11"
+          },
+          {
+            "t": "Help texts for the hard concepts (score, cut-off date, reversal, VAT method)",
             "done": false
           }
         ],
@@ -314,9 +324,9 @@
         ]
       ],
       "at": 4,
-      "progress": 0.16,
-      "stepsDone": 26,
-      "stepsTotal": 39,
+      "progress": 0.32,
+      "stepsDone": 28,
+      "stepsTotal": 41,
       "doneToday": 0,
       "state": "moving",
       "task": "Walkthrough fixes: takeover, bank, mobile UI",
@@ -325,7 +335,7 @@
       "lastPush": "2026-11-24T18:52:43Z",
       "needs": [
         {
-          "t": "Review and merge the phone receipts PR",
+          "t": "Review and merge the phone receipts PR; its Cloudflare preview build failed instantly while the GitHub build and a local build pass, so check the preview build ",
           "since": "2026-11-24",
           "link": "https://github.com/tarekmania/bilaro/pull/1",
           "links": [
@@ -346,6 +356,14 @@
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Split \"Help texts and first-login guide\": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilar"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Added the walkthrough fixes (7ffc176) to Tester-ready: real work on main that no step foresaw"
+        },
         {
           "on": "2026-11-24",
           "t": "Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping"
@@ -903,13 +921,17 @@
           "links": []
         },
         {
-          "t": "Plan the admin walkthrough with the B&G team",
-          "since": "2026-11-24",
+          "t": "Hold the admin walkthrough with the B&G team using the script (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)",
+          "since": "2026-11-25",
           "link": null,
           "links": []
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Wrote the walkthrough script myself instead of leaving \"plan the walkthrough\" to Tarek: only holding the session needs him"
+        },
         {
           "on": "2026-11-24",
           "t": "Merge stays with Tarek: client project, B&G's customers book on it"
@@ -1302,7 +1324,7 @@
     "sixng": "#c98b4f"
   },
   "day": "2026-11-25",
-  "updatedAt": "2026-11-25T01:32:36.911Z",
+  "updatedAt": "2026-11-25T01:35:24.933Z",
   "lastSeenPush": "2026-11-24T21:51:36Z",
   "heads": {
     "gta6-namehash": "298f10202679",
@@ -1318,10 +1340,10 @@
   },
   "projectHashes": {
     "gta6-namehash": "473d30021663",
-    "bilaro": "f96e10df49a3",
+    "bilaro": "442eddaf5c39",
     "easyrep": "e73eef9752f5",
     "tischlein-lager": "e004e5b4456a",
-    "noble-drive-redo": "61e443482e69",
+    "noble-drive-redo": "97754a62cbc9",
     "gta6-asset-info": "b25b85e0d161",
     "sixng": "d01caa9a8695",
     "tutti-price-expert": "632beaa70abd",
