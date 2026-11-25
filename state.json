@@ -2,6 +2,133 @@
   "headline": "Eight lines are moving.",
   "lines": [
     {
+      "id": "health-center",
+      "repo": null,
+      "name": "Health Center",
+      "goal": "One Android app holds food, training, notes and watch data, and an AI answers from all of it",
+      "stations": [
+        "Plan",
+        "Food",
+        "Training",
+        "Body and watch",
+        "AI overview"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Features and requirements set",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Data model for food, training, notes and body data",
+            "done": true,
+            "on": "2026-11-25"
+          },
+          {
+            "t": "Stack chosen: Android web app with its own data store",
+            "done": false
+          },
+          {
+            "t": "Repo created and linked here",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Log a meal by chat, voice or photo",
+            "done": false
+          },
+          {
+            "t": "Calorie estimate per meal",
+            "done": false
+          },
+          {
+            "t": "Save recipes, also from Instagram cooking videos",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Exercises with sets and reps",
+            "done": false
+          },
+          {
+            "t": "Training plans",
+            "done": false
+          },
+          {
+            "t": "History per exercise",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Notes on sensations and issues",
+            "done": false
+          },
+          {
+            "t": "Smartwatch connected: heart rate and steps",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "AI answers from all the data",
+            "done": false
+          },
+          {
+            "t": "Weekly overview",
+            "done": false
+          },
+          {
+            "t": "Used every day on the phone",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 2,
+      "stepsTotal": 15,
+      "doneToday": 1,
+      "state": "moving",
+      "task": "Next: Data model for food, training, notes and body data",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-25T12:00:00Z",
+      "needs": [],
+      "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Data model written as one timeline table plus detail tables and a nightly daily summary, so the AI reads a month in 30 rows; the stack must answer five test que"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Stack step notes that watch data from Health Connect needs a native bridge: a pure web app cannot read it"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Added to the Commandcenter without a repo: the plan exists in chats; the line shows up now and gets its repo when one is created"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Profile plan for now: the station master writes the data model and stack proposal into docs/health-center/ before any code"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge auto: Tarek's own app with no other users"
+        }
+      ],
+      "profile": "plan",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      },
+      "color": "#a8c83a"
+    },
+    {
       "id": "tutti-price-expert",
       "repo": "tarekmania/tutti-price-expert",
       "name": "Tutti",
@@ -83,7 +210,7 @@
       "stepsTotal": 13,
       "doneToday": 0,
       "state": "moving",
-      "task": "Fixed ICU number-format test failures",
+      "task": "6 pull requests wait for merge",
       "held": null,
       "runsWeek": 0,
       "lastPush": "2026-11-25T01:33:49Z",
@@ -1220,89 +1347,13 @@
         "progress": 0.6
       },
       "color": "#f2892b"
-    },
-    {
-      "id": "sixng",
-      "repo": "tarekmania/SixNG",
-      "name": "SixNG",
-      "goal": "SixNG names every GTA VI struct and field by itself, straight from gta6-namehash",
-      "stations": [
-        "Struct and field names",
-        "Namehash import",
-        "Names without hand work"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Struct names merged upstream",
-            "done": true
-          },
-          {
-            "t": "Map-format structs and more fields merged upstream",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Import a namehash dictionary as last resort",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Import pull request merged upstream",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "SixNG ships with the namehash dictionary",
-            "done": false
-          },
-          {
-            "t": "Names confirmed in SixNG flow back into namehash",
-            "done": false
-          },
-          {
-            "t": "Maintainer updates names without Tarek",
-            "done": false
-          }
-        ]
-      ],
-      "at": 0,
-      "progress": 0.5,
-      "stepsDone": 3,
-      "stepsTotal": 7,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "Namehash import PR submitted upstream",
-      "held": null,
-      "runsWeek": 67,
-      "lastPush": "2026-11-24T16:04:17Z",
-      "needs": [],
-      "decisions": [
-        {
-          "on": "2026-11-24",
-          "t": "SixNG is its own line: Tarek's own work lives in this fork (namehash import), next to GTA6 Asset Info"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Goal is that the maintainer uses gta6-namehash directly, so names stop depending on Tarek's pull requests (Tarek, chat)"
-        }
-      ],
-      "profile": "contribute",
-      "draft": false,
-      "todayFrom": {
-        "at": 0,
-        "progress": 0.5
-      },
-      "color": "#a8c83a"
     }
   ],
   "depot": [
     {
-      "id": "health-center",
-      "repo": null,
-      "name": "Health Center"
+      "id": "sixng",
+      "repo": "tarekmania/SixNG",
+      "name": "SixNG"
     },
     {
       "id": "easyrep-sales",
@@ -1328,7 +1379,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-25",
-  "updatedAt": "2026-11-25T01:38:56.780Z",
+  "updatedAt": "2026-11-25T01:45:14.121Z",
   "lastSeenPush": "2026-11-25T01:33:49Z",
   "heads": {
     "tutti-price-expert": "bdab0928cebc",
@@ -1350,7 +1401,7 @@
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "97754a62cbc9",
     "gta6-asset-info": "b25b85e0d161",
-    "sixng": "d01caa9a8695",
+    "sixng": "3913a7ea39d7",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"
   }

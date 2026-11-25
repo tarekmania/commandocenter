@@ -2,10 +2,17 @@
   "id": "sixng",
   "repo": "tarekmania/SixNG",
   "name": "SixNG",
-  "task": "Namehash import PR submitted upstream",
+  "task": "BC6H fix, localised text, character outfits",
   "held": null,
   "project": true,
   "evidence": [
-    "880fdfd Import a namehash dictionary as last resort"
+    "a4063d3 BC6H BCPack: fix one-region to two-region state (#15)",
+    "0619601 sixng text: decode the localised text tables",
+    "d207a54 sixng outfit: character as rigged GLB with animation clip",
+    "d7430ce Decode BC4, BC5 and BC6H BCPack texture chunks",
+    "908a301 Audio: codec id fix; PCM and XMA2 export",
+    "4c496f2 Drawable dictionaries: model, name, link, export per member (#8)",
+    "e077498 CI: build and test on Windows, macOS and Linux (#4)",
+    "42603f2 Stream the whole map in Map 3D within RAM and VRAM caps"
   ]
 }
