@@ -55,11 +55,13 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 > feedback rounds fixed, design on the level of the best tools
 - [x] Tester round 1: takeover & MWST · f5a647b
 - [x] Tester round 2: invoices & contacts · 2738741
+- [x] Walkthrough fixes: takeover, bank lines, mobile · 7ffc176 · 2026-11-24
 - [ ] Tester round 3: bank import & receipts
 - [ ] Design pass on all main screens
 - [ ] Receipt upload from the phone
 - [ ] Real bexio imports of 3 test companies
-- [ ] Help texts and first-login guide
+- [x] First-login guide with setup tasks · 9681925 · 2026-11-11
+- [ ] Help texts for the hard concepts (score, cut-off date, reversal, VAT method)
 
 ### Paying customers
 > own company's books in Bilaro, first SMEs fully off bexio, public pricing and sign-up
@@ -78,13 +80,16 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-25 Split "Help texts and first-login guide": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilaro/2026-11-25-help-texts.md
+- 2026-11-25 Added the walkthrough fixes (7ffc176) to Tester-ready: real work on main that no step foresaw
 - 2026-11-24 Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping
 - 2026-11-24 Merge stays with Tarek: main deploys the live app that testers use
 
 ## Needs Tarek
-- [ ] 2026-11-24 Review and merge the phone receipts PR (https://github.com/tarekmania/bilaro/pull/1)
+- [ ] 2026-11-24 Review and merge the phone receipts PR; its Cloudflare preview build failed instantly while the GitHub build and a local build pass, so check the preview build log once (https://github.com/tarekmania/bilaro/pull/1)
 - [ ] 2026-11-24 Run tester round 3 (bank import & receipts) with the testers and share the feedback
 - [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test
 
 ## Log
+- 2026-11-25: Review budget full (4 of 3 open), no PR. PR #1 still builds locally; planned the help texts with ten draft texts (docs/bilaro/2026-11-25-help-texts.md)
 - 2026-11-24: Receipt upload from the phone: installable web app (manifest, icons, shortcut) and phone link on Belege; build, lint and 310 tests ok (https://github.com/tarekmania/bilaro/pull/1)
