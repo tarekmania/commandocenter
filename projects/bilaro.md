@@ -91,5 +91,5 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 - [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test
 
 ## Log
-- 2026-11-25: Review budget full (4 of 3 open), no PR. PR #1 still builds locally; planned the help texts with ten draft texts (docs/bilaro/2026-11-25-help-texts.md)
+- 2026-11-25: Review budget full (3 of 3 open), no PR. PR #1 still builds locally; planned the help texts with ten draft texts (docs/bilaro/2026-11-25-help-texts.md)
 - 2026-11-24: Receipt upload from the phone: installable web app (manifest, icons, shortcut) and phone link on Belege; build, lint and 310 tests ok (https://github.com/tarekmania/bilaro/pull/1)
