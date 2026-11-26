@@ -54,6 +54,7 @@ Goal: B&G Autovermietung's customers book and pay online, and the team runs ever
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-26 Wrote the test week plan myself (what each booking must go through, a 10-minute daily check, pass criteria); running it with the team needs Tarek and comes after the walkthrough
 - 2026-11-25 Wrote the walkthrough script myself instead of leaving "plan the walkthrough" to Tarek: only holding the session needs him
 - 2026-11-24 Merge stays with Tarek: client project, B&G's customers book on it
 
@@ -63,5 +64,6 @@ Goal: B&G Autovermietung's customers book and pay online, and the team runs ever
 - [ ] 2026-11-25 Hold the admin walkthrough with the B&G team using the script (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)
 
 ## Log
+- 2026-11-26: No new commits on main, PR #1 still open; review budget full, so wrote the test week plan from the booking, payment and reminder code (docs/noble-drive-redo/2026-11-26-test-week.md)
 - 2026-11-25: No new commits on main; review budget full, so wrote the 60-minute admin walkthrough script for the B&G team (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)
 - 2026-11-24: SMS found already built; wrote the live test checklist and fixed a stuck-pending SMS case when the gateway key is missing (https://github.com/tarekmania/noble-drive-redo/pull/1)
