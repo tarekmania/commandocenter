@@ -2,6 +2,484 @@
   "headline": "Eight lines are moving.",
   "lines": [
     {
+      "id": "easyrep",
+      "repo": "tarekmania/easyrep",
+      "name": "EasyRep",
+      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
+      "stations": [
+        "Telematics core",
+        "Website that converts",
+        "App redesign",
+        "Lead machine",
+        "Paying fleets"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Demo tenant & trip processing",
+            "done": true
+          },
+          {
+            "t": "MFK (vehicle inspection) tracking",
+            "done": true
+          },
+          {
+            "t": "Billing export",
+            "done": true
+          },
+          {
+            "t": "Location filter for the fleet",
+            "done": true
+          },
+          {
+            "t": "Faster per-vehicle trip scan",
+            "done": true
+          },
+          {
+            "t": "Alerts & fault codes",
+            "done": true
+          },
+          {
+            "t": "Invoicing through the platform",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "New homepage (Wise-style)",
+            "done": true
+          },
+          {
+            "t": "Press & ETH credibility section",
+            "done": true
+          },
+          {
+            "t": "Garage partner page /werkstaetten",
+            "done": true
+          },
+          {
+            "t": "Realistic app screenshots",
+            "done": true
+          },
+          {
+            "t": "Garage portal screenshots",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Per-user redesign switch",
+            "done": true
+          },
+          {
+            "t": "Login, forgot & reset redesigned",
+            "done": true
+          },
+          {
+            "t": "Overview, map & zones redesigned",
+            "done": true
+          },
+          {
+            "t": "New login shown to everyone",
+            "done": true
+          },
+          {
+            "t": "Security hardening pass",
+            "done": true
+          },
+          {
+            "t": "Vehicle list and vehicle page",
+            "done": true
+          },
+          {
+            "t": "Trips and driving behaviour",
+            "done": true
+          },
+          {
+            "t": "Alerts and service orders",
+            "done": true
+          },
+          {
+            "t": "Users, invitations and settings",
+            "done": true
+          },
+          {
+            "t": "Devices and connections under settings",
+            "done": true
+          },
+          {
+            "t": "Reports and exports",
+            "done": true
+          },
+          {
+            "t": "Driver area redesigned (phone first)",
+            "done": true
+          },
+          {
+            "t": "Garage portal and onboarding (group 9)",
+            "done": true
+          },
+          {
+            "t": "Phone layout checked on all screens",
+            "done": false
+          },
+          {
+            "t": "New design default for all customers",
+            "done": false
+          },
+          {
+            "t": "Old design removed",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Qualified leads from Google Maps signals",
+            "done": false
+          },
+          {
+            "t": "Lead scoring by fleet size and industry",
+            "done": false
+          },
+          {
+            "t": "Mail domains warmed up",
+            "done": false
+          },
+          {
+            "t": "50 cold mails a day running",
+            "done": false
+          },
+          {
+            "t": "Workshop partner campaign live",
+            "done": false
+          },
+          {
+            "t": "Savings calculator on the homepage",
+            "done": false
+          },
+          {
+            "t": "Demo booking from mail to calendar",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Large fleet contract signed",
+            "done": false
+          },
+          {
+            "t": "Trackers installed on the contract fleet",
+            "done": false
+          },
+          {
+            "t": "First fleet won through a workshop",
+            "done": false
+          },
+          {
+            "t": "5 paying fleets",
+            "done": false
+          },
+          {
+            "t": "10 paying fleets",
+            "done": false
+          }
+        ]
+      ],
+      "at": 1,
+      "progress": 0.81,
+      "stepsDone": 25,
+      "stepsTotal": 40,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "Garage portal screens for workshops shipped",
+      "held": null,
+      "runsWeek": 30,
+      "lastPush": "2026-11-26T01:42:40Z",
+      "needs": [],
+      "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Phone check done as a code audit first; the fixes go into one pull request when the review budget has room"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: live product with paying fleets, synced with Lovable"
+        }
+      ],
+      "profile": "lovable",
+      "draft": false,
+      "todayFrom": {
+        "at": 1,
+        "progress": 0.81
+      },
+      "color": "#8fb3ff"
+    },
+    {
+      "id": "bilaro",
+      "repo": "tarekmania/bilaro",
+      "name": "Bilaro",
+      "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
+      "stations": [
+        "Core bookkeeping",
+        "bexio takeover",
+        "Year-end & VAT",
+        "AI connector",
+        "Payroll",
+        "Tester-ready",
+        "Paying customers"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Chart of accounts, journal & statements",
+            "done": true
+          },
+          {
+            "t": "Receipts, bank & VAT",
+            "done": true
+          },
+          {
+            "t": "Period picker & open invoices",
+            "done": true
+          },
+          {
+            "t": "Dunning fees and default interest",
+            "done": true
+          },
+          {
+            "t": "Two-factor sign-in & team roles",
+            "done": true
+          },
+          {
+            "t": "Stripe subscription & webhook",
+            "done": true
+          },
+          {
+            "t": "Pay supplier invoices via payment file",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Import bexio contacts & invoices",
+            "done": true
+          },
+          {
+            "t": "Balance takeover by cut-off date",
+            "done": true
+          },
+          {
+            "t": "Fix takeover issues from feedback",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Year-end closing assistant",
+            "done": true
+          },
+          {
+            "t": "VAT reconciliation and MWST-XML export",
+            "done": true
+          },
+          {
+            "t": "Fixed assets with depreciation",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "MCP server with OAuth consent",
+            "done": true
+          },
+          {
+            "t": "Consent page expiry handling",
+            "done": true
+          },
+          {
+            "t": "Read tools: search, ledger, accounts",
+            "done": true
+          },
+          {
+            "t": "Write tools with preview & confirm",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Employees and monthly pay runs",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Social insurances, source tax, GAV presets",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Payslips, booking and pain.001 payout",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Extra runs without basic wage",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Print fixes and mobile run list",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Official Lohnausweis (Formular 11)",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Source-tax rate income and L-GAV 2026",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Payroll run with a real company's data",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Tester round 1: takeover & MWST",
+            "done": true
+          },
+          {
+            "t": "Tester round 2: invoices & contacts",
+            "done": true
+          },
+          {
+            "t": "Walkthrough fixes: takeover, bank lines, mobile",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Tester round 3: bank import & receipts",
+            "done": false
+          },
+          {
+            "t": "Design pass on all main screens",
+            "done": false
+          },
+          {
+            "t": "Receipt upload from the phone",
+            "done": false
+          },
+          {
+            "t": "Real bexio imports of 3 test companies",
+            "done": false
+          },
+          {
+            "t": "First-login guide with setup tasks",
+            "done": true,
+            "on": "2026-11-11"
+          },
+          {
+            "t": "Help texts for the hard concepts (score, cut-off date, reversal, VAT method)",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Own company closes 2026 in Bilaro",
+            "done": false
+          },
+          {
+            "t": "Pricing page on bilaro.ch",
+            "done": false
+          },
+          {
+            "t": "Self sign-up with trial and Stripe",
+            "done": false
+          },
+          {
+            "t": "First fiduciary partner using Bilaro",
+            "done": false
+          },
+          {
+            "t": "First 3 paying SMEs",
+            "done": false
+          },
+          {
+            "t": "First SME fully off bexio",
+            "done": false
+          },
+          {
+            "t": "10 paying SMEs",
+            "done": false
+          }
+        ]
+      ],
+      "at": 4,
+      "progress": 0.32,
+      "stepsDone": 28,
+      "stepsTotal": 41,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "Walkthrough fixes: takeover, bank, mobile UI",
+      "held": null,
+      "runsWeek": 10,
+      "lastPush": "2026-11-26T01:41:52Z",
+      "needs": [
+        {
+          "t": "Review and merge the phone receipts PR; its Cloudflare preview build failed instantly while the GitHub build and a local build pass, so check the preview build ",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/bilaro/pull/1",
+          "links": [
+            "https://github.com/tarekmania/bilaro/pull/1"
+          ]
+        },
+        {
+          "t": "Run tester round 3 (bank import & receipts) with the testers and share the feedback",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
+        {
+          "t": "Provide bexio export files of 3 test companies for the real import test",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-25",
+          "t": "Split \"Help texts and first-login guide\": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilar"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Added the walkthrough fixes (7ffc176) to Tester-ready: real work on main that no step foresaw"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: main deploys the live app that testers use"
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 4,
+        "progress": 0.32
+      },
+      "color": "#3cb46e"
+    },
+    {
       "id": "health-center",
       "repo": null,
       "name": "Health Center",
@@ -91,7 +569,7 @@
       "progress": 0,
       "stepsDone": 2,
       "stepsTotal": 15,
-      "doneToday": 1,
+      "doneToday": 0,
       "state": "moving",
       "task": "Next: Data model for food, training, notes and body data",
       "held": null,
@@ -368,484 +846,6 @@
         "progress": 0.73
       },
       "color": "#f4c430"
-    },
-    {
-      "id": "bilaro",
-      "repo": "tarekmania/bilaro",
-      "name": "Bilaro",
-      "goal": "Swiss SMEs move from bexio to Bilaro and pay for it",
-      "stations": [
-        "Core bookkeeping",
-        "bexio takeover",
-        "Year-end & VAT",
-        "AI connector",
-        "Payroll",
-        "Tester-ready",
-        "Paying customers"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Chart of accounts, journal & statements",
-            "done": true
-          },
-          {
-            "t": "Receipts, bank & VAT",
-            "done": true
-          },
-          {
-            "t": "Period picker & open invoices",
-            "done": true
-          },
-          {
-            "t": "Dunning fees and default interest",
-            "done": true
-          },
-          {
-            "t": "Two-factor sign-in & team roles",
-            "done": true
-          },
-          {
-            "t": "Stripe subscription & webhook",
-            "done": true
-          },
-          {
-            "t": "Pay supplier invoices via payment file",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Import bexio contacts & invoices",
-            "done": true
-          },
-          {
-            "t": "Balance takeover by cut-off date",
-            "done": true
-          },
-          {
-            "t": "Fix takeover issues from feedback",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Year-end closing assistant",
-            "done": true
-          },
-          {
-            "t": "VAT reconciliation and MWST-XML export",
-            "done": true
-          },
-          {
-            "t": "Fixed assets with depreciation",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "MCP server with OAuth consent",
-            "done": true
-          },
-          {
-            "t": "Consent page expiry handling",
-            "done": true
-          },
-          {
-            "t": "Read tools: search, ledger, accounts",
-            "done": true
-          },
-          {
-            "t": "Write tools with preview & confirm",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Employees and monthly pay runs",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Social insurances, source tax, GAV presets",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Payslips, booking and pain.001 payout",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Extra runs without basic wage",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Print fixes and mobile run list",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Official Lohnausweis (Formular 11)",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Source-tax rate income and L-GAV 2026",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Payroll run with a real company's data",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Tester round 1: takeover & MWST",
-            "done": true
-          },
-          {
-            "t": "Tester round 2: invoices & contacts",
-            "done": true
-          },
-          {
-            "t": "Walkthrough fixes: takeover, bank lines, mobile",
-            "done": true,
-            "on": "2026-11-24"
-          },
-          {
-            "t": "Tester round 3: bank import & receipts",
-            "done": false
-          },
-          {
-            "t": "Design pass on all main screens",
-            "done": false
-          },
-          {
-            "t": "Receipt upload from the phone",
-            "done": false
-          },
-          {
-            "t": "Real bexio imports of 3 test companies",
-            "done": false
-          },
-          {
-            "t": "First-login guide with setup tasks",
-            "done": true,
-            "on": "2026-11-11"
-          },
-          {
-            "t": "Help texts for the hard concepts (score, cut-off date, reversal, VAT method)",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Own company closes 2026 in Bilaro",
-            "done": false
-          },
-          {
-            "t": "Pricing page on bilaro.ch",
-            "done": false
-          },
-          {
-            "t": "Self sign-up with trial and Stripe",
-            "done": false
-          },
-          {
-            "t": "First fiduciary partner using Bilaro",
-            "done": false
-          },
-          {
-            "t": "First 3 paying SMEs",
-            "done": false
-          },
-          {
-            "t": "First SME fully off bexio",
-            "done": false
-          },
-          {
-            "t": "10 paying SMEs",
-            "done": false
-          }
-        ]
-      ],
-      "at": 4,
-      "progress": 0.32,
-      "stepsDone": 28,
-      "stepsTotal": 41,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "Walkthrough fixes: takeover, bank, mobile UI",
-      "held": null,
-      "runsWeek": 10,
-      "lastPush": "2026-11-24T18:52:43Z",
-      "needs": [
-        {
-          "t": "Review and merge the phone receipts PR; its Cloudflare preview build failed instantly while the GitHub build and a local build pass, so check the preview build ",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/bilaro/pull/1",
-          "links": [
-            "https://github.com/tarekmania/bilaro/pull/1"
-          ]
-        },
-        {
-          "t": "Run tester round 3 (bank import & receipts) with the testers and share the feedback",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        },
-        {
-          "t": "Provide bexio export files of 3 test companies for the real import test",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        }
-      ],
-      "decisions": [
-        {
-          "on": "2026-11-25",
-          "t": "Split \"Help texts and first-login guide\": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilar"
-        },
-        {
-          "on": "2026-11-25",
-          "t": "Added the walkthrough fixes (7ffc176) to Tester-ready: real work on main that no step foresaw"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge stays with Tarek: main deploys the live app that testers use"
-        }
-      ],
-      "profile": "build",
-      "draft": false,
-      "todayFrom": {
-        "at": 4,
-        "progress": 0.16
-      },
-      "color": "#3cb46e"
-    },
-    {
-      "id": "easyrep",
-      "repo": "tarekmania/easyrep",
-      "name": "EasyRep",
-      "goal": "SME fleets in DACH buy EasyRep, and enough of them pay for the Series A story",
-      "stations": [
-        "Telematics core",
-        "Website that converts",
-        "App redesign",
-        "Lead machine",
-        "Paying fleets"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Demo tenant & trip processing",
-            "done": true
-          },
-          {
-            "t": "MFK (vehicle inspection) tracking",
-            "done": true
-          },
-          {
-            "t": "Billing export",
-            "done": true
-          },
-          {
-            "t": "Location filter for the fleet",
-            "done": true
-          },
-          {
-            "t": "Faster per-vehicle trip scan",
-            "done": true
-          },
-          {
-            "t": "Alerts & fault codes",
-            "done": true
-          },
-          {
-            "t": "Invoicing through the platform",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "New homepage (Wise-style)",
-            "done": true
-          },
-          {
-            "t": "Press & ETH credibility section",
-            "done": true
-          },
-          {
-            "t": "Garage partner page /werkstaetten",
-            "done": true
-          },
-          {
-            "t": "Realistic app screenshots",
-            "done": true
-          },
-          {
-            "t": "Garage portal screenshots",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Per-user redesign switch",
-            "done": true
-          },
-          {
-            "t": "Login, forgot & reset redesigned",
-            "done": true
-          },
-          {
-            "t": "Overview, map & zones redesigned",
-            "done": true
-          },
-          {
-            "t": "New login shown to everyone",
-            "done": true
-          },
-          {
-            "t": "Security hardening pass",
-            "done": true
-          },
-          {
-            "t": "Vehicle list and vehicle page",
-            "done": true
-          },
-          {
-            "t": "Trips and driving behaviour",
-            "done": true
-          },
-          {
-            "t": "Alerts and service orders",
-            "done": true
-          },
-          {
-            "t": "Users, invitations and settings",
-            "done": true
-          },
-          {
-            "t": "Devices and connections under settings",
-            "done": true
-          },
-          {
-            "t": "Reports and exports",
-            "done": true
-          },
-          {
-            "t": "Driver area redesigned (phone first)",
-            "done": true
-          },
-          {
-            "t": "Garage portal and onboarding (group 9)",
-            "done": true
-          },
-          {
-            "t": "Phone layout checked on all screens",
-            "done": false
-          },
-          {
-            "t": "New design default for all customers",
-            "done": false
-          },
-          {
-            "t": "Old design removed",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Qualified leads from Google Maps signals",
-            "done": false
-          },
-          {
-            "t": "Lead scoring by fleet size and industry",
-            "done": false
-          },
-          {
-            "t": "Mail domains warmed up",
-            "done": false
-          },
-          {
-            "t": "50 cold mails a day running",
-            "done": false
-          },
-          {
-            "t": "Workshop partner campaign live",
-            "done": false
-          },
-          {
-            "t": "Savings calculator on the homepage",
-            "done": false
-          },
-          {
-            "t": "Demo booking from mail to calendar",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Large fleet contract signed",
-            "done": false
-          },
-          {
-            "t": "Trackers installed on the contract fleet",
-            "done": false
-          },
-          {
-            "t": "First fleet won through a workshop",
-            "done": false
-          },
-          {
-            "t": "5 paying fleets",
-            "done": false
-          },
-          {
-            "t": "10 paying fleets",
-            "done": false
-          }
-        ]
-      ],
-      "at": 1,
-      "progress": 0.81,
-      "stepsDone": 25,
-      "stepsTotal": 40,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "Garage portal screens for workshops shipped",
-      "held": null,
-      "runsWeek": 36,
-      "lastPush": "2026-11-24T18:11:21Z",
-      "needs": [],
-      "decisions": [
-        {
-          "on": "2026-11-25",
-          "t": "Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot"
-        },
-        {
-          "on": "2026-11-25",
-          "t": "Phone check done as a code audit first; the fixes go into one pull request when the review budget has room"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge stays with Tarek: live product with paying fleets, synced with Lovable"
-        }
-      ],
-      "profile": "lovable",
-      "draft": false,
-      "todayFrom": {
-        "at": 1,
-        "progress": 0.81
-      },
-      "color": "#8fb3ff"
     },
     {
       "id": "tischlein-lager",
@@ -1373,13 +1373,13 @@
     "health-center": "#a8c83a",
     "sixng": "#a8c83a"
   },
-  "day": "2026-11-25",
-  "updatedAt": "2026-11-25T15:38:01.673Z",
-  "lastSeenPush": "2026-11-25T01:33:49Z",
+  "day": "2026-11-26",
+  "updatedAt": "2026-11-26T01:44:02.511Z",
+  "lastSeenPush": "2026-11-26T01:42:40Z",
   "heads": {
+    "bilaro": "7ffc176dbf6c",
     "tutti-price-expert": "bdab0928cebc",
     "gta6-namehash": "298f10202679",
-    "bilaro": "7ffc176dbf6c",
     "easyrep": "a2a67ec99969",
     "tischlein-lager": "f0f748616592",
     "noble-drive-redo": "c4eb854d1cee",
@@ -1389,14 +1389,14 @@
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
+    "bilaro": "442eddaf5c39",
     "tutti-price-expert": "695a55deaf8a",
     "gta6-namehash": "473d30021663",
-    "bilaro": "442eddaf5c39",
     "easyrep": "e73eef9752f5",
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "97754a62cbc9",
     "gta6-asset-info": "b25b85e0d161",
-    "sixng": "7857f0cd8c5c",
+    "sixng": "e9bc8d705f93",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"
   }
