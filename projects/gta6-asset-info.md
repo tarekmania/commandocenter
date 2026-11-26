@@ -3,9 +3,9 @@
 Setup:
 - Profile: contribute
 - Repo: tarekmania/GTA6-Asset-Info
-- Cadence: weekly
+- Cadence: paused
 - Merge: tarek
-- Notes: Fork of TrinitronClient/GTA6-Asset-Info. Prepare changes on a branch in the fork; opening the upstream pull request is a Needs Tarek item. Pull request texts short and factual, only the change.
+- Notes: Fork of TrinitronClient/GTA6-Asset-Info. Prepare changes on a branch in the fork; opening the upstream pull request is a Needs Tarek item. Pull request texts short and factual, only the change. The upstream repo is not public since 2026-11-25: check with `git ls-remote https://github.com/TrinitronClient/GTA6-Asset-Info` and resume only when it answers again. Format pages name no tools (the maintainer removed tool names after a merge). No tiny pull requests: names reach the scene through gta6-namehash and SixNG's import, not one docs PR per name.
 
 Goal: Every GTA VI asset format is documented and named, so the scene can read all of it
 
@@ -35,15 +35,15 @@ Goal: Every GTA VI asset format is documented and named, so the scene can read a
 - [x] Meta resources & LOD hierarchy · 3c6e02c
 - [x] Collision bounds & surface ids · 5080ce5
 - [x] Navmesh, lights & road graph · 1ddcacd
-- [ ] Collision ID to name mapping
+- [x] Collision ID to name mapping: TERRAIN_ names, DEFAULT for the default id · 273ae2b · 2026-11-24
 
 ### Fully named
 > struct and field names resolved, hash keys mapped to names
 - [x] Shader & parameter names resolved · 3739c82
 - [x] Material names via lowercase JOAAT · a124af5
 - [x] Map field hashes verified (PSIN overlap) · 1ddcacd
-- [ ] Next names PR batched from the watcher
-- [ ] Collision ids named
+- [x] Next names PR batched from the watcher: ten field and struct names · 273ae2b · 2026-11-24
+- [ ] Collision ids named (258 of 398 named; the rest are not in any public list)
 - [ ] Hash keys mapped with gta6-namehash
 
 ## Notes
@@ -51,12 +51,15 @@ Goal: Every GTA VI asset format is documented and named, so the scene can read a
 - Related tools: SixNG (asset extractor) and the own resolver gta6-namehash.
 
 ## Done (Tarek's word)
+- 2026-11-24 Pull request with the collision surface names and ten more hash names merged upstream
 
 ## Decisions
+- 2026-11-26 Cadence paused: the upstream repo stopped being public on 2026-11-25, so there is nothing to contribute to; resume when it is public again
+- 2026-11-26 Dropped the Needs Tarek item for station/names-batch-2026-11-24: its upstream is gone; the branch stays as it is and is rebased if upstream returns
+- 2026-11-26 Ticked collision names and the batched names PR: merged upstream on 2026-11-24 (Tarek, chat 2026-11-24)
 - 2026-11-24 Merge stays with Tarek: pull requests to the upstream project go out under his name
 
 ## Needs Tarek
-- [ ] 2026-11-24 Open the upstream PR from https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24 — "Name eight more hashes": case-sensitive joaat matches that fit the notes' meaning: clipDictionaryName, clipName (§17), ScaleY, ScaleX, Indices, AspectRatio (§11), volOuterColour (§7), probably Category (§19).
 
 ## Log
 - 2026-11-24: Ran gta6-namehash over current upstream notes; 8 new names verified and prepared on station/names-batch-2026-11-24 (based on upstream main). Upstream merged #165 (collision surface names) today.
