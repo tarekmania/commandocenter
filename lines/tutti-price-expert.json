@@ -2,10 +2,11 @@
   "id": "tutti-price-expert",
   "repo": "tarekmania/tutti-price-expert",
   "name": "Tutti",
-  "task": "6 pull requests wait for merge",
+  "task": "7 pull requests wait for merge",
   "held": null,
   "project": true,
   "evidence": [
+    "open PR #7: Known costs for dry dual-clutch gearboxes",
     "open PR #6: Swiss group separator ’ on every ICU version",
     "open PR #5: Flip finder: km-adjusted market value, engine filter, PureTech belt cost",
     "open PR #4: Analysis report as PDF and HTML",

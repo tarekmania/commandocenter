@@ -2,6 +2,136 @@
   "headline": "Eight lines are moving.",
   "lines": [
     {
+      "id": "tutti-price-expert",
+      "repo": "tarekmania/tutti-price-expert",
+      "name": "Tutti",
+      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
+      "stations": [
+        "API client",
+        "Flip finder",
+        "Web app",
+        "Online & shareable",
+        "First profitable flip"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Review and merge the API client PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the flip finder PRs",
+            "done": false
+          },
+          {
+            "t": "Budget per search setting (in #5: budget per scan, deals over budget incl. costs",
+            "done": false
+          },
+          {
+            "t": "Cost traps per model (belts, gearboxes): belts in #5, dry dual-clutch gearboxes",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Merge the web app PR",
+            "done": false
+          },
+          {
+            "t": "Merge the report PR",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Running on the own server",
+            "done": false
+          },
+          {
+            "t": "Reachable at flip.easyrep.ch",
+            "done": false
+          },
+          {
+            "t": "Login so only invited people can scan",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "First scan with a real budget",
+            "done": false
+          },
+          {
+            "t": "Car inspected and bought",
+            "done": false
+          },
+          {
+            "t": "Car sold with profit",
+            "done": false
+          },
+          {
+            "t": "Profit noted per flip in the tool",
+            "done": false
+          }
+        ]
+      ],
+      "at": 0,
+      "progress": 0,
+      "stepsDone": 0,
+      "stepsTotal": 13,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "7 pull requests wait for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-26T01:45:33Z",
+      "needs": [
+        {
+          "t": "Merge the stack: #6 and #7 into it, then #5 into master and close #1 to #4 as contained",
+          "since": "2026-11-26",
+          "link": "https://github.com/tarekmania/tutti-price-expert/pull/7",
+          "links": [
+            "https://github.com/tarekmania/tutti-price-expert/pull/7"
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-26",
+          "t": "Gearbox cost traps cover only the two well-known dry dual-clutch gearboxes (VW DQ200, Ford PowerShift) from 100'000 km, as a risk cost of CHF 2500 editable in t"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "#7 is stacked on #6 and stays open: this run may not merge, and it must go in after the stack"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "The station master does not merge the stack itself: #1 to #5 are not its own pull requests and the scheduled run says never merge; merging goes to Tarek"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Fixed the ICU test failures in the app, not in the tests: format.ts now always prints ’, so the app looks the same on every machine"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 0,
+        "progress": 0
+      },
+      "color": "#c98b4f"
+    },
+    {
       "id": "easyrep",
       "repo": "tarekmania/easyrep",
       "name": "EasyRep",
@@ -197,6 +327,10 @@
       "lastPush": "2026-11-26T01:42:40Z",
       "needs": [],
       "decisions": [
+        {
+          "on": "2026-11-26",
+          "t": "Built the audit's phone fixes on a branch without a pull request: the review budget is full (3 of 3), the pull request opens on the first run with room"
+        },
         {
           "on": "2026-11-25",
           "t": "Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot"
@@ -455,6 +589,10 @@
       ],
       "decisions": [
         {
+          "on": "2026-11-26",
+          "t": "Built the first part of the help texts on a branch without a pull request: the review budget is full; four of the ten planned tips (score, Später, Stichtag, Sto"
+        },
+        {
           "on": "2026-11-25",
           "t": "Split \"Help texts and first-login guide\": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilar"
         },
@@ -605,128 +743,6 @@
         "progress": 0
       },
       "color": "#a8c83a"
-    },
-    {
-      "id": "tutti-price-expert",
-      "repo": "tarekmania/tutti-price-expert",
-      "name": "Tutti",
-      "goal": "Tutti finds cars on tutti.ch far below market value, and the flips make money",
-      "stations": [
-        "API client",
-        "Flip finder",
-        "Web app",
-        "Online & shareable",
-        "First profitable flip"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Review and merge the API client PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the flip finder PRs",
-            "done": false
-          },
-          {
-            "t": "Budget per search setting",
-            "done": false
-          },
-          {
-            "t": "Cost traps per model (belts, gearboxes)",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Merge the web app PR",
-            "done": false
-          },
-          {
-            "t": "Merge the report PR",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Running on the own server",
-            "done": false
-          },
-          {
-            "t": "Reachable at flip.easyrep.ch",
-            "done": false
-          },
-          {
-            "t": "Login so only invited people can scan",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "First scan with a real budget",
-            "done": false
-          },
-          {
-            "t": "Car inspected and bought",
-            "done": false
-          },
-          {
-            "t": "Car sold with profit",
-            "done": false
-          },
-          {
-            "t": "Profit noted per flip in the tool",
-            "done": false
-          }
-        ]
-      ],
-      "at": 0,
-      "progress": 0,
-      "stepsDone": 0,
-      "stepsTotal": 13,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "6 pull requests wait for merge",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-25T01:33:49Z",
-      "needs": [
-        {
-          "t": "Merge #6 into fix-valuation, then #5 → #1 down to master, or merge #5 into master and close #1 to #4",
-          "since": "2026-11-25",
-          "link": "https://github.com/tarekmania/tutti-price-expert/pull/6",
-          "links": [
-            "https://github.com/tarekmania/tutti-price-expert/pull/6"
-          ]
-        }
-      ],
-      "decisions": [
-        {
-          "on": "2026-11-25",
-          "t": "The station master does not merge the stack itself: #1 to #5 are not its own pull requests and the scheduled run says never merge; merging goes to Tarek"
-        },
-        {
-          "on": "2026-11-25",
-          "t": "Fixed the ICU test failures in the app, not in the tests: format.ts now always prints ’, so the app looks the same on every machine"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
-        }
-      ],
-      "profile": "build",
-      "draft": false,
-      "todayFrom": {
-        "at": 0,
-        "progress": 0
-      },
-      "color": "#c98b4f"
     },
     {
       "id": "gta6-namehash",
@@ -1178,6 +1194,10 @@
       ],
       "decisions": [
         {
+          "on": "2026-11-26",
+          "t": "Wrote the test week plan myself (what each booking must go through, a 10-minute daily check, pass criteria); running it with the team needs Tarek and comes afte"
+        },
+        {
           "on": "2026-11-25",
           "t": "Wrote the walkthrough script myself instead of leaving \"plan the walkthrough\" to Tarek: only holding the session needs him"
         },
@@ -1374,13 +1394,13 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-26",
-  "updatedAt": "2026-11-26T01:44:02.511Z",
-  "lastSeenPush": "2026-11-26T01:42:40Z",
+  "updatedAt": "2026-11-26T01:48:42.564Z",
+  "lastSeenPush": "2026-11-26T01:45:33Z",
   "heads": {
-    "bilaro": "7ffc176dbf6c",
     "tutti-price-expert": "bdab0928cebc",
-    "gta6-namehash": "298f10202679",
     "easyrep": "a2a67ec99969",
+    "bilaro": "7ffc176dbf6c",
+    "gta6-namehash": "298f10202679",
     "tischlein-lager": "f0f748616592",
     "noble-drive-redo": "c4eb854d1cee",
     "gta6-asset-info": "648739f9e9a4",
@@ -1389,12 +1409,12 @@
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
-    "bilaro": "442eddaf5c39",
-    "tutti-price-expert": "695a55deaf8a",
+    "tutti-price-expert": "209d865ea4e7",
+    "easyrep": "f7d9a45f036b",
+    "bilaro": "cd3ea8e65c37",
     "gta6-namehash": "473d30021663",
-    "easyrep": "e73eef9752f5",
     "tischlein-lager": "e004e5b4456a",
-    "noble-drive-redo": "97754a62cbc9",
+    "noble-drive-redo": "9f3528ba1faa",
     "gta6-asset-info": "b25b85e0d161",
     "sixng": "e9bc8d705f93",
     "easyrep-sales": "cca5fc229bc5",
