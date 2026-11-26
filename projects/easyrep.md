@@ -74,6 +74,7 @@ Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A st
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-26 Built the audit's phone fixes on a branch without a pull request: the review budget is full (3 of 3), the pull request opens on the first run with room
 - 2026-11-25 Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot
 - 2026-11-25 Phone check done as a code audit first; the fixes go into one pull request when the review budget has room
 - 2026-11-24 Merge stays with Tarek: live product with paying fleets, synced with Lovable
@@ -81,5 +82,6 @@ Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A st
 ## Needs Tarek
 
 ## Log
+- 2026-11-26: No new commits on main. Review budget full: built fixes 1-3 and 5 from the phone audit on station/phone-layout, build ok, no pull request yet (https://github.com/tarekmania/easyrep/tree/station/phone-layout)
 - 2026-11-25: Tarek merged the redesign groups 6 to 9 (#16, #17, #19 to #23); closed obsolete #18; review budget full, so wrote the phone layout audit with 5 concrete fixes (docs/easyrep/2026-11-25-phone-layout-audit.md)
 - 2026-11-24: Vehicles (group 4) and trips/drivers (group 5) are merged; prepared group 8: mockups copied and inventory of settings, devices and reports written (https://github.com/tarekmania/easyrep/pull/18)
