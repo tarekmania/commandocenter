@@ -18,8 +18,8 @@ Goal: Tutti finds cars on tutti.ch far below market value, and the flips make mo
 ### Flip finder
 > market value adjusted for km, filters, known cost traps, budget per search
 - [ ] Merge the flip finder PRs
-- [ ] Budget per search setting
-- [ ] Cost traps per model (belts, gearboxes)
+- [ ] Budget per search setting (in #5: budget per scan, deals over budget incl. costs marked)
+- [ ] Cost traps per model (belts, gearboxes): belts in #5, dry dual-clutch gearboxes in #7
 
 ### Web app
 > scan from the browser, deals and settings
@@ -46,14 +46,17 @@ Goal: Tutti finds cars on tutti.ch far below market value, and the flips make mo
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-26 Gearbox cost traps cover only the two well-known dry dual-clutch gearboxes (VW DQ200, Ford PowerShift) from 100'000 km, as a risk cost of CHF 2500 editable in the settings; more models only when a real listing shows one (https://github.com/tarekmania/tutti-price-expert/pull/7)
+- 2026-11-26 #7 is stacked on #6 and stays open: this run may not merge, and it must go in after the stack
 - 2026-11-25 The station master does not merge the stack itself: #1 to #5 are not its own pull requests and the scheduled run says never merge; merging goes to Tarek
 - 2026-11-25 Fixed the ICU test failures in the app, not in the tests: format.ts now always prints ’, so the app looks the same on every machine (https://github.com/tarekmania/tutti-price-expert/pull/6)
 - 2026-11-24 Merge is auto: Tarek's own tool, no users yet, runs only on command
 - 2026-11-24 The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5
 
 ## Needs Tarek
-- [ ] 2026-11-25 Merge #6 into fix-valuation, then #5 → #1 down to master, or merge #5 into master and close #1 to #4 (https://github.com/tarekmania/tutti-price-expert/pull/6)
+- [ ] 2026-11-26 Merge the stack: #6 and #7 into it, then #5 into master and close #1 to #4 as contained (https://github.com/tarekmania/tutti-price-expert/pull/7)
 
 ## Log
+- 2026-11-26: Stack still unmerged, no new commits. Budget per search is already in #5. Built gearbox cost traps (DQ200, PowerShift) on top of #6; backend 94/94, frontend 13/13, build ok (https://github.com/tarekmania/tutti-price-expert/pull/7)
 - 2026-11-25: Fixed the 4 ICU-dependent frontend tests in format.ts on top of #5; frontend 13/13, build ok, backend 93/93 (https://github.com/tarekmania/tutti-price-expert/pull/6)
 - 2026-11-24: No new work: the plan builds on the five unmerged PRs. Checked the stack: linear, #5 contains all; backend tests 93/93, frontend build ok, 4 frontend tests depend on the ICU number format
