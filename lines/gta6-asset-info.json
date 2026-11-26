@@ -2,149 +2,9 @@
   "id": "gta6-asset-info",
   "repo": "tarekmania/GTA6-Asset-Info",
   "name": "GTA6 Asset Info",
-  "goal": "Every GTA VI asset format is documented and named, so the scene can read all of it",
-  "stations": [
-    {
-      "name": "Containers & resources",
-      "steps": [
-        {
-          "t": "RPF9 header & payload layout",
-          "done": true,
-          "ref": "bad5bc2"
-        },
-        {
-          "t": "Resource/system & graphics pages",
-          "done": true,
-          "ref": "bad5bc2"
-        },
-        {
-          "t": "Audio (ADAT), PSO graph & shaders",
-          "done": true,
-          "ref": "9feb253"
-        },
-        {
-          "t": "RPF9 TOC encryption",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Textures",
-      "steps": [
-        {
-          "t": "Texture dicts & Xbox BC tiling",
-          "done": true,
-          "ref": "a2b53f7"
-        },
-        {
-          "t": "ttpf store layouts (Gfx10, 1-byte)",
-          "done": true,
-          "ref": "9ad5a5c"
-        },
-        {
-          "t": "BCPack BC1 decode (98.4% coverage)",
-          "done": true,
-          "ref": "e9d9ca5"
-        },
-        {
-          "t": "Video (Bink2) & UI atlases",
-          "done": true,
-          "ref": "f76ffb8"
-        },
-        {
-          "t": "BCPack BC3/4/5/6H/7 decode",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Models, vehicles & peds",
-      "steps": [
-        {
-          "t": "Drawables, LODs, skeletons, skinning",
-          "done": true,
-          "ref": "3739c82"
-        },
-        {
-          "t": "Vehicle parts, damage, handling data",
-          "done": true,
-          "ref": "3739c82"
-        },
-        {
-          "t": "Ped clothing skinning & body shape",
-          "done": true,
-          "ref": "6a6e6cd"
-        },
-        {
-          "t": "Ped head faces via material presets",
-          "done": true,
-          "ref": "d47428f"
-        },
-        {
-          "t": "Wheel scale, liveries, colours",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Map, world & collision",
-      "steps": [
-        {
-          "t": "Meta resources & LOD hierarchy",
-          "done": true,
-          "ref": "3c6e02c"
-        },
-        {
-          "t": "Collision bounds & surface ids",
-          "done": true,
-          "ref": "5080ce5"
-        },
-        {
-          "t": "Navmesh, lights & road graph",
-          "done": true,
-          "ref": "1ddcacd"
-        },
-        {
-          "t": "Collision ID to name mapping",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Fully named",
-      "steps": [
-        {
-          "t": "Shader & parameter names resolved",
-          "done": true,
-          "ref": "3739c82"
-        },
-        {
-          "t": "Material names via lowercase JOAAT",
-          "done": true,
-          "ref": "a124af5"
-        },
-        {
-          "t": "Map field hashes verified (PSIN overlap)",
-          "done": true,
-          "ref": "1ddcacd"
-        },
-        {
-          "t": "Next names PR batched from the watcher",
-          "done": false
-        },
-        {
-          "t": "Collision ids named",
-          "done": false
-        },
-        {
-          "t": "Hash keys mapped with gta6-namehash",
-          "done": false
-        }
-      ]
-    }
-  ],
   "task": "Ped head faces documented via material presets",
-  "held": null,
+  "held": { "reason": "upstream repo not public", "since": "2026-11-25" },
+  "project": true,
   "evidence": [
     "648739f Merge upstream main and preserve fork research",
     "d47428f Ped head faces through material presets; meta map type 0x71",
@@ -154,6 +14,5 @@
     "3739c82 Shader names, LOD parents, interior contents, PSO schema, vehicle tables",
     "a2b53f7 ttpf: d1 bits 10-19 are the array size; array and cube-map layouts",
     "bad5bc2 structure: byte-level layout notes for RPF9, resources/textures, AWC audio, PSO and object graph"
-  ],
-  "v": 4
+  ]
 }

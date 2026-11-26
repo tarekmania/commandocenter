@@ -1,5 +1,5 @@
 {
-  "headline": "Eight lines are moving.",
+  "headline": "GTA6 Namehash reached Wider coverage and GTA6 Asset Info reached Map, world & collision. GTA6 Asset Info is held at a si",
   "lines": [
     {
       "id": "tutti-price-expert",
@@ -323,7 +323,7 @@
       "state": "moving",
       "task": "Garage portal screens for workshops shipped",
       "held": null,
-      "runsWeek": 30,
+      "runsWeek": 22,
       "lastPush": "2026-11-26T01:42:40Z",
       "needs": [],
       "decisions": [
@@ -804,6 +804,11 @@
           {
             "t": "Checked RDR2 lists: not used",
             "done": true
+          },
+          {
+            "t": "Checked rage-tools-vi's 36,952 names: 36,305 are CodeWalker's, most of the rest",
+            "done": true,
+            "on": "2026-11-25"
           }
         ],
         [
@@ -821,19 +826,30 @@
             "on": "2026-11-23"
           },
           {
-            "t": "Used by SixNG (import pull request waiting upstream)",
-            "done": false
+            "t": "Used by SixNG: `sixng names --namehash`",
+            "done": true,
+            "on": "2026-11-24"
           },
           {
-            "t": "Used inside GTA6 Asset Info",
+            "t": "Credited in SixNG's third-party notices",
+            "done": true,
+            "on": "2026-11-24"
+          },
+          {
+            "t": "Scene listing shows coverage and the SixNG import",
+            "done": true,
+            "on": "2026-11-25"
+          },
+          {
+            "t": "Used inside GTA6 Asset Info (upstream not public since 2026-11-25)",
             "done": false
           }
         ]
       ],
-      "at": 1,
-      "progress": 0.73,
-      "stepsDone": 11,
-      "stepsTotal": 16,
+      "at": 2,
+      "progress": 0.21,
+      "stepsDone": 15,
+      "stepsTotal": 19,
       "doneToday": 0,
       "state": "moving",
       "task": "RAGE-StringsDatabase PR waits for merge",
@@ -843,16 +859,28 @@
       "needs": [],
       "decisions": [
         {
+          "on": "2026-11-26",
+          "t": "Format notes come from the fork branch docs/surface-and-field-names while upstream is not public, and the confirmed layer never shrinks in that time: names conf"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "README coverage should use the same count as the scene listing (471 of 874 backticked hashes in the notes, 458 confirmed): fix pull request #1 before merging it"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "rage-tools-vi's names are not added: almost all are already in, the new ones were read from game files"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "Ticked SixNG use, the notices credit and the listing update: merged upstream (Tarek, chat 2026-11-24/25)"
+        },
+        {
           "on": "2026-11-24",
           "t": "Listing in the scene's awesome list counts as the announcement; Tarek's fork of that list stays off the map, its work belongs here"
         },
         {
           "on": "2026-11-24",
           "t": "The sources check pull request is reviewed and merged by the station master (Merge auto), no review by Tarek"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "First release v0.1 is tagged once the sources check is merged"
         }
       ],
       "profile": "build",
@@ -1303,8 +1331,9 @@
             "done": true
           },
           {
-            "t": "Collision ID to name mapping",
-            "done": false
+            "t": "Collision ID to name mapping: TERRAIN_ names, DEFAULT for the default id",
+            "done": true,
+            "on": "2026-11-24"
           }
         ],
         [
@@ -1321,11 +1350,12 @@
             "done": true
           },
           {
-            "t": "Next names PR batched from the watcher",
-            "done": false
+            "t": "Next names PR batched from the watcher: ten field and struct names",
+            "done": true,
+            "on": "2026-11-24"
           },
           {
-            "t": "Collision ids named",
+            "t": "Collision ids named (258 of 398 named; the rest are not in any public list)",
             "done": false
           },
           {
@@ -1334,27 +1364,33 @@
           }
         ]
       ],
-      "at": 2,
-      "progress": 0.6,
-      "stepsDone": 17,
+      "at": 3,
+      "progress": 0.02,
+      "stepsDone": 19,
       "stepsTotal": 24,
       "doneToday": 0,
-      "state": "moving",
+      "state": "held",
       "task": "Ped head faces documented via material presets",
-      "held": null,
+      "held": {
+        "reason": "upstream repo not public",
+        "since": "2026-11-25"
+      },
       "runsWeek": 49,
       "lastPush": "2026-11-24T17:22:20Z",
-      "needs": [
-        {
-          "t": "Open the upstream PR from — \"Name eight more hashes\": case-sensitive joaat matches that fit the notes' meaning: clipDictionaryName, clipName (§17), ScaleY, Scal",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24",
-          "links": [
-            "https://github.com/tarekmania/gta6-asset-info/tree/station/names-batch-2026-11-24"
-          ]
-        }
-      ],
+      "needs": [],
       "decisions": [
+        {
+          "on": "2026-11-26",
+          "t": "Cadence paused: the upstream repo stopped being public on 2026-11-25, so there is nothing to contribute to; resume when it is public again"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "Dropped the Needs Tarek item for station/names-batch-2026-11-24: its upstream is gone; the branch stays as it is and is rebased if upstream returns"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "Ticked collision names and the batched names PR: merged upstream on 2026-11-24 (Tarek, chat 2026-11-24)"
+        },
         {
           "on": "2026-11-24",
           "t": "Merge stays with Tarek: pull requests to the upstream project go out under his name"
@@ -1394,7 +1430,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-26",
-  "updatedAt": "2026-11-26T15:05:00.205Z",
+  "updatedAt": "2026-11-26T20:34:50.745Z",
   "lastSeenPush": "2026-11-26T01:45:33Z",
   "heads": {
     "tutti-price-expert": "bdab0928cebc",
@@ -1412,10 +1448,10 @@
     "tutti-price-expert": "209d865ea4e7",
     "easyrep": "f7d9a45f036b",
     "bilaro": "cd3ea8e65c37",
-    "gta6-namehash": "473d30021663",
+    "gta6-namehash": "cb690be91257",
     "tischlein-lager": "e004e5b4456a",
     "noble-drive-redo": "9f3528ba1faa",
-    "gta6-asset-info": "b25b85e0d161",
+    "gta6-asset-info": "a8c6d51ee825",
     "sixng": "e9bc8d705f93",
     "easyrep-sales": "cca5fc229bc5",
     "tempo30": "7a9c3f0822eb"

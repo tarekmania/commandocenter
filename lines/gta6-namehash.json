@@ -2,110 +2,14 @@
   "id": "gta6-namehash",
   "repo": "tarekmania/gta6-namehash",
   "name": "GTA6 Namehash",
-  "goal": "GTA 6 tool authors resolve any hash to a name instead of guessing",
-  "stations": [
-    {
-      "name": "Hash dictionary",
-      "steps": [
-        {
-          "t": "Joaat hashing: exact & lowercase",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "Build dictionary from public sources",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "~309k names, ~498k hashes committed",
-          "done": true,
-          "ref": "1e38c45"
-        }
-      ]
-    },
-    {
-      "name": "CLI lookup",
-      "steps": [
-        {
-          "t": "Resolve hashes via CLI or stdin",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "Resolve hashes across files/trees",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "List unresolved hashes",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "Mark matches as candidates, not confirmed",
-          "done": true,
-          "ref": "02149cc"
-        },
-        {
-          "t": "Confirmed tier from other RE projects",
-          "done": true,
-          "ref": "c96156d"
-        }
-      ]
-    },
-    {
-      "name": "Wider coverage",
-      "steps": [
-        {
-          "t": "Close remaining format-note hashes",
-          "done": false
-        },
-        {
-          "t": "Add more public name lists",
-          "done": false
-        },
-        {
-          "t": "Checked RDR2 lists: not used",
-          "done": true,
-          "ref": "777215f"
-        }
-      ]
-    },
-    {
-      "name": "Adoption",
-      "steps": [
-        {
-          "t": "Release with a clear README and licence",
-          "done": true,
-          "ref": "1e38c45"
-        },
-        {
-          "t": "Announced in the GTA 6 research scene",
-          "done": false
-        },
-        {
-          "t": "Used by SixNG",
-          "done": false
-        },
-        {
-          "t": "Used inside GTA6 Asset Info",
-          "done": false
-        }
-      ]
-    }
-  ],
   "task": "RAGE-StringsDatabase PR waits for merge",
   "held": null,
+  "project": true,
   "evidence": [
-    "298f102 Refresh confirmed layer",
     "open PR #1: Sources: RAGE-StringsDatabase checked, README coverage updated",
     "777215f Sources: GTA V lists only; RDR2 lists checked and not used",
-    "d600231 Refresh confirmed layer",
-    "fa69270 Refresh confirmed layer",
     "c96156d Add a confirmed layer: resolve as confirmed or candidate",
     "02149cc Frame resolver output as candidates, not confirmed names",
     "1e38c45 gta6-namehash: shared joaat hash to name resolver for GTA 6"
-  ],
-  "v": 4
+  ]
 }
