@@ -497,7 +497,7 @@
             "done": false
           },
           {
-            "t": "Login so only invited people can scan",
+            "t": "Login so only invited people can scan (password login and Caddy setup built in #",
             "done": false
           }
         ],
@@ -542,6 +542,10 @@
       ],
       "decisions": [
         {
+          "on": "2026-11-27",
+          "t": "Planned the flip ledger instead of building it on top of #7: the stack has waited since 13 Nov and a fourth layer makes it harder to merge; the existing feedbac"
+        },
+        {
           "on": "2026-11-26",
           "t": "Gearbox cost traps cover only the two well-known dry dual-clutch gearboxes (VW DQ200, Ford PowerShift) from 100'000 km, as a risk cost of CHF 2500 editable in t"
         },
@@ -560,10 +564,6 @@
         {
           "on": "2026-11-24",
           "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "The five stacked pull requests are merged as one through #5 after the apostrophe tests are fixed; #1 to #4 are closed as contained in #5"
         }
       ],
       "profile": "build",
@@ -1455,7 +1455,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-27",
-  "updatedAt": "2026-11-27T01:36:01.606Z",
+  "updatedAt": "2026-11-27T01:38:28.849Z",
   "lastSeenPush": "2026-11-27T01:34:13Z",
   "heads": {
     "noble-drive-redo": "c4eb854d1cee",
@@ -1472,7 +1472,7 @@
   "projectHashes": {
     "noble-drive-redo": "18cabc80f5ff",
     "bilaro": "c95f0d6069db",
-    "tutti-price-expert": "209d865ea4e7",
+    "tutti-price-expert": "c3dacd934eee",
     "easyrep": "f9129eba119f",
     "gta6-namehash": "cb690be91257",
     "tischlein-lager": "e004e5b4456a",
