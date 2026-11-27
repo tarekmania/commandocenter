@@ -32,7 +32,7 @@ Same pattern as the login decision of 19 Nov: one constant in code, easy to undo
    - `parsePreference(undefined | null) -> null` (no choice made), `true`/`false` as today.
    - `resolveNewUi(available, preference)`: when `NEW_UI_DEFAULT_FOR_ALL`, return `preference !== false` (everyone gets the new design unless they explicitly chose the old one); otherwise the current rule.
 2. `useNewUi.ts`: with `NEW_UI_DEFAULT_FOR_ALL`, `useNewUiAvailable()` returns `available: true` without the org query, so the switch in the user menu is shown to everyone (it becomes the way back to the old design).
-3. `readStoredNewUi()`: a missing localStorage key means "new" when `NEW_UI_DEFAULT_FOR_ALL`, so the first paint does not flash the old layout.
+3. `readStoredNewUi()` / `writeStoredNewUi()`: today "off" removes the key, so "off" and "never chose" look the same. Store `"0"` for off and `"1"` for on; a missing key means "new" when `NEW_UI_DEFAULT_FOR_ALL`, so the first paint does not flash the old layout.
 4. Tests in `src/redesign/newUi.test.ts`: missing preference -> new; explicit `false` -> old; constant off -> old behaviour unchanged.
 5. Pull request text: what changes for customers, and that setting the constant to `false` undoes it.
 
