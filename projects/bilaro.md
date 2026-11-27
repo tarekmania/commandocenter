@@ -80,6 +80,7 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-27 Help texts finished at five tips plus a «Hilfe» group in Cmd+K: the planned tips for dunning, QR bill, closing and roles were dropped because those screens already explain them in place (checked in the code); the closing draft text was also wrong (the owner can reopen a year)
 - 2026-11-26 Built the first part of the help texts on a branch without a pull request: the review budget is full; four of the ten planned tips (score, Später, Stichtag, Storno) are checked against the code and placed, the other six follow on the same branch
 - 2026-11-25 Split "Help texts and first-login guide": the guide (/start, seven setup tasks) exists since 9681925; what is missing is help on concepts, planned in docs/bilaro/2026-11-25-help-texts.md
 - 2026-11-25 Added the walkthrough fixes (7ffc176) to Tester-ready: real work on main that no step foresaw
@@ -92,6 +93,7 @@ Goal: Swiss SMEs move from bexio to Bilaro and pay for it
 - [ ] 2026-11-24 Provide bexio export files of 3 test companies for the real import test
 
 ## Log
+- 2026-11-27: No new commits on main, PR #1 still open, review budget full. Finished the help texts on the branch: VAT method tip, help texts searchable in Cmd+K; build, lint and 340 tests ok, no pull request yet (https://github.com/tarekmania/bilaro/tree/station/help-texts)
 - 2026-11-26: No new commits on main, PR #1 still open. Review budget full: built HelpTip with one text file and a test, tips on bank, takeover and journal; build, lint and 339 tests ok, no pull request yet (https://github.com/tarekmania/bilaro/tree/station/help-texts)
 - 2026-11-25: Review budget full (3 of 3 open), no PR. PR #1 still builds locally; planned the help texts with ten draft texts (docs/bilaro/2026-11-25-help-texts.md)
 - 2026-11-24: Receipt upload from the phone: installable web app (manifest, icons, shortcut) and phone link on Belege; build, lint and 310 tests ok (https://github.com/tarekmania/bilaro/pull/1)
