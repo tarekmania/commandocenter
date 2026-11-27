@@ -2,6 +2,180 @@
   "headline": "Seven lines are moving. GTA6 Asset Info is held at a signal.",
   "lines": [
     {
+      "id": "noble-drive-redo",
+      "repo": "tarekmania/noble-drive-redo",
+      "name": "Noble Drive",
+      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
+      "stations": [
+        "Vehicle catalog",
+        "Booking flow",
+        "Admin & CRM",
+        "Live",
+        "Handed over"
+      ],
+      "steps": [
+        [
+          {
+            "t": "Vehicle listing with logos",
+            "done": true
+          },
+          {
+            "t": "Grouped models, live availability",
+            "done": true
+          },
+          {
+            "t": "Multi-language site (DE/EN)",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Signature, contract & checkout",
+            "done": true
+          },
+          {
+            "t": "Pay-on-pickup wording update",
+            "done": true
+          },
+          {
+            "t": "Hourly billing",
+            "done": true
+          },
+          {
+            "t": "Payment step in checkout",
+            "done": true
+          },
+          {
+            "t": "Booking button re-enabled",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Collapsible admin sidebar",
+            "done": true
+          },
+          {
+            "t": "Booking delete with confirm dialog",
+            "done": true
+          },
+          {
+            "t": "Protocol/log on bookings",
+            "done": true
+          },
+          {
+            "t": "Locked down public writes/uploads",
+            "done": true
+          }
+        ],
+        [
+          {
+            "t": "Custom domain & DNS",
+            "done": true
+          },
+          {
+            "t": "Email notification infra",
+            "done": true
+          },
+          {
+            "t": "SMS notifications",
+            "done": true
+          },
+          {
+            "t": "Reminders reach short and hourly rentals",
+            "done": false
+          },
+          {
+            "t": "Booking and reminder mails tested end to end",
+            "done": false
+          },
+          {
+            "t": "Real payment tested with a live booking",
+            "done": false
+          }
+        ],
+        [
+          {
+            "t": "Admin walkthrough with the client team",
+            "done": false
+          },
+          {
+            "t": "Test week with real bookings",
+            "done": false
+          },
+          {
+            "t": "Client feedback fixed",
+            "done": false
+          },
+          {
+            "t": "Client signs off",
+            "done": false
+          },
+          {
+            "t": "Final invoice paid",
+            "done": false
+          }
+        ]
+      ],
+      "at": 2,
+      "progress": 0.5,
+      "stepsDone": 15,
+      "stepsTotal": 23,
+      "doneToday": 0,
+      "state": "moving",
+      "task": "Live test checklist PR waits for merge",
+      "held": null,
+      "runsWeek": 0,
+      "lastPush": "2026-11-27T01:34:13Z",
+      "needs": [
+        {
+          "t": "Review and merge the live test checklist PR",
+          "since": "2026-11-24",
+          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1",
+          "links": [
+            "https://github.com/tarekmania/noble-drive-redo/pull/1"
+          ]
+        },
+        {
+          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists",
+          "since": "2026-11-24",
+          "link": null,
+          "links": []
+        },
+        {
+          "t": "Hold the admin walkthrough with the B&G team using the script (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)",
+          "since": "2026-11-25",
+          "link": null,
+          "links": []
+        }
+      ],
+      "decisions": [
+        {
+          "on": "2026-11-27",
+          "t": "Added the step \"Reminders reach short and hourly rentals\" before the end-to-end test: the hourly run only looked at a one-hour slice, so hourly rentals, a misse"
+        },
+        {
+          "on": "2026-11-26",
+          "t": "Wrote the test week plan myself (what each booking must go through, a 10-minute daily check, pass criteria); running it with the team needs Tarek and comes afte"
+        },
+        {
+          "on": "2026-11-25",
+          "t": "Wrote the walkthrough script myself instead of leaving \"plan the walkthrough\" to Tarek: only holding the session needs him"
+        },
+        {
+          "on": "2026-11-24",
+          "t": "Merge stays with Tarek: client project, B&G's customers book on it"
+        }
+      ],
+      "profile": "build",
+      "draft": false,
+      "todayFrom": {
+        "at": 2,
+        "progress": 0.5
+      },
+      "color": "#d94f9a"
+    },
+    {
       "id": "bilaro",
       "repo": "tarekmania/bilaro",
       "name": "Bilaro",
@@ -237,6 +411,10 @@
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-27",
+          "t": "Help texts finished at five tips plus a «Hilfe» group in Cmd+K: the planned tips for dunning, QR bill, closing and roles were dropped because those screens alre"
+        },
         {
           "on": "2026-11-26",
           "t": "Built the first part of the help texts on a branch without a pull request: the review budget is full; four of the ten planned tips (score, Später, Stichtag, Sto"
@@ -1090,172 +1268,6 @@
       "color": "#1fb5b0"
     },
     {
-      "id": "noble-drive-redo",
-      "repo": "tarekmania/noble-drive-redo",
-      "name": "Noble Drive",
-      "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
-      "stations": [
-        "Vehicle catalog",
-        "Booking flow",
-        "Admin & CRM",
-        "Live",
-        "Handed over"
-      ],
-      "steps": [
-        [
-          {
-            "t": "Vehicle listing with logos",
-            "done": true
-          },
-          {
-            "t": "Grouped models, live availability",
-            "done": true
-          },
-          {
-            "t": "Multi-language site (DE/EN)",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Signature, contract & checkout",
-            "done": true
-          },
-          {
-            "t": "Pay-on-pickup wording update",
-            "done": true
-          },
-          {
-            "t": "Hourly billing",
-            "done": true
-          },
-          {
-            "t": "Payment step in checkout",
-            "done": true
-          },
-          {
-            "t": "Booking button re-enabled",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Collapsible admin sidebar",
-            "done": true
-          },
-          {
-            "t": "Booking delete with confirm dialog",
-            "done": true
-          },
-          {
-            "t": "Protocol/log on bookings",
-            "done": true
-          },
-          {
-            "t": "Locked down public writes/uploads",
-            "done": true
-          }
-        ],
-        [
-          {
-            "t": "Custom domain & DNS",
-            "done": true
-          },
-          {
-            "t": "Email notification infra",
-            "done": true
-          },
-          {
-            "t": "SMS notifications",
-            "done": true
-          },
-          {
-            "t": "Booking and reminder mails tested end to end",
-            "done": false
-          },
-          {
-            "t": "Real payment tested with a live booking",
-            "done": false
-          }
-        ],
-        [
-          {
-            "t": "Admin walkthrough with the client team",
-            "done": false
-          },
-          {
-            "t": "Test week with real bookings",
-            "done": false
-          },
-          {
-            "t": "Client feedback fixed",
-            "done": false
-          },
-          {
-            "t": "Client signs off",
-            "done": false
-          },
-          {
-            "t": "Final invoice paid",
-            "done": false
-          }
-        ]
-      ],
-      "at": 2,
-      "progress": 0.6,
-      "stepsDone": 15,
-      "stepsTotal": 22,
-      "doneToday": 0,
-      "state": "moving",
-      "task": "Live test checklist PR waits for merge",
-      "held": null,
-      "runsWeek": 0,
-      "lastPush": "2026-11-24T17:27:05Z",
-      "needs": [
-        {
-          "t": "Review and merge the live test checklist PR",
-          "since": "2026-11-24",
-          "link": "https://github.com/tarekmania/noble-drive-redo/pull/1",
-          "links": [
-            "https://github.com/tarekmania/noble-drive-redo/pull/1"
-          ]
-        },
-        {
-          "t": "Run the live test with one real booking (card and cash) following docs/live-test.md; check the hourly rental-reminders schedule exists",
-          "since": "2026-11-24",
-          "link": null,
-          "links": []
-        },
-        {
-          "t": "Hold the admin walkthrough with the B&G team using the script (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)",
-          "since": "2026-11-25",
-          "link": null,
-          "links": []
-        }
-      ],
-      "decisions": [
-        {
-          "on": "2026-11-26",
-          "t": "Wrote the test week plan myself (what each booking must go through, a 10-minute daily check, pass criteria); running it with the team needs Tarek and comes afte"
-        },
-        {
-          "on": "2026-11-25",
-          "t": "Wrote the walkthrough script myself instead of leaving \"plan the walkthrough\" to Tarek: only holding the session needs him"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge stays with Tarek: client project, B&G's customers book on it"
-        }
-      ],
-      "profile": "build",
-      "draft": false,
-      "todayFrom": {
-        "at": 2,
-        "progress": 0.6
-      },
-      "color": "#d94f9a"
-    },
-    {
       "id": "gta6-asset-info",
       "repo": "tarekmania/GTA6-Asset-Info",
       "name": "GTA6 Asset Info",
@@ -1443,27 +1455,27 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-27",
-  "updatedAt": "2026-11-27T01:33:01.349Z",
-  "lastSeenPush": "2026-11-27T01:31:43Z",
+  "updatedAt": "2026-11-27T01:36:01.606Z",
+  "lastSeenPush": "2026-11-27T01:34:13Z",
   "heads": {
+    "noble-drive-redo": "c4eb854d1cee",
     "bilaro": "7ffc176dbf6c",
     "tutti-price-expert": "bdab0928cebc",
     "easyrep": "a2a67ec99969",
     "gta6-namehash": "298f10202679",
     "tischlein-lager": "f0f748616592",
-    "noble-drive-redo": "c4eb854d1cee",
     "gta6-asset-info": "648739f9e9a4",
     "sixng": "a4063d38097d",
     "easyrep-sales": "2428a56e7198",
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
-    "bilaro": "cd3ea8e65c37",
+    "noble-drive-redo": "18cabc80f5ff",
+    "bilaro": "c95f0d6069db",
     "tutti-price-expert": "209d865ea4e7",
     "easyrep": "f9129eba119f",
     "gta6-namehash": "cb690be91257",
     "tischlein-lager": "e004e5b4456a",
-    "noble-drive-redo": "9f3528ba1faa",
     "gta6-asset-info": "a8c6d51ee825",
     "sixng": "e9bc8d705f93",
     "easyrep-sales": "cca5fc229bc5",
