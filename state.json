@@ -1,5 +1,5 @@
 {
-  "headline": "GTA6 Namehash reached Wider coverage and GTA6 Asset Info reached Map, world & collision. GTA6 Asset Info is held at a si",
+  "headline": "Seven lines are moving. GTA6 Asset Info is held at a signal.",
   "lines": [
     {
       "id": "tutti-price-expert",
@@ -325,8 +325,21 @@
       "held": null,
       "runsWeek": 22,
       "lastPush": "2026-11-26T01:42:40Z",
-      "needs": [],
+      "needs": [
+        {
+          "t": "Review slot blocked: the phone fixes wait on a branch until Bilaro #1, Noble Drive #1 or Tischlein #1 is merged or closed",
+          "since": "2026-11-27",
+          "link": "https://github.com/tarekmania/easyrep/tree/station/phone-layout",
+          "links": [
+            "https://github.com/tarekmania/easyrep/tree/station/phone-layout"
+          ]
+        }
+      ],
       "decisions": [
+        {
+          "on": "2026-11-27",
+          "t": "Planned the default switch as one code constant (missing choice = new design, explicit old choice kept), no migration: same easy undo as the login decision; the"
+        },
         {
           "on": "2026-11-26",
           "t": "Built the audit's phone fixes on a branch without a pull request: the review budget is full (3 of 3), the pull request opens on the first run with room"
@@ -886,8 +899,8 @@
       "profile": "build",
       "draft": false,
       "todayFrom": {
-        "at": 1,
-        "progress": 0.73
+        "at": 2,
+        "progress": 0.21
       },
       "color": "#f4c430"
     },
@@ -1399,8 +1412,8 @@
       "profile": "contribute",
       "draft": false,
       "todayFrom": {
-        "at": 2,
-        "progress": 0.6
+        "at": 3,
+        "progress": 0.02
       },
       "color": "#f2892b"
     }
@@ -1429,8 +1442,8 @@
     "health-center": "#a8c83a",
     "sixng": "#a8c83a"
   },
-  "day": "2026-11-26",
-  "updatedAt": "2026-11-26T20:34:50.745Z",
+  "day": "2026-11-27",
+  "updatedAt": "2026-11-27T01:30:50.274Z",
   "lastSeenPush": "2026-11-26T01:45:33Z",
   "heads": {
     "tutti-price-expert": "bdab0928cebc",
@@ -1446,7 +1459,7 @@
   },
   "projectHashes": {
     "tutti-price-expert": "209d865ea4e7",
-    "easyrep": "f7d9a45f036b",
+    "easyrep": "f9129eba119f",
     "bilaro": "cd3ea8e65c37",
     "gta6-namehash": "cb690be91257",
     "tischlein-lager": "e004e5b4456a",
