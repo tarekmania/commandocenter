@@ -2,139 +2,9 @@
   "id": "noble-drive-redo",
   "repo": "tarekmania/noble-drive-redo",
   "name": "Noble Drive",
-  "goal": "B&G Autovermietung's customers book and pay online, and the team runs everything from one admin",
-  "stations": [
-    {
-      "name": "Vehicle catalog",
-      "steps": [
-        {
-          "t": "Vehicle listing with logos",
-          "done": true,
-          "ref": "e51ce33"
-        },
-        {
-          "t": "Grouped models, live availability",
-          "done": true,
-          "ref": "9d4feb4"
-        },
-        {
-          "t": "Multi-language site (DE/EN)",
-          "done": true,
-          "ref": "59d831a"
-        }
-      ]
-    },
-    {
-      "name": "Booking flow",
-      "steps": [
-        {
-          "t": "Signature, contract & checkout",
-          "done": true,
-          "ref": "874ed30"
-        },
-        {
-          "t": "Pay-on-pickup wording update",
-          "done": true,
-          "ref": "a3ce082"
-        },
-        {
-          "t": "Hourly billing",
-          "done": true,
-          "ref": "843e6de"
-        },
-        {
-          "t": "Payment step in checkout",
-          "done": true,
-          "ref": "7344875"
-        },
-        {
-          "t": "Booking button re-enabled",
-          "done": true,
-          "ref": "ac14156"
-        }
-      ]
-    },
-    {
-      "name": "Admin & CRM",
-      "steps": [
-        {
-          "t": "Collapsible admin sidebar",
-          "done": true,
-          "ref": "b4546ba"
-        },
-        {
-          "t": "Booking delete with confirm dialog",
-          "done": true,
-          "ref": "c4eb854"
-        },
-        {
-          "t": "Protocol/log on bookings",
-          "done": true,
-          "ref": "907a90a"
-        },
-        {
-          "t": "Locked down public writes/uploads",
-          "done": true,
-          "ref": "935a55a"
-        }
-      ]
-    },
-    {
-      "name": "Live",
-      "steps": [
-        {
-          "t": "Custom domain & DNS",
-          "done": true,
-          "ref": "49c9658"
-        },
-        {
-          "t": "Email notification infra",
-          "done": true,
-          "ref": "a4f2882"
-        },
-        {
-          "t": "SMS notifications",
-          "done": true,
-          "ref": "Tarek"
-        },
-        {
-          "t": "Booking and reminder mails tested end to end",
-          "done": false
-        },
-        {
-          "t": "Real payment tested with a live booking",
-          "done": false
-        }
-      ]
-    },
-    {
-      "name": "Handed over",
-      "steps": [
-        {
-          "t": "Admin walkthrough with the client team",
-          "done": false
-        },
-        {
-          "t": "Test week with real bookings",
-          "done": false
-        },
-        {
-          "t": "Client feedback fixed",
-          "done": false
-        },
-        {
-          "t": "Client signs off",
-          "done": false
-        },
-        {
-          "t": "Final invoice paid",
-          "done": false
-        }
-      ]
-    }
-  ],
   "task": "Live test checklist PR waits for merge",
   "held": null,
+  "project": true,
   "evidence": [
     "open PR #1: Live test checklist; SMS key check before claiming the send",
     "c4eb854 Add booking delete with confirmation dialog in admin booking detail",
@@ -143,6 +13,5 @@
     "ac14156 Buchungsbutton auf der Hauptseite wieder freigeschaltet",
     "9d4feb4 Fahrzeuge mit Status ausser 'Verfügbar' online nicht buchbar; Modelle korrekt gruppiert",
     "935a55a Sicherheit: öffentliche Schreibzugriffe und Uploads serverseitig abgesichert"
-  ],
-  "v": 4
+  ]
 }

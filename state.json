@@ -542,9 +542,19 @@
           "links": [
             "https://github.com/tarekmania/tutti-price-expert/pull/7"
           ]
+        },
+        {
+          "t": "Run the first scan with a real budget and mark every deal gut or schlecht (docs/tutti-price-expert/2026-11-28-first-real-scan.md)",
+          "since": "2026-11-28",
+          "link": null,
+          "links": []
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-28",
+          "t": "Wrote the runbook for the first real scan instead of more code on the stack: nothing has merged since 13 Nov, and the next real progress is a scan with Tarek's "
+        },
         {
           "on": "2026-11-27",
           "t": "Planned the flip ledger instead of building it on top of #7: the stack has waited since 13 Nov and a fourth layer makes it harder to merge; the existing feedbac"
@@ -564,10 +574,6 @@
         {
           "on": "2026-11-25",
           "t": "Fixed the ICU test failures in the app, not in the tests: format.ts now always prints ’, so the app looks the same on every machine"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge is auto: Tarek's own tool, no users yet, runs only on command"
         }
       ],
       "profile": "build",
@@ -1459,7 +1465,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-28",
-  "updatedAt": "2026-11-28T01:44:40.349Z",
+  "updatedAt": "2026-11-28T01:47:46.869Z",
   "lastSeenPush": "2026-11-28T01:42:57Z",
   "heads": {
     "noble-drive-redo": "c4eb854d1cee",
@@ -1476,7 +1482,7 @@
   "projectHashes": {
     "noble-drive-redo": "f0e1079f016e",
     "bilaro": "8f3bbe6a18f0",
-    "tutti-price-expert": "c3dacd934eee",
+    "tutti-price-expert": "4505e0cd1666",
     "easyrep": "f9129eba119f",
     "gta6-namehash": "cb690be91257",
     "tischlein-lager": "e004e5b4456a",
