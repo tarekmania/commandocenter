@@ -55,6 +55,7 @@ Goal: B&G Autovermietung's customers book and pay online, and the team runs ever
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-28 Took the package-lock.json rewrite out of the reminder branch: it came from a local install (main's lockfile is stale, the project installs with bun.lock) and would have made a 60-line change an 11,000-line review
 - 2026-11-27 Added the step "Reminders reach short and hourly rentals" before the end-to-end test: the hourly run only looked at a one-hour slice, so hourly rentals, a missed run or a failed send got no reminder; built the fix on a branch without a pull request because the review budget is full
 - 2026-11-26 Wrote the test week plan myself (what each booking must go through, a 10-minute daily check, pass criteria); running it with the team needs Tarek and comes after the walkthrough
 - 2026-11-25 Wrote the walkthrough script myself instead of leaving "plan the walkthrough" to Tarek: only holding the session needs him
@@ -66,6 +67,7 @@ Goal: B&G Autovermietung's customers book and pay online, and the team runs ever
 - [ ] 2026-11-25 Hold the admin walkthrough with the B&G team using the script (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)
 
 ## Log
+- 2026-11-28: No new commits on main, PR #1 still open, review budget full. Reviewed the reminder catch-up branch again and restored main's package-lock.json on it; diff now 3 files, tests 13/13 and build ok, no pull request yet (https://github.com/tarekmania/noble-drive-redo/tree/station/reminder-catch-up)
 - 2026-11-27: No new commits on main, PR #1 still open, review budget full. Found that rental-reminders misses short rentals and missed runs; built catch-up windows with tests on a branch, tests 13/13 and build ok, no pull request yet (https://github.com/tarekmania/noble-drive-redo/tree/station/reminder-catch-up)
 - 2026-11-26: No new commits on main, PR #1 still open; review budget full, so wrote the test week plan from the booking, payment and reminder code (docs/noble-drive-redo/2026-11-26-test-week.md)
 - 2026-11-25: No new commits on main; review budget full, so wrote the 60-minute admin walkthrough script for the B&G team (docs/noble-drive-redo/2026-11-25-admin-walkthrough.md)
