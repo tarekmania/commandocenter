@@ -126,7 +126,7 @@
       "task": "Live test checklist PR waits for merge",
       "held": null,
       "runsWeek": 0,
-      "lastPush": "2026-11-27T01:34:13Z",
+      "lastPush": "2026-11-28T01:42:57Z",
       "needs": [
         {
           "t": "Review and merge the live test checklist PR",
@@ -150,6 +150,10 @@
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-28",
+          "t": "Took the package-lock.json rewrite out of the reminder branch: it came from a local install (main's lockfile is stale, the project installs with bun.lock) and w"
+        },
         {
           "on": "2026-11-27",
           "t": "Added the step \"Reminders reach short and hourly rentals\" before the end-to-end test: the hourly run only looked at a one-hour slice, so hourly rentals, a misse"
@@ -1455,8 +1459,8 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-28",
-  "updatedAt": "2026-11-28T01:42:39.080Z",
-  "lastSeenPush": "2026-11-27T01:34:13Z",
+  "updatedAt": "2026-11-28T01:44:40.349Z",
+  "lastSeenPush": "2026-11-28T01:42:57Z",
   "heads": {
     "noble-drive-redo": "c4eb854d1cee",
     "bilaro": "7ffc176dbf6c",
@@ -1470,7 +1474,7 @@
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
-    "noble-drive-redo": "18cabc80f5ff",
+    "noble-drive-redo": "f0e1079f016e",
     "bilaro": "8f3bbe6a18f0",
     "tutti-price-expert": "c3dacd934eee",
     "easyrep": "f9129eba119f",
