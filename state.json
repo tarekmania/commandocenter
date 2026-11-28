@@ -197,15 +197,20 @@
       "lastPush": "2026-11-28T02:11:46Z",
       "needs": [
         {
-          "t": "Review slot blocked: the phone fixes wait on a branch until Bilaro #1, Noble Drive #1 or Tischlein #1 is merged or closed",
+          "t": "Review slot blocked: the phone fixes wait on a branch until Bilaro #1, Noble Drive #1 or Tischlein #1 is merged or closed; the design default waits behind it",
           "since": "2026-11-27",
           "link": "https://github.com/tarekmania/easyrep/tree/station/phone-layout",
           "links": [
-            "https://github.com/tarekmania/easyrep/tree/station/phone-layout"
+            "https://github.com/tarekmania/easyrep/tree/station/phone-layout",
+            "https://github.com/tarekmania/easyrep/tree/station/design-default"
           ]
         }
       ],
       "decisions": [
+        {
+          "on": "2026-11-28",
+          "t": "Built \"New design default for all customers\" on its own branch, separate from the phone fixes: Tarek merging it is the moment customers see the new design, so i"
+        },
         {
           "on": "2026-11-27",
           "t": "Planned the default switch as one code constant (missing choice = new design, explicit old choice kept), no migration: same easy undo as the login decision; the"
@@ -1465,7 +1470,7 @@
     "sixng": "#a8c83a"
   },
   "day": "2026-11-28",
-  "updatedAt": "2026-11-28T02:13:02.610Z",
+  "updatedAt": "2026-11-28T02:14:59.379Z",
   "lastSeenPush": "2026-11-28T02:11:46Z",
   "heads": {
     "easyrep": "a2a67ec99969",
@@ -1480,7 +1485,7 @@
     "tempo30": "8cbdae01efa4"
   },
   "projectHashes": {
-    "easyrep": "f9129eba119f",
+    "easyrep": "a622a3eb1f78",
     "noble-drive-redo": "f0e1079f016e",
     "bilaro": "8f3bbe6a18f0",
     "tutti-price-expert": "4505e0cd1666",
