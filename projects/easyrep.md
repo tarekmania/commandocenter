@@ -74,6 +74,7 @@ Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A st
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-28 Built "New design default for all customers" on its own branch, separate from the phone fixes: Tarek merging it is the moment customers see the new design, so it must stay one small pull request he can merge or revert alone; no pull request while the review budget is full
 - 2026-11-27 Planned the default switch as one code constant (missing choice = new design, explicit old choice kept), no migration: same easy undo as the login decision; the four pages still old do not block it
 - 2026-11-26 Built the audit's phone fixes on a branch without a pull request: the review budget is full (3 of 3), the pull request opens on the first run with room
 - 2026-11-25 Closed my PR #18 (group 8 mockups and inventory): Tarek built and merged group 8 in #19, so it only added reference files and held a review slot
@@ -81,9 +82,10 @@ Goal: SME fleets in DACH buy EasyRep, and enough of them pay for the Series A st
 - 2026-11-24 Merge stays with Tarek: live product with paying fleets, synced with Lovable
 
 ## Needs Tarek
-- [ ] 2026-11-27 Review slot blocked: the phone fixes wait on a branch until Bilaro #1, Noble Drive #1 or Tischlein #1 is merged or closed (https://github.com/tarekmania/easyrep/tree/station/phone-layout)
+- [ ] 2026-11-27 Review slot blocked: the phone fixes wait on a branch until Bilaro #1, Noble Drive #1 or Tischlein #1 is merged or closed (https://github.com/tarekmania/easyrep/tree/station/phone-layout); the design default waits behind it (https://github.com/tarekmania/easyrep/tree/station/design-default)
 
 ## Log
+- 2026-11-28: No new commits on main, review budget full (3 of 3). Built the design default (one constant, explicit old choice kept) on station/design-default; switch tests 5/5 and strict tsc ok, full build not run because npm install hangs in this session (https://github.com/tarekmania/easyrep/tree/station/design-default)
 - 2026-11-27: No new commits on main, review budget full (3 of 3). Planned "New design default for all customers": switch rules, what is still old, the change and its tests (docs/easyrep/2026-11-27-default-rollout.md)
 - 2026-11-26: No new commits on main. Review budget full: built fixes 1-3 and 5 from the phone audit on station/phone-layout, build ok, no pull request yet (https://github.com/tarekmania/easyrep/tree/station/phone-layout)
 - 2026-11-25: Tarek merged the redesign groups 6 to 9 (#16, #17, #19 to #23); closed obsolete #18; review budget full, so wrote the phone layout audit with 5 concrete fixes (docs/easyrep/2026-11-25-phone-layout-audit.md)
