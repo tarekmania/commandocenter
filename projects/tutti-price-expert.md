@@ -46,6 +46,7 @@ Goal: Tutti finds cars on tutti.ch far below market value, and the flips make mo
 ## Done (Tarek's word)
 
 ## Decisions
+- 2026-11-28 Wrote the runbook for the first real scan instead of more code on the stack: nothing has merged since 13 Nov, and the next real progress is a scan with Tarek's budget, which only needs him and works from the branch too
 - 2026-11-27 Planned the flip ledger instead of building it on top of #7: the stack has waited since 13 Nov and a fourth layer makes it harder to merge; the existing feedback table has no purchase price or costs, so a separate flips table is planned (docs/tutti-price-expert/2026-11-27-flip-ledger.md)
 - 2026-11-26 Gearbox cost traps cover only the two well-known dry dual-clutch gearboxes (VW DQ200, Ford PowerShift) from 100'000 km, as a risk cost of CHF 2500 editable in the settings; more models only when a real listing shows one (https://github.com/tarekmania/tutti-price-expert/pull/7)
 - 2026-11-26 #7 is stacked on #6 and stays open: this run may not merge, and it must go in after the stack
@@ -56,8 +57,10 @@ Goal: Tutti finds cars on tutti.ch far below market value, and the flips make mo
 
 ## Needs Tarek
 - [ ] 2026-11-26 Merge the stack: #6 and #7 into it, then #5 into master and close #1 to #4 as contained (https://github.com/tarekmania/tutti-price-expert/pull/7)
+- [ ] 2026-11-28 Run the first scan with a real budget and mark every deal gut or schlecht (docs/tutti-price-expert/2026-11-28-first-real-scan.md)
 
 ## Log
+- 2026-11-28: No new commits, stack #1 to #7 still open. Wrote the runbook for the first scan with a real budget: settings to check, go/stop checks per deal, what to record (docs/tutti-price-expert/2026-11-28-first-real-scan.md)
 - 2026-11-27: No new commits, stack #1 to #7 still open. Found the login and server setup already built in #5 (noted on the route); planned the flip ledger for after the merge (docs/tutti-price-expert/2026-11-27-flip-ledger.md)
 - 2026-11-26: Stack still unmerged, no new commits. Budget per search is already in #5. Built gearbox cost traps (DQ200, PowerShift) on top of #6; backend 94/94, frontend 13/13, build ok (https://github.com/tarekmania/tutti-price-expert/pull/7)
 - 2026-11-25: Fixed the 4 ICU-dependent frontend tests in format.ts on top of #5; frontend 13/13, build ok, backend 93/93 (https://github.com/tarekmania/tutti-price-expert/pull/6)
