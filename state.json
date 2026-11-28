@@ -412,6 +412,10 @@
       ],
       "decisions": [
         {
+          "on": "2026-11-28",
+          "t": "Started \"Design pass on all main screens\" as a code audit: the review budget is full (3 of 3) and the help texts already wait on their branch; the main problem "
+        },
+        {
           "on": "2026-11-27",
           "t": "Help texts finished at five tips plus a «Hilfe» group in Cmd+K: the planned tips for dunning, QR bill, closing and roles were dropped because those screens alre"
         },
@@ -430,10 +434,6 @@
         {
           "on": "2026-11-24",
           "t": "Payroll is its own station before Tester-ready: it was built on 2026-11-24 and is a capability of its own, not part of core bookkeeping"
-        },
-        {
-          "on": "2026-11-24",
-          "t": "Merge stays with Tarek: main deploys the live app that testers use"
         }
       ],
       "profile": "build",
@@ -1400,7 +1400,7 @@
         "reason": "upstream repo not public",
         "since": "2026-11-25"
       },
-      "runsWeek": 49,
+      "runsWeek": 32,
       "lastPush": "2026-11-24T17:22:20Z",
       "needs": [],
       "decisions": [
@@ -1454,8 +1454,8 @@
     "health-center": "#a8c83a",
     "sixng": "#a8c83a"
   },
-  "day": "2026-11-27",
-  "updatedAt": "2026-11-27T14:58:06.439Z",
+  "day": "2026-11-28",
+  "updatedAt": "2026-11-28T01:42:39.080Z",
   "lastSeenPush": "2026-11-27T01:34:13Z",
   "heads": {
     "noble-drive-redo": "c4eb854d1cee",
@@ -1471,7 +1471,7 @@
   },
   "projectHashes": {
     "noble-drive-redo": "18cabc80f5ff",
-    "bilaro": "c95f0d6069db",
+    "bilaro": "8f3bbe6a18f0",
     "tutti-price-expert": "c3dacd934eee",
     "easyrep": "f9129eba119f",
     "gta6-namehash": "cb690be91257",
